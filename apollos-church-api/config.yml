@@ -20,7 +20,7 @@ ROCK:
   IMAGE_URL: https://rock.crossings.church/GetImage.ashx
   SHARE_URL: https://rock.crossings.church
   # This should match the timezone of the Rock server
-  TIMEZONE: 'America/Chicago'
+  TIMEZONE: "America/Chicago"
   USE_PLUGIN: true
   SHOW_INACTIVE_CONTENT: ${ROCK_SHOW_INACTIVE_CONTENT}
 UNIVERSAL_LINKS:
@@ -54,11 +54,11 @@ ALGOLIA:
       - title
       - unordered(summary)
     #customRankings:
-      # NOT CURRENTLY INCLUDED
-      # This just demonstrates what's possible
-      # To include likedCount (or any other field) override search package
-      # and add field to config below
-      #- desc(likedCount)
+    # NOT CURRENTLY INCLUDED
+    # This just demonstrates what's possible
+    # To include likedCount (or any other field) override search package
+    # and add field to config below
+    #- desc(likedCount)
 TWILIO:
   ACCOUNT_SID: ${TWILIO_ACCOUNT_SID}
   AUTH_TOKEN: ${TWILIO_AUTH_TOKEN}
@@ -80,8 +80,8 @@ ANALYTICS:
 BIBLE_API:
   KEY: ${BIBLE_API_KEY}
   BIBLE_ID:
-    WEB: '9879dbb7cfe39e4d-01'
-    KJV: 'de4e12af7f28f599-02'
+    WEB: "9879dbb7cfe39e4d-01"
+    KJV: "de4e12af7f28f599-02"
 CLOUDINARY:
   # Cloudinary is used to improve image loading
   # value should look something like
@@ -170,17 +170,16 @@ HOME_FEATURES:
     algorithms: [SERMON_CHILDREN]
     subtitle: For Him
     type: VerticalCardList
-  - title: BULLETIN
-    subtitle: What's happening at apollos?
+  - title: Current Happenings
+    subtitle: What's happening at Crossings
     type: ActionList
     algorithms:
       - type: CONTENT_CHANNEL
         arguments:
-          contentChannelId: 13
+          contentChannelId: 2
       - type: UPCOMING_EVENTS
   - algorithms: [USER_FEED]
     type: VerticalCardList
-
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:
