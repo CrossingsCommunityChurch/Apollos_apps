@@ -10,22 +10,22 @@
 APP:
   # This variable is used for generating deep links.
   # It should match whatver is in your Info.plist `CFBundleURLTypes`
-  DEEP_LINK_HOST: apolloschurchapp
+  DEEP_LINK_HOST: Crossings
   ROOT_API_URL: ${ROOT_URL}
   JOBS_USERNAME: ${JOBS_USERNAME}
   JOBS_PASSWORD: ${JOBS_PASSWORD}
 ROCK:
-  API_URL: https://apollosrock.newspring.cc/api
+  API_URL: https://rock.crossings.church/api
   API_TOKEN: ${ROCK_TOKEN}
-  IMAGE_URL: https://apollosrock.newspring.cc/GetImage.ashx
-  SHARE_URL: https://apollosrock.newspring.cc
+  IMAGE_URL: https://rock.crossings.church/GetImage.ashx
+  SHARE_URL: https://rock.crossings.church
   # This should match the timezone of the Rock server
-  TIMEZONE: 'America/New_York'
+  TIMEZONE: 'America/Chicago'
   USE_PLUGIN: true
   SHOW_INACTIVE_CONTENT: ${ROCK_SHOW_INACTIVE_CONTENT}
 UNIVERSAL_LINKS:
   # This should be your app's bundle ID, as found in your info.plist.
-  APPLE_APP_ID: org.reactjs.native.apolloschurchapp
+  APPLE_APP_ID: church.crossings.app
   # This should be your app's team ID, as found in Xcode
   APPLE_TEAM_ID: 7TM8C6252Z
   # Where should a user be redirected if they don't have your app installed?
@@ -39,9 +39,9 @@ ONE_SIGNAL:
   APP_ID: b6e75a77-003f-4466-95ca-82cc5cdc407b
   REST_KEY: ${ONE_SIGNAL_REST_KEY}
 CHURCH_ONLINE:
-  URL: https://apollos.churchonline.org/api/v1/
+  URL: https://sanct.crossings.church/api/v1/
   MEDIA_URLS: []
-  WEB_VIEW_URL: https://apollos.churchonline.org/
+  WEB_VIEW_URL: https://sanct.crossings.church
 ALGOLIA:
   APPLICATION_ID: ${ALGOLIA_APP_ID}
   API_KEY: ${ALGOLIA_API_KEY}
@@ -95,9 +95,9 @@ ENGINE:
 ROCK_MAPPINGS:
   INTERACTIONS:
     # Name of the InteractionChannel that will be created per EntityType
-    CHANNEL_NAME: Apollos App
+    CHANNEL_NAME: Crossings App
     # Prefix for the name of the InteractionComponent that will be created per Entity
-    COMPONENT_NAME: Apollos App Component
+    COMPONENT_NAME: Crossings App Component
     # 512 is "Mobile App"
     CHANNEL_MEDIUM_TYPE_ID: 512
 
@@ -106,47 +106,48 @@ ROCK_MAPPINGS:
       # When resolving "ContentSeriesContentItem" look in rock for a "ContentChannelItem"
       EntityType: ContentChannelItem
       # Used to define the subset of content channels types that use this specific type.
-      ContentChannelTypeId: [6, 7]
+      ContentChannelTypeId: [6, 11]
     DevotionalContentItem:
       EntityType: ContentChannelItem
-      ContentChannelTypeId: [1]
+      ContentChannelTypeId: [23]
     MediaContentItem:
       EntityType: ContentChannelItem
     UniversalContentItem:
       EntityType: ContentChannelItem
     WeekendContentItem:
-      ContentChannelId: [5]
+      ContentChannelId: [21]
       EntityType: ContentChannelItem
     ContentItem:
       EntityType: ContentChannelItem
 
   DATAVIEW_CATEGORIES:
     # Id of the category used to store all persona dataviews
-    PersonaId: 210
+    PersonaId: 498
 
   # Apollos will pull these content channels and expose them in the app on the discover screen.
   DISCOVER_CONTENT_CHANNEL_IDS:
     - 2
     - 3
-    - 4
-    - 6
-    - 8
+    - 18
+    - 19
+    - 24
   # Apollos will pull content items from these channels and expose them on the user feed
   # However, it will not expose the channel itself.
   # These channels are also pulled when indexing searchable content.
   FEED_CONTENT_CHANNEL_IDS:
     - 1
-    - 2
     - 3
-    - 4
-    - 5
-    - 6
-    - 8
+    - 18
+    - 19
+    - 21
+    - 22
+    - 23
+    - 24
 
   CAMPAIGN_CHANNEL_IDS:
     - 11
 
-  SERMON_CHANNEL_ID: 5
+  SERMON_CHANNEL_ID: 21
 
   SERVING_GROUP_TYPE_ID: 23
   COMMUNITY_GROUP_TYPE_ID: 25
