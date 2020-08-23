@@ -14,6 +14,9 @@ APP:
   ROOT_API_URL: ${ROOT_URL}
   JOBS_USERNAME: ${JOBS_USERNAME}
   JOBS_PASSWORD: ${JOBS_PASSWORD}
+BUGSNAG:
+  ## Optional, but you'll need to remove references to @apollosproject/bugsnag if you don't wish to use.
+  API_KEY: ${BUGSNAG_KEY}
 ROCK:
   API_URL: https://rock.crossings.church/api
   API_TOKEN: ${ROCK_TOKEN}
@@ -126,7 +129,6 @@ ROCK_MAPPINGS:
 
   # Apollos will pull these content channels and expose them in the app on the discover screen.
   DISCOVER_CONTENT_CHANNEL_IDS:
-    - 2
     - 3
     - 18
     - 19
