@@ -16,7 +16,7 @@ import {
   Interactions,
   RockConstants,
   Person,
-  ContentItem,
+  //ContentItem,
   ContentChannel,
   Sharable,
   Auth,
@@ -35,6 +35,8 @@ import * as Theme from './theme';
 // This module is used to attach Rock User updating to the OneSignal module.
 // This module includes a Resolver that overides a resolver defined in `OneSignal`
 import * as OneSignalWithRock from './oneSignalWithRock';
+
+import * as ContentItem from './content-items/data-source'
 
 const data = {
   Followings,
