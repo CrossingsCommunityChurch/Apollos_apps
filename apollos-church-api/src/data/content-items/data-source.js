@@ -32,6 +32,7 @@ class dataSource extends ContentItem.dataSource {
             : [],
         }));
       };
+
 }
 
 const {resolver, schema} = ContentItem;

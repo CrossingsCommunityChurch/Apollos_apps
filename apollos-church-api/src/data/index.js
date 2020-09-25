@@ -15,7 +15,7 @@ import {
   Followings,
   Interactions,
   RockConstants,
-  Person,
+  //Person,
   //ContentItem,
   ContentChannel,
   Sharable,
@@ -26,8 +26,8 @@ import {
   Campus,
   Group,
   BinaryFiles,
-  Feature,
-  Event,
+  //Feature,
+  //Event,
   PrayerRequest,
 } from '@apollosproject/data-connector-rock';
 import * as Theme from './theme';
@@ -37,6 +37,9 @@ import * as Theme from './theme';
 import * as OneSignalWithRock from './oneSignalWithRock';
 
 import * as ContentItem from './content-items/data-source'
+import * as Event from './event'
+import * as Feature from './features/data-source'
+import * as Person from './person'
 
 const data = {
   Followings,
