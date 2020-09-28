@@ -62,10 +62,9 @@ ALGOLIA:
     # To include likedCount (or any other field) override search package
     # and add field to config below
     #- desc(likedCount)
-TWILIO:
-  ACCOUNT_SID: ${TWILIO_ACCOUNT_SID}
-  AUTH_TOKEN: ${TWILIO_AUTH_TOKEN}
-  FROM_NUMBER: ${TWILIO_FROM_NUMBER}
+CLEARSTREAM:
+  API_KEY: ${CLEARSTREAM_API_KEY}
+  FROM_NUMBER: ${CLEARSTREAM_FROM_NUMBER}
 PASS:
   TEMPLATES:
     CHECKIN: ${PWD}/wallet-passes/checkin.pass
@@ -137,7 +136,6 @@ ROCK_MAPPINGS:
   # However, it will not expose the channel itself.
   # These channels are also pulled when indexing searchable content.
   FEED_CONTENT_CHANNEL_IDS:
-    - 1
     - 3
     - 18
     - 19
