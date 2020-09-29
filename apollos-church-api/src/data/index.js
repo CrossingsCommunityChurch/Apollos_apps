@@ -10,7 +10,7 @@ import * as OneSignal from '@apollosproject/data-connector-onesignal';
 import * as Search from '@apollosproject/data-connector-algolia-search';
 import * as Pass from '@apollosproject/data-connector-passes';
 import * as Cache from '@apollosproject/data-connector-redis-cache';
-import * as Sms from '@apollosproject/data-connector-twilio';
+//import * as Sms from '@apollosproject/data-connector-twilio';
 import {
   Followings,
   Interactions,
@@ -40,6 +40,7 @@ import * as ContentItem from './content-items/data-source'
 import * as Event from './event'
 import * as Feature from './features/data-source'
 import * as Person from './person'
+import * as Sms from './clearstream'
 
 const data = {
   Followings,
