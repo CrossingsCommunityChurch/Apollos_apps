@@ -32,12 +32,12 @@ const ActionTable = () => (
       <View>
         <RowHeader>
           <Name>
-            <H4>{'Connect with Apollos'}</H4>
+            <H4>{'Connect with Crossings'}</H4>
           </Name>
         </RowHeader>
         <TableView>
           <Touchable
-            onPress={() => openUrl('https://apollosrock.newspring.cc/page/235')}
+            onPress={() => openUrl('https://crossings.church/locations/okc/serve/')}
           >
             <Cell>
               <CellText>Find a serving opportunity</CellText>
@@ -46,16 +46,7 @@ const ActionTable = () => (
           </Touchable>
           <Divider />
           <Touchable
-            onPress={() => openUrl('https://apollosrock.newspring.cc/page/236')}
-          >
-            <Cell>
-              <CellText>Join a small group</CellText>
-              <CellIcon name="arrow-next" />
-            </Cell>
-          </Touchable>
-          <Divider />
-          <Touchable
-            onPress={() => openUrl('https://apollosrock.newspring.cc/page/233')}
+            onPress={() => openUrl('https://crossings.church/prayer/prayer-request')}
           >
             <Cell>
               <CellText>I need prayer</CellText>

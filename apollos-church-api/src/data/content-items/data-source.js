@@ -1,7 +1,7 @@
 import { ContentItem } from '@apollosproject/data-connector-rock';
 import ApollosConfig from '@apollosproject/config';
 
-const { ROCK_MAPPINGS, ROCK_CONSTANTS } = ApollosConfig;
+const { ROCK_MAPPINGS, ROCK_CONSTANTS, BIBLE_API } = ApollosConfig;
 const imageURL = 'images.crossings.church'
 
 class dataSource extends ContentItem.dataSource {

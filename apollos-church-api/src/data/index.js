@@ -41,6 +41,7 @@ import * as Event from './event'
 import * as Feature from './features/data-source'
 import * as Person from './person'
 import * as Sms from './clearstream'
+import * as MatrixItem from './matrix-items';
 
 const data = {
   Followings,
@@ -71,6 +72,7 @@ const data = {
   Event,
   Cache,
   PrayerRequest,
+  MatrixItem,
 };
 
 const {

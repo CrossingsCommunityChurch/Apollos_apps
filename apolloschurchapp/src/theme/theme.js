@@ -24,8 +24,8 @@ const colors = {
   darkTertiary: '#9c7d4c',
 
   // Light shades
-  lightPrimary: '#5c7385',
-  lightSecondary: '#2b74b0',
+  lightPrimary: '#ffffff',
+  lightSecondary: '#f7f7f7',
   lightTertiary: '#d4aa67',
 
   // Statics

@@ -56,7 +56,7 @@ class Home extends PureComponent {
               <FeaturesFeedConnected
                 onPressActionItem={this.handleOnPress({ openUrl })}
                 ListHeaderComponent={
-                  <LogoTitle source={require('./wordmark.png')} />
+                  <LogoTitle source={require('./Crossings-06.png')} />
                 }
               />
             </SafeAreaView>
