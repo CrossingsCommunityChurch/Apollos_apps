@@ -1,6 +1,9 @@
 import { gql } from 'apollo-server';
 
-import { createApolloServerConfig } from '@apollosproject/server-core';
+import {
+  createApolloServerConfig,
+  Interfaces,
+} from '@apollosproject/server-core';
 
 import * as Analytics from '@apollosproject/data-connector-analytics';
 import * as Scripture from '@apollosproject/data-connector-bible';
@@ -44,6 +47,7 @@ import * as Sms from './clearstream'
 import * as MatrixItem from './matrix-items';
 
 const data = {
+  Interfaces,
   Followings,
   ContentChannel,
   ContentItem,

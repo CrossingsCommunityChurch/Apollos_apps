@@ -42,14 +42,13 @@ ONE_SIGNAL:
   APP_ID: 144c1d64-5745-429c-8c50-3c45891711cd
   REST_KEY: ${ONE_SIGNAL_REST_KEY}
 CHURCH_ONLINE:
-  URL: 
+  URL: https://apollos.online.church/
   MEDIA_URLS: []
-  WEB_VIEW_URL:
+  WEB_VIEW_URL: https://apollos.online.church/
 ALGOLIA:
-  APPLICATION_ID: ${ALGOLIA_APP_ID}
-  API_KEY: ${ALGOLIA_API_KEY}
-  # TODO: should we support multiple indices? how
-  SEARCH_INDEX: test_ContentItem
+  APPLICATION_ID: ${ALGOLIASEARCH_APPLICATION_ID}
+  API_KEY: ${ALGOLIASEARCH_API_KEY}
+  SEARCH_INDEX: prod_ContentItem
   # Configure Algolia custom settings here
   # https://www.algolia.com/doc/api-reference/settings-api-parameters/
   CONFIGURATION:
@@ -156,6 +155,16 @@ ROCK_MAPPINGS:
   MOBILE_DEVICE_TYPE_ID: 671
 
 HOME_FEATURES:
+  - algorithms: [USER_FEED]
+    type: HeroList
+    primaryAction:
+      # Right now, you hardcode exactly what GraphQL should return.
+      # Long term, we hope to have a more sophisticated mechanism for driving this field
+      action: OPEN_NODE
+      title: 'Read More'
+      relatedNode:
+        __typename: UniversalContentItem
+        id: 21
   - algorithms: [DAILY_PRAYER]
     isCard: false
     type: PrayerList
@@ -163,14 +172,6 @@ HOME_FEATURES:
   - algorithms: [CAMPAIGN_ITEMS]
     type: HeroList
     isFeatured: true
-    primaryAction:
-      # Right now, you hardcode exactly what GraphQL should return.
-      # Long term, we hope to have a more sophisticated mechanism for driving this field
-      action: OPEN_URL
-      title: 'Read More'
-      relatedNode:
-        __typename: Url
-        url: 'https://crossings.church'
   - title: FOR YOU
     algorithms: [SERMON_CHILDREN, PERSONA_FEED]
     subtitle: Explore what God calls you to today
@@ -190,8 +191,6 @@ HOME_FEATURES:
         arguments:
           contentChannelId: 2
       - type: UPCOMING_EVENTS
-  - algorithms: [USER_FEED]
-    type: VerticalCardList
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:
