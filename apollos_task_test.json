@@ -1,0 +1,119 @@
+{
+    "family": "ccc-apollos-api-dev",
+    "executionRoleArn": "arn:aws:iam::630260715093:role/ecsTaskExecutionRole",
+    "networkMode": "bridge",
+    "containerDefinitions": [
+      {
+        "name": "ccc_graphapi",
+        "image": "630260715093.dkr.ecr.us-east-1.amazonaws.com/ccc_graphapi:latest",
+        "links": [],
+        "cpu": 10,
+        "memory": 512,
+        "portMappings": [
+          {
+            "containerPort": 4000,
+            "hostPort": 0,
+            "protocol": "tcp"
+          }
+        ],
+        "essential": true,
+        "entryPoint": [],
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "/ecs/ccc-apollos-api-dev",
+            "awslogs-region": "us-east-1",
+            "awslogs-stream-prefix": "ecs"
+          }
+        },
+        "command": [],
+        "environment": [
+          {
+            "name": "PORT",
+            "value": "4000"
+          },
+          {
+            "name": "ROCK_API",
+            "value": "https://rms.crossings.church/api"
+          },
+          {
+            "name": "ROCK_SHOW_INACTIVE_CONTENT",
+            "value": "false"
+          }
+        ],
+        "secrets": [
+          {
+            "valueFrom": "BIBLE_API_KEY",
+            "name": "BIBLE_API_KEY"
+          },
+          {
+            "valueFrom": "TWILIO_ACCOUNT_SID",
+            "name": "TWILIO_ACCOUNT_SID"
+          },
+          {
+            "valueFrom": "TWILIO_AUTH_TOKEN",
+            "name": "TWILIO_AUTH_TOKEN"
+          },
+          {
+            "valueFrom": "TWILIO_FROM_NUMBER",
+            "name": "TWILIO_FROM_NUMBER"
+          },
+          {
+            "valueFrom": "ROCK_TOKEN",
+            "name": "ROCK_TOKEN"
+          },
+          {
+            "valueFrom": "PASS_WWDR_CERT",
+            "name": "PASS_WWDR_CERT"
+          },
+          {
+            "valueFrom": "PASS_SIGNER_CERT",
+            "name": "PASS_SIGNER_CERT"
+          },
+          {
+            "valueFrom": "PASS_SIGNER_KEY",
+            "name": "PASS_SIGNER_KEY"
+          },
+          {
+            "valueFrom": "PASS_SIGNER_PASSPHRASE",
+            "name": "PASS_SIGNER_PASSPHRASE"
+          },
+          {
+            "valueFrom": "ALGOLIA_APP_ID",
+            "name": "ALGOLIA_APP_ID"
+          },
+          {
+            "valueFrom": "ALGOLIA_API_KEY",
+            "name": "ALGOLIA_API_KEY"
+          },
+          {
+            "valueFrom": "REDIS_URL",
+            "name": "REDIS_URL"
+          },
+          {
+            "valueFrom": "ONE_SIGNAL_REST_KEY",
+            "name": "ONE_SIGNAL_REST_KEY"
+          },
+          {
+            "valueFrom": "ENGINE_API_KEY",
+            "name": "ENGINE_API_KEY"
+          },
+          {
+            "valueFrom": "BUGSNAG_API_KEY",
+            "name": "BUGSNAG_API_KEY"
+          }
+        ],
+        "mountPoints": [],
+        "volumesFrom": []
+      }
+    ],
+    "volumes": [],
+    "placementConstraints": [],
+    "requiresCompatibilities": ["EC2"],
+    "tags": [
+      {
+        "key": "registeredBy",
+        "value": "github-action"
+      }
+    ]
+  }

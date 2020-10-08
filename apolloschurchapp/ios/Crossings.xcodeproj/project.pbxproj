@@ -360,8 +360,8 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = 7KS82J74VW;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 83DP3WM45E;
+						ProvisioningStyle = Automatic;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -505,8 +505,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Crossings/Pods-Crossings-resources.sh",
-				"${PODS_ROOT}/google-cast-sdk-no-bluetooth/GoogleCastSDK-ios-4.4.8_static/GoogleCast.framework/GoogleCastCoreResources.bundle",
-				"${PODS_ROOT}/google-cast-sdk-no-bluetooth/GoogleCastSDK-ios-4.4.8_static/GoogleCast.framework/GoogleCastUIResources.bundle",
+				"${PODS_ROOT}/google-cast-sdk-no-bluetooth/GoogleCastSDK-ios-4.5.0_static/GoogleCast.framework/GoogleCastCoreResources.bundle",
+				"${PODS_ROOT}/google-cast-sdk-no-bluetooth/GoogleCastSDK-ios-4.5.0_static/GoogleCast.framework/GoogleCastUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -692,27 +692,28 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 54F271B8EB67A4997A2C7D96 /* Pods-Crossings.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_ENTITLEMENTS = Crossings/Crossings.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development: Apollos Apps (58685TNK9H)";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 274;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 234;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = 7KS82J74VW;
+				DEVELOPMENT_TEAM = 83DP3WM45E;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 				INFOPLIST_FILE = Crossings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.3.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.apolloschurch.app;
+				PRODUCT_BUNDLE_IDENTIFIER = church.crossings.rock;
 				PRODUCT_NAME = Crossings;
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.apolloschurch.app";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -721,26 +722,27 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1F8F5BC4745C8F22C695573D /* Pods-Crossings.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_ENTITLEMENTS = Crossings/Crossings.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Distribution: Differential Dev Shop, LLC (7KS82J74VW)";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 274;
-				DEVELOPMENT_TEAM = 7KS82J74VW;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 234;
+				DEVELOPMENT_TEAM = 83DP3WM45E;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 				INFOPLIST_FILE = Crossings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.3.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.apolloschurch.app;
+				PRODUCT_BUNDLE_IDENTIFIER = church.crossings.rock;
 				PRODUCT_NAME = Crossings;
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.apolloschurch.app";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

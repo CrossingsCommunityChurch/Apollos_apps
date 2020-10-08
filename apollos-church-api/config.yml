@@ -42,9 +42,9 @@ ONE_SIGNAL:
   APP_ID: 144c1d64-5745-429c-8c50-3c45891711cd
   REST_KEY: ${ONE_SIGNAL_REST_KEY}
 CHURCH_ONLINE:
-  URL: https://apollos.online.church/
+  URL: https://edmond.crossings.church/
   MEDIA_URLS: []
-  WEB_VIEW_URL: https://apollos.online.church/
+  WEB_VIEW_URL: https://edmond.crossings.church/
 ALGOLIA:
   APPLICATION_ID: ${ALGOLIASEARCH_APPLICATION_ID}
   API_KEY: ${ALGOLIASEARCH_API_KEY}
