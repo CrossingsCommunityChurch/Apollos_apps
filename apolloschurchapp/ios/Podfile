@@ -55,7 +55,7 @@ post_install do |installer|
    if target.name == 'react-native-config'
      phase = target.project.new(Xcodeproj::Project::Object::PBXShellScriptBuildPhase)
      phase.shell_script = "cd ../../"\
-     " && RNC_ROOT=./node_modules/react-native-config/"\
+     " && RNC_ROOT=./node_modules/react-native-config"\
      " && export SYMROOT=$RNC_ROOT/ios/ReactNativeConfig"\
      " && ruby $RNC_ROOT/ios/ReactNativeConfig/BuildDotenvConfig.ruby"
 

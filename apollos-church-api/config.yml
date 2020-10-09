@@ -139,9 +139,6 @@ ROCK_MAPPINGS:
   FEED_CONTENT_CHANNEL_IDS:
     - 18
     - 19
-    - 21
-    - 22
-    - 23
 
   CAMPAIGN_CHANNEL_IDS:
     - 11
