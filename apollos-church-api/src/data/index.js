@@ -1,6 +1,9 @@
 import { gql } from 'apollo-server';
 
-import { createApolloServerConfig } from '@apollosproject/server-core';
+import {
+  createApolloServerConfig,
+  Interfaces,
+} from '@apollosproject/server-core';
 
 import * as Analytics from '@apollosproject/data-connector-analytics';
 import * as Scripture from '@apollosproject/data-connector-bible';
@@ -10,13 +13,13 @@ import * as OneSignal from '@apollosproject/data-connector-onesignal';
 import * as Search from '@apollosproject/data-connector-algolia-search';
 import * as Pass from '@apollosproject/data-connector-passes';
 import * as Cache from '@apollosproject/data-connector-redis-cache';
-import * as Sms from '@apollosproject/data-connector-twilio';
+//import * as Sms from '@apollosproject/data-connector-twilio';
 import {
   Followings,
   Interactions,
   RockConstants,
-  Person,
-  ContentItem,
+  //Person,
+  //ContentItem,
   ContentChannel,
   Sharable,
   Auth,
@@ -26,8 +29,9 @@ import {
   Campus,
   Group,
   BinaryFiles,
-  Feature,
-  Event,
+  //Feature,
+  //Event,
+  PrayerRequest,
 } from '@apollosproject/data-connector-rock';
 import * as Theme from './theme';
 
@@ -35,7 +39,15 @@ import * as Theme from './theme';
 // This module includes a Resolver that overides a resolver defined in `OneSignal`
 import * as OneSignalWithRock from './oneSignalWithRock';
 
+import * as ContentItem from './content-items/data-source'
+import * as Event from './event'
+import * as Feature from './features/data-source'
+import * as Person from './person'
+import * as Sms from './clearstream'
+import * as MatrixItem from './matrix-items';
+
 const data = {
+  Interfaces,
   Followings,
   ContentChannel,
   ContentItem,
@@ -63,6 +75,8 @@ const data = {
   Feature,
   Event,
   Cache,
+  PrayerRequest,
+  MatrixItem,
 };
 
 const {

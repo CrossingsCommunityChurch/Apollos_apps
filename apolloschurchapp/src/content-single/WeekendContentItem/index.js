@@ -62,11 +62,11 @@ const WeekendContentItem = ({ content, loading }) => {
                     {coverImageSources.length || loading ? (
                       <Stretchy
                         background
-                        style={{ backgroundColor: theme.colors.primary }}
+                        style={{ backgroundColor: theme.colors.white }}
                       >
                         <GradientOverlayImage
                           isLoading={!coverImageSources.length && loading}
-                          overlayColor={theme.colors.primary}
+                          overlayColor={theme.colors.white}
                           overlayType="featured"
                           source={coverImageSources}
                         />
@@ -108,7 +108,11 @@ WeekendContentItem.propTypes = {
     }),
     id: PropTypes.string,
     title: PropTypes.string,
-    videos: PropTypes.arrayOf(PropTypes.shape({ sources: PropTypes.array })),
+    videos: PropTypes.arrayOf(
+      PropTypes.shape({
+        sources: PropTypes.arrayOf(PropTypes.shape({ uri: PropTypes.string })),
+      })
+    ),
   }),
   loading: PropTypes.bool,
 };

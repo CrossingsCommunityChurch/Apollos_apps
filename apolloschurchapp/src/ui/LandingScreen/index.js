@@ -76,7 +76,7 @@ LandingScreen.propTypes = {
 LandingScreen.defaultProps = {
   slideTitle: "We're glad you're here.",
   description:
-    "We're not just a building you go to, but a family to belong to.",
+    "Live by Faith, Be a voice of hope, be known by love. ",
 };
 
 LandingScreen.navigationOptions = {

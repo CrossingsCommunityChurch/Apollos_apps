@@ -10,12 +10,14 @@ import {
   NavigationService,
 } from '@apollosproject/ui-kit';
 import Passes from '@apollosproject/ui-passes';
+import { CoreNavigationAnalytics } from '@apollosproject/ui-analytics';
 import { MapViewConnected as Location } from '@apollosproject/ui-mapview';
 import { MediaPlayer } from '@apollosproject/ui-media-player';
 import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
 
 import Providers from './Providers';
 import ContentSingle from './content-single';
+import NodeSingle from './node-single';
 import Event from './event';
 import Tabs from './tabs';
 import PersonalDetails from './user-settings/PersonalDetails';
@@ -45,6 +47,7 @@ const AppNavigator = createStackNavigator(
     ProtectedRoute: ProtectedRouteWithSplashScreen,
     Tabs,
     ContentSingle,
+    NodeSingle,
     Event,
     Auth: EnhancedAuth,
     PersonalDetails,
@@ -68,11 +71,16 @@ const App = () => (
   <Providers>
     <BackgroundView>
       <AppStatusBar />
-      <AppContainer
-        ref={(navigatorRef) => {
-          NavigationService.setTopLevelNavigator(navigatorRef);
-        }}
-      />
+      <CoreNavigationAnalytics>
+        {(props) => (
+          <AppContainer
+            ref={(navigatorRef) => {
+              NavigationService.setTopLevelNavigator(navigatorRef);
+            }}
+            {...props}
+          />
+        )}
+      </CoreNavigationAnalytics>
       <MediaPlayer />
     </BackgroundView>
   </Providers>
