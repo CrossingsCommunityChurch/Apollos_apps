@@ -100,8 +100,8 @@ class dataSource extends Event.dataSource {
     const imageUrl = await this.getImages(
       { attributeValues: eventProcess.attributeValues, attributes: eventProcess.attributes }
     );
-    console.log("image asset is ")
-    console.log(imageUrl);
+    //console.log("image asset is ")
+    //console.log(imageUrl);
     if (imageUrl) {
       return imageUrl[0];
     }
@@ -124,8 +124,8 @@ class dataSource extends Event.dataSource {
         })
       );
       var obj =``
-      console.log("Image keys are")
-      console.log(imageKeys);
+      //console.log("Image keys are")
+      //console.log(imageKeys);
       return imageKeys.map((key) => ({
         __typename: 'ImageMedia',
         key,

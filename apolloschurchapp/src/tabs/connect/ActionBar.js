@@ -14,7 +14,7 @@ const Toolbar = ({ navigation }) => (
           label="Check-in"
         />
         <ActionBarItem
-          onPress={() => openUrl('https://apollosrock.newspring.cc/page/186')}
+          onPress={() => openUrl('https://crossings.church/give')}
           icon="download"
           label="Give"
         />

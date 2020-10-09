@@ -129,10 +129,9 @@ ROCK_MAPPINGS:
 
   # Apollos will pull these content channels and expose them in the app on the discover screen.
   DISCOVER_CONTENT_CHANNEL_IDS:
-    - 23
     - 18
     - 19
-    - 24
+    - 23
   # Apollos will pull content items from these channels and expose them on the user feed
   # However, it will not expose the channel itself.
   # These channels are also pulled when indexing searchable content.
@@ -152,6 +151,10 @@ ROCK_MAPPINGS:
   MOBILE_DEVICE_TYPE_ID: 671
 
 HOME_FEATURES:
+  - algorithms: [DAILY_PRAYER]
+    isCard: false
+    type: PrayerList
+    title: Daily Prayer
   - algorithms: [USER_FEED]
     type: HeroList
     primaryAction:
@@ -162,10 +165,6 @@ HOME_FEATURES:
       relatedNode:
         __typename: UniversalContentItem
         id: 21
-  - algorithms: [DAILY_PRAYER]
-    isCard: false
-    type: PrayerList
-    title: Daily Prayer
   - algorithms: [CAMPAIGN_ITEMS]
     type: HeroList
     isFeatured: true

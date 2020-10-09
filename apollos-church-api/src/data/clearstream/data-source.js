@@ -38,7 +38,6 @@ export default class clearstream extends DataSource {
         })
     
         res.on('end', () => {
-            console.log("Response Body: ", JSON.parse(responseBody))
             resolve(JSON.parse(responseBody) )
         })
         }).on("error", (err) => {
