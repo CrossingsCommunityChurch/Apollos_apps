@@ -70,6 +70,7 @@ terraform.tfvars
 # dotenv environment variables file
 .env
 .env.storybook
+.env.production
 
 # next.js build output
 .next
