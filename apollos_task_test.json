@@ -79,12 +79,12 @@
             "name": "PASS_SIGNER_PASSPHRASE"
           },
           {
-            "valueFrom": "ALGOLIA_APP_ID",
-            "name": "ALGOLIA_APP_ID"
+            "valueFrom": "ALGOLIASEARCH_APPLICATION_ID",
+            "name": "ALGOLIASEARCH_APPLICATION_ID"
           },
           {
-            "valueFrom": "ALGOLIA_API_KEY",
-            "name": "ALGOLIA_API_KEY"
+            "valueFrom": "ALGOLIASEARCH_API_KEY",
+            "name": "ALGOLIASEARCH_API_KEY"
           },
           {
             "valueFrom": "REDIS_URL",
@@ -99,8 +99,8 @@
             "name": "ENGINE_API_KEY"
           },
           {
-            "valueFrom": "BUGSNAG_API_KEY",
-            "name": "BUGSNAG_API_KEY"
+            "valueFrom": "BUGSNAG_KEY",
+            "name": "BUGSNAG_KEY"
           }
         ],
         "mountPoints": [],
