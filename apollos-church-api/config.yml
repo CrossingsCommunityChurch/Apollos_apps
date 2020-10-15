@@ -42,9 +42,9 @@ ONE_SIGNAL:
   APP_ID: 144c1d64-5745-429c-8c50-3c45891711cd
   REST_KEY: ${ONE_SIGNAL_REST_KEY}
 CHURCH_ONLINE:
-  URL: https://edmond.crossings.church/
+  URL: https://venue.crossings.church/
   MEDIA_URLS: []
-  WEB_VIEW_URL: https://edmond.crossings.church/
+  WEB_VIEW_URL: https://venue.crossings.church/
 ALGOLIA:
   APPLICATION_ID: ${ALGOLIASEARCH_APPLICATION_ID}
   API_KEY: ${ALGOLIASEARCH_API_KEY}
@@ -118,7 +118,7 @@ ROCK_MAPPINGS:
     UniversalContentItem:
       EntityType: ContentChannelItem
     WeekendContentItem:
-      ContentChannelId: [21]
+      ContentChannelId: [18]
       EntityType: ContentChannelItem
     ContentItem:
       EntityType: ContentChannelItem
@@ -136,7 +136,6 @@ ROCK_MAPPINGS:
   # However, it will not expose the channel itself.
   # These channels are also pulled when indexing searchable content.
   FEED_CONTENT_CHANNEL_IDS:
-    - 21
     - 18
     - 19
 
