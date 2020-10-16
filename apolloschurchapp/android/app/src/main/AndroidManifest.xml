@@ -19,6 +19,9 @@
         android:name="com.google.android.geo.API_KEY"
         android:value="@string/GOOGLE_MAPS_API_KEY"/>
 
+      <meta-data android:name="com.bugsnag.android.API_KEY"
+             android:value="b0505b1e539130a7815e2e2cd22d99ec"/>
+
       <meta-data
         android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
         android:value="com.reactnative.googlecast.GoogleCastOptionsProvider" />

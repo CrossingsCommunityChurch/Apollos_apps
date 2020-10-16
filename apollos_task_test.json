@@ -101,6 +101,10 @@
           {
             "valueFrom": "BUGSNAG_KEY",
             "name": "BUGSNAG_KEY"
+          },
+          {
+            "valueFrom": "ROOT_URL",
+            "name": "ROOT_URL"
           }
         ],
         "mountPoints": [],
