@@ -1,5 +1,6 @@
 // import styleOverrides from './styleOverrides';
 // import propOverrides from './propOverrides';
+import fonts from './fonts'
 
 /* Add your custom theme definitions below. Anything that is supported in UI-Kit Theme can be
  overridden and/or customized here! */
@@ -78,5 +79,65 @@ const colors = {
 //   ...styleOverrides,
 //   ...propOverrides,
 // };
+
+export const typography = {
+  ...fonts
+};
+
+const overrides = {
+  'ui-kit.FeaturedCard.Label': {
+    type: 'secondary',
+  },
+  'ui-kit.HighlightCard.Label': {
+    type: 'secondary',
+  },
+  H1: {
+    fontFamily: typography.sans.black.default,
+  },
+  H2: {
+    fontFamily: typography.sans.black.default,
+  },
+  H3: {
+    fontFamily: typography.sans.black.default,
+  },
+  H4: {
+    fontFamily: typography.sans.black.default,
+  },
+  H5: {
+    fontFamily: typography.sans.bold.default,
+  },
+  H6: {
+    fontFamily: typography.sans.black.default,
+  },
+  /* 'ui-prayer.PrayerExperience': () => ({
+    AddPrayerComponent: (props) => (
+      <AddPrayerScreenConnected
+        {...props}
+        AddedPrayerComponent={(props) => (
+          <ConfirmationDialogScreen
+            {...props}
+            title={
+              'Thanks for giving our community the opportunity to pray for you!'
+            }
+            body={
+              <Text>
+                <BodyText>
+                  In addition to our prayer community here on the LCBC App, your
+                  request has also been sent to the LCBC Ministry Team and a
+                  small trusted team of volunteers.
+                </BodyText>
+                {'\n\n'}
+                <BodyText>
+                  We hope you feel encouraged by God’s presence in your life and
+                  his love for you today!
+                </BodyText>
+              </Text>
+            }
+          />
+        )}
+      />
+    ),
+  }), **/
+};
 
 export default { colors };

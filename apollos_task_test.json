@@ -34,11 +34,11 @@
           },
           {
             "name": "ROCK_API",
-            "value": "https://rms.crossings.church/api"
+            "value": "https://rock.crossings.church/api"
           },
           {
             "name": "ROCK_SHOW_INACTIVE_CONTENT",
-            "value": "false"
+            "value": "False"
           }
         ],
         "secrets": [
