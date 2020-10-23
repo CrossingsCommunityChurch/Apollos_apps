@@ -33,6 +33,7 @@ import {
   FeatureFeed,
   //Event,
   PrayerRequest,
+  ActionAlgorithm,
 } from '@apollosproject/data-connector-rock';
 import * as Theme from './theme';
 
@@ -45,7 +46,7 @@ import * as Event from './event'
 import * as Feature from './features/data-source'
 import * as Person from './person'
 import * as Sms from './clearstream'
-import * as MatrixItem from './matrix-items';
+//import * as MatrixItem from './matrix-items';
 
 const data = {
   Interfaces,
@@ -78,6 +79,7 @@ const data = {
   Event,
   Cache,
   PrayerRequest,
+  ActionAlgorithm,
 };
 
 const {

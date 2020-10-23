@@ -42,9 +42,9 @@ ONE_SIGNAL:
   APP_ID: 144c1d64-5745-429c-8c50-3c45891711cd
   REST_KEY: ${ONE_SIGNAL_REST_KEY}
 CHURCH_ONLINE:
-  URL: https://edmond.crossings.church/
+  URL: https://ccctest.crossings.church/
   MEDIA_URLS: []
-  WEB_VIEW_URL: https://edmond.crossings.church//
+  WEB_VIEW_URL: https://ccctest.crossings.church/
 ALGOLIA:
   APPLICATION_ID: ${ALGOLIASEARCH_APPLICATION_ID}
   API_KEY: ${ALGOLIASEARCH_API_KEY}
@@ -136,9 +136,9 @@ ROCK_MAPPINGS:
   # However, it will not expose the channel itself.
   # These channels are also pulled when indexing searchable content.
   FEED_CONTENT_CHANNEL_IDS:
-    - 18
-    - 19
     - 21
+    - 22
+    - 376
 
   CAMPAIGN_CHANNEL_IDS:
     - 11
@@ -166,6 +166,14 @@ HOME_FEATURES:
       relatedNode:
         __typename: UniversalContentItem
         id: 21
+  - title: Current Happenings
+    subtitle: What's happening at Crossings
+    type: ActionList
+    algorithms:
+      - type: CONTENT_CHANNEL
+        arguments:
+          contentChannelId: 2
+      - type: UPCOMING_EVENTS
   - algorithms: [CAMPAIGN_ITEMS]
     type: HeroList
     isFeatured: true
@@ -180,33 +188,26 @@ HOME_FEATURES:
     algorithms: [SERMON_CHILDREN]
     subtitle: For Him
     type: VerticalCardList
-  - title: Current Happenings
-    subtitle: What's happening at Crossings
-    type: ActionList
-    algorithms:
-      - type: CONTENT_CHANNEL
-        arguments:
-          contentChannelId: 2
-      - type: UPCOMING_EVENTS
+ 
 
 DISCOVER_FEATURES:
   - algorithms:
       - type: CONTENT_CHANNEL
         arguments:
-          contentChannelId: 3
+          contentChannelId: 18
           limit: 3
     type: HorizontalCardList
-    subtitle: Sermons
+    subtitle: Sunday Messages
   - algorithms:
       - type: CONTENT_CHANNEL
         arguments:
-          contentChannelId: 5
+          contentChannelId: 19
           limit: 3
     type: HorizontalCardList
-    subtitle: Podcasts
+    subtitle: Teaching Series
     primaryAction:
       action: OPEN_CHANNEL
-      title: 'Read More'
+      title: 'show More'
       relatedNode:
         __typename: ContentChannel
         id: 5
