@@ -30,6 +30,7 @@ import {
   Group,
   BinaryFiles,
   //Feature,
+  FeatureFeed,
   //Event,
   PrayerRequest,
 } from '@apollosproject/data-connector-rock';
@@ -73,10 +74,10 @@ const data = {
   Group,
   BinaryFiles,
   Feature,
+  FeatureFeed,
   Event,
   Cache,
   PrayerRequest,
-  MatrixItem,
 };
 
 const {
