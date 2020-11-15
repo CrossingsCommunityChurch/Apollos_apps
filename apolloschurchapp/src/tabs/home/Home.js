@@ -66,7 +66,9 @@ class Home extends PureComponent {
                     featureFeedId={data?.homeFeedFeatures?.id}
                     onPressActionItem={handleOnPress}
                     ListHeaderComponent={
-                      <LogoTitle source={require('./Crossings-06.png')} />
+                      <LogoTitle
+                        source={require('./Crossings_markonly_black.png')}
+                      />
                     }
                   />
                 )}

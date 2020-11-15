@@ -1,6 +1,6 @@
 // import styleOverrides from './styleOverrides';
 // import propOverrides from './propOverrides';
-import fonts from './fonts'
+import fonts from './fonts';
 
 /* Add your custom theme definitions below. Anything that is supported in UI-Kit Theme can be
  overridden and/or customized here! */
@@ -81,7 +81,7 @@ const colors = {
 // };
 
 export const typography = {
-  ...fonts
+  ...fonts,
 };
 
 const overrides = {
@@ -137,7 +137,7 @@ const overrides = {
         )}
       />
     ),
-  }), **/
+  }), * */
 };
 
 export default { colors };

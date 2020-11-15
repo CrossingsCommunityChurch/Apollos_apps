@@ -28,23 +28,23 @@ ROCK:
   SHOW_INACTIVE_CONTENT: ${ROCK_SHOW_INACTIVE_CONTENT}
 UNIVERSAL_LINKS:
   # This should be your app's bundle ID, as found in your info.plist.
-  APPLE_APP_ID: church.crossings.app
+  APPLE_APP_ID: church.crossings.rock
   # This should be your app's team ID, as found in Xcode
-  APPLE_TEAM_ID: 7TM8C6252Z
+  APPLE_TEAM_ID: 83DP3WM45E
   # Where should a user be redirected if they don't have your app installed?
-  APP_STORE_LINK: https://apollos.app/ios
-  PLAY_STORE_LINK: https://apollos.app/android
+  APP_STORE_LINK: https://crossings.church/app
+  PLAY_STORE_LINK: https://crossings.church/app
   # Your app Id, as found in your app/build.gradle.
-  GOOGLE_APP_ID: com.differential.apollos
+  GOOGLE_APP_ID: church.crossings.rock
   # https://docs.getsocial.im/knowledge-base/android-signing-key-sha256/
   GOOGLE_KEYSTORE_SHA256: EC:6E:B5:5A:62:53:1E:53:FF:C4:BA:A7:CB:29:77:57:71:9D:65:2F:AF:69:41:A3:AD:2B:C4:55:A1:7A:07:03
 ONE_SIGNAL:
   APP_ID: 144c1d64-5745-429c-8c50-3c45891711cd
   REST_KEY: ${ONE_SIGNAL_REST_KEY}
 CHURCH_ONLINE:
-  URL: https://ccctest.crossings.church/
+  URL: https://venue.crossings.church/
   MEDIA_URLS: []
-  WEB_VIEW_URL: https://ccctest.crossings.church/
+  WEB_VIEW_URL: https://venue.crossings.church/
 ALGOLIA:
   APPLICATION_ID: ${ALGOLIASEARCH_APPLICATION_ID}
   API_KEY: ${ALGOLIASEARCH_API_KEY}
@@ -82,8 +82,6 @@ BIBLE_API:
   KEY: ${BIBLE_API_KEY}
   BIBLE_ID:
     KJV: 'de4e12af7f28f599-01'
-    NIV: '71c6eab17ae5b667-01'
-    ESV: 'f421fe261da7624f-01'
     
 CLOUDINARY:
   # Cloudinary is used to improve image loading
@@ -98,9 +96,9 @@ ENGINE:
 ROCK_MAPPINGS:
   INTERACTIONS:
     # Name of the InteractionChannel that will be created per EntityType
-    CHANNEL_NAME: Crossings App
+    CHANNEL_NAME: Crossings App test
     # Prefix for the name of the InteractionComponent that will be created per Entity
-    COMPONENT_NAME: Crossings App 
+    COMPONENT_NAME: Crossings App test
     # 512 is "Mobile App"
     CHANNEL_MEDIUM_TYPE_ID: 512
 
@@ -138,7 +136,6 @@ ROCK_MAPPINGS:
   FEED_CONTENT_CHANNEL_IDS:
     - 21
     - 22
-    - 376
 
   CAMPAIGN_CHANNEL_IDS:
     - 11
@@ -153,15 +150,37 @@ ROCK_MAPPINGS:
 
 HOME_FEATURES:
   - type: ActionBar
-    title: Welcome to Apollos
+    title: Welcome to Crossings
     actions: [{
       title: Check In,
       icon: check,
+      id: 123456789,
       action: OPEN_URL,
       relatedNode: {
         __typename: Url,
-        url: 'https://www.google.com'
+        url: 'https://rock.crossings.church'
       }
+    },
+    {
+      title: Give,
+      icon: plus,
+      id: 1234,
+      action: OPEN_URL,
+      relatedNode: {
+        __typename: Url,
+        url: 'https://crossings.church/give'
+      },
+    }, 
+    {
+      title: Info,
+      icon: information,
+      id: 12345,
+      action: OPEN_CHANNEL,
+      relatedNode:{
+        __typename: ContentChannel,
+        id: 1,
+        name: Upcoming 
+      },
     }]
   - algorithms: [DAILY_PRAYER]
     isCard: false
@@ -169,13 +188,14 @@ HOME_FEATURES:
     title: Daily Prayer
   - algorithms: [USER_FEED]
     type: HeroList
+    limit: 6
     primaryAction:
       # Right now, you hardcode exactly what GraphQL should return.
       # Long term, we hope to have a more sophisticated mechanism for driving this field
-      action: OPEN_NODE
-      title: 'Read More'
+      action: OPEN_CHANNEL
+      title: 'See More'
       relatedNode:
-        __typename: UniversalContentItem
+        __typename: ContentChannel
         id: 21
   - title: Current Happenings
     subtitle: What's happening at Crossings
@@ -183,6 +203,7 @@ HOME_FEATURES:
     algorithms:
       - type: CONTENT_CHANNEL
         arguments:
+          # This currently points to the Service Bulletin content channel Add stuff there to show it.
           contentChannelId: 2
       - type: UPCOMING_EVENTS
   - algorithms: [CAMPAIGN_ITEMS]
@@ -221,8 +242,8 @@ DISCOVER_FEATURES:
       title: 'show More'
       relatedNode:
         __typename: ContentChannel
-        id: 5
-        name: Podcasts
+        id: 19
+        name: Teaching Series
   - algorithms:
       - type: CONTENT_CHANNEL
         arguments:

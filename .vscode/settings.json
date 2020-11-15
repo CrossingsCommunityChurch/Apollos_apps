@@ -1,0 +1,17 @@
+{
+    "workbench.colorTheme": "Visual Studio 2019 Dark",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.iconTheme": "eq-material-theme-icons-darker",
+    "git.autofetch": true,
+    "aws.profile": "profile:default",
+    "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "eslint.autoFixOnSave": true,
+"eslint.alwaysShowStatus": true,
+"editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+}
+}
