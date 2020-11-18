@@ -140,4 +140,4 @@ const overrides = {
   }), * */
 };
 
-export default { colors };
+export default { colors, overrides, typography };

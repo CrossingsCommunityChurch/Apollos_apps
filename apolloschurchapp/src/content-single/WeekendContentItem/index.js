@@ -66,7 +66,7 @@ const WeekendContentItem = ({ content, loading }) => {
                       >
                         <GradientOverlayImage
                           isLoading={!coverImageSources.length && loading}
-                          overlayColor={theme.colors.white}
+                          overlayColor={theme.colors.black}
                           overlayType="featured"
                           source={coverImageSources}
                         />
