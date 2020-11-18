@@ -7,7 +7,7 @@ import {
   HorizontalContentSeriesFeedConnected,
   LiveConsumer,
   MediaControlsConnected,
-  ContentSingleFeaturesConnected,
+  FeaturesFeedConnected,
 } from '@apollosproject/ui-connected';
 import {
   styled,
@@ -66,7 +66,7 @@ const WeekendContentItem = ({ content, loading }) => {
                       >
                         <GradientOverlayImage
                           isLoading={!coverImageSources.length && loading}
-                          overlayColor={theme.colors.white}
+                          overlayColor={theme.colors.black}
                           overlayType="featured"
                           source={coverImageSources}
                         />
@@ -89,7 +89,9 @@ const WeekendContentItem = ({ content, loading }) => {
                   </ThemeMixin>
                 </Header>
                 <StyledMediaControlsConnected contentId={content.id} />
-                <ContentSingleFeaturesConnected contentId={content.id} />
+                <FeaturesFeedConnected
+                  featureFeedId={content.featureFeed?.id}
+                />
                 <HorizontalContentSeriesFeedConnected contentId={content.id} />
               </FlexedScrollView>
             )}
@@ -113,6 +115,9 @@ WeekendContentItem.propTypes = {
         sources: PropTypes.arrayOf(PropTypes.shape({ uri: PropTypes.string })),
       })
     ),
+    featureFeed: PropTypes.shape({
+      id: PropTypes.string,
+    }),
   }),
   loading: PropTypes.bool,
 };
