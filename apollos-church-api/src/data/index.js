@@ -76,10 +76,10 @@ const data = {
   BinaryFiles,
   Feature,
   FeatureFeed,
+  ActionAlgorithm,
   Event,
   Cache,
   PrayerRequest,
-  ActionAlgorithm,
 };
 
 const {
