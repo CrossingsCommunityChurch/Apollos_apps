@@ -2,9 +2,9 @@ import { Event } from '@apollosproject/data-connector-rock';
 import ical from 'node-ical';
 import moment from 'moment-timezone';
 import ApollosConfig from '@apollosproject/config';
-import gql from 'graphql-tag';
-const { ROCK_MAPPINGS, ROCK_CONSTANTS } = ApollosConfig;
-const imageURL = 'images.crossings.church'
+
+const { ROCK_CONSTANTS } = ApollosConfig;
+const imageURL = 'images.crossings.church';
 
 async function getMostRecentOccurenceForEvent(event) {
   // Let's grab the iCal content
@@ -96,48 +96,53 @@ class dataSource extends Event.dataSource {
     const event = await this.request('EventCalendarItems')
       .andFilter(`EventItemId eq ${eventItemId}`)
       .get();
-    var eventProcess = event[0];
-    const imageUrl = await this.getImages(
-      { attributeValues: eventProcess.attributeValues, attributes: eventProcess.attributes }
-    );
-    //console.log("image asset is ")
-    //console.log(imageUrl);
+    const eventProcess = event[0];
+    const imageUrl = await this.getImages({
+      attributeValues: eventProcess.attributeValues,
+      attributes: eventProcess.attributes,
+    });
+    // console.log("image asset is ")
+    // console.log(imageUrl);
     if (imageUrl) {
       return imageUrl[0];
     }
     return null;
   };
 
-  attributeIsImage =  ({ key, attributeValues, attributes }) =>
-  attributes[key].fieldTypeId === ROCK_CONSTANTS.IMAGE || 
-  (key.toLowerCase().includes('image') &&
-    typeof attributeValues[key].value === 'string' &&(attributeValues[key].value.startsWith('http') ||
-    attributeValues[key].valueFormatted.startsWith('http')));// looks like an image url
-  
-  
-  getImages = async ({ attributeValues, attributes }) => {
-      const imageKeys = Object.keys(attributes).filter((key) =>
-         this.attributeIsImage({
-          key,
-          attributeValues,
-          attributes,
-        })
-      );
-      var obj =``
-      //console.log("Image keys are")
-      //console.log(imageKeys);
-      return imageKeys.map((key) => ({
-        __typename: 'ImageMedia',
-        key,
-        name: attributes[key].name,
-        sources: attributeValues[key].value
-          ? [{ uri: attributeValues[key].valueFormatted.replace("cccrockweb.s3.amazonaws.com", imageURL)}]
-          : [],
-      }));
-    };
+  attributeIsImage = ({ key, attributeValues, attributes }) =>
+    attributes[key].fieldTypeId === ROCK_CONSTANTS.IMAGE ||
+    (key.toLowerCase().includes('image') &&
+      typeof attributeValues[key].value === 'string' &&
+      (attributeValues[key].value.startsWith('http') ||
+        attributeValues[key].valueFormatted.startsWith('http'))); // looks like an image url
 
+  getImages = async ({ attributeValues, attributes }) => {
+    const imageKeys = Object.keys(attributes).filter((key) =>
+      this.attributeIsImage({
+        key,
+        attributeValues,
+        attributes,
+      })
+    );
+    // console.log("Image keys are")
+    // console.log(imageKeys);
+    return imageKeys.map((key) => ({
+      __typename: 'ImageMedia',
+      key,
+      name: attributes[key].name,
+      sources: attributeValues[key].value
+        ? [
+            {
+              uri: attributeValues[key].valueFormatted.replace(
+                'cccrockweb.s3.amazonaws.com',
+                imageURL
+              ),
+            },
+          ]
+        : [],
+    }));
+  };
 }
 
-
-const {resolver, schema} = Event;
+const { resolver, schema } = Event;
 export { schema, resolver, dataSource };
