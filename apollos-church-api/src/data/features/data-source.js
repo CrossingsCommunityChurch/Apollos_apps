@@ -6,21 +6,21 @@ import moment from 'moment-timezone';
 import semver from 'semver';
 
 class dataSource extends Feature.dataSource {
+  expanded = true;
 
-  expanded = true
+  /** Base Attrs and Methods from the Core DataSource */
+  baseAlgorithms = this.ACTION_ALGORITHIMS;
 
-    /** Base Attrs and Methods from the Core DataSource */
-    baseAlgorithms = this.ACTION_ALGORITHIMS;
-    ACTION_ALGORITHIMS = Object.entries({
-      ...this.baseAlgorithms,
-      UPCOMING_EVENTS: this.upcomingEventsAlgorithm
-    }).reduce((accum, [key, value]) => {
-      // convenciance code to make sure all methods are bound to the Features dataSource
-      // eslint-disable-next-line
+  ACTION_ALGORITHIMS = Object.entries({
+    ...this.baseAlgorithms,
+    UPCOMING_EVENTS: this.upcomingEventsAlgorithm,
+  }).reduce((accum, [key, value]) => {
+    // convenciance code to make sure all methods are bound to the Features dataSource
+    // eslint-disable-next-line
       accum[key] = value.bind(this);
-      return accum;
-  }, {})
-  
+    return accum;
+  }, {});
+
   async upcomingEventsAlgorithm() {
     const { Event, Person } = this.context.dataSources;
 
@@ -52,6 +52,6 @@ class dataSource extends Feature.dataSource {
   }
 }
 
-const {resolver, schema} = Feature;
+const { resolver, schema } = Feature;
 
-export {dataSource, resolver, schema};
+export { dataSource, resolver, schema };

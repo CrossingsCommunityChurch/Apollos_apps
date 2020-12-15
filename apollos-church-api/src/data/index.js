@@ -13,13 +13,13 @@ import * as OneSignal from '@apollosproject/data-connector-onesignal';
 import * as Search from '@apollosproject/data-connector-algolia-search';
 import * as Pass from '@apollosproject/data-connector-passes';
 import * as Cache from '@apollosproject/data-connector-redis-cache';
-//import * as Sms from '@apollosproject/data-connector-twilio';
+// import * as Sms from '@apollosproject/data-connector-twilio';
 import {
   Followings,
   Interactions,
   RockConstants,
-  //Person,
-  //ContentItem,
+  // Person,
+  // ContentItem,
   ContentChannel,
   Sharable,
   Auth,
@@ -29,9 +29,9 @@ import {
   Campus,
   Group,
   BinaryFiles,
-  //Feature,
+  // Feature,
   FeatureFeed,
-  //Event,
+  // Event,
   PrayerRequest,
   ActionAlgorithm,
 } from '@apollosproject/data-connector-rock';
@@ -41,12 +41,12 @@ import * as Theme from './theme';
 // This module includes a Resolver that overides a resolver defined in `OneSignal`
 import * as OneSignalWithRock from './oneSignalWithRock';
 
-import * as ContentItem from './content-items/data-source'
-import * as Event from './event'
-import * as Feature from './features/data-source'
-import * as Person from './person'
-import * as Sms from './clearstream'
-//import * as MatrixItem from './matrix-items';
+import * as ContentItem from './content-items/data-source';
+import * as Event from './event';
+import * as Feature from './features/data-source';
+import * as Person from './person';
+import * as Sms from './clearstream';
+// import * as MatrixItem from './matrix-items';
 
 const data = {
   Interfaces,
@@ -76,10 +76,10 @@ const data = {
   BinaryFiles,
   Feature,
   FeatureFeed,
+  ActionAlgorithm,
   Event,
   Cache,
   PrayerRequest,
-  ActionAlgorithm,
 };
 
 const {

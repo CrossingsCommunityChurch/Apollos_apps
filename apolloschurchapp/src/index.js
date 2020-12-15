@@ -3,7 +3,7 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import RNBootSplash from 'react-native-bootsplash';
-import Bugsnag from '@bugsnag/react-native'
+// import Bugsnag from '@bugsnag/react-native'
 import {
   BackgroundView,
   withTheme,
@@ -22,12 +22,11 @@ import Event from './event';
 import Tabs from './tabs';
 import PersonalDetails from './user-settings/PersonalDetails';
 import ChangePassword from './user-settings/ChangePassword';
-import LandingScreen from './LandingScreen';
-import UserWebBrowser from './user-web-browser';
+import LandingScreen from './ui/LandingScreen';
 import Onboarding from './ui/Onboarding';
 
-Bugsnag.start();
- 
+// Bugsnag.start();
+
 const AppStatusBar = withTheme(({ theme }) => ({
   barStyle: theme.barStyle,
   backgroundColor: theme.colors.background.paper,
@@ -56,7 +55,6 @@ const AppNavigator = createStackNavigator(
     ChangePassword,
     Location,
     Passes,
-    UserWebBrowser,
     Onboarding,
     LandingScreen,
   },
