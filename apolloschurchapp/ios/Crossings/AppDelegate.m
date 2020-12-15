@@ -14,7 +14,6 @@
 #import <React/RCTLinkingManager.h>
 #import "RNBootSplash.h"
 #import <GoogleCast/GoogleCast.h>
-#import <Bugsnag/Bugsnag.h>
 
 @implementation AppDelegate
 
@@ -57,7 +56,6 @@
   GCKCastOptions* options = [[GCKCastOptions alloc] initWithDiscoveryCriteria:criteria];
   options.physicalVolumeButtonsWillControlDeviceVolume = YES;
   [GCKCastContext setSharedInstanceWithOptions:options];
-  [Bugsnag start];
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

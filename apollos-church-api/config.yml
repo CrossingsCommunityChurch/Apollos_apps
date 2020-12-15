@@ -155,10 +155,10 @@ HOME_FEATURES:
       title: Check In,
       icon: check,
       id: 123456789,
-      action: OPEN_URL,
+      action: OPEN_AUTHENTICATED_URL,
       relatedNode: {
         __typename: Url,
-        url: 'https://crossings.church/mobile-checkin'
+        url: 'https://crossings.church/mobile-checkin',
       }
     },
     {

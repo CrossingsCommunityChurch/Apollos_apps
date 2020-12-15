@@ -20,6 +20,7 @@ const LogoTitle = styled(({ theme }) => ({
 }))(Image);
 
 function handleOnPress({ action, ...props }) {
+  // eslint-disable-next-line no-console
   if (FEATURE_FEED_ACTION_MAP[action]) {
     FEATURE_FEED_ACTION_MAP[action]({ action, ...props });
   }
