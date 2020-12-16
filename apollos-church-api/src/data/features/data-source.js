@@ -1,4 +1,5 @@
 import { Feature } from '@apollosproject/data-connector-rock';
+import { featuresSchema as schema } from '@apollosproject/data-schema';
 import { get, flatten } from 'lodash';
 import { createGlobalId } from '@apollosproject/server-core';
 import ApollosConfig from '@apollosproject/config';
@@ -52,6 +53,6 @@ class dataSource extends Feature.dataSource {
   }
 }
 
-const { resolver, schema } = Feature;
+const { resolver } = Feature;
 
 export { dataSource, resolver, schema };
