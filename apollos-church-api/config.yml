@@ -158,7 +158,7 @@ HOME_FEATURES:
       action: OPEN_AUTHENTICATED_URL,
       relatedNode: {
         __typename: Url,
-        url: 'https://crossings.church/mobile-checkin',
+        url: 'https://crossings.church/self-checkin',
       }
     },
     {

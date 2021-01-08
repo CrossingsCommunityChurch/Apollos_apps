@@ -1,19 +1,19 @@
-import { Feature } from '@apollosproject/data-connector-rock';
+import {
+  Feature,
+  ActionAlgorithm as baseAlgorithms,
+} from '@apollosproject/data-connector-rock';
 import { featuresSchema as schema } from '@apollosproject/data-schema';
-import { get, flatten } from 'lodash';
 import { createGlobalId } from '@apollosproject/server-core';
-import ApollosConfig from '@apollosproject/config';
 import moment from 'moment-timezone';
-import semver from 'semver';
 
 class dataSource extends Feature.dataSource {
   expanded = true;
 
   /** Base Attrs and Methods from the Core DataSource */
-  baseAlgorithms = this.ACTION_ALGORITHIMS;
+  /** baseAlgorithms = this.ACTION_ALGORITHIMS; */
 
   ACTION_ALGORITHIMS = Object.entries({
-    ...this.baseAlgorithms,
+    ...baseAlgorithms,
     UPCOMING_EVENTS: this.upcomingEventsAlgorithm,
   }).reduce((accum, [key, value]) => {
     // convenciance code to make sure all methods are bound to the Features dataSource
