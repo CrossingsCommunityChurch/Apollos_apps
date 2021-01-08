@@ -7,10 +7,14 @@ export default {
     name: (root, args, { dataSources }) => dataSources.Event.getName(root),
     description: (root, args, { dataSources }) =>
       dataSources.Event.getDescription(root),
-    start: ({ schedule }, args, { dataSources }) =>
-      dataSources.Event.getDateTime(schedule).start,
-    end: ({ schedule }, args, { dataSources }) =>
-      dataSources.Event.getDateTime(schedule).end,
+    start: async ({ schedule }, args, { dataSources }) => {
+      const event = await dataSources.Event.getDateTime(schedule);
+      return event.start;
+    },
+    end: async ({ schedule }, args, { dataSources }) => {
+      const event = await dataSources.Event.getDateTime(schedule);
+      return event.end;
+    },
     image: (root, args, { dataSources }) => dataSources.Event.getImage(root),
   },
   Campus: {

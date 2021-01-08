@@ -124,12 +124,6 @@ class dataSource extends Event.dataSource {
     const nextStart = jsonResponse.nextStartDateTime;
     const end = jsonResponse.endTime;
 
-    console.log(
-      `The end Time is: ${nextStart} and evaluates as ${moment
-        .tz(nextStart, 'yyyy-MM-dd HH:mm', ApollosConfig.ROCK.TIMEZONE)
-        .utc()
-        .format()}`
-    );
     // Convert to UTC time
     if (
       moment(nextStart, 'yyyy-MM-dd HH:mm').isValid() &&
@@ -138,11 +132,11 @@ class dataSource extends Event.dataSource {
       console.log('We made it here.');
       return {
         start: moment
-          .tz(nextStart, 'yyyy-MM-dd HH:mm', ApollosConfig.ROCK.TIMEZONE)
+          .tz(nextStart, ApollosConfig.ROCK.TIMEZONE)
           .utc()
           .format(),
         end: moment
-          .tz(end, 'yyyy-MM-dd HH:mm', ApollosConfig.ROCK.TIMEZONE)
+          .tz(end, ApollosConfig.ROCK.TIMEZONE)
           .utc()
           .format(),
       };
