@@ -135,7 +135,6 @@ ROCK_MAPPINGS:
   # These channels are also pulled when indexing searchable content.
   FEED_CONTENT_CHANNEL_IDS:
     - 21
-    - 22
 
   CAMPAIGN_CHANNEL_IDS:
     - 11
@@ -158,7 +157,7 @@ HOME_FEATURES:
       action: OPEN_AUTHENTICATED_URL,
       relatedNode: {
         __typename: Url,
-        url: 'https://crossings.church/mobile-checkin',
+        url: 'https://crossings.church/self-checkin',
       }
     },
     {
@@ -197,7 +196,32 @@ HOME_FEATURES:
       relatedNode:
         __typename: ContentChannel
         id: 21
-  - title: Current Happenings
+  - algorithms: [CONTENT_CHANNEL]
+    contentChannelId: 19
+    title: Teaching Series
+    subtitle: Weekly Teachings
+    type: HorizontalCardList
+    limit: 5
+    primaryAction:
+      action: OPEN_CHANNEL
+      title: See More
+      relatedNode:
+        __typename: ContentChannel
+        id: 19
+  - algorithms: [CONTENT_CHANNEL]
+    contentChannelId: 23
+    title: Devotions
+    subtitle: Weekly Studies
+    type: HorizontalCardList
+    limit: 5
+    primaryAction:
+      action: OPEN_CHANNEL
+      title: See More
+      relatedNode:
+        __typename: ContentChannel
+        id: 23
+  
+  - title: Upcoming Events
     subtitle: What's happening at Crossings
     type: ActionList
     algorithms:

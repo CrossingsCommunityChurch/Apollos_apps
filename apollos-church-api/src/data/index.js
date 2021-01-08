@@ -100,9 +100,6 @@ export {
   setupJobs,
 };
 
-// eslint-disable-next-line no-console
-console.log(JSON.stringify(Feature.schema));
-
 // the upload Scalar is added
 export const testSchema = [
   gql`

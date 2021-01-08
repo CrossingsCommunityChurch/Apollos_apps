@@ -2,6 +2,9 @@ import { Event } from '@apollosproject/data-connector-rock';
 import ical from 'node-ical';
 import moment from 'moment-timezone';
 import ApollosConfig from '@apollosproject/config';
+import resolver from './resolver';
+
+// Re-work this after Rock update to v12 to use the eventscheduledinstance lavatemplate.
 
 const { ROCK_CONSTANTS } = ApollosConfig;
 const imageURL = 'images.crossings.church';
@@ -26,9 +29,11 @@ async function getMostRecentOccurenceForEvent(event) {
 
   mostRecentOccurence = mostRecentOccurence.add(tzOffset, 'minutes').toDate();
   // Sometimes we have a "recurring rule"
+  // eslint-disable-next-line prettier/prettier
+  // eslint-disable-next-line no-console
+  // console.log(`ICAL OBJECT: ${JSON.stringify(iCalEvent)}`);
   if (iCalEvent.rrule) {
     // Using the embeded RRule JS library, let's grab the next time this event occurs.
-    // console.log(iCalEvent.rrule.after(new Date()));
     mostRecentOccurence = moment.tz(
       iCalEvent.rrule.after(new Date()),
       ApollosConfig.ROCK.TIMEZONE
@@ -87,10 +92,62 @@ class dataSource extends Event.dataSource {
       );
 
     if (limit != null) {
-      return sortedEvents.slice(0, 3);
+      // eslint-disable-next-line prettier/prettier
+      // console.log(JSON.stringify(sortedEvents));
+      return sortedEvents.slice(0, 5);
     }
+    // eslint-disable-next-line prettier/prettier
+    // console.log(JSON.stringify(sortedEvents));
     return sortedEvents;
   }
+
+  getDateTime = async (schedule) => {
+    /** Named schedules will include a duration, check in start offset and check in end offset
+     *  (in minutes) and there is a parser using Lava that gives us all of these values
+     */
+    const lava = `{% schedule id:'${schedule.id}' %}
+    {% assign duration = schedule.DurationInMinutes %}
+        {
+            "nextStartDateTime": "{{ schedule.NextStartDateTime | Date:'yyyy-MM-dd HH:mm' }}",
+            "endTime": "{{ schedule.NextStartDateTime | DateAdd:duration,'m' | Date:'yyy-MM-dd HH:mm' }}"
+        }
+    {% endschedule %}`;
+
+    /** Parse the response and get each property of the response */
+    const response = await this.post(
+      `/Lava/RenderTemplate`,
+      lava.replace(/\n/g, '')
+    );
+    const jsonResponse = JSON.parse(response);
+
+    /** Build the final return object with defaults taken into consideration */
+    const nextStart = jsonResponse.nextStartDateTime;
+    const end = jsonResponse.endTime;
+
+    // Convert to UTC time
+    if (
+      moment(nextStart, 'yyyy-MM-dd HH:mm').isValid() &&
+      moment(end, 'yyyy-MM-dd HH:mm').isValid()
+    ) {
+      console.log('We made it here.');
+      return {
+        start: moment
+          .tz(nextStart, ApollosConfig.ROCK.TIMEZONE)
+          .utc()
+          .format(),
+        end: moment
+          .tz(end, ApollosConfig.ROCK.TIMEZONE)
+          .utc()
+          .format(),
+      };
+    }
+
+    // Fallback
+    return {
+      start: null, // Keep a null start date by default for easier value checking
+      end: null, // Default the startOffset if the offset is 0
+    };
+  };
 
   getImage = async ({ eventItemId }) => {
     const event = await this.request('EventCalendarItems')
@@ -124,8 +181,6 @@ class dataSource extends Event.dataSource {
         attributes,
       })
     );
-    // console.log("Image keys are")
-    // console.log(imageKeys);
     return imageKeys.map((key) => ({
       __typename: 'ImageMedia',
       key,
@@ -144,5 +199,5 @@ class dataSource extends Event.dataSource {
   };
 }
 
-const { resolver, schema } = Event;
+const { schema } = Event;
 export { schema, resolver, dataSource };
