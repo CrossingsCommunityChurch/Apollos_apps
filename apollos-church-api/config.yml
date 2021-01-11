@@ -96,9 +96,9 @@ ENGINE:
 ROCK_MAPPINGS:
   INTERACTIONS:
     # Name of the InteractionChannel that will be created per EntityType
-    CHANNEL_NAME: Crossings App test
+    CHANNEL_NAME: Apollos Crossings App
     # Prefix for the name of the InteractionComponent that will be created per Entity
-    COMPONENT_NAME: Crossings App test
+    COMPONENT_NAME: Apollos Crossings App Component
     # 512 is "Mobile App"
     CHANNEL_MEDIUM_TYPE_ID: 512
 
@@ -130,6 +130,8 @@ ROCK_MAPPINGS:
     - 18
     - 19
     - 23
+    - 376
+
   # Apollos will pull content items from these channels and expose them on the user feed
   # However, it will not expose the channel itself.
   # These channels are also pulled when indexing searchable content.
@@ -186,7 +188,7 @@ HOME_FEATURES:
     type: PrayerList
     title: Daily Prayer
   - algorithms: [USER_FEED]
-    type: HeroList
+    type: VerticalCardList
     limit: 6
     primaryAction:
       # Right now, you hardcode exactly what GraphQL should return.
@@ -215,12 +217,10 @@ HOME_FEATURES:
     type: HorizontalCardList
     limit: 5
     primaryAction:
-      action: OPEN_CHANNEL
+      action: OPEN_NODE
       title: See More
       relatedNode:
-        __typename: ContentChannel
-        id: 23
-  
+        __typename: DevotionalContentItem
   - title: Upcoming Events
     subtitle: What's happening at Crossings
     type: ActionList
@@ -228,7 +228,7 @@ HOME_FEATURES:
       - type: CONTENT_CHANNEL
         arguments:
           # This currently points to the Service Bulletin content channel Add stuff there to show it.
-          contentChannelId: 2
+          contentChannelId: 376
       - type: UPCOMING_EVENTS
   - algorithms: [CAMPAIGN_ITEMS]
     type: HeroList
