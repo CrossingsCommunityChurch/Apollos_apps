@@ -151,7 +151,6 @@ ROCK_MAPPINGS:
 
 HOME_FEATURES:
   - type: ActionBar
-    title: Welcome to Crossings
     actions: [{
       title: Check In,
       icon: check,
@@ -183,12 +182,8 @@ HOME_FEATURES:
         name: Upcoming 
       },
     }]
-  - algorithms: [DAILY_PRAYER]
-    isCard: false
-    type: PrayerList
-    title: Daily Prayer
   - algorithms: [USER_FEED]
-    type: VerticalCardList
+    type: HeroList
     limit: 6
     primaryAction:
       # Right now, you hardcode exactly what GraphQL should return.
@@ -198,6 +193,10 @@ HOME_FEATURES:
       relatedNode:
         __typename: ContentChannel
         id: 21
+  - algorithms: [DAILY_PRAYER]
+    isCard: false
+    type: PrayerList
+    title: Daily Prayer
   - algorithms: [CONTENT_CHANNEL]
     contentChannelId: 19
     title: Teaching Series

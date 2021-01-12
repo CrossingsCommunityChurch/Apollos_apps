@@ -11,14 +11,15 @@ import {
   FEATURE_FEED_ACTION_MAP,
   RockAuthedWebBrowser,
 } from '@apollosproject/ui-connected';
-
+import Logo from './logo';
+/*
 const LogoTitle = styled(({ theme }) => ({
   height: theme.sizing.baseUnit + 10,
   margin: theme.sizing.baseUnit + 10,
   alignSelf: 'center',
   resizeMode: 'contain',
 }))(Image);
-
+*/
 function handleOnPress({ action, ...props }) {
   // eslint-disable-next-line no-console
   if (FEATURE_FEED_ACTION_MAP[action]) {
@@ -66,11 +67,7 @@ class Home extends PureComponent {
                     navigation={this.props.navigation}
                     featureFeedId={data?.homeFeedFeatures?.id}
                     onPressActionItem={handleOnPress}
-                    ListHeaderComponent={
-                      <LogoTitle
-                        source={require('./Crossings_markonly_black.png')}
-                      />
-                    }
+                    ListHeaderComponent={<Logo />}
                   />
                 )}
               </Query>
