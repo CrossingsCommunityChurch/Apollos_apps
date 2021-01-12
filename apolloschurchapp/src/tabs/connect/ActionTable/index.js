@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import {
   TableView,
@@ -11,7 +12,6 @@ import {
   styled,
   PaddedView,
   H4,
-  NavigationService,
 } from '@apollosproject/ui-kit';
 import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 
@@ -37,7 +37,9 @@ const ActionTable = () => (
         </RowHeader>
         <TableView>
           <Touchable
-            onPress={() => openUrl('https://crossings.church/locations/okc/serve/')}
+            onPress={() =>
+              openUrl('https://crossings.church/locations/okc/serve/')
+            }
           >
             <Cell>
               <CellText>Find a serving opportunity</CellText>
@@ -46,7 +48,9 @@ const ActionTable = () => (
           </Touchable>
           <Divider />
           <Touchable
-            onPress={() => openUrl('https://crossings.church/prayer/prayer-request')}
+            onPress={() =>
+              openUrl('https://crossings.church/prayer/prayer-request')
+            }
           >
             <Cell>
               <CellText>I need prayer</CellText>
