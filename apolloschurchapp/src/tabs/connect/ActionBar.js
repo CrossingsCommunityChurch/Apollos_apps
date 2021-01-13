@@ -3,7 +3,10 @@ import { ActionBar, ActionBarItem } from '@apollosproject/ui-kit';
 import { useNavigation } from '@react-navigation/native';
 import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 
-const Toolbar = ({ navigation }) => (
+
+const Toolbar = () => {
+  const navigation = useNavigation();
+  return(
   <RockAuthedWebBrowser>
     {(openUrl) => (
       <ActionBar>
@@ -26,11 +29,6 @@ const Toolbar = ({ navigation }) => (
     )}
   </RockAuthedWebBrowser>
 );
-
-Toolbar.propTypes = {
-  navigation: PropTypes.shape({
-    navigate: PropTypes.func.isRequired,
-  }).isRequired,
 };
 
 export default Toolbar;
