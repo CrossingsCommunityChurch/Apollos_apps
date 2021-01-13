@@ -2,8 +2,8 @@
 //  File.swift
 //  Crossings
 //
-//  Created by Vincent Wilson on 11/30/20.
-//  Copyright © 2020 Apollos. All rights reserved.
+//  Created by Cameron Llewellyn on 1/13/21.
+//  Copyright © 2021 Facebook. All rights reserved.
 //
 
 import Foundation
