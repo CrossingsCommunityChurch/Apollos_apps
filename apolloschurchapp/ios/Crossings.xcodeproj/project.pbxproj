@@ -23,6 +23,7 @@
 		073F3D512565B0A700FBCCBD /* NunitoSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 073F3D432565B0A600FBCCBD /* NunitoSans-LightItalic.ttf */; };
 		073F3D522565B0A700FBCCBD /* NunitoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 073F3D442565B0A600FBCCBD /* NunitoSans-ExtraBold.ttf */; };
 		073F3D532565B0A700FBCCBD /* NunitoSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 073F3D452565B0A700FBCCBD /* NunitoSans-ExtraLight.ttf */; };
+		075AB7E625AF396F00EE4961 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AB7E525AF396F00EE4961 /* File.swift */; };
 		08CE105F17284254AD54AF84 /* DroidSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3B8A0AC5A6B4FABB3BDF6CB /* DroidSerif-Bold.ttf */; };
 		11A55876BFC8414F925A033D /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4EE6E465616491D84B21590 /* OpenSans-SemiBoldItalic.ttf */; };
 		12B8332CF9CE49578371E622 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D941BF5B2FB437EBF648108 /* OpenSans-LightItalic.ttf */; };
@@ -31,7 +32,6 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1BF15451C61849CE91C8222D /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B8D2AF548C0434FAD8C7755 /* OpenSans-BoldItalic.ttf */; };
 		1C48DCDE11AC47C48E918489 /* Inter-UI-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DC74A378C1CC40E4B6192D7F /* Inter-UI-Medium.otf */; };
-		25B9E67E3B46D33F45473A84 /* libPods-Crossings-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F64CCA987A0419EB9C02236 /* libPods-Crossings-tvOSTests.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -54,9 +54,10 @@
 		8EA9BDE542E09F685A47D9BE /* libPods-Crossings-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B9762ACA099D28C28DBB31 /* libPods-Crossings-tvOS.a */; };
 		90743C40BF544F10A810C43C /* DroidSerif-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADC3D2DB245545ADB1CAB3FE /* DroidSerif-Italic.ttf */; };
 		93A2B0A9328A46A4B7DD5EFA /* DroidSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E007B33EDD74B82AEF02C24 /* DroidSerif-Regular.ttf */; };
-		A415698B9815C7305EDB7AA7 /* libPods-CrossingsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 560CBCD50AE7D282715D134E /* libPods-CrossingsTests.a */; };
+		AA78F5F873623FA1AAC5DA6E /* libPods-Crossings-CrossingsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76DA529FA722A828E097B746 /* libPods-Crossings-CrossingsTests.a */; };
 		AB3BD177B8A14193A5EEDDF8 /* Inter-UI-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A613256118404CB691DE2C8E /* Inter-UI-Regular.otf */; };
 		AC880BA6C39644E7AE1A522C /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26E1A0C95D75437DB905B5DD /* OpenSans-Bold.ttf */; };
+		ADA4A2822D3702AB812AC366 /* libPods-Crossings-tvOS-Crossings-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB897EDCB5D4AE41DB521873 /* libPods-Crossings-tvOS-Crossings-tvOSTests.a */; };
 		B02F194A3F6A4FE29AC799B4 /* DroidSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A93F9D112A034626A9421759 /* DroidSerif-BoldItalic.ttf */; };
 		B7511D1B3EC340C7B90FF8DB /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBF77FDFC24418CA1DBF372 /* OpenSans-Italic.ttf */; };
 		D7F59A0CE2DA44338905CB9B /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FCDDE0E51AE4F859BEC98A1 /* OpenSans-ExtraBold.ttf */; };
@@ -102,6 +103,8 @@
 		073F3D432565B0A600FBCCBD /* NunitoSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-LightItalic.ttf"; path = "../assets/fonts/NunitoSans-LightItalic.ttf"; sourceTree = "<group>"; };
 		073F3D442565B0A600FBCCBD /* NunitoSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraBold.ttf"; path = "../assets/fonts/NunitoSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		073F3D452565B0A700FBCCBD /* NunitoSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraLight.ttf"; path = "../assets/fonts/NunitoSans-ExtraLight.ttf"; sourceTree = "<group>"; };
+		075AB7E425AF396F00EE4961 /* Crossings-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Crossings-Bridging-Header.h"; sourceTree = "<group>"; };
+		075AB7E525AF396F00EE4961 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		0D480D95FC7F4569B8B934E3 /* libRCTOneSignal.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTOneSignal.a; sourceTree = "<group>"; };
 		0FCDDE0E51AE4F859BEC98A1 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-ExtraBold.ttf"; path = "../assets/fonts/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Crossings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crossings.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,24 +120,27 @@
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F5410F239E9477B9C2E86BD /* Inter-UI-BoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-BoldItalic.otf"; path = "../assets/fonts/Inter-UI-BoldItalic.otf"; sourceTree = "<group>"; };
 		38B9762ACA099D28C28DBB31 /* libPods-Crossings-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Crossings-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B5185C0B3CA667008FBC0EC /* Pods-Crossings-CrossingsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-CrossingsTests.debug.xcconfig"; path = "Target Support Files/Pods-Crossings-CrossingsTests/Pods-Crossings-CrossingsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3B8D2AF548C0434FAD8C7755 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-BoldItalic.ttf"; path = "../assets/fonts/OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		4D941BF5B2FB437EBF648108 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-LightItalic.ttf"; path = "../assets/fonts/OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
 		4E007B33EDD74B82AEF02C24 /* DroidSerif-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-Regular.ttf"; path = "../assets/fonts/DroidSerif-Regular.ttf"; sourceTree = "<group>"; };
-		4F64CCA987A0419EB9C02236 /* libPods-Crossings-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Crossings-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F271B8EB67A4997A2C7D96 /* Pods-Crossings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings.debug.xcconfig"; path = "Target Support Files/Pods-Crossings/Pods-Crossings.debug.xcconfig"; sourceTree = "<group>"; };
-		560CBCD50AE7D282715D134E /* libPods-CrossingsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrossingsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5A2BC2998547F4816B82E4 /* Inter-UI-BlackItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-BlackItalic.otf"; path = "../assets/fonts/Inter-UI-BlackItalic.otf"; sourceTree = "<group>"; };
 		63F6EE53A9B44B4388B5F1C2 /* Inter-UI-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Italic.otf"; path = "../assets/fonts/Inter-UI-Italic.otf"; sourceTree = "<group>"; };
 		6FADB4F98C474DC3BB0EB09A /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-SemiBold.ttf"; path = "../assets/fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		745C835CA2F1E1EC2425152A /* Pods-Crossings-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Crossings-tvOS/Pods-Crossings-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		76DA529FA722A828E097B746 /* libPods-Crossings-CrossingsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Crossings-CrossingsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CC6F9448A3B97303EEBDAFD /* Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Crossings-tvOS-Crossings-tvOSTests/Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		82AAE52D24187BB500D1EEC7 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = Crossings/BootSplash.storyboard; sourceTree = "<group>"; };
 		A460FD7884FD4574A818005A /* Inter-UI-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-MediumItalic.otf"; path = "../assets/fonts/Inter-UI-MediumItalic.otf"; sourceTree = "<group>"; };
 		A613256118404CB691DE2C8E /* Inter-UI-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Regular.otf"; path = "../assets/fonts/Inter-UI-Regular.otf"; sourceTree = "<group>"; };
 		A93F9D112A034626A9421759 /* DroidSerif-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-BoldItalic.ttf"; path = "../assets/fonts/DroidSerif-BoldItalic.ttf"; sourceTree = "<group>"; };
 		AB44FC16DED929081698EDFD /* Pods-CrossingsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrossingsTests.debug.xcconfig"; path = "Target Support Files/Pods-CrossingsTests/Pods-CrossingsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB741CDEE78A4AC8BA37594E /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-ExtraBoldItalic.ttf"; path = "../assets/fonts/OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		AB897EDCB5D4AE41DB521873 /* libPods-Crossings-tvOS-Crossings-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Crossings-tvOS-Crossings-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC3D2DB245545ADB1CAB3FE /* DroidSerif-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-Italic.ttf"; path = "../assets/fonts/DroidSerif-Italic.ttf"; sourceTree = "<group>"; };
 		AE85030F59F256E90D5A4C2B /* Pods-Crossings-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Crossings-tvOS/Pods-Crossings-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		C38FF54C1317DF3E427CF450 /* Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Crossings-tvOS-Crossings-tvOSTests/Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		C53D38F22304463BB9635B7A /* OpenSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Light.ttf"; path = "../assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		CEBF77FDFC24418CA1DBF372 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Italic.ttf"; path = "../assets/fonts/OpenSans-Italic.ttf"; sourceTree = "<group>"; };
 		D394E3064D75710E81C51EB0 /* Pods-Crossings-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Crossings-tvOSTests/Pods-Crossings-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 		DC74A378C1CC40E4B6192D7F /* Inter-UI-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Medium.otf"; path = "../assets/fonts/Inter-UI-Medium.otf"; sourceTree = "<group>"; };
 		DCB1270C2429347200079762 /* Crossings.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Crossings.entitlements; path = Crossings/Crossings.entitlements; sourceTree = "<group>"; };
 		DDB6B5B7B6A0D1ECB68CF0DD /* libPods-Crossings.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Crossings.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDEE0E63057C3857E996CE80 /* Pods-Crossings-CrossingsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-CrossingsTests.release.xcconfig"; path = "Target Support Files/Pods-Crossings-CrossingsTests/Pods-Crossings-CrossingsTests.release.xcconfig"; sourceTree = "<group>"; };
 		E3B8A0AC5A6B4FABB3BDF6CB /* DroidSerif-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-Bold.ttf"; path = "../assets/fonts/DroidSerif-Bold.ttf"; sourceTree = "<group>"; };
 		E98AC9782C338F13632EF710 /* Pods-CrossingsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrossingsTests.release.xcconfig"; path = "Target Support Files/Pods-CrossingsTests/Pods-CrossingsTests.release.xcconfig"; sourceTree = "<group>"; };
 		EC21254B449443F99016EBFD /* Inter-UI-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Black.otf"; path = "../assets/fonts/Inter-UI-Black.otf"; sourceTree = "<group>"; };
@@ -157,7 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A415698B9815C7305EDB7AA7 /* libPods-CrossingsTests.a in Frameworks */,
+				AA78F5F873623FA1AAC5DA6E /* libPods-Crossings-CrossingsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,7 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25B9E67E3B46D33F45473A84 /* libPods-Crossings-tvOSTests.a in Frameworks */,
+				ADA4A2822D3702AB812AC366 /* libPods-Crossings-tvOS-Crossings-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,8 +238,8 @@
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 				DDB6B5B7B6A0D1ECB68CF0DD /* libPods-Crossings.a */,
 				38B9762ACA099D28C28DBB31 /* libPods-Crossings-tvOS.a */,
-				4F64CCA987A0419EB9C02236 /* libPods-Crossings-tvOSTests.a */,
-				560CBCD50AE7D282715D134E /* libPods-CrossingsTests.a */,
+				76DA529FA722A828E097B746 /* libPods-Crossings-CrossingsTests.a */,
+				AB897EDCB5D4AE41DB521873 /* libPods-Crossings-tvOS-Crossings-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -291,6 +298,10 @@
 				DA9745795726553C6FA9E7A8 /* Pods-Crossings-tvOSTests.release.xcconfig */,
 				AB44FC16DED929081698EDFD /* Pods-CrossingsTests.debug.xcconfig */,
 				E98AC9782C338F13632EF710 /* Pods-CrossingsTests.release.xcconfig */,
+				3B5185C0B3CA667008FBC0EC /* Pods-Crossings-CrossingsTests.debug.xcconfig */,
+				DDEE0E63057C3857E996CE80 /* Pods-Crossings-CrossingsTests.release.xcconfig */,
+				7CC6F9448A3B97303EEBDAFD /* Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig */,
+				C38FF54C1317DF3E427CF450 /* Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -313,6 +324,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				075AB7E525AF396F00EE4961 /* File.swift */,
 				13B07FAE1A68108700A75B9A /* Crossings */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* CrossingsTests */,
@@ -321,6 +333,7 @@
 				58D6A3E05A234CD89DC0BCE1 /* Resources */,
 				79CEBF9D223011FC00D8F685 /* Recovered References */,
 				76EC01CF690166B3232686FE /* Pods */,
+				075AB7E425AF396F00EE4961 /* Crossings-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -349,6 +362,7 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				47EA63EAE70422BB245E3C4E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -433,6 +447,7 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 83DP3WM45E;
+						LastSwiftMigration = 1230;
 						ProvisioningStyle = Automatic;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
@@ -573,7 +588,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CrossingsTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Crossings-CrossingsTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -601,17 +616,41 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Crossings/Pods-Crossings-resources.sh",
-				"${PODS_ROOT}/google-cast-sdk-no-bluetooth/GoogleCastSDK-ios-4.5.1_static/GoogleCast.framework/GoogleCastCoreResources.bundle",
-				"${PODS_ROOT}/google-cast-sdk-no-bluetooth/GoogleCastSDK-ios-4.5.1_static/GoogleCast.framework/GoogleCastUIResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+				"${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-ios-4.5.1_static/GoogleCast.framework/GoogleCastCoreResources.bundle",
+				"${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-ios-4.5.1_static/GoogleCast.framework/GoogleCastUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleCastCoreResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleCastUIResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Crossings/Pods-Crossings-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47EA63EAE70422BB245E3C4E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Crossings-CrossingsTests/Pods-Crossings-CrossingsTests-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+				"${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-ios-4.5.1_static/GoogleCast.framework/GoogleCastCoreResources.bundle",
+				"${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-ios-4.5.1_static/GoogleCast.framework/GoogleCastUIResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleCastCoreResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleCastUIResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Crossings-CrossingsTests/Pods-Crossings-CrossingsTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9C20354F160AAF86C8281F23 /* [CP] Check Pods Manifest.lock */ = {
@@ -651,7 +690,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Crossings-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Crossings-tvOS-Crossings-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -696,6 +735,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				075AB7E625AF396F00EE4961 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -735,8 +775,9 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB44FC16DED929081698EDFD /* Pods-CrossingsTests.debug.xcconfig */;
+			baseConfigurationReference = 3B5185C0B3CA667008FBC0EC /* Pods-Crossings-CrossingsTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -762,8 +803,9 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E98AC9782C338F13632EF710 /* Pods-CrossingsTests.release.xcconfig */;
+			baseConfigurationReference = DDEE0E63057C3857E996CE80 /* Pods-Crossings-CrossingsTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				HEADER_SEARCH_PATHS = (
@@ -789,6 +831,7 @@
 			baseConfigurationReference = 54F271B8EB67A4997A2C7D96 /* Pods-Crossings.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Crossings/Crossings.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -800,6 +843,7 @@
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 				INFOPLIST_FILE = Crossings/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.3.1;
 				OTHER_LDFLAGS = (
@@ -810,6 +854,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = church.crossings.rock;
 				PRODUCT_NAME = Crossings;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Crossings-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -819,6 +866,7 @@
 			baseConfigurationReference = 1F8F5BC4745C8F22C695573D /* Pods-Crossings.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Crossings/Crossings.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -829,6 +877,7 @@
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 				INFOPLIST_FILE = Crossings/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.3.1;
 				OTHER_LDFLAGS = (
@@ -839,6 +888,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = church.crossings.rock;
 				PRODUCT_NAME = Crossings;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Crossings-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -909,7 +960,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D394E3064D75710E81C51EB0 /* Pods-Crossings-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 7CC6F9448A3B97303EEBDAFD /* Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -940,7 +991,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA9745795726553C6FA9E7A8 /* Pods-Crossings-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = C38FF54C1317DF3E427CF450 /* Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;

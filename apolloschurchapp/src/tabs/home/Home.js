@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 import { Image } from 'react-native';
-import SafeAreaView from 'react-native-safe-area-view';
 import PropTypes from 'prop-types';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import gql from 'graphql-tag';
-import { Query } from 'react-apollo';
+import { Query } from '@apollo/client/react/components';
 
 import { styled, BackgroundView } from '@apollosproject/ui-kit';
 import {
@@ -11,14 +11,15 @@ import {
   FEATURE_FEED_ACTION_MAP,
   RockAuthedWebBrowser,
 } from '@apollosproject/ui-connected';
-
+import Logo from './logo';
+/*
 const LogoTitle = styled(({ theme }) => ({
   height: theme.sizing.baseUnit + 10,
   margin: theme.sizing.baseUnit + 10,
   alignSelf: 'center',
   resizeMode: 'contain',
 }))(Image);
-
+*/
 function handleOnPress({ action, ...props }) {
   // eslint-disable-next-line no-console
   if (FEATURE_FEED_ACTION_MAP[action]) {
@@ -41,13 +42,8 @@ export const GET_HOME_FEED = gql`
 `;
 
 class Home extends PureComponent {
-  static navigationOptions = () => ({
-    header: null,
-  });
-
   static propTypes = {
     navigation: PropTypes.shape({
-      getParam: PropTypes.func,
       setParams: PropTypes.func,
       navigate: PropTypes.func,
     }),
@@ -58,19 +54,15 @@ class Home extends PureComponent {
       <RockAuthedWebBrowser>
         {(openUrl) => (
           <BackgroundView>
-            <SafeAreaView>
-              <Query query={GET_HOME_FEED}>
+            <SafeAreaView edges={['top', 'left', 'right']}>
+              <Query query={GET_HOME_FEED} fetchPolicy="cache-and-network">
                 {({ data }) => (
                   <FeaturesFeedConnected
                     openUrl={openUrl}
                     navigation={this.props.navigation}
                     featureFeedId={data?.homeFeedFeatures?.id}
                     onPressActionItem={handleOnPress}
-                    ListHeaderComponent={
-                      <LogoTitle
-                        source={require('./Crossings_markonly_black.png')}
-                      />
-                    }
+                    ListHeaderComponent={<Logo />}
                   />
                 )}
               </Query>

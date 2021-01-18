@@ -9,55 +9,6 @@ import resolver from './resolver';
 const { ROCK_CONSTANTS } = ApollosConfig;
 const imageURL = 'images.crossings.church';
 
-async function getMostRecentOccurenceForEvent(event) {
-  // Let's grab the iCal content
-  const iCal = event.schedule.iCalendarContent;
-  const iCalEvent = Object.values(await ical.async.parseICS(iCal))[0];
-
-  // Default the start date to the iCal's reported state date
-  let mostRecentOccurence = moment.tz(
-    iCalEvent.start,
-    ApollosConfig.ROCK.TIMEZONE
-  );
-
-  // Dates returned from `iCal` are parsed if they are in UTC.
-  // We need to find the difference between the times returned and the correct time.
-  // And then offset by that time.
-  const tzOffset = moment.tz
-    .zone(ApollosConfig.ROCK.TIMEZONE)
-    .utcOffset(mostRecentOccurence);
-
-  mostRecentOccurence = mostRecentOccurence.add(tzOffset, 'minutes').toDate();
-  // Sometimes we have a "recurring rule"
-  // eslint-disable-next-line prettier/prettier
-  // eslint-disable-next-line no-console
-  // console.log(`ICAL OBJECT: ${JSON.stringify(iCalEvent)}`);
-  if (iCalEvent.rrule) {
-    // Using the embeded RRule JS library, let's grab the next time this event occurs.
-    mostRecentOccurence = moment.tz(
-      iCalEvent.rrule.after(new Date()),
-      ApollosConfig.ROCK.TIMEZONE
-    );
-
-    const offset = moment.tz
-      .zone(ApollosConfig.ROCK.TIMEZONE)
-      .utcOffset(mostRecentOccurence);
-
-    mostRecentOccurence = mostRecentOccurence.add(offset, 'minutes').toDate();
-
-    // console.log({ mostRecentOccurence }, 'rrule');
-    // Rock also likes to throw events inside this rdate property in the iCal string.
-  } else if (iCalEvent.rdate) {
-    // rdate's aren't supported by the iCal library. Let's parse them ourselves.
-    mostRecentOccurence = iCalEvent.rdate
-      .split(',') // Take a list of values
-      .map((d) => moment.tz(d, ApollosConfig.ROCK.TIMEZONE).toDate()) // Use moment to parse them into dates
-      .find((d) => d > new Date()); // Now find the one that happens soonest (it's already sorted by earliest to latest)
-  }
-  // We should have _something_ at this point. Return it!
-  return mostRecentOccurence;
-}
-
 class dataSource extends Event.dataSource {
   async getUpcomingEventsByCampus({ limit = null, campusId } = {}) {
     // Get the first three persona items.
@@ -76,31 +27,55 @@ class dataSource extends Event.dataSource {
     const eventsWithMostRecentOccurence = await Promise.all(
       events.map(async (event) => ({
         ...event,
-        mostRecentOccurence: await getMostRecentOccurenceForEvent(event),
+        mostRecentOccurence: await this.getNextStart(event),
       }))
     );
-
     const sortedEvents = eventsWithMostRecentOccurence
       .filter(
         ({ mostRecentOccurence }) =>
           mostRecentOccurence &&
-          mostRecentOccurence.getTime() > new Date().getTime()
-      )
+          new Date(mostRecentOccurence) > new Date()
+        )
       .sort(
         (a, b) =>
-          a.mostRecentOccurence.getTime() - b.mostRecentOccurence.getTime()
+          a.mostRecentOccurence - b.mostRecentOccurence
       );
 
     if (limit != null) {
       // eslint-disable-next-line prettier/prettier
-      // console.log(JSON.stringify(sortedEvents));
+      //console.log(JSON.stringify(sortedEvents));
       return sortedEvents.slice(0, 5);
     }
     // eslint-disable-next-line prettier/prettier
-    // console.log(JSON.stringify(sortedEvents));
+    //console.log(JSON.stringify(sortedEvents));
     return sortedEvents;
   }
 
+  getNextStart = async (event) => {
+   const lava = `{% schedule id:'${event.schedule.id}' %}
+       {
+           "nextStartDateTime": "{{ schedule.NextStartDateTime | Date:'yyyy-MM-dd HH:mm' }}"
+       }
+   {% endschedule %}`;
+
+   /** Parse the response and get each property of the response */
+   const response = await this.post(
+     `/Lava/RenderTemplate`,
+     lava.replace(/\n/g, '')
+   );
+   const jsonResponse = JSON.parse(response);
+   /** Build the final return object with defaults taken into consideration */
+   const nextStart = jsonResponse.nextStartDateTime;
+   if (moment(nextStart, 'yyyy-MM-dd HH:mm').isValid()) {
+    return  moment
+        .tz(nextStart, ApollosConfig.ROCK.TIMEZONE)
+        .utc()
+        .format()
+  }
+  else{
+  return null; // Keep a null start date by default for easier value checking
+}
+  }
   getDateTime = async (schedule) => {
     /** Named schedules will include a duration, check in start offset and check in end offset
      *  (in minutes) and there is a parser using Lava that gives us all of these values
@@ -129,7 +104,6 @@ class dataSource extends Event.dataSource {
       moment(nextStart, 'yyyy-MM-dd HH:mm').isValid() &&
       moment(end, 'yyyy-MM-dd HH:mm').isValid()
     ) {
-      console.log('We made it here.');
       return {
         start: moment
           .tz(nextStart, ApollosConfig.ROCK.TIMEZONE)
