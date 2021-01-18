@@ -10,7 +10,7 @@ import * as Scripture from '@apollosproject/data-connector-bible';
 import * as LiveStream from '@apollosproject/data-connector-church-online';
 import * as Cloudinary from '@apollosproject/data-connector-cloudinary';
 import * as OneSignal from '@apollosproject/data-connector-onesignal';
-import * as Search from '@apollosproject/data-connector-algolia-search';
+// import * as Search from '@apollosproject/data-connector-algolia-search';
 import * as Pass from '@apollosproject/data-connector-passes';
 import * as Cache from '@apollosproject/data-connector-redis-cache';
 // import * as Sms from '@apollosproject/data-connector-twilio';
@@ -29,11 +29,11 @@ import {
   Campus,
   Group,
   BinaryFiles,
-  // Feature,
+  Feature,
   FeatureFeed,
   // Event,
   PrayerRequest,
-  ActionAlgorithm,
+  // ActionAlgorithm,
 } from '@apollosproject/data-connector-rock';
 import * as Theme from './theme';
 
@@ -41,12 +41,13 @@ import * as Theme from './theme';
 // This module includes a Resolver that overides a resolver defined in `OneSignal`
 import * as OneSignalWithRock from './oneSignalWithRock';
 
-import * as ContentItem from './content-items/data-source';
+import * as ContentItem from './content-items';
 import * as Event from './event';
-import * as Feature from './features/data-source';
+// import * as Feature from './features/data-source';
 import * as Person from './person';
 import * as Sms from './clearstream';
-// import * as MatrixItem from './matrix-items';
+import * as ActionAlgorithm from './action-algorithms';
+import * as Search from './search';
 
 const data = {
   Interfaces,
