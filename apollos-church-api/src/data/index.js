@@ -36,7 +36,7 @@ import {
   // ActionAlgorithm,
 } from '@apollosproject/data-connector-rock';
 
-import { Comment } from '@apollosproject/data-connector-postgres';
+import { Comment, UserFlag } from '@apollosproject/data-connector-postgres';
 
 import * as Theme from './theme';
 
@@ -85,6 +85,7 @@ const data = {
   Cache,
   PrayerRequest,
   Comment,
+  UserFlag,
 };
 
 const {
