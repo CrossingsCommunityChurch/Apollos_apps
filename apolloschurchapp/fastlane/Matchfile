@@ -2,5 +2,4 @@ git_url("https://github.com/ApollosProject/certificates")
 
 storage_mode("git")
 
-app_identifier(["com.apolloschurch.app"])
-username("apps@apollos.app")
+app_identifier(["church.crossings.rock"])
