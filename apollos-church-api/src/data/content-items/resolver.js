@@ -9,7 +9,7 @@ const resolverExtensions = {
   author: async ({ attributeValues }, args, { dataSources }) => {
     if (get(attributeValues, 'speaker.value', null)) {
       const { id } = await dataSources.Person.getFromAliasId(
-        attributeValues.author.value
+        attributeValues.speaker.value
       );
 
       const person = await dataSources.Person.getFromId(id);

@@ -34,7 +34,7 @@ if (REDIS_URL) {
 const createJobs = ({ getContext, queues }) => {
   const FullIndexQueue = queues.add('algolia-full-index-queue', queueOpts);
   const DeltaIndexQueue = queues.add('algolia-delta-index-queue', queueOpts);
-
+  console.log('REDIS INDEX STARTED.');
   FullIndexQueue.process(async () => {
     const context = getContext();
     return context.dataSources.Search.indexAll();
@@ -44,18 +44,18 @@ const createJobs = ({ getContext, queues }) => {
     const context = getContext();
     const jobs = await DeltaIndexQueue.getCompleted();
     const timestamp = isEmpty(jobs)
-      ? moment().subtract(1, 'day').toDate()
-      : jobs
-          .map((j) => j.opts.timestamp)
-          .sort((a, b) => {
-            if (a > b) {
-              return -1;
-            }
-            if (a < b) {
-              return 1;
-            }
-            return 0;
-          })[0];
+      ? moment()
+          .subtract(1, 'day')
+          .toDate()
+      : jobs.map((j) => j.opts.timestamp).sort((a, b) => {
+          if (a > b) {
+            return -1;
+          }
+          if (a < b) {
+            return 1;
+          }
+          return 0;
+        })[0];
     const datetime = moment(timestamp)
       .tz(ROCK.TIMEZONE)
       .format()
@@ -66,8 +66,8 @@ const createJobs = ({ getContext, queues }) => {
   FullIndexQueue.add(null, { repeat: { cron: '15 3 * * 1' } });
   DeltaIndexQueue.add(null, { repeat: { cron: '15 3 * * *' } });
   // Uncomment this to trigger an index right now.
-  // FullIndexQueue.add(null);
-  // DeltaIndexQueue.add(null);
+  FullIndexQueue.add(null);
+  DeltaIndexQueue.add(null);
 };
 
 export default createJobs;

@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react';
-import { Image } from 'react-native';
 import PropTypes from 'prop-types';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import gql from 'graphql-tag';
 import { Query } from '@apollo/client/react/components';
 
-import { styled, BackgroundView } from '@apollosproject/ui-kit';
+import { BackgroundView } from '@apollosproject/ui-kit';
 import {
   FeaturesFeedConnected,
   FEATURE_FEED_ACTION_MAP,

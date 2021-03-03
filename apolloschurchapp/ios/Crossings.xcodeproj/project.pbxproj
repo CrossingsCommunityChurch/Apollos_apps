@@ -835,7 +835,7 @@
 				CODE_SIGN_ENTITLEMENTS = Crossings/Crossings.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 241;
+				CURRENT_PROJECT_VERSION = 508;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 83DP3WM45E;
 				HEADER_SEARCH_PATHS = (
@@ -870,7 +870,7 @@
 				CODE_SIGN_ENTITLEMENTS = Crossings/Crossings.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 241;
+				CURRENT_PROJECT_VERSION = 508;
 				DEVELOPMENT_TEAM = 83DP3WM45E;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

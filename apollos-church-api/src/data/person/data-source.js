@@ -1,4 +1,5 @@
 import { Person as personData } from '@apollosproject/data-connector-rock';
+import { getIdentifierType } from '../utils';
 
 class Person extends personData.dataSource {
   async getCurrentUserCampusId() {
@@ -18,6 +19,21 @@ class Person extends personData.dataSource {
     }
     return { campusId: null, campusGuid: null };
   }
+
+  getFromAliasId = async (aliasId) => {
+    // Fetch the PersonAlias, selecting only the PersonId.
+    const personAlias = await this.request('/PersonAlias')
+      .filter(getIdentifierType(aliasId).query)
+      .select('PersonId')
+      .first();
+
+    // If we have a personAlias, return him.
+    if (personAlias) {
+      return this.getFromId(personAlias.personId);
+    }
+    // Otherwise, return null.
+    return null;
+  };
 }
 
 export default Person;

@@ -6,6 +6,7 @@ const Container = styled(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'flex-start',
   paddingHorizontal: theme.sizing.baseUnit,
+  paddingVertical: theme.sizing.baseUnit,
   flexDirection: 'row',
 }))(View);
 

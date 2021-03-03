@@ -50,17 +50,17 @@ class dataSource extends ContentItem.dataSource {
       .andFilter(this.LIVE_CONTENT());
 
   forSearchDateAndActive = async ({ datetime }) =>
-      this.request()
-        .filterOneOf(
-          ROCK_MAPPINGS.DISCOVER_CONTENT_CHANNEL_IDS.map(
-            (id) => `ContentChannelId eq ${id}`
-          )
+    this.request()
+      .filterOneOf(
+        ROCK_MAPPINGS.DISCOVER_CONTENT_CHANNEL_IDS.map(
+          (id) => `ContentChannelId eq ${id}`
         )
-        .cache({ ttl: 60 })
-        .andFilter(
-          `(CreatedDateTime gt datetime'${datetime}') or (ModifiedDateTime gt datetime'${datetime}')`
-        )
-        .andFilter(this.LIVE_CONTENT());
+      )
+      .cache({ ttl: 60 })
+      .andFilter(
+        `(CreatedDateTime gt datetime'${datetime}') or (ModifiedDateTime gt datetime'${datetime}')`
+      )
+      .andFilter(this.LIVE_CONTENT());
 }
 
 const { resolver, schema } = ContentItem;
