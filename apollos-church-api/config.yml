@@ -218,10 +218,11 @@ HOME_FEATURES:
     type: HorizontalCardList
     limit: 5
     primaryAction:
-      action: OPEN_NODE
+      action: OPEN_CHANNEL
       title: See More
       relatedNode:
-        __typename: DevotionalContentItem
+        __typename: ContentChannel
+        id: 23
   - title: Upcoming Events
     subtitle: What's happening at Crossings
     type: ActionList
