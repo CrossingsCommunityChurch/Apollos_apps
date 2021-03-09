@@ -26,7 +26,9 @@
     "pods": "(cd ios && bundle install && bundle exec pod install)",
     "start": "react-native start",
     "test": "TZ=UTC jest",
-    "upgrade": "npx @apollosproject/upgrade-tools upgrade"
+    "upgrade": "npx @apollosproject/upgrade-tools upgrade",
+    "icons": "react-native set-icon --path",
+    "splash": "react-native set-splash --path"
   },
   "jest": {
     "preset": "react-native",
@@ -99,7 +101,6 @@
     "memoize-one": "4.0.0",
     "moment": "2.22.2",
     "node-fetch": "2.6.1",
-    "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-apollo": "2.5.5",
     "react-native": "0.63.4",
