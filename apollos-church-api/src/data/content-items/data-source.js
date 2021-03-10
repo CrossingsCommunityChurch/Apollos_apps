@@ -42,7 +42,7 @@ class dataSource extends ContentItem.dataSource {
   forSearch = () =>
     this.request()
       .filterOneOf(
-        ROCK_MAPPINGS.DISCOVER_CONTENT_CHANNEL_IDS.map(
+        ROCK_MAPPINGS.SEARCH_CONTENT_CHANNEL_IDS.map(
           (id) => `ContentChannelId eq ${id}`
         )
       )
@@ -52,7 +52,7 @@ class dataSource extends ContentItem.dataSource {
   forSearchDateAndActive = async () =>
     this.request()
       .filterOneOf(
-        ROCK_MAPPINGS.DISCOVER_CONTENT_CHANNEL_IDS.map(
+        ROCK_MAPPINGS.SEARCH_CONTENT_CHANNEL_IDS.map(
           (id) => `ContentChannelId eq ${id}`
         )
       )

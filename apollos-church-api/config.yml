@@ -55,6 +55,7 @@ ALGOLIA:
     searchableAttributes:
       - title
       - unordered(summary)
+      - author
     #customRankings:
     # NOT CURRENTLY INCLUDED
     # This just demonstrates what's possible
@@ -131,6 +132,12 @@ ROCK_MAPPINGS:
     - 19
     - 23
     - 376
+
+  SEARCH_CONTENT_CHANNEL_IDS:
+    - 21
+    - 22
+    - 423
+    - 23
 
   # Apollos will pull content items from these channels and expose them on the user feed
   # However, it will not expose the channel itself.
