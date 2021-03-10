@@ -55,7 +55,6 @@ export default class Search {
   async mapItemToAlgolia(item) {
     const { ContentItem } = this.context.dataSources;
     const type = await ContentItem.resolveType(item);
-
     const { data } = await graphql(
       this.context.schema,
       `
@@ -65,7 +64,7 @@ query getItem {
       id
       title
       summary
-      tags
+      author { firstName lastName }
       objectID: id
       __typename
       coverImage { sources { uri } }
@@ -78,14 +77,13 @@ query getItem {
     return data.node;
   }
 
-  async deltaIndex({ datetime }) {
+  async deltaIndex({}) {
     const { ContentItem } = this.context.dataSources;
     let itemsLeft = true;
     const args = { after: null, first: 100 };
-
     while (itemsLeft) {
       const { edges } = await ContentItem.paginate({
-        cursor: await ContentItem.forSearchDateAndActive({ datetime }),
+        cursor: await ContentItem.forSearchDateAndActive(),
         args,
       });
 
@@ -114,7 +112,6 @@ query getItem {
     const { ContentItem } = this.context.dataSources;
     let itemsLeft = true;
     const args = { after: null, first: 100 };
-
     while (itemsLeft) {
       const { edges } = await ContentItem.paginate({
         cursor: ContentItem.forSearch(),

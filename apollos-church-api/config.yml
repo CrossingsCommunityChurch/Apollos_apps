@@ -48,7 +48,7 @@ CHURCH_ONLINE:
 ALGOLIA:
   APPLICATION_ID: ${ALGOLIASEARCH_APPLICATION_ID}
   API_KEY: ${ALGOLIASEARCH_API_KEY}
-  SEARCH_INDEX: prod_ContentItem
+  SEARCH_INDEX: Dev_ContentItem
   # Configure Algolia custom settings here
   # https://www.algolia.com/doc/api-reference/settings-api-parameters/
   CONFIGURATION:
@@ -152,6 +152,11 @@ ROCK_MAPPINGS:
   MOBILE_DEVICE_TYPE_ID: 671
 
 HOME_FEATURES:
+  # Commenting this out for now to be deployed after testing.
+  #- algorithms: [DAILY_PRAYER]
+  #  isCard: true
+  #  type: PrayerList
+  #  title: Daily Prayer
   - type: ActionBar
     actions: [{
       title: Check In,
@@ -195,10 +200,6 @@ HOME_FEATURES:
       relatedNode:
         __typename: ContentChannel
         id: 21
-  - algorithms: [DAILY_PRAYER]
-    isCard: false
-    type: PrayerList
-    title: Daily Prayer
   - algorithms: [CONTENT_CHANNEL]
     contentChannelId: 19
     title: Teaching Series
@@ -227,10 +228,11 @@ HOME_FEATURES:
     subtitle: What's happening at Crossings
     type: ActionList
     algorithms:
-      - type: CONTENT_CHANNEL
-        arguments:
-          # This currently points to the Service Bulletin content channel Add stuff there to show it.
-          contentChannelId: 376
+     # Commenting this out for now to see how we want to handle it. 
+     # - type: CONTENT_CHANNEL
+     #   arguments:
+     #     # This currently points to the Service Bulletin content channel Add stuff there to show it.
+     #     contentChannelId: 376
       - type: UPCOMING_EVENTS
   - algorithms: [CAMPAIGN_ITEMS]
     type: HeroList

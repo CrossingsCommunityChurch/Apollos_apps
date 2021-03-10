@@ -7,6 +7,15 @@ const resolverExtensions = {
   tags: ({ attributeValues }) =>
     split(get(attributeValues, 'tags.value', ''), ','),
   author: async ({ attributeValues }, args, { dataSources }) => {
+    if (get(attributeValues, 'author.value', null)) {
+      const { id } = await dataSources.Person.getFromAliasId(
+        attributeValues.author.value
+      );
+
+      const person = await dataSources.Person.getFromId(id);
+
+      return person;
+    }
     if (get(attributeValues, 'speaker.value', null)) {
       const { id } = await dataSources.Person.getFromAliasId(
         attributeValues.speaker.value

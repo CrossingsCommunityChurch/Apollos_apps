@@ -49,7 +49,7 @@ class dataSource extends ContentItem.dataSource {
       .cache({ ttl: 60 })
       .andFilter(this.LIVE_CONTENT());
 
-  forSearchDateAndActive = async ({ datetime }) =>
+  forSearchDateAndActive = async () =>
     this.request()
       .filterOneOf(
         ROCK_MAPPINGS.DISCOVER_CONTENT_CHANNEL_IDS.map(
@@ -57,9 +57,6 @@ class dataSource extends ContentItem.dataSource {
         )
       )
       .cache({ ttl: 60 })
-      .andFilter(
-        `(CreatedDateTime gt datetime'${datetime}') or (ModifiedDateTime gt datetime'${datetime}')`
-      )
       .andFilter(this.LIVE_CONTENT());
 }
 
