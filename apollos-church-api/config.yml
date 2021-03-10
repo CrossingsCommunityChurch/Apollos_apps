@@ -56,6 +56,7 @@ ALGOLIA:
       - title
       - unordered(summary)
       - author
+      - htmlContent
     #customRankings:
     # NOT CURRENTLY INCLUDED
     # This just demonstrates what's possible
@@ -132,7 +133,7 @@ ROCK_MAPPINGS:
     - 19
     - 23
     - 376
-
+  # Todo add events to be returnable type 
   SEARCH_CONTENT_CHANNEL_IDS:
     - 21
     - 22
@@ -265,6 +266,13 @@ DISCOVER_FEATURES:
           limit: 3
     type: HorizontalCardList
     subtitle: Sunday Messages
+    primaryAction:
+     action: OPEN_CHANNEL
+     title: 'show More'
+     relatedNode:
+       __typename: ContentChannel
+       id: 18
+       name: Teaching Series
   - algorithms:
       - type: CONTENT_CHANNEL
         arguments:
@@ -279,6 +287,20 @@ DISCOVER_FEATURES:
         __typename: ContentChannel
         id: 19
         name: Teaching Series
+  - algorithms:
+      - type: CONTENT_CHANNEL
+        arguments:
+          contentChannelId: 423
+          limit: 3
+    type: HorizontalCardList
+    subtitle: The Gathering Series
+    primaryAction:
+      action: OPEN_CHANNEL
+      title: 'show More'
+      relatedNode:
+        __typename: ContentChannel
+        id: 423
+        name: The Gathering Series
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:
