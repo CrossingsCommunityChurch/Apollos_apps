@@ -56,15 +56,15 @@ CHURCH_ONLINE:
 ALGOLIA:
   APPLICATION_ID: ${ALGOLIASEARCH_APPLICATION_ID}
   API_KEY: ${ALGOLIASEARCH_API_KEY}
-  SEARCH_INDEX: Dev_ContentItem
+  SEARCH_INDEX: Beta_ContentItem
   # Configure Algolia custom settings here
   # https://www.algolia.com/doc/api-reference/settings-api-parameters/
   CONFIGURATION:
     searchableAttributes:
       - title
+      - htmlContent
       - unordered(summary)
       - author
-      - htmlContent
     #customRankings:
     # NOT CURRENTLY INCLUDED
     # This just demonstrates what's possible
