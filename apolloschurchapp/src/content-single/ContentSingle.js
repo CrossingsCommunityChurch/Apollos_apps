@@ -13,15 +13,15 @@ import { styled } from '@apollosproject/ui-kit';
 
 import ActionContainer from './ActionContainer';
 
-const NodeSingleConnectedWithActionContainer = styled(
-  ({ theme: { sizing } }) => ({ paddingBottom: sizing.baseUnit * 5 })
-)(NodeSingleConnected);
+const PaddedNodeSingleConnected = styled(({ theme: { sizing } }) => ({
+  paddingBottom: sizing.baseUnit * 5,
+}))(NodeSingleConnected);
 
 const ContentSingle = (props) => {
   const nodeId = props.route?.params?.itemId;
   const { data, loading } = useQuery(
     gql`
-      query getContentNodeTitle($nodeId: ID) {
+      query getContentNodeTitle($nodeId: ID!) {
         node(id: $nodeId) {
           id
           ... on ContentNode {
@@ -47,9 +47,9 @@ const ContentSingle = (props) => {
           itemId: nodeId,
         }}
       />
-      <NodeSingleConnectedWithActionContainer nodeId={nodeId}>
+      <PaddedNodeSingleConnected nodeId={nodeId}>
         <ActionContainer itemId={nodeId} />
-      </NodeSingleConnectedWithActionContainer>
+      </PaddedNodeSingleConnected>
     </ThemeMixinConnected>
   );
 };

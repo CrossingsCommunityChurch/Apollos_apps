@@ -33,49 +33,45 @@ class dataSource extends Event.dataSource {
     const sortedEvents = eventsWithMostRecentOccurence
       .filter(
         ({ mostRecentOccurence }) =>
-          mostRecentOccurence &&
-          new Date(mostRecentOccurence) > new Date()
-        )
-      .sort(
-        (a, b) =>
-          a.mostRecentOccurence - b.mostRecentOccurence
-      );
+          mostRecentOccurence && new Date(mostRecentOccurence) > new Date()
+      )
+      .sort((a, b) => a.mostRecentOccurence - b.mostRecentOccurence);
 
     if (limit != null) {
       // eslint-disable-next-line prettier/prettier
-      //console.log(JSON.stringify(sortedEvents));
+      // console.log(JSON.stringify(sortedEvents));
       return sortedEvents.slice(0, 5);
     }
     // eslint-disable-next-line prettier/prettier
-    //console.log(JSON.stringify(sortedEvents));
+    // console.log(JSON.stringify(sortedEvents));
     return sortedEvents;
   }
 
   getNextStart = async (event) => {
-   const lava = `{% schedule id:'${event.schedule.id}' %}
+    const lava = `{% schedule id:'${event.schedule.id}' %}
        {
            "nextStartDateTime": "{{ schedule.NextStartDateTime | Date:'yyyy-MM-dd HH:mm' }}"
        }
    {% endschedule %}`;
 
-   /** Parse the response and get each property of the response */
-   const response = await this.post(
-     `/Lava/RenderTemplate`,
-     lava.replace(/\n/g, '')
-   );
-   const jsonResponse = JSON.parse(response);
-   /** Build the final return object with defaults taken into consideration */
-   const nextStart = jsonResponse.nextStartDateTime;
-   if (moment(nextStart, 'yyyy-MM-dd HH:mm').isValid()) {
-    return  moment
+    /** Parse the response and get each property of the response */
+    const response = await this.post(
+      `/Lava/RenderTemplate`,
+      lava.replace(/\n/g, '')
+    );
+    const jsonResponse = JSON.parse(response);
+    /** Build the final return object with defaults taken into consideration */
+    const nextStart = jsonResponse.nextStartDateTime;
+    if (moment(nextStart, 'yyyy-MM-dd HH:mm').isValid()) {
+      return moment
         .tz(nextStart, ApollosConfig.ROCK.TIMEZONE)
         .utc()
-        .format()
-  }
-  else{
-  return null; // Keep a null start date by default for easier value checking
-}
-  }
+        .format();
+    }
+
+    return null; // Keep a null start date by default for easier value checking
+  };
+
   getDateTime = async (schedule) => {
     /** Named schedules will include a duration, check in start offset and check in end offset
      *  (in minutes) and there is a parser using Lava that gives us all of these values

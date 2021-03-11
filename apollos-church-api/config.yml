@@ -14,6 +14,14 @@ APP:
   ROOT_API_URL: ${ROOT_URL}
   JOBS_USERNAME: ${JOBS_USERNAME}
   JOBS_PASSWORD: ${JOBS_PASSWORD}
+  FLAG_LIMIT: 1
+  DATABASE:
+  URL: ${DATABASE_URL}
+  OPTIONS:
+    dialectOptions:
+      ssl:
+        require: false
+        rejectUnauthorized: false
 BUGSNAG:
   ## Optional, but you'll need to remove references to @apollosproject/bugsnag if you don't wish to use.
   API_KEY: ${BUGSNAG_KEY}
@@ -160,11 +168,6 @@ ROCK_MAPPINGS:
   MOBILE_DEVICE_TYPE_ID: 671
 
 HOME_FEATURES:
-  # Commenting this out for now to be deployed after testing.
-  #- algorithms: [DAILY_PRAYER]
-  #  isCard: true
-  #  type: PrayerList
-  #  title: Daily Prayer
   - type: ActionBar
     actions: [{
       title: Check In,
@@ -185,29 +188,16 @@ HOME_FEATURES:
         __typename: Url,
         url: 'https://crossings.church/give'
       },
-    }, 
-    {
-      title: Info,
-      icon: information,
-      id: 12345,
-      action: OPEN_CHANNEL,
-      relatedNode:{
-        __typename: ContentChannel,
-        id: 1,
-        name: Upcoming 
-      },
     }]
   - algorithms: [USER_FEED]
     type: HeroList
     limit: 6
-    primaryAction:
-      # Right now, you hardcode exactly what GraphQL should return.
-      # Long term, we hope to have a more sophisticated mechanism for driving this field
-      action: OPEN_CHANNEL
-      title: 'See More'
-      relatedNode:
-        __typename: ContentChannel
-        id: 21
+  # Commenting this out for now to be deployed after testing.
+  - algorithms: [DAILY_PRAYER]
+    isCard: false
+    type: PrayerList
+    title: Daily Prayer
+    subtitle: Join us in prayer
   - algorithms: [CONTENT_CHANNEL]
     contentChannelId: 19
     title: Teaching Series
@@ -299,7 +289,7 @@ DISCOVER_FEATURES:
       title: 'show More'
       relatedNode:
         __typename: ContentChannel
-        id: 423
+        id: 422
         name: The Gathering Series
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.

@@ -33,6 +33,7 @@ import {
   FeatureFeed,
   // Event,
   PrayerRequest,
+  Persona,
   // ActionAlgorithm,
 } from '@apollosproject/data-connector-rock';
 
@@ -51,13 +52,18 @@ import * as Person from './person';
 import * as Sms from './clearstream';
 import * as ActionAlgorithm from './action-algorithms';
 import * as Search from './search';
+// This modules ties together certain updates so they occurs in both Rock and Postgres.
+// Will be eliminated in the future through an enhancement to the Shovel
+// import * as Person from './rockWithPostgres';
 
 const data = {
   Interfaces,
   Followings,
   ContentChannel,
   ContentItem,
-  Person,
+  // RockPerson, // This entry needs to come before (postgres) Person
+  BinaryFiles, // This entry needs to come before (postgres) Person
+  // PostgresPerson, // Postgres person for now, as we extend this dataSource in the 'rockWithPostgres' file
   Cloudinary,
   Auth,
   AuthSms,
@@ -77,7 +83,6 @@ const data = {
   Template,
   Campus,
   Group,
-  BinaryFiles,
   Feature,
   FeatureFeed,
   ActionAlgorithm,
@@ -86,6 +91,9 @@ const data = {
   PrayerRequest,
   Comment,
   UserFlag,
+  // PostgresCampus,
+  Persona,
+  Person, // An extension of Postgres person. Will be eliminated in the near future so you can use just postgres/Person.
 };
 
 const {
