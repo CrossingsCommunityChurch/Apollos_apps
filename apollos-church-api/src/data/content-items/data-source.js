@@ -2,7 +2,7 @@ import { ContentItem } from '@apollosproject/data-connector-rock';
 import ApollosConfig from '@apollosproject/config';
 
 const { ROCK_MAPPINGS, ROCK_CONSTANTS } = ApollosConfig;
-const imageURL = 'images.crossings.church';
+const imageURL = 'images.crossings.church/fit-in/700x700';
 
 class dataSource extends ContentItem.dataSource {
   expanded = true;
@@ -42,25 +42,22 @@ class dataSource extends ContentItem.dataSource {
   forSearch = () =>
     this.request()
       .filterOneOf(
-        ROCK_MAPPINGS.DISCOVER_CONTENT_CHANNEL_IDS.map(
+        ROCK_MAPPINGS.SEARCH_CONTENT_CHANNEL_IDS.map(
           (id) => `ContentChannelId eq ${id}`
         )
       )
       .cache({ ttl: 60 })
       .andFilter(this.LIVE_CONTENT());
 
-  forSearchDateAndActive = async ({ datetime }) =>
-      this.request()
-        .filterOneOf(
-          ROCK_MAPPINGS.DISCOVER_CONTENT_CHANNEL_IDS.map(
-            (id) => `ContentChannelId eq ${id}`
-          )
+  forSearchDateAndActive = async () =>
+    this.request()
+      .filterOneOf(
+        ROCK_MAPPINGS.SEARCH_CONTENT_CHANNEL_IDS.map(
+          (id) => `ContentChannelId eq ${id}`
         )
-        .cache({ ttl: 60 })
-        .andFilter(
-          `(CreatedDateTime gt datetime'${datetime}') or (ModifiedDateTime gt datetime'${datetime}')`
-        )
-        .andFilter(this.LIVE_CONTENT());
+      )
+      .cache({ ttl: 60 })
+      .andFilter(this.LIVE_CONTENT());
 }
 
 const { resolver, schema } = ContentItem;

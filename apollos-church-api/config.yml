@@ -14,6 +14,14 @@ APP:
   ROOT_API_URL: ${ROOT_URL}
   JOBS_USERNAME: ${JOBS_USERNAME}
   JOBS_PASSWORD: ${JOBS_PASSWORD}
+  FLAG_LIMIT: 1
+  DATABASE:
+  URL: ${DATABASE_URL}
+  OPTIONS:
+    dialectOptions:
+      ssl:
+        require: false
+        rejectUnauthorized: false
 BUGSNAG:
   ## Optional, but you'll need to remove references to @apollosproject/bugsnag if you don't wish to use.
   API_KEY: ${BUGSNAG_KEY}
@@ -48,14 +56,15 @@ CHURCH_ONLINE:
 ALGOLIA:
   APPLICATION_ID: ${ALGOLIASEARCH_APPLICATION_ID}
   API_KEY: ${ALGOLIASEARCH_API_KEY}
-  SEARCH_INDEX: prod_ContentItem
+  SEARCH_INDEX: Dev_ContentItem
   # Configure Algolia custom settings here
   # https://www.algolia.com/doc/api-reference/settings-api-parameters/
   CONFIGURATION:
     searchableAttributes:
       - title
       - unordered(summary)
-      - unordered(tags)
+      - author
+      - htmlContent
     #customRankings:
     # NOT CURRENTLY INCLUDED
     # This just demonstrates what's possible
@@ -132,6 +141,12 @@ ROCK_MAPPINGS:
     - 19
     - 23
     - 376
+  # Todo add events to be returnable type 
+  SEARCH_CONTENT_CHANNEL_IDS:
+    - 21
+    - 22
+    - 423
+    - 23
 
   # Apollos will pull content items from these channels and expose them on the user feed
   # However, it will not expose the channel itself.
@@ -139,6 +154,7 @@ ROCK_MAPPINGS:
   FEED_CONTENT_CHANNEL_IDS:
     - 21
     - 22
+    - 423
 
   CAMPAIGN_CHANNEL_IDS:
     - 11
@@ -172,33 +188,16 @@ HOME_FEATURES:
         __typename: Url,
         url: 'https://crossings.church/give'
       },
-    }, 
-    {
-      title: Info,
-      icon: information,
-      id: 12345,
-      action: OPEN_CHANNEL,
-      relatedNode:{
-        __typename: ContentChannel,
-        id: 1,
-        name: Upcoming 
-      },
     }]
   - algorithms: [USER_FEED]
     type: HeroList
     limit: 6
-    primaryAction:
-      # Right now, you hardcode exactly what GraphQL should return.
-      # Long term, we hope to have a more sophisticated mechanism for driving this field
-      action: OPEN_CHANNEL
-      title: 'See More'
-      relatedNode:
-        __typename: ContentChannel
-        id: 21
+  # Commenting this out for now to be deployed after testing.
   - algorithms: [DAILY_PRAYER]
     isCard: false
     type: PrayerList
     title: Daily Prayer
+    subtitle: Join us in prayer
   - algorithms: [CONTENT_CHANNEL]
     contentChannelId: 19
     title: Teaching Series
@@ -218,18 +217,20 @@ HOME_FEATURES:
     type: HorizontalCardList
     limit: 5
     primaryAction:
-      action: OPEN_NODE
+      action: OPEN_CHANNEL
       title: See More
       relatedNode:
-        __typename: DevotionalContentItem
+        __typename: ContentChannel
+        id: 23
   - title: Upcoming Events
     subtitle: What's happening at Crossings
     type: ActionList
     algorithms:
-      - type: CONTENT_CHANNEL
-        arguments:
-          # This currently points to the Service Bulletin content channel Add stuff there to show it.
-          contentChannelId: 376
+     # Commenting this out for now to see how we want to handle it. 
+     # - type: CONTENT_CHANNEL
+     #   arguments:
+     #     # This currently points to the Service Bulletin content channel Add stuff there to show it.
+     #     contentChannelId: 376
       - type: UPCOMING_EVENTS
   - algorithms: [CAMPAIGN_ITEMS]
     type: HeroList
@@ -255,6 +256,13 @@ DISCOVER_FEATURES:
           limit: 3
     type: HorizontalCardList
     subtitle: Sunday Messages
+    primaryAction:
+     action: OPEN_CHANNEL
+     title: 'show More'
+     relatedNode:
+       __typename: ContentChannel
+       id: 18
+       name: Teaching Series
   - algorithms:
       - type: CONTENT_CHANNEL
         arguments:
@@ -269,6 +277,20 @@ DISCOVER_FEATURES:
         __typename: ContentChannel
         id: 19
         name: Teaching Series
+  - algorithms:
+      - type: CONTENT_CHANNEL
+        arguments:
+          contentChannelId: 423
+          limit: 3
+    type: HorizontalCardList
+    subtitle: The Gathering Series
+    primaryAction:
+      action: OPEN_CHANNEL
+      title: 'show More'
+      relatedNode:
+        __typename: ContentChannel
+        id: 422
+        name: The Gathering Series
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:

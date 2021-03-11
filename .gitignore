@@ -7,9 +7,12 @@ ehthumbs.db
 Thumbs.db
 *.swp
 
+
 # Dependency directories
 node_modules/
 .yalc/
 yalc.lock
 
 terraform.tfvars
+
+apolloschurchapp/.env.production

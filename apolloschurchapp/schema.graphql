@@ -4,6 +4,7 @@ enum ACTION_FEATURE_ACTION {
   READ_CONTENT
   READ_EVENT
   OPEN_URL
+  OPEN_AUTHENTICATED_URL
   OPEN_NODE
   OPEN_CHANNEL
 }
@@ -39,6 +40,14 @@ type ActionListFeature implements Feature & Node {
   subtitle: String
   actions: [ActionListAction]
   primaryAction: FeatureAction
+}
+
+type AddCommentFeature implements Feature & Node {
+  id: ID!
+  order: Int
+  relatedNode: Node!
+  addPrompt: String
+  initialPrompt: String
 }
 
 input AnalyticsDeviceInfo {
@@ -150,6 +159,25 @@ type CardListItem {
 """A rgb color string"""
 scalar Color
 
+type Comment implements Node {
+  id: ID!
+  person: Person
+  text: String
+  visibility: CommentVisibility
+}
+
+type CommentListFeature implements Feature & Node {
+  id: ID!
+  order: Int
+  comments: [Comment]
+}
+
+enum CommentVisibility {
+  PUBLIC
+  PRIVATE
+  FOLLOWERS
+}
+
 type ContentChannel implements Node {
   id: ID!
   name: String
@@ -239,7 +267,7 @@ type Device implements Node {
   notificationsEnabled: Boolean!
 }
 
-type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ScriptureNode & LikableNode & ShareableNode {
+type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ScriptureNode & LikableNode & ShareableNode & FeaturesNode {
   id: ID!
   title(hyphenated: Boolean): String
   publishDate: String
@@ -257,6 +285,8 @@ type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & 
   isLiked: Boolean
   likedCount: Int
   sharing: SharableContentItem
+  features: [Feature] @deprecated(reason: "Use featureFeed")
+  featureFeed: FeatureFeed
 }
 
 type Event implements Node {
@@ -439,6 +469,8 @@ type Mutation {
   updateUserPushSettings(input: PushSettingsInput!): Person
   updateUserCampus(campusId: String!): Person
   addPrayer(text: String!, isAnonymous: Boolean): PrayerRequest
+  addComment(parentId: ID!, text: String!, visibility: CommentVisibility): Comment
+  flagComment(commentId: ID!): Comment
 }
 
 interface Node {
@@ -496,6 +528,7 @@ type Person implements Node {
   devices: [Device]
   campus: Campus
   groups(type: GROUP_TYPE, asLeader: Boolean): [Group]
+  prayers: [PrayerRequest]
 }
 
 type PrayerListFeature implements Feature & Node {
@@ -529,7 +562,7 @@ type Query {
   _placeholder: Boolean
   node(id: ID!): Node
   likedContent(first: Int, after: String): ContentItemsConnection
-  contentChannels: [ContentChannel]
+  contentChannels: [ContentChannel] @deprecated(reason: "No longer supported.")
   campaigns: ContentItemsConnection
   userFeed(first: Int, after: String): ContentItemsConnection
   personaFeed(first: Int, after: String): ContentItemsConnection
@@ -563,6 +596,7 @@ type Scripture implements Node {
 type ScriptureFeature implements Feature & Node {
   id: ID!
   order: Int
+  title: String
   scriptures: [Scripture]
   sharing: SharableFeature
 }
@@ -614,6 +648,7 @@ type SmsPinResult {
 type TextFeature implements Feature & Node {
   id: ID!
   order: Int
+  title: String
   body: String
   sharing: SharableFeature
 }
@@ -701,6 +736,14 @@ type VerticalCardListFeature implements Feature & Node {
   cards: [CardListItem]
 }
 
+type VerticalPrayerListFeature implements Feature & Node {
+  id: ID!
+  order: Int
+  title: String
+  subtitle: String
+  prayers: [PrayerRequest]
+}
+
 type VideoMedia implements Media {
   name: String
   key: String
@@ -719,8 +762,8 @@ interface VideoNode {
 type WebviewFeature implements Feature & Node {
   id: ID!
   order: Int
-  linkText: String
   title: String
+  linkText: String
   url: String
 }
 

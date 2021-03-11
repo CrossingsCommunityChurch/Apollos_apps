@@ -39,6 +39,7 @@ jest.mock('react-native-safe-area-context', () => ({
     children({ top: 0, bottom: 0, left: 0, right: 0 }),
   SafeAreaProvider: ({ children }) => children,
   SafeAreaView: jest.requireActual('react-native').SafeAreaView,
+  useSafeAreaInsets: () => ({ top: 3 }),
 }));
 
 jest.mock('react-native-device-info', () => ({
@@ -87,7 +88,7 @@ jest.mock('@apollosproject/ui-media-player', () => ({
 
 jest.mock('react-native-video', () => 'Video');
 
-jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
+// jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
 
 jest.mock(
   'react-native/Libraries/Components/DatePicker/DatePickerIOS',
