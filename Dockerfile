@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:12-alpine
 COPY . /usr/src/
 WORKDIR /usr/src
 RUN yarn --ignore-scripts
