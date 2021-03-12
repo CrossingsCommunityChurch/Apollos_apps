@@ -10,6 +10,7 @@ class dataSource extends baseAlgorithms.dataSource {
   ACTION_ALGORITHIMS = Object.entries({
     ...baseAlgorithms,
     UPCOMING_EVENTS: this.upcomingEventsAlgorithm,
+    MOST_RECENT_SERMON,
   }).reduce((accum, [key, value]) => {
     // convenciance code to make sure all methods are bound to the Features dataSource
     // eslint-disable-next-line
