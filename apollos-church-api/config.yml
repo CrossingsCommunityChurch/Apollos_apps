@@ -34,6 +34,7 @@ ROCK:
   TIMEZONE: "America/Chicago"
   USE_PLUGIN: true
   SHOW_INACTIVE_CONTENT: ${ROCK_SHOW_INACTIVE_CONTENT}
+  VERSION: 12
 UNIVERSAL_LINKS:
   # This should be your app's bundle ID, as found in your info.plist.
   APPLE_APP_ID: church.crossings.rock
@@ -87,7 +88,7 @@ ANALYTICS:
   # on the accompanying service
   SEGMENT_KEY:
   GA_ID:
-  USE_ROCK: true
+  USE_ROCK: false
 BIBLE_API:
   KEY: ${BIBLE_API_KEY}
   BIBLE_ID:
@@ -226,11 +227,10 @@ HOME_FEATURES:
     subtitle: What's happening at Crossings
     type: ActionList
     algorithms:
-     # Commenting this out for now to see how we want to handle it. 
-     # - type: CONTENT_CHANNEL
-     #   arguments:
-     #     # This currently points to the Service Bulletin content channel Add stuff there to show it.
-     #     contentChannelId: 376
+      - type: CONTENT_CHANNEL
+        arguments:
+          # This currently points to the Service Bulletin content channel Add stuff there to show it.
+          contentChannelId: 376
       - type: UPCOMING_EVENTS
   - algorithms: [CAMPAIGN_ITEMS]
     type: HeroList

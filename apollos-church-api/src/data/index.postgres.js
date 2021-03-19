@@ -10,15 +10,14 @@ import * as Scripture from '@apollosproject/data-connector-bible';
 import * as LiveStream from '@apollosproject/data-connector-church-online';
 import * as Cloudinary from '@apollosproject/data-connector-cloudinary';
 import * as OneSignal from '@apollosproject/data-connector-onesignal';
-// import * as Search from '@apollosproject/data-connector-algolia-search';
+import * as Search from '@apollosproject/data-connector-algolia-search';
 import * as Pass from '@apollosproject/data-connector-passes';
 import * as Cache from '@apollosproject/data-connector-redis-cache';
-// import * as Sms from '@apollosproject/data-connector-twilio';
+import * as Sms from '@apollosproject/data-connector-twilio';
 import {
   Followings,
   Interactions,
   RockConstants,
-  // Person,
   ContentItem,
   ContentChannel,
   Sharable,
@@ -35,7 +34,16 @@ import {
   Event,
   PrayerRequest,
   Persona,
+  Person as RockPerson,
 } from '@apollosproject/data-connector-rock';
+
+import {
+  Comment,
+  UserFlag,
+  Follow,
+  Campus as PostgresCampus,
+  Person as PostgresPerson,
+} from '@apollosproject/data-connector-postgres';
 
 import * as Theme from './theme';
 
@@ -43,23 +51,18 @@ import * as Theme from './theme';
 // This module includes a Resolver that overides a resolver defined in `OneSignal`
 import * as OneSignalWithRock from './oneSignalWithRock';
 
-// import * as ContentItem from './content-items';
-// import * as Event from './event';
-// import * as Feature from './features/data-source';
-import * as Person from './person';
-import * as Sms from './clearstream';
-// import * as ActionAlgorithm from './action-algorithms';
-import * as Search from './search';
 // This modules ties together certain updates so they occurs in both Rock and Postgres.
 // Will be eliminated in the future through an enhancement to the Shovel
-// import * as Person from './rockWithPostgres';
+import * as Person from './rockWithPostgres';
 
 const data = {
   Interfaces,
   Followings,
   ContentChannel,
   ContentItem,
-  BinaryFiles,
+  RockPerson, // This entry needs to come before (postgres) Person
+  BinaryFiles, // This entry needs to come before (postgres) Person
+  PostgresPerson, // Postgres person for now, as we extend this dataSource in the 'rockWithPostgres' file
   Cloudinary,
   Auth,
   AuthSms,
@@ -85,8 +88,12 @@ const data = {
   Event,
   Cache,
   PrayerRequest,
+  Comment,
+  UserFlag,
+  Follow,
+  PostgresCampus,
   Persona,
-  Person,
+  Person, // An extension of Postgres person. Will be eliminated in the near future so you can use just postgres/Person.
 };
 
 const {
@@ -96,7 +103,6 @@ const {
   context,
   applyServerMiddleware,
   setupJobs,
-  migrations,
 } = createApolloServerConfig(data);
 
 export {
@@ -106,7 +112,6 @@ export {
   context,
   applyServerMiddleware,
   setupJobs,
-  migrations,
 };
 
 // the upload Scalar is added
