@@ -1,11 +1,10 @@
 import React from 'react';
-import { Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import gql from 'graphql-tag';
 import { Query } from '@apollo/client/react/components';
 import { useNavigation } from '@react-navigation/native';
 
-import { styled, BackgroundView } from '@apollosproject/ui-kit';
+import { BackgroundView } from '@apollosproject/ui-kit';
 import {
   FeaturesFeedConnected,
   FEATURE_FEED_ACTION_MAP,
@@ -13,14 +12,16 @@ import {
 } from '@apollosproject/ui-connected';
 
 import { SearchButton } from '../../ui/Search';
+import Logo from './logo';
 
+/*
 const LogoTitle = styled(({ theme }) => ({
   height: theme.sizing.baseUnit,
   margin: theme.sizing.baseUnit,
   alignSelf: 'center',
   resizeMode: 'contain',
 }))(Image);
-
+*/
 function handleOnPress({ action, ...props }) {
   if (FEATURE_FEED_ACTION_MAP[action]) {
     FEATURE_FEED_ACTION_MAP[action]({ action, ...props });
@@ -57,7 +58,7 @@ const Home = () => {
                   onPressActionItem={handleOnPress}
                   ListHeaderComponent={
                     <>
-                      <LogoTitle source={require('./wordmark.png')} />
+                      <Logo />
                       <SearchButton
                         onPress={() => navigation.navigate('Search')}
                       />

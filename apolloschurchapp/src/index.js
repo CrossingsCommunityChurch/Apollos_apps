@@ -25,7 +25,6 @@ import Event from './event';
 import Tabs from './tabs';
 import LandingScreen from './ui/LandingScreen';
 import Onboarding from './ui/Onboarding';
-import ContentFeed from './content-feed';
 import Search from './ui/Search';
 
 enableScreens(); // improves performance for react-navigation
@@ -101,17 +100,6 @@ const App = (props) => (
             name="Location"
             component={Location}
             options={{ headerShown: true }}
-          />
-          <Screen
-            component={ContentFeed}
-            name="ContentFeed"
-            /** Function for React Navigation to set information in the header. */
-            options={({ route }) => ({
-              title: route.params.itemTitle || 'Content Feed',
-              stackPresentation: 'push',
-              headerShown: true,
-              headerTitleLarge: true,
-            })}
           />
           <Screen
             name="Passes"

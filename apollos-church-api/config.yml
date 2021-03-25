@@ -51,9 +51,9 @@ ONE_SIGNAL:
   APP_ID: 144c1d64-5745-429c-8c50-3c45891711cd
   REST_KEY: ${ONE_SIGNAL_REST_KEY}
 CHURCH_ONLINE:
-  URL: https://venue.crossings.church/
+  URL: https://ccctest.online.church/
   MEDIA_URLS: []
-  WEB_VIEW_URL: https://venue.crossings.church/
+  WEB_VIEW_URL: https://ccctest.online.church/
 ALGOLIA:
   APPLICATION_ID: ${ALGOLIASEARCH_APPLICATION_ID}
   API_KEY: ${ALGOLIASEARCH_API_KEY}
@@ -168,6 +168,8 @@ ROCK_MAPPINGS:
 
   MOBILE_DEVICE_TYPE_ID: 671
 
+  SUNDAY_SERMON_SCHEDULE_CATEGORY_ID: 406
+
 HOME_FEATURES:
   - type: ActionBar
     actions: [{
@@ -227,11 +229,12 @@ HOME_FEATURES:
     subtitle: What's happening at Crossings
     type: ActionList
     algorithms:
-      - type: CONTENT_CHANNEL
-        arguments:
-          # This currently points to the Service Bulletin content channel Add stuff there to show it.
-          contentChannelId: 376
       - type: UPCOMING_EVENTS
+  - title: Upcoming Streams
+    subtitle: Crossings Live Streams
+    type: ActionList
+    algorithms:
+      - type: UPCOMING_STREAMS
   - algorithms: [CAMPAIGN_ITEMS]
     type: HeroList
     isFeatured: true

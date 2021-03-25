@@ -20,7 +20,6 @@ class dataSource extends baseAlgorithms.dataSource {
   async upcomingEventsAlgorithm() {
     const { Event, Person } = this.context.dataSources;
     const { campusId } = await Person.getCurrentUserCampusId();
-
     if (!campusId) {
       return [];
     }

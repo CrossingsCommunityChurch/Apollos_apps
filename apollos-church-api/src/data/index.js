@@ -19,7 +19,7 @@ import {
   Interactions,
   RockConstants,
   // Person,
-  ContentItem,
+  // ContentItem,
   ContentChannel,
   Sharable,
   Auth,
@@ -29,10 +29,10 @@ import {
   Campus,
   Group,
   BinaryFiles,
-  Feature,
-  FeatureFeed,
-  ActionAlgorithm,
-  Event,
+  // Feature,
+  // FeatureFeed,
+  // ActionAlgorithm,
+  // Event,
   PrayerRequest,
   Persona,
 } from '@apollosproject/data-connector-rock';
@@ -43,13 +43,15 @@ import * as Theme from './theme';
 // This module includes a Resolver that overides a resolver defined in `OneSignal`
 import * as OneSignalWithRock from './oneSignalWithRock';
 
-// import * as ContentItem from './content-items';
-// import * as Event from './event';
-// import * as Feature from './features/data-source';
+import * as ContentItem from './content-items';
+import * as Event from './event';
+import * as Feature from './features';
+import * as FeatureFeed from './feature-feeds';
 import * as Person from './person';
 import * as Sms from './clearstream';
-// import * as ActionAlgorithm from './action-algorithms';
+import * as ActionAlgorithm from './action-algorithms';
 import * as Search from './search';
+// import * as LiveStream from './live';
 // This modules ties together certain updates so they occurs in both Rock and Postgres.
 // Will be eliminated in the future through an enhancement to the Shovel
 // import * as Person from './rockWithPostgres';
