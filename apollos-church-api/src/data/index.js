@@ -55,13 +55,15 @@ import * as Search from './search';
 // This modules ties together certain updates so they occurs in both Rock and Postgres.
 // Will be eliminated in the future through an enhancement to the Shovel
 // import * as Person from './rockWithPostgres';
+// This is to mock any postgres resolvers so we don't throw API errors for unresolved
+// typedefs
+import NoPostgres from './noPostgres';
 
 const data = {
   Interfaces,
   Followings,
   ContentChannel,
   ContentItem,
-  BinaryFiles,
   Cloudinary,
   Auth,
   AuthSms,
@@ -89,6 +91,8 @@ const data = {
   PrayerRequest,
   Persona,
   Person,
+  BinaryFiles,
+  NoPostgres,
 };
 
 const {
