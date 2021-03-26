@@ -247,24 +247,24 @@ PODS:
     - React-cxxreact (= 0.63.4)
     - React-jsi (= 0.63.4)
   - React-jsinspector (0.63.4)
-  - react-native-apollos-player (2.6.0):
+  - react-native-apollos-player (2.7.0):
     - React
   - react-native-config (0.11.7):
     - React
   - react-native-geolocation (2.0.2):
     - React
-  - react-native-geolocation-service (5.2.0):
+  - react-native-geolocation-service (5.1.1):
     - React
-  - react-native-google-cast (3.4.1):
+  - react-native-google-cast (3.3.0):
     - React
-    - react-native-google-cast/Default (= 3.4.1)
-  - react-native-google-cast/Default (3.4.1):
-    - google-cast-sdk
+    - react-native-google-cast/Default (= 3.3.0)
+  - react-native-google-cast/Default (3.3.0):
+    - google-cast-sdk (<= 4.3.0)
     - React
     - react-native-google-cast/RNGoogleCast
-  - react-native-google-cast/RNGoogleCast (3.4.1):
+  - react-native-google-cast/RNGoogleCast (3.3.0):
     - React
-  - react-native-image-picker (3.2.1):
+  - react-native-image-picker (3.1.4):
     - React-Core
   - react-native-maps (0.27.1):
     - React
@@ -277,8 +277,8 @@ PODS:
     - React
   - react-native-safari-view (1.0.0):
     - React
-  - react-native-safe-area-context (3.1.9):
-    - React-Core
+  - react-native-safe-area-context (3.0.7):
+    - React
   - react-native-splash-screen (3.2.0):
     - React
   - react-native-video (5.0.2):
@@ -355,15 +355,13 @@ PODS:
   - RNAnalytics (1.1.5):
     - AstronomerAnalytics
     - React
-  - RNBootSplash (2.2.8):
-    - React-Core
   - RNCAsyncStorage (1.12.1):
     - React-Core
   - RNCMaskedView (0.1.10):
     - React
-  - RNCPicker (1.9.10):
+  - RNCPicker (1.9.4):
     - React-Core
-  - RNDateTimePicker (3.0.9):
+  - RNDateTimePicker (3.0.4):
     - React-Core
   - RNDeviceInfo (4.0.1):
     - React
@@ -373,7 +371,7 @@ PODS:
     - React-Core
   - RNPermissions (2.2.2):
     - React-Core
-  - RNReanimated (2.0.1):
+  - RNReanimated (2.0.0):
     - DoubleConversion
     - FBLazyVector
     - FBReactNativeSpec
@@ -402,7 +400,7 @@ PODS:
     - React-RCTVibration
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (2.16.1):
+  - RNScreens (2.18.1):
     - React-Core
   - RNSVG (9.13.6):
     - React
@@ -478,7 +476,6 @@ DEPENDENCIES:
   - rn-fetch-blob (from `../node_modules/rn-fetch-blob`)
   - "RNAirplay (from `../node_modules/@apollosproject/react-native-airplay-btn`)"
   - "RNAnalytics (from `../node_modules/@metarouter/analytics-react-native`)"
-  - RNBootSplash (from `../node_modules/react-native-bootsplash`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - "RNCPicker (from `../node_modules/@react-native-picker/picker`)"
@@ -603,8 +600,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@apollosproject/react-native-airplay-btn"
   RNAnalytics:
     :path: "../node_modules/@metarouter/analytics-react-native"
-  RNBootSplash:
-    :path: "../node_modules/react-native-bootsplash"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-community/async-storage"
   RNCMaskedView:
@@ -663,18 +658,18 @@ SPEC CHECKSUMS:
   React-jsi: a0418934cf48f25b485631deb27c64dc40fb4c31
   React-jsiexecutor: 93bd528844ad21dc07aab1c67cb10abae6df6949
   React-jsinspector: 58aef7155bc9a9683f5b60b35eccea8722a4f53a
-  react-native-apollos-player: 4af3a3f9f143f14af41abd55f5e561f7df96c5c2
+  react-native-apollos-player: d4bcd7dd7e7b7206eded4e0007b8fdbb6b268021
   react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
   react-native-geolocation: c956aeb136625c23e0dce0467664af2c437888c9
-  react-native-geolocation-service: 7c9436da6dfdecd9526c62eac62ea2bc3f0cc8ea
-  react-native-google-cast: 9ead682d0026c857318efa8ea9c6f58b6142651a
-  react-native-image-picker: 64d12e81f3d9dad0af107fe6536b295d51932ec0
+  react-native-geolocation-service: f33626f1ae12381ca2ae60f98b2f5edd676bf95a
+  react-native-google-cast: 410619ef162b8b91815ecf7271502224998dee8e
+  react-native-image-picker: 28d8d1f5a643119876b8b2c7d4d1dcfb2b232dd4
   react-native-maps: f4b89da81626ad7f151a8bfcb79733295d31ce5c
   react-native-music-control: dcfe5b61e56a15898c4618579cb8ce612c9d21a8
   react-native-onesignal: ad2eaab1517951e50d19fa3eccd16d3048167181
   react-native-passkit-wallet: 51e3babdaeec4c10b5736786ebd1bfb470fcaa36
   react-native-safari-view: 955d7160d159241b8e9395d12d10ea0ef863dcdd
-  react-native-safe-area-context: b6e0e284002381d2ff29fa4fff42b4d8282e3c94
+  react-native-safe-area-context: ef6f16c66b0797ecae1bf86c103dfb3dc16fc33d
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
   react-native-video: d01ed7ff1e38fa7dcc6c15c94cf505e661b7bfd0
   react-native-webview: db4682f1698ab4b17a5e88f951031d203ff8aea8
@@ -691,21 +686,20 @@ SPEC CHECKSUMS:
   rn-fetch-blob: 651b8d076b43d0d7aa294a3d9ec16c00aab8bef9
   RNAirplay: 75777dd55dafbd3687703c3eb9c290ea6cc43248
   RNAnalytics: 360b0680753d0e1d37152a25d47aa34a015cab72
-  RNBootSplash: 14d30c2e1de7247d334540cb2c2d7f3c2acc6150
   RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
-  RNCPicker: 77183d9b1cd80ae55505322f8ad09ba0036e29ba
-  RNDateTimePicker: 8a51a2216c307769e69ef827293d59549ab1ca23
+  RNCPicker: 2c31098349f499e7ab4da6c1ce26f7537d271062
+  RNDateTimePicker: 3d1931e387248cb8f1d1d33740d4a1a82dfe622a
   RNDeviceInfo: 687c1b2ab6d86ff1ca1208783320cd144138c7f2
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNInAppBrowser: 48b95ba7a4eaff5cc223bca338d3e319561dbd1b
   RNPermissions: 5df468064df661a4c8c017e2791ce90d7695eea5
-  RNReanimated: c5e9d841d33ed7f83861462756cec7146e73afaa
-  RNScreens: 45c457af3d2ee9e08fc01e70da87e653d46b1198
+  RNReanimated: 5231286440b796e09df3bfa5c1b12b02bfe07664
+  RNScreens: f7ad633b2e0190b77b6a7aab7f914fad6f198d8d
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: d531f287af8558e53a77e09167c3eed7cdd60e90
+PODFILE CHECKSUM: ff0b6ccfe0571b896a44f129ac11790a8b809329
 
 COCOAPODS: 1.8.4
