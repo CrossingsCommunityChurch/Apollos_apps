@@ -45,7 +45,6 @@ class dataSource extends baseAlgorithms.dataSource {
   async upcomingStreamsAlgorithm() {
     const { LiveStream, ContentItem } = this.context.dataSources;
     const liveStreams = await LiveStream.getLiveStreams({});
-    console.log(`Live stream data is: ${JSON.stringify(liveStreams)}`);
     // Map them into specific actions.
     return liveStreams.map((stream, i) => ({
       id: `1234${i}`,

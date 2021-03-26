@@ -29,7 +29,6 @@ export default class LiveStream extends RockApolloDataSource {
     // If we have data in the sermon feed, and the `getLiveStream.isLive` is true
     // this returns an array of livestreams
     const liveItems = await ContentItem.getActiveLiveStreamContent();
-    if (!liveItems) return [];
     return Promise.all(
       liveItems.map(async (item) => ({
         contentItem: item,
