@@ -1,3 +1,4 @@
+import { get } from 'lodash';
 import { ActionAlgorithm as baseAlgorithms } from '@apollosproject/data-connector-rock';
 import moment from 'moment-timezone';
 
@@ -7,15 +8,11 @@ class dataSource extends baseAlgorithms.dataSource {
   /** Base Attrs and Methods from the Core DataSource */
   /** baseAlgorithms = this.ACTION_ALGORITHIMS; */
 
-  ACTION_ALGORITHIMS = Object.entries({
-    ...baseAlgorithms,
-    UPCOMING_EVENTS: this.upcomingEventsAlgorithm,
-  }).reduce((accum, [key, value]) => {
-    // convenciance code to make sure all methods are bound to the Features dataSource
-    // eslint-disable-next-line
-        accum[key] = value.bind(this);
-    return accum;
-  }, {});
+  ACTION_ALGORITHMS = {
+    ...this.ACTION_ALGORITHMS,
+    UPCOMING_EVENTS: this.upcomingEventsAlgorithm.bind(this),
+    UPCOMING_STREAMS: this.upcomingStreamsAlgorithm.bind(this),
+  };
 
   async upcomingEventsAlgorithm() {
     const { Event, Person } = this.context.dataSources;
@@ -41,6 +38,22 @@ class dataSource extends baseAlgorithms.dataSource {
       // Current app design calls for no user-supplied images.
       image: Event.getImage(event),
       action: 'READ_EVENT',
+      summary: '',
+    }));
+  }
+
+  async upcomingStreamsAlgorithm() {
+    const { LiveStream, ContentItem } = this.context.dataSources;
+    const liveStreams = await LiveStream.getLiveStreams({});
+    console.log(`Live stream data is: ${JSON.stringify(liveStreams)}`);
+    // Map them into specific actions.
+    return liveStreams.map((stream, i) => ({
+      id: `1234${i}`,
+      title: 'Test title',
+      subtitle: 'Test Subtitle',
+      relatedNode: { ...stream.url, __type: 'Url' },
+      image: ContentItem.getCoverImage(stream.contentItem),
+      action: 'OPEN_URL',
       summary: '',
     }));
   }

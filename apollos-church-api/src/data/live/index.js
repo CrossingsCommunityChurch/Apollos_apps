@@ -1,5 +1,5 @@
-import { liveSchema } from '@apollosproject/data-schema';
+import { default as schema } from './schema';
 import resolver from './resolver';
 import dataSource from './data-source';
 
-export { liveSchema as schema, resolver, dataSource };
+export { schema, resolver, dataSource };

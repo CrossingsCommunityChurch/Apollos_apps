@@ -169,6 +169,8 @@ ROCK_MAPPINGS:
   MOBILE_DEVICE_TYPE_ID: 671
 
   SUNDAY_SERMON_SCHEDULE_CATEGORY_ID: 406
+  
+  LIVESTREAM_CONTENT_CHANNEL_ID: 443
 
 HOME_FEATURES:
   - type: ActionBar
@@ -231,7 +233,7 @@ HOME_FEATURES:
     algorithms:
       - type: UPCOMING_EVENTS
   - title: Upcoming Streams
-    subtitle: Crossings Live Streams
+    subtitle: What's streaming at Crossings
     type: ActionList
     algorithms:
       - type: UPCOMING_STREAMS

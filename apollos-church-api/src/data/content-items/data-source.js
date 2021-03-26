@@ -58,8 +58,25 @@ class dataSource extends ContentItem.dataSource {
       )
       .cache({ ttl: 60 })
       .andFilter(this.LIVE_CONTENT());
-}
 
+  getLiveFeed() {
+    return this.byContentChannelId(
+      ROCK_MAPPINGS.LIVESTREAM_CONTENT_CHANNEL_ID
+    ).andFilter(this.LIVE_CONTENT());
+  }
+
+  // having this as a method instead of a property will cause issues in the
+  // data-connector-church-online package.
+  getActiveLiveStreamContent = async () => {
+    const { LiveStream } = this.context.dataSources;
+    const { isLive } = await LiveStream.getLiveStream();
+    // if there is no live stream, then there is no live content. Easy enough!
+    if (!isLive) return [];
+
+    const currentLiveStreams = await this.getLiveFeed().first();
+    return [currentLiveStreams];
+  };
+}
 const { resolver, schema } = ContentItem;
 
 export { dataSource, resolver, schema };

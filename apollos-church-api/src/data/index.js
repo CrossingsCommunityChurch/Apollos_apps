@@ -7,7 +7,7 @@ import {
 
 import * as Analytics from '@apollosproject/data-connector-analytics';
 import * as Scripture from '@apollosproject/data-connector-bible';
-import * as LiveStream from '@apollosproject/data-connector-church-online';
+// import * as LiveStream from '@apollosproject/data-connector-church-online';
 import * as Cloudinary from '@apollosproject/data-connector-cloudinary';
 import * as OneSignal from '@apollosproject/data-connector-onesignal';
 // import * as Search from '@apollosproject/data-connector-algolia-search';
@@ -29,8 +29,8 @@ import {
   Campus,
   Group,
   BinaryFiles,
-  // Feature,
-  // FeatureFeed,
+  Feature,
+  FeatureFeed,
   // ActionAlgorithm,
   // Event,
   PrayerRequest,
@@ -45,13 +45,14 @@ import * as OneSignalWithRock from './oneSignalWithRock';
 
 import * as ContentItem from './content-items';
 import * as Event from './event';
-import * as Feature from './features';
-import * as FeatureFeed from './feature-feeds';
+// import * as Feature from './features';
+// import * as FeatureFeed from './feature-feeds';
 import * as Person from './person';
 import * as Sms from './clearstream';
 import * as ActionAlgorithm from './action-algorithms';
 import * as Search from './search';
-// import * as LiveStream from './live';
+import * as LiveStream from './live';
+
 // This modules ties together certain updates so they occurs in both Rock and Postgres.
 // Will be eliminated in the future through an enhancement to the Shovel
 // import * as Person from './rockWithPostgres';
