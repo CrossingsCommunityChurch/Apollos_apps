@@ -26,10 +26,10 @@ BUGSNAG:
   ## Optional, but you'll need to remove references to @apollosproject/bugsnag if you don't wish to use.
   API_KEY: ${BUGSNAG_KEY}
 ROCK:
-  API_URL: https://rock.crossings.church/api
+  API_URL: https://rocktest.crossings.church/api
   API_TOKEN: ${ROCK_TOKEN}
-  IMAGE_URL: https://rock.crossings.church/GetImage.ashx
-  SHARE_URL: https://rock.crossings.church
+  IMAGE_URL: https://rocktest.crossings.church/GetImage.ashx
+  SHARE_URL: https://rockrocktest.crossings.church
   # This should match the timezone of the Rock server
   TIMEZONE: "America/Chicago"
   USE_PLUGIN: true
@@ -169,7 +169,7 @@ ROCK_MAPPINGS:
   MOBILE_DEVICE_TYPE_ID: 671
 
   SUNDAY_SERMON_SCHEDULE_CATEGORY_ID: 406
-  
+
   LIVESTREAM_CONTENT_CHANNEL_ID: 443
 
 HOME_FEATURES:
@@ -194,15 +194,15 @@ HOME_FEATURES:
         url: 'https://crossings.church/give'
       },
     }]
-  - algorithms: [USER_FEED]
-    type: HeroList
-    limit: 6
-  # Commenting this out for now to be deployed after testing.
   - algorithms: [DAILY_PRAYER]
     isCard: false
     type: PrayerList
     title: Daily Prayer
     subtitle: Join us in prayer
+  - algorithms: [USER_FEED]
+    type: HeroList
+    limit: 6
+  # Commenting this out for now to be deployed after testing.
   - algorithms: [CONTENT_CHANNEL]
     contentChannelId: 19
     title: Teaching Series
