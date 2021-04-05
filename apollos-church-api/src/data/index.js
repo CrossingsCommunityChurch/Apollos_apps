@@ -29,8 +29,8 @@ import {
   Campus,
   Group,
   BinaryFiles,
-  Feature,
-  FeatureFeed,
+  // Feature,
+  // FeatureFeed,
   // ActionAlgorithm,
   // Event,
   PrayerRequest,
@@ -45,8 +45,8 @@ import * as OneSignalWithRock from './oneSignalWithRock';
 
 import * as ContentItem from './content-items';
 import * as Event from './event';
-// import * as Feature from './features';
-// import * as FeatureFeed from './feature-feeds';
+import * as Feature from './features';
+import * as FeatureFeed from './feature-feeds';
 import * as Person from './person';
 import * as Sms from './clearstream';
 import * as ActionAlgorithm from './action-algorithms';

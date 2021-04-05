@@ -1,4 +1,5 @@
 import { ContentItem } from '@apollosproject/data-connector-rock';
+import { get } from 'lodash';
 import ApollosConfig from '@apollosproject/config';
 
 const { ROCK_MAPPINGS, ROCK_CONSTANTS } = ApollosConfig;
@@ -65,6 +66,16 @@ class dataSource extends ContentItem.dataSource {
     ).andFilter(this.LIVE_CONTENT());
   }
 
+  getWebviewUrl = ({ attributeValues }) => {
+    const link = get(attributeValues, 'WebviewURL.value', '');
+    return link;
+  };
+
+  getMeidaUrl = ({ attributeValues }) => {
+    const link = get(attributeValues, 'MediaHLSLink.value', '');
+    return link;
+  };
+
   // having this as a method instead of a property will cause issues in the
   // data-connector-church-online package.
   getActiveLiveStreamContent = async () => {
@@ -73,7 +84,7 @@ class dataSource extends ContentItem.dataSource {
     // if there is no live stream, then there is no live content. Easy enough!
     if (!isLive) return [];
 
-    const currentLiveStreams = await this.getLiveFeed().first();
+    const currentLiveStreams = await this.getLiveFeed();
     return [currentLiveStreams];
   };
 }

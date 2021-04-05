@@ -16,9 +16,9 @@ export default class LiveStream extends RockApolloDataSource {
     return {
       isLive: stream,
       eventStartTime: null,
-      media: CHURCH_ONLINE.MEDIA_URLS,
-      webViewUrl: CHURCH_ONLINE.WEB_VIEW_URL,
-      url: { url: CHURCH_ONLINE.WEB_VIEW_URL, id: '1234654311234' },
+      media: '',
+      webViewUrl: '',
+      url: '',
     };
   }
 
