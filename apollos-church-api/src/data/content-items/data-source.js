@@ -61,17 +61,16 @@ class dataSource extends ContentItem.dataSource {
       .andFilter(this.LIVE_CONTENT());
 
   getLiveFeed() {
-    return this.byContentChannelId(ROCK_MAPPINGS.LIVESTREAM_CONTENT_CHANNEL_ID);
+    return this.byContentChannelId(
+      ROCK_MAPPINGS.LIVESTREAM_CONTENT_CHANNEL_ID
+    ).andFilter(this.LIVE_CONTENT());
   }
 
-  getWebviewUrl = ({ attributeValues }) => {
-    console.log(`Attributes are : ${JSON.stringify(attributeValues)}`);
-    const link = get(attributeValues, 'WebviewURL.value', '');
-    return link;
-  };
+  getWebviewURL = ({ attributeValues }) =>
+    get(attributeValues, 'webviewUrl.value', 'default');
 
-  getMeidaUrl = ({ attributeValues }) => {
-    const link = get(attributeValues, 'MediaHLSLink.value', '');
+  getMeidaURL = ({ attributeValues }) => {
+    const link = get(attributeValues, 'mediaHlsLink.value', '');
     return link;
   };
 
@@ -83,8 +82,8 @@ class dataSource extends ContentItem.dataSource {
     // if there is no live stream, then there is no live content. Easy enough!
     if (!isLive) return [];
 
-    const currentLiveStreams = await this.getLiveFeed();
-    return [currentLiveStreams];
+    const currentLiveStreams = await this.getLiveFeed().get();
+    return currentLiveStreams;
   };
 }
 
