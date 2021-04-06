@@ -2,6 +2,8 @@
 import RockApolloDataSource from '@apollosproject/rock-apollo-data-source';
 import ApollosConfig from '@apollosproject/config';
 
+const { inspect } = require('util');
+
 const { CHURCH_ONLINE, ROCK_MAPPINGS } = ApollosConfig;
 
 export default class LiveStream extends RockApolloDataSource {
@@ -17,7 +19,6 @@ export default class LiveStream extends RockApolloDataSource {
       isLive: stream,
       eventStartTime: null,
       media: '',
-      webViewUrl: '',
       url: '',
     };
   }
@@ -29,9 +30,11 @@ export default class LiveStream extends RockApolloDataSource {
     // If we have data in the sermon feed, and the `getLiveStream.isLive` is true
     // this returns an array of livestreams
     const liveItems = await ContentItem.getActiveLiveStreamContent();
+    console.log(`Live items are: ${inspect(liveItems)}`);
     return Promise.all(
       liveItems.map(async (item) => ({
         contentItem: item,
+        webViewUrl: item.webviewURL,
         ...(await this.getLiveStream()),
       }))
     );

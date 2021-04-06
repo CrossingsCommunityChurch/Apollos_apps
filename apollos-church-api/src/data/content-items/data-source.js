@@ -61,12 +61,11 @@ class dataSource extends ContentItem.dataSource {
       .andFilter(this.LIVE_CONTENT());
 
   getLiveFeed() {
-    return this.byContentChannelId(
-      ROCK_MAPPINGS.LIVESTREAM_CONTENT_CHANNEL_ID
-    ).andFilter(this.LIVE_CONTENT());
+    return this.byContentChannelId(ROCK_MAPPINGS.LIVESTREAM_CONTENT_CHANNEL_ID);
   }
 
   getWebviewUrl = ({ attributeValues }) => {
+    console.log(`Attributes are : ${JSON.stringify(attributeValues)}`);
     const link = get(attributeValues, 'WebviewURL.value', '');
     return link;
   };
@@ -88,6 +87,5 @@ class dataSource extends ContentItem.dataSource {
     return [currentLiveStreams];
   };
 }
-const { resolver, schema } = ContentItem;
 
-export { dataSource, resolver, schema };
+export { dataSource };

@@ -1,6 +1,5 @@
 import { ContentItem } from '@apollosproject/data-connector-rock';
 import gql from 'graphql-tag';
-import { addInterfacesForEachContentItemType } from '@apollosproject/data-schema/lib/utils';
 
 export default gql`
   ${ContentItem.schema}
@@ -53,16 +52,4 @@ export default gql`
     parentChannel: ContentChannel
     theme: Theme
   }
-
-  ${addInterfacesForEachContentItemType(
-    ['ShareableNode'],
-    [
-      'UniversalContentItem',
-      'WeekendContentItem',
-      'MediaContentItem',
-      'ContentSeriesContentItem',
-      'DevotionalContentItem',
-      'LiveContentItem',
-    ]
-  )}
 `;
