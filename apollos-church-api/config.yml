@@ -207,11 +207,11 @@ HOME_FEATURES:
         url: 'https://crossings.church/give'
       },
     }]
-  - algorithms: [DAILY_PRAYER]
-    isCard: false
-    type: PrayerList
-    title: Daily Prayer
-    subtitle: Join us in prayer
+  #- algorithms: [DAILY_PRAYER]
+   # isCard: false
+    #type: PrayerList
+   # title: Daily Prayer
+    #subtitle: Join us in prayer
   - algorithms: [USER_FEED]
     type: HeroList
     limit: 6
