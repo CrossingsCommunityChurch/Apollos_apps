@@ -2,8 +2,6 @@
 import RockApolloDataSource from '@apollosproject/rock-apollo-data-source';
 import ApollosConfig from '@apollosproject/config';
 
-const { inspect } = require('util');
-
 const { ROCK_MAPPINGS } = ApollosConfig;
 
 export default class LiveStream extends RockApolloDataSource {
@@ -18,7 +16,7 @@ export default class LiveStream extends RockApolloDataSource {
     return {
       isLive: stream,
       eventStartTime: null,
-      media: '',
+      media: null,
       url: '',
     };
   }
@@ -33,6 +31,7 @@ export default class LiveStream extends RockApolloDataSource {
     return Promise.all(
       liveItems.map(async (item) => ({
         contentItem: item,
+        relatedNode: { ...item, __type: ContentItem.resolveType(item) },
         webViewUrl: ContentItem.getWebviewURL(item),
         ...(await this.getLiveStream()),
       }))

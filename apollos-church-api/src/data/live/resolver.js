@@ -6,6 +6,10 @@ const resolver = {
     liveStreams: (root, args, { dataSources }) =>
       dataSources.LiveStream.getLiveStreams(),
   },
+  LiveNode: {
+    __resolveType: ({ __typename, __type }, args, resolveInfo) =>
+      __typename || resolveInfo.schema.getType(__type),
+  },
 };
 
 export default resolverMerge(resolver, baseLive);

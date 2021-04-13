@@ -6,13 +6,7 @@ export default gql`
     eventStartTime: String
     media: VideoMedia
     webViewUrl: String
-    contentItem: ContentItem
-      @cacheControl(maxAge: 10)
-      @deprecated(
-        reason: "LiveStreams are not limited to ContentItems. Please use 'relatedNode' instead."
-      )
-    relatedNode: Node
-    actions: [LiveStreamAction]
+    contentItem: ContentItem @cacheControl(maxAge: 10)
   }
   extend type Query {
     liveStream: LiveStream
@@ -26,10 +20,4 @@ export default gql`
     liveStream: LiveStream
   }
   extend type WeekendContentItem implements LiveNode
-
-  extend enum InteractionAction {
-    LIVESTREAM_JOINED
-    LIVESTREAM_CLOSED
-    VIEWED_ACTION
-  }
 `;

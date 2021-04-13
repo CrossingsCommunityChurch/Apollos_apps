@@ -177,13 +177,7 @@ ROCK_MAPPINGS:
   LIVESTREAM_EVENT_CONTENT_CHANNEL_ID: 588
 
 HOME_HEADER_FEATURES:
-  - algorithms: [UPCOMING_STREAMS]
-    type: LiveContentList
-    title: Live Now
-  - algorithms: [DAILY_PRAYER]
-    isCard: false
-    type: PrayerList
-    title: Daily Prayer
+  
 
 HOME_FEATURES:
   - type: ActionBar
@@ -212,6 +206,9 @@ HOME_FEATURES:
     #type: PrayerList
    # title: Daily Prayer
     #subtitle: Join us in prayer
+  - algorithms: [UPCOMING_STREAMS]
+    type: LiveContentList
+    title: Live Now
   - algorithms: [USER_FEED]
     type: HeroList
     limit: 6
