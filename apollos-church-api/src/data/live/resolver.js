@@ -36,21 +36,6 @@ const resolver = {
 
       return null;
     },
-    relatedNode: async ({ attributeValues }, _, { dataSources }) => {
-      const contentItemId = attributeValues?.contentItem?.value;
-      if (contentItemId && !isEmpty(contentItemId)) {
-        const { ContentItem } = dataSources;
-        const contentItem = await ContentItem.getFromId(contentItemId);
-        const __typename = ContentItem.resolveType(contentItem);
-
-        return {
-          __typename,
-          ...contentItem,
-        };
-      }
-
-      return null;
-    },
   },
 };
 

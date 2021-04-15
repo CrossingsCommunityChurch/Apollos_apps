@@ -111,8 +111,8 @@ const LiveTouchable = ({ id, coverImage, withMargin }) => {
 };
 
 const renderItem = ({ item, index, dataLength }) => {
-  const { id, relatedNode, media } = item;
-
+  const { id, relatedNode, media, contentItem } = item;
+  console.log(`ContentItem is ${JSON.stringify(contentItem)}`);
   return (
     <LiveTouchable
       {...relatedNode}
