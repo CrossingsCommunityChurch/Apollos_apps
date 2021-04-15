@@ -1,6 +1,8 @@
 // import { dataSource as baseLive } from '@apollosproject/data-connector-church-online';
 import RockApolloDataSource from '@apollosproject/rock-apollo-data-source';
 import ApollosConfig from '@apollosproject/config';
+import { compareAsc, parseISO, isFuture } from 'date-fns';
+import { first } from 'lodash';
 
 const { ROCK_MAPPINGS } = ApollosConfig;
 
@@ -15,7 +17,8 @@ export default class LiveStream extends RockApolloDataSource {
       )) === 'true';
     return {
       isLive: stream,
-      eventStartTime: null,
+      eventStartTime: '',
+      eventEndTime: '',
       media: null,
       url: '',
     };
@@ -36,5 +39,36 @@ export default class LiveStream extends RockApolloDataSource {
         ...(await this.getLiveStream()),
       }))
     );
+  }
+
+  async getNextInstance({ attributeValues }) {
+    const { Schedule } = this.context.dataSources;
+    const scheduleIds = attributeValues?.schedules?.value;
+    if (scheduleIds) {
+      const scheduleArray = scheduleIds.split(',');
+      const times = await Schedule.getOccurrencesFromIds(scheduleArray);
+      const schedule = first(times);
+      // This should be the right instance that is starting next. meant to be used in the timeisinschedules function.
+      if (schedule) {
+        /* const parsedSchedule = await Schedule.parseiCalendar(
+          schedule.iCalendarContent
+        );
+
+        const nextInstance = parsedSchedule
+          .filter(({ end }) => end && isFuture(parseISO(end)))
+          .sort((a, b) => {
+            const dateA = parseISO(a.start);
+            const dateB = parseISO(b.start);
+
+            return compareAsc(dateA, dateB);
+          })
+          .filter(({ end }) => isFuture(parseISO(end)))
+          .find(() => true);
+          */
+        return schedule;
+      }
+    }
+
+    return null;
   }
 }

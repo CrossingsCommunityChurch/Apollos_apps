@@ -1,5 +1,6 @@
 import ApollosConfig from '@apollosproject/config';
 import FRAGMENTS from '@apollosproject/ui-fragments';
+import gql from 'graphql-tag';
 import fragmentTypes from './src/client/fragmentTypes.json';
 
 // Create a map all the interfaces each type implements.
@@ -16,4 +17,79 @@ const TYPEMAP = fragmentTypes.__schema.types.reduce((acc, curr) => {
   return acc;
 }, {});
 
-ApollosConfig.loadJs({ FRAGMENTS, TYPEMAP });
+ApollosConfig.loadJs({
+  SCHEMA_VERSION: '2021.04.14',
+  FRAGMENTS: {
+    ...FRAGMENTS,
+    LIVE_STREAM_LIST_FEATURE_FRAGMENT: gql`
+      fragment LiveStreamListFeatureFragment on LiveStreamListFeature {
+        id
+        title
+        subtitle
+        liveStreams {
+          id
+          eventStartTime
+          eventEndTime
+          isLive
+          webViewUrl
+          media {
+            sources {
+              uri
+            }
+          }
+          relatedNode {
+            id
+            ... on ContentNode {
+              title
+              coverImage {
+                sources {
+                  uri
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+    LIVE_NODE_FRAGMENT: gql`
+      fragment LiveNodeFragment on LiveNode {
+        liveStream {
+          id
+          eventStartTime
+          eventEndTime
+          isLive
+          media {
+            sources {
+              uri
+            }
+          }
+        }
+      }
+    `,
+    LIVE_STREAM_FRAGMENT: gql`
+      fragment LiveStreamFragment on LiveStream {
+        id
+        eventStartTime
+        eventEndTime
+        isLive
+        media {
+          sources {
+            uri
+          }
+        }
+        relatedNode {
+          id
+          ... on ContentNode {
+            title
+            coverImage {
+              sources {
+                uri
+              }
+            }
+          }
+        }
+      }
+    `,
+  },
+  TYPEMAP,
+});

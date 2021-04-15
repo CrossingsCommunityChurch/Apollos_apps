@@ -2,11 +2,15 @@ import gql from 'graphql-tag';
 
 export default gql`
   type LiveStream {
+    id: ID!
     isLive: Boolean @cacheControl(maxAge: 10)
     eventStartTime: String
+    eventEndTime: String
     media: VideoMedia
     webViewUrl: String
     contentItem: ContentItem @cacheControl(maxAge: 10)
+
+    relatedNode: Node
   }
   extend type Query {
     liveStream: LiveStream

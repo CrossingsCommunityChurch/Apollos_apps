@@ -19,3 +19,7 @@ export const getIdentifierType = (identifier) => {
 
   return { type: 'custom', value: identifier, query: null };
 };
+
+export const isRequired = (method, param) => {
+  throw new Error(`${method} : ${param} is required`);
+};
