@@ -15,7 +15,7 @@ APP:
   JOBS_USERNAME: ${JOBS_USERNAME}
   JOBS_PASSWORD: ${JOBS_PASSWORD}
   FLAG_LIMIT: 1
-  DATABASE:
+DATABASE:
   URL: ${DATABASE_URL}
   OPTIONS:
     dialectOptions:
@@ -34,6 +34,7 @@ ROCK:
   TIMEZONE: "America/Chicago"
   USE_PLUGIN: true
   SHOW_INACTIVE_CONTENT: ${ROCK_SHOW_INACTIVE_CONTENT}
+  VERSION: 12
 UNIVERSAL_LINKS:
   # This should be your app's bundle ID, as found in your info.plist.
   APPLE_APP_ID: church.crossings.rock
@@ -50,9 +51,9 @@ ONE_SIGNAL:
   APP_ID: 144c1d64-5745-429c-8c50-3c45891711cd
   REST_KEY: ${ONE_SIGNAL_REST_KEY}
 CHURCH_ONLINE:
-  URL: https://venue.crossings.church/
+  URL: https://ccctest.online.church/
   MEDIA_URLS: []
-  WEB_VIEW_URL: https://venue.crossings.church/
+  WEB_VIEW_URL: https://ccctest.online.church/
 ALGOLIA:
   APPLICATION_ID: ${ALGOLIASEARCH_APPLICATION_ID}
   API_KEY: ${ALGOLIASEARCH_API_KEY}
@@ -87,7 +88,7 @@ ANALYTICS:
   # on the accompanying service
   SEGMENT_KEY:
   GA_ID:
-  USE_ROCK: true
+  USE_ROCK: false
 BIBLE_API:
   KEY: ${BIBLE_API_KEY}
   BIBLE_ID:
@@ -128,6 +129,9 @@ ROCK_MAPPINGS:
     WeekendContentItem:
       ContentChannelId: [21]
       EntityType: ContentChannelItem
+    LiveContentItem:
+      ContentChannelTypeId: [156]
+      EntityType: ContentChannelItem
     ContentItem:
       EntityType: ContentChannelItem
 
@@ -167,6 +171,14 @@ ROCK_MAPPINGS:
 
   MOBILE_DEVICE_TYPE_ID: 671
 
+  SUNDAY_SERMON_SCHEDULE_CATEGORY_ID: 406
+
+  LIVESTREAM_CONTENT_CHANNEL_ID: 443
+  LIVESTREAM_EVENT_CONTENT_CHANNEL_ID: 588
+
+HOME_HEADER_FEATURES:
+  
+
 HOME_FEATURES:
   - type: ActionBar
     actions: [{
@@ -189,15 +201,18 @@ HOME_FEATURES:
         url: 'https://crossings.church/give'
       },
     }]
+  #- algorithms: [DAILY_PRAYER]
+   # isCard: false
+    #type: PrayerList
+   # title: Daily Prayer
+    #subtitle: Join us in prayer
+  - algorithms: [UPCOMING_STREAMS]
+    type: LiveContentList
+    title: Live Now
   - algorithms: [USER_FEED]
     type: HeroList
     limit: 6
   # Commenting this out for now to be deployed after testing.
-  - algorithms: [DAILY_PRAYER]
-    isCard: false
-    type: PrayerList
-    title: Daily Prayer
-    subtitle: Join us in prayer
   - algorithms: [CONTENT_CHANNEL]
     contentChannelId: 19
     title: Teaching Series
@@ -226,15 +241,7 @@ HOME_FEATURES:
     subtitle: What's happening at Crossings
     type: ActionList
     algorithms:
-     # Commenting this out for now to see how we want to handle it. 
-     # - type: CONTENT_CHANNEL
-     #   arguments:
-     #     # This currently points to the Service Bulletin content channel Add stuff there to show it.
-     #     contentChannelId: 376
       - type: UPCOMING_EVENTS
-  - algorithms: [CAMPAIGN_ITEMS]
-    type: HeroList
-    isFeatured: true
   - title: FOR YOU
     algorithms: [SERMON_CHILDREN, PERSONA_FEED]
     subtitle: Explore what God calls you to today

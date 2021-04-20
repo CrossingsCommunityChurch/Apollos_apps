@@ -7,7 +7,7 @@ import {
 
 import * as Analytics from '@apollosproject/data-connector-analytics';
 import * as Scripture from '@apollosproject/data-connector-bible';
-import * as LiveStream from '@apollosproject/data-connector-church-online';
+// import * as LiveStream from '@apollosproject/data-connector-church-online';
 import * as Cloudinary from '@apollosproject/data-connector-cloudinary';
 import * as OneSignal from '@apollosproject/data-connector-onesignal';
 // import * as Search from '@apollosproject/data-connector-algolia-search';
@@ -29,15 +29,13 @@ import {
   Campus,
   Group,
   BinaryFiles,
-  Feature,
-  FeatureFeed,
+  // Feature,
+  // FeatureFeed,
+  // ActionAlgorithm,
   // Event,
   PrayerRequest,
   Persona,
-  // ActionAlgorithm,
 } from '@apollosproject/data-connector-rock';
-
-import { Comment, UserFlag } from '@apollosproject/data-connector-postgres';
 
 import * as Theme from './theme';
 
@@ -47,23 +45,27 @@ import * as OneSignalWithRock from './oneSignalWithRock';
 
 import * as ContentItem from './content-items';
 import * as Event from './event';
-// import * as Feature from './features/data-source';
+import * as Feature from './features';
+import * as FeatureFeed from './feature-feeds';
 import * as Person from './person';
 import * as Sms from './clearstream';
 import * as ActionAlgorithm from './action-algorithms';
 import * as Search from './search';
+import * as LiveStream from './live';
+import * as Schedule from './schedule';
+
 // This modules ties together certain updates so they occurs in both Rock and Postgres.
 // Will be eliminated in the future through an enhancement to the Shovel
 // import * as Person from './rockWithPostgres';
+// This is to mock any postgres resolvers so we don't throw API errors for unresolved
+// typedefs
+import NoPostgres from './noPostgres';
 
 const data = {
   Interfaces,
   Followings,
   ContentChannel,
   ContentItem,
-  // RockPerson, // This entry needs to come before (postgres) Person
-  BinaryFiles, // This entry needs to come before (postgres) Person
-  // PostgresPerson, // Postgres person for now, as we extend this dataSource in the 'rockWithPostgres' file
   Cloudinary,
   Auth,
   AuthSms,
@@ -89,11 +91,11 @@ const data = {
   Event,
   Cache,
   PrayerRequest,
-  Comment,
-  UserFlag,
-  // PostgresCampus,
   Persona,
-  Person, // An extension of Postgres person. Will be eliminated in the near future so you can use just postgres/Person.
+  Person,
+  BinaryFiles,
+  NoPostgres,
+  Schedule,
 };
 
 const {
@@ -103,6 +105,7 @@ const {
   context,
   applyServerMiddleware,
   setupJobs,
+  migrations,
 } = createApolloServerConfig(data);
 
 export {
@@ -112,6 +115,7 @@ export {
   context,
   applyServerMiddleware,
   setupJobs,
+  migrations,
 };
 
 // the upload Scalar is added

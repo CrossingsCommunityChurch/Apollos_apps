@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Svg, { Path } from 'react-native-svg';
 import { makeIcon } from '@apollosproject/ui-kit';
 
-const Icon = makeIcon(({ size = 40, fill, ...otherProps } = {}) => (
+const BrandIcon = makeIcon(({ size = 40, fill, ...otherProps } = {}) => (
   <Svg
     id="prefix__Layer_1"
     data-name="Layer 1"
@@ -19,9 +19,9 @@ const Icon = makeIcon(({ size = 40, fill, ...otherProps } = {}) => (
   </Svg>
 ));
 
-Icon.propTypes = {
+BrandIcon.propTypes = {
   size: PropTypes.number,
   fill: PropTypes.string,
 };
 
-export default Icon;
+export default BrandIcon;

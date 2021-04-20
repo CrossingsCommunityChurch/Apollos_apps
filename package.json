@@ -1,26 +1,29 @@
 {
   "name": "apollos-templates",
   "scripts": {
-    "start": "yarn watch:client & lerna run start --parallel",
-    "watch:client": "(cd apolloschurchapp && yarn wml start)",
-    "link-packages": "watchman watch-del-all && lerna run link-packages --parallel",
+    "setup": "lerna run setup",
+    "start": "lerna run start:dev --parallel",
     "link-doctor": "node ./scripts/link-doctor.js",
-    "unlink-packages": "lerna run unlink-packages --parallel",
+    "link-packages": "watchman watch-del-all && yarn && lerna run link-packages",
+    "unlink-packages": "yarn && lerna run unlink-packages && yarn --check-files",
     "lint": "lerna run lint --stream",
     "test": "lerna run test --stream",
     "ios": "lerna run ios --parallel",
     "android": "lerna run android --parallel",
-    "pods": "lerna run pods --parallel"
+    "pods": "lerna run pods --parallel",
+    "postinstall": "lerna run postinstall --parallel",
+    "bump": "./scripts/bump.sh",
+    "canary": "./scripts/add-packages.sh canary && yarn",
+    "next": "./scripts/add-packages.sh next && yarn",
+    "secrets": "./scripts/secrets.sh"
   },
   "private": true,
+  "node": ">=12.x.x",
   "devDependencies": {
     "lerna": "^3.20.2",
-    "wml": "^0.0.83",
-    "yalc": "^1.0.0-pre.35",
     "chalk": "^4.0.0"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "workspaces": {
     "packages": [
       "apolloschurchapp",

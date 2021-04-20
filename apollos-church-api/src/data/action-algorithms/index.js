@@ -7,20 +7,15 @@ class dataSource extends baseAlgorithms.dataSource {
   /** Base Attrs and Methods from the Core DataSource */
   /** baseAlgorithms = this.ACTION_ALGORITHIMS; */
 
-  ACTION_ALGORITHIMS = Object.entries({
-    ...baseAlgorithms,
-    UPCOMING_EVENTS: this.upcomingEventsAlgorithm,
-  }).reduce((accum, [key, value]) => {
-    // convenciance code to make sure all methods are bound to the Features dataSource
-    // eslint-disable-next-line
-        accum[key] = value.bind(this);
-    return accum;
-  }, {});
+  ACTION_ALGORITHMS = {
+    ...this.ACTION_ALGORITHMS,
+    UPCOMING_EVENTS: this.upcomingEventsAlgorithm.bind(this),
+    UPCOMING_STREAMS: this.allLiveStreamContentAlgorithm.bind(this),
+  };
 
   async upcomingEventsAlgorithm() {
     const { Event, Person } = this.context.dataSources;
     const { campusId } = await Person.getCurrentUserCampusId();
-
     if (!campusId) {
       return [];
     }
@@ -44,6 +39,27 @@ class dataSource extends baseAlgorithms.dataSource {
       action: 'READ_EVENT',
       summary: '',
     }));
+  }
+
+  async upcomingStreamsAlgorithm() {
+    const { LiveStream, ContentItem } = this.context.dataSources;
+    const liveStreams = await LiveStream.getLiveStreams({});
+    // Map them into specific actions.
+    return liveStreams.map((stream, i) => ({
+      id: `1234${i}`,
+      title: 'Test title',
+      subtitle: 'Test Subtitle',
+      relatedNode: { ...stream.url, __type: 'Url' },
+      image: ContentItem.getCoverImage(stream.contentItem),
+      action: 'OPEN_URL',
+      summary: '',
+    }));
+  }
+
+  async allLiveStreamContentAlgorithm() {
+    const { LiveStream } = this.context.dataSources;
+    const liveStreams = await LiveStream.getLiveStreams();
+    return liveStreams;
   }
 }
 

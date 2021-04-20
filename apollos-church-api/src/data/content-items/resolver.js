@@ -30,6 +30,15 @@ const resolverExtensions = {
   },
 };
 
+const liveResolver = {
+  ...coreContentItem.resolver.ContentItem,
+  webviewURL: (root, args, { dataSources: { ContentItem } }) =>
+    ContentItem.getWebviewURL(root),
+
+  mediaURL: (root, args, { dataSources: { ContentItem } }) =>
+    ContentItem.getMediaURL(root),
+};
+
 const resolver = {
   DevotionalContentItem: {
     ...resolverExtensions,
@@ -45,6 +54,9 @@ const resolver = {
   },
   WeekendContentItem: {
     ...resolverExtensions,
+  },
+  LiveContentItem: {
+    ...liveResolver,
   },
 };
 
