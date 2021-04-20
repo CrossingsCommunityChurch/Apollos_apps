@@ -1,8 +1,10 @@
 // import { dataSource as baseLive } from '@apollosproject/data-connector-church-online';
 import RockApolloDataSource from '@apollosproject/rock-apollo-data-source';
 import ApollosConfig from '@apollosproject/config';
+import { compareAsc, parseISO, isFuture } from 'date-fns';
+import { first } from 'lodash';
 
-const { CHURCH_ONLINE, ROCK_MAPPINGS } = ApollosConfig;
+const { ROCK_MAPPINGS } = ApollosConfig;
 
 export default class LiveStream extends RockApolloDataSource {
   async getLiveStream() {
@@ -15,10 +17,9 @@ export default class LiveStream extends RockApolloDataSource {
       )) === 'true';
     return {
       isLive: stream,
-      eventStartTime: null,
-      media: CHURCH_ONLINE.MEDIA_URLS,
-      webViewUrl: CHURCH_ONLINE.WEB_VIEW_URL,
-      url: { url: CHURCH_ONLINE.WEB_VIEW_URL, id: '1234654311234' },
+      eventStartTime: '',
+      eventEndTime: '',
+      media: null,
     };
   }
 
@@ -32,8 +33,42 @@ export default class LiveStream extends RockApolloDataSource {
     return Promise.all(
       liveItems.map(async (item) => ({
         contentItem: item,
+        relatedNode: { ...item, __type: ContentItem.resolveType(item) },
+        webViewUrl: ContentItem.getWebviewURL(item),
+        action: 'OPEN_URL',
         ...(await this.getLiveStream()),
       }))
     );
+  }
+
+  async getNextInstance({ attributeValues }) {
+    const { Schedule } = this.context.dataSources;
+    const scheduleIds = attributeValues?.schedules?.value;
+    if (scheduleIds) {
+      const scheduleArray = scheduleIds.split(',');
+      const times = await Schedule.getOccurrencesFromIds(scheduleArray);
+      const schedule = first(times);
+      // This should be the right instance that is starting next. meant to be used in the timeisinschedules function.
+      if (schedule) {
+        /* const parsedSchedule = await Schedule.parseiCalendar(
+          schedule.iCalendarContent
+        );
+
+        const nextInstance = parsedSchedule
+          .filter(({ end }) => end && isFuture(parseISO(end)))
+          .sort((a, b) => {
+            const dateA = parseISO(a.start);
+            const dateB = parseISO(b.start);
+
+            return compareAsc(dateA, dateB);
+          })
+          .filter(({ end }) => isFuture(parseISO(end)))
+          .find(() => true);
+          */
+        return schedule;
+      }
+    }
+
+    return null;
   }
 }

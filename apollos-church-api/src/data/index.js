@@ -29,8 +29,8 @@ import {
   Campus,
   Group,
   BinaryFiles,
-  Feature,
-  FeatureFeed,
+  // Feature,
+  // FeatureFeed,
   // ActionAlgorithm,
   // Event,
   PrayerRequest,
@@ -45,13 +45,14 @@ import * as OneSignalWithRock from './oneSignalWithRock';
 
 import * as ContentItem from './content-items';
 import * as Event from './event';
-// import * as Feature from './features';
-// import * as FeatureFeed from './feature-feeds';
+import * as Feature from './features';
+import * as FeatureFeed from './feature-feeds';
 import * as Person from './person';
 import * as Sms from './clearstream';
 import * as ActionAlgorithm from './action-algorithms';
 import * as Search from './search';
 import * as LiveStream from './live';
+import * as Schedule from './schedule';
 
 // This modules ties together certain updates so they occurs in both Rock and Postgres.
 // Will be eliminated in the future through an enhancement to the Shovel
@@ -94,6 +95,7 @@ const data = {
   Person,
   BinaryFiles,
   NoPostgres,
+  Schedule,
 };
 
 const {

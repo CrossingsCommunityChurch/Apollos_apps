@@ -15,7 +15,7 @@ APP:
   JOBS_USERNAME: ${JOBS_USERNAME}
   JOBS_PASSWORD: ${JOBS_PASSWORD}
   FLAG_LIMIT: 1
-  DATABASE:
+DATABASE:
   URL: ${DATABASE_URL}
   OPTIONS:
     dialectOptions:
@@ -129,6 +129,9 @@ ROCK_MAPPINGS:
     WeekendContentItem:
       ContentChannelId: [21]
       EntityType: ContentChannelItem
+    LiveContentItem:
+      ContentChannelTypeId: [156]
+      EntityType: ContentChannelItem
     ContentItem:
       EntityType: ContentChannelItem
 
@@ -169,8 +172,12 @@ ROCK_MAPPINGS:
   MOBILE_DEVICE_TYPE_ID: 671
 
   SUNDAY_SERMON_SCHEDULE_CATEGORY_ID: 406
-  
+
   LIVESTREAM_CONTENT_CHANNEL_ID: 443
+  LIVESTREAM_EVENT_CONTENT_CHANNEL_ID: 588
+
+HOME_HEADER_FEATURES:
+  
 
 HOME_FEATURES:
   - type: ActionBar
@@ -194,15 +201,18 @@ HOME_FEATURES:
         url: 'https://crossings.church/give'
       },
     }]
+  #- algorithms: [DAILY_PRAYER]
+   # isCard: false
+    #type: PrayerList
+   # title: Daily Prayer
+    #subtitle: Join us in prayer
+  - algorithms: [UPCOMING_STREAMS]
+    type: LiveContentList
+    title: Live Now
   - algorithms: [USER_FEED]
     type: HeroList
     limit: 6
   # Commenting this out for now to be deployed after testing.
-  - algorithms: [DAILY_PRAYER]
-    isCard: false
-    type: PrayerList
-    title: Daily Prayer
-    subtitle: Join us in prayer
   - algorithms: [CONTENT_CHANNEL]
     contentChannelId: 19
     title: Teaching Series
@@ -232,14 +242,6 @@ HOME_FEATURES:
     type: ActionList
     algorithms:
       - type: UPCOMING_EVENTS
-  - title: Upcoming Streams
-    subtitle: What's streaming at Crossings
-    type: ActionList
-    algorithms:
-      - type: UPCOMING_STREAMS
-  - algorithms: [CAMPAIGN_ITEMS]
-    type: HeroList
-    isFeatured: true
   - title: FOR YOU
     algorithms: [SERMON_CHILDREN, PERSONA_FEED]
     subtitle: Explore what God calls you to today

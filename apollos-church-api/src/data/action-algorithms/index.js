@@ -1,4 +1,3 @@
-import { get } from 'lodash';
 import { ActionAlgorithm as baseAlgorithms } from '@apollosproject/data-connector-rock';
 import moment from 'moment-timezone';
 
@@ -11,7 +10,7 @@ class dataSource extends baseAlgorithms.dataSource {
   ACTION_ALGORITHMS = {
     ...this.ACTION_ALGORITHMS,
     UPCOMING_EVENTS: this.upcomingEventsAlgorithm.bind(this),
-    UPCOMING_STREAMS: this.upcomingStreamsAlgorithm.bind(this),
+    UPCOMING_STREAMS: this.allLiveStreamContentAlgorithm.bind(this),
   };
 
   async upcomingEventsAlgorithm() {
@@ -55,6 +54,12 @@ class dataSource extends baseAlgorithms.dataSource {
       action: 'OPEN_URL',
       summary: '',
     }));
+  }
+
+  async allLiveStreamContentAlgorithm() {
+    const { LiveStream } = this.context.dataSources;
+    const liveStreams = await LiveStream.getLiveStreams();
+    return liveStreams;
   }
 }
 

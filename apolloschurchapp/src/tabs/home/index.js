@@ -1,15 +1,10 @@
 import React, { useEffect } from 'react';
-import { Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Query } from '@apollo/client/react/components';
 import { gql, useApolloClient } from '@apollo/client';
 import { useNavigation } from '@react-navigation/native';
 
-import {
-  styled,
-  BackgroundView,
-  NavigationService,
-} from '@apollosproject/ui-kit';
+import { BackgroundView, NavigationService } from '@apollosproject/ui-kit';
 import {
   FeaturesFeedConnected,
   FEATURE_FEED_ACTION_MAP,
@@ -20,14 +15,8 @@ import { checkOnboardingStatusAndNavigate } from '@apollosproject/ui-onboarding'
 
 import { SearchButton } from '../../ui/Search';
 import { ONBOARDING_VERSION } from '../../ui/Onboarding';
+import LiveStreamListFeatureConnected from '../../live-feed/LiveStreamListFeatureConnected';
 import Logo from './logo';
-
-const LogoTitle = styled(({ theme }) => ({
-  height: theme.sizing.baseUnit,
-  margin: theme.sizing.baseUnit,
-  alignSelf: 'center',
-  resizeMode: 'contain',
-}))(Image);
 
 function handleOnPress({ action, ...props }) {
   if (FEATURE_FEED_ACTION_MAP[action]) {
@@ -74,6 +63,9 @@ const Home = () => {
                   navigation={navigation}
                   featureFeedId={data?.homeFeedFeatures?.id}
                   onPressActionItem={handleOnPress}
+                  additionalFeatures={{
+                    LiveStreamListFeature: LiveStreamListFeatureConnected,
+                  }}
                   ListHeaderComponent={
                     <>
                       <Logo />
