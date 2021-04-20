@@ -7,7 +7,6 @@ class Person extends personData.dataSource {
     try {
       // If we have a user
       const { id } = await Auth.getCurrentPerson();
-      console.log(`auth worked id is: ${id}`);
       const { guid: campusGuid, id: campusId } = await Campus.getForPerson({
         id,
       });

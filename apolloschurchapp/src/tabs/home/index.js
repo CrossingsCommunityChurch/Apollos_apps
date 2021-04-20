@@ -62,10 +62,10 @@ const Home = () => {
                   openUrl={openUrl}
                   navigation={navigation}
                   featureFeedId={data?.homeFeedFeatures?.id}
+                  onPressActionItem={handleOnPress}
                   additionalFeatures={{
                     LiveStreamListFeature: LiveStreamListFeatureConnected,
                   }}
-                  onPressActionItem={handleOnPress}
                   ListHeaderComponent={
                     <>
                       <Logo />

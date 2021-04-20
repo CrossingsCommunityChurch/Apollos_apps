@@ -32,6 +32,7 @@ ApollosConfig.loadJs({
           eventEndTime
           isLive
           webViewUrl
+          action
           media {
             sources {
               uri

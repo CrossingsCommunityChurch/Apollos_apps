@@ -39,7 +39,6 @@ const filterForValidStream = ({ eventStartTime, eventEndTime }) => {
 const filterForCurrentStreams = ({ eventStartTime, eventEndTime }) => {
   const start = parseISO(eventStartTime);
   const end = parseISO(eventEndTime);
-  console.log(`Times are ${start}`);
   return isWithinInterval(new Date(), { start, end });
 };
 
@@ -98,7 +97,6 @@ const evaluateNextRefetch = (liveStreams) => {
  * @param {array} liveStreams | Live Stream objects that should be managed
  */
 const useLiveStreams = (liveStreams) => {
-  console.log(`Live steam data is ${JSON.stringify(liveStreams)}`);
   const skip = !Array.isArray(liveStreams) || liveStreams.length === 0;
   const [nextRefetch, setNextRefetch] = useState(null);
 

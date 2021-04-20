@@ -9,7 +9,7 @@ export default gql`
     media: VideoMedia
     webViewUrl: String
     contentItem: ContentItem @cacheControl(maxAge: 10)
-
+    action: ACTION_FEATURE_ACTION
     relatedNode: Node
   }
   extend type Query {

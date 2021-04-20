@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Animated, FlatList, View, LogBox } from 'react-native';
+import { Animated, FlatList, View, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import PropTypes from 'prop-types';
 import { get, isEmpty, isNumber } from 'lodash';
@@ -9,7 +9,11 @@ import {
   TouchableScale,
   styled,
   withTheme,
+  withPlaceholder,
+  Placeholder,
+  H6,
 } from '@apollosproject/ui-kit';
+import { compose, pure } from 'recompose';
 
 import HorizontalFeatureFeed from '../ui/HorizontalFeatureFeed';
 import { useLiveStreams } from './hooks';
@@ -92,42 +96,52 @@ const CircularImagePosition = styled(({ theme }) => ({
   alignItems: 'center',
 }))(View);
 
-const LiveTouchable = ({ id, coverImage, withMargin }) => {
-  const navigation = useNavigation();
-  return (
-    <LiveItemContainer
-      withMargin={withMargin}
-      onPress={() =>
-        navigation.navigate('LiveStreamSingle', { liveStreamId: id })
-      }
-    >
-      <BorderWithPulse />
+const Title = compose(
+  styled(
+    ({ theme }) => ({
+      color: theme.colors.text.tertiary,
+    }),
+    'LiveItem.Title'
+  ),
+  withPlaceholder(Placeholder.Typography, { width: 75 }),
+  pure
+)(H6);
 
-      <CircularImagePosition>
-        <CirclularImage source={get(coverImage, 'sources[0]')} />
-      </CircularImagePosition>
-    </LiveItemContainer>
-  );
-};
+const LiveTouchable = ({ coverImage, withMargin, onPressItem, url, title }) => (
+  <LiveItemContainer
+    withMargin={withMargin}
+    onPress={() =>
+      onPressItem({
+        relatedNode: { url },
+        action: 'OPEN_URL',
+      })
+    }
+  >
+    <BorderWithPulse />
+    <CircularImagePosition>
+      <CirclularImage source={get(coverImage, 'sources[0]')} />
+    </CircularImagePosition>
+  </LiveItemContainer>
+);
 
-const renderItem = ({ item, index, dataLength }) => {
-  const { id, relatedNode, media, contentItem } = item;
-  console.log(`ContentItem is ${JSON.stringify(contentItem)}`);
+const renderItem = ({ item, index, dataLength, ...props }) => {
+  const { relatedNode, media, webViewUrl } = item;
   return (
     <LiveTouchable
       {...relatedNode}
-      id={id}
+      url={webViewUrl}
       media={media}
       withMargin={index < dataLength - 1}
+      {...props}
     />
   );
 };
 
-const LiveStreamsFeedFeature = ({ liveStreams }) => (
+const LiveStreamsFeedFeature = ({ liveStreams, ...props }) => (
   <FlatList
     data={liveStreams}
-    renderItem={(props) =>
-      renderItem({ ...props, dataLength: liveStreams.length })
+    renderItem={(items) =>
+      renderItem({ ...items, dataLength: liveStreams.length, ...props })
     }
     horizontal
   />
@@ -135,7 +149,8 @@ const LiveStreamsFeedFeature = ({ liveStreams }) => (
 
 const LiveStreamListFeatureConnected = ({
   featureId,
-  ItemSeparatorComponent,
+  onPressActionItem,
+  ...props
 }) => {
   const { loading, data } = useQuery(GET_LIVESTREAM_LIST_FEATURE, {
     fetchPolicy: 'network-only',
@@ -161,8 +176,8 @@ const LiveStreamListFeatureConnected = ({
         subtitle={subtitle}
         style={style}
         isLoading={loading}
+        {...props}
       />
-      {!!ItemSeparatorComponent && <ItemSeparatorComponent />}
     </View>
   ) : null;
 };

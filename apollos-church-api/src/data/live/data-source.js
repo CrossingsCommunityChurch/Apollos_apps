@@ -20,7 +20,6 @@ export default class LiveStream extends RockApolloDataSource {
       eventStartTime: '',
       eventEndTime: '',
       media: null,
-      url: '',
     };
   }
 
@@ -36,6 +35,7 @@ export default class LiveStream extends RockApolloDataSource {
         contentItem: item,
         relatedNode: { ...item, __type: ContentItem.resolveType(item) },
         webViewUrl: ContentItem.getWebviewURL(item),
+        action: 'OPEN_URL',
         ...(await this.getLiveStream()),
       }))
     );
