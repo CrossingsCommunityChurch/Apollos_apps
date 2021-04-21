@@ -157,8 +157,6 @@ ROCK_MAPPINGS:
   # These channels are also pulled when indexing searchable content.
   FEED_CONTENT_CHANNEL_IDS:
     - 21
-    - 22
-    - 423
 
   CAMPAIGN_CHANNEL_IDS:
     - 11
@@ -211,7 +209,8 @@ HOME_FEATURES:
     title: Live Now
   - algorithms: [USER_FEED]
     type: HeroList
-    limit: 6
+    title: Recent Sermon
+    limit: 1
   # Commenting this out for now to be deployed after testing.
   - algorithms: [CONTENT_CHANNEL]
     contentChannelId: 19
