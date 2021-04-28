@@ -24,7 +24,7 @@ const AVATAR_MULTIPLIER = 0.8;
 const LiveItemContainer = styled(({ theme, withMargin }) => ({
   flexDirection: 'column',
   justifyContent: 'center',
-  alignContent: 'center',
+  alignItems: 'center',
   marginRight: theme.sizing.baseUnit * (withMargin ? 0.5 : 0),
 }))(TouchableScale);
 
