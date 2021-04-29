@@ -112,20 +112,19 @@ const LiveImageContainer = styled(({ theme, withMargin }) => ({
   justifyContent: 'center',
   alignContent: 'center',
   marginRight: theme.sizing.baseUnit * (withMargin ? 0.5 : 0),
-}))(TouchableScale);
+}))(View);
 
 const LiveTouchable = ({ coverImage, withMargin, onPressItem, url, title }) => (
   <LiveItemContainer
     withMargin={withMargin}
+    onPress={() =>
+      onPressItem({
+        relatedNode: { url },
+        action: 'OPEN_URL',
+      })
+    }
   >
-    <LiveImageContainer
-        onPress={() =>
-          onPressItem({
-            relatedNode: { url },
-            action: 'OPEN_URL',
-          })
-        }
-    >
+    <LiveImageContainer>
       <BorderWithPulse />
       <CircularImagePosition>
         <CirclularImage source={get(coverImage, 'sources[0]')} />
