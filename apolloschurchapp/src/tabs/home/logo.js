@@ -27,9 +27,8 @@ const Title = styled(({ theme }) => ({
 }))(UIText);
 
 const BrandIcon = withTheme(({ theme }) => ({
-  fill: theme.colors.primary,
   name: 'BrandIcon',
-  size: 20,
+  size: 25,
 }))(Icon);
 
 const Logo = () => (

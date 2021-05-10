@@ -7,7 +7,6 @@ import { styled, withTheme, Touchable, Icon } from '@apollosproject/ui-kit';
 const SearchIcon = withTheme(({ theme: { colors, sizing: { baseUnit } } }) => ({
   name: 'search',
   size: baseUnit * 2,
-  fill: colors.primary,
 }))(Icon);
 
 const SearchButtonContainer = styled(({ theme: { sizing: { baseUnit } } }) => ({
