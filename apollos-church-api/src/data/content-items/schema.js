@@ -44,10 +44,12 @@ export default gql`
     childContentItemsConnection(
       first: Int
       after: String
+      orderBy: ContentItemsConnectionOrderInput
     ): ContentItemsConnection
     siblingContentItemsConnection(
       first: Int
       after: String
+      orderBy: ContentItemsConnectionOrderInput
     ): ContentItemsConnection
     parentChannel: ContentChannel
     theme: Theme

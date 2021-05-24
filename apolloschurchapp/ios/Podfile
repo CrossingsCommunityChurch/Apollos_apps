@@ -24,7 +24,7 @@ target 'Crossings' do
   # you should disable these next few lines.
   #use_flipper!
   post_install do |installer|
-    #flipper_post_install(installer)
+   # flipper_post_install(installer)
       installer.pods_project.targets.each do |target|
        if target.name == 'react-native-config'
          phase = target.project.new(Xcodeproj::Project::Object::PBXShellScriptBuildPhase)
