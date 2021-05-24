@@ -147,7 +147,7 @@ DerivedData
 fastlane/report.xml
 
 # symbols
-Crossings.app.dSYM.zip
+*.app.dSYM.zip
 
 # iOS keys
 *.p8
