@@ -4,20 +4,16 @@ import { useNavigation } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { styled, NavigationService } from '@apollosproject/ui-kit';
 import { useApolloClient } from '@apollo/client';
-
+import { createFeatureFeedTab } from '@apollosproject/ui-connected';
 import { checkOnboardingStatusAndNavigate } from '@apollosproject/ui-onboarding';
 import { SearchButton } from '../ui/Search';
 import { ONBOARDING_VERSION } from '../ui/Onboarding';
-import { createFeatureFeedTab } from './Tab';
+import LiveStreamListFeatureConnected from '../live-feed/LiveStreamListFeatureConnected';
 import Connect from './connect';
 import tabBarIcon from './tabBarIcon';
+import Logo from './logo';
 
-const HeaderLogo = styled(({ theme }) => ({
-  height: theme.sizing.baseUnit,
-  resizeMode: 'contain',
-}))(Image);
-
-const HeaderCenter = () => <HeaderLogo source={require('./wordmark.png')} />;
+const HeaderCenter = () => <Logo />;
 const HeaderRight = () => {
   const navigation = useNavigation();
   return <SearchButton onPress={() => navigation.navigate('Search')} />;
@@ -30,6 +26,11 @@ const HomeTab = createFeatureFeedTab({
     headerCenter: HeaderCenter,
     headerRight: HeaderRight,
     headerLargeTitle: false,
+  },
+  tabProps: {
+    additionalFeatures: {
+      LiveStreamListFeature: LiveStreamListFeatureConnected,
+    },
   },
   tabName: 'Home',
   feedName: 'HOME',

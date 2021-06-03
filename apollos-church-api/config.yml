@@ -15,22 +15,13 @@ APP:
   ROOT_API_URL: ${ROOT_URL}
   JOBS_USERNAME: ${JOBS_USERNAME}
   JOBS_PASSWORD: ${JOBS_PASSWORD}
-  FLAG_LIMIT: 1
 DATABASE:
   URL: ${DATABASE_URL}
 BUGSNAG:
-  ## Optional, but you'll need to remove references to @apollosproject/bugsnag if you don't wish to use.
   API_KEY: ${BUGSNAG_KEY}
 ROCK:
-  URL: https://rock.crossings.church/api
+  URL: ${ROCK_URL}
   API_TOKEN: ${ROCK_TOKEN}
-  IMAGE_URL: https://rock.crossings.church/GetImage.ashx
-  SHARE_URL: https://rock.crossings.church
-  # This should match the timezone of the Rock server
-  TIMEZONE: "America/Chicago"
-  USE_PLUGIN: true
-  SHOW_INACTIVE_CONTENT: ${ROCK_SHOW_INACTIVE_CONTENT}
-  VERSION: 12
 UNIVERSAL_LINKS:
   # This should be your app's bundle ID, as found in your info.plist.
   APPLE_APP_ID: church.crossings.rock
@@ -40,7 +31,7 @@ UNIVERSAL_LINKS:
   APP_STORE_LINK: https://crossings.church/app
   PLAY_STORE_LINK: https://crossings.church/app
   # Your app Id, as found in your app/build.gradle.
-  GOOGLE_APP_ID: church.crossings.rock
+  GOOGLE_APP_ID: church.crossings.rocks
   # https://docs.getsocial.im/knowledge-base/android-signing-key-sha256/
   GOOGLE_KEYSTORE_SHA256: EC:6E:B5:5A:62:53:1E:53:FF:C4:BA:A7:CB:29:77:57:71:9D:65:2F:AF:69:41:A3:AD:2B:C4:55:A1:7A:07:03
 ONE_SIGNAL:
@@ -48,7 +39,6 @@ ONE_SIGNAL:
   REST_KEY: ${ONE_SIGNAL_REST_KEY}
 CHURCH_ONLINE:
   URL: https://venue.online.church/
-  MEDIA_URLS: []
   WEB_VIEW_URL: https://venue.online.church/
 ALGOLIA:
   APPLICATION_ID: ${ALGOLIASEARCH_APPLICATION_ID}
@@ -135,12 +125,6 @@ ROCK_MAPPINGS:
     # Id of the category used to store all persona dataviews
     PersonaId: 498
 
-  # Apollos will pull these content channels and expose them in the app on the discover screen.
-  DISCOVER_CONTENT_CHANNEL_IDS:
-    - 18
-    - 19
-    - 23
-    - 376
   # Todo add events to be returnable type 
   SEARCH_CONTENT_CHANNEL_IDS:
     - 21
@@ -148,14 +132,10 @@ ROCK_MAPPINGS:
     - 423
     - 23
 
-  # Apollos will pull content items from these channels and expose them on the user feed
-  # However, it will not expose the channel itself.
-  # These channels are also pulled when indexing searchable content.
-  FEED_CONTENT_CHANNEL_IDS:
+  ALL_CONTENT_CHANNELS:
     - 21
-
-  CAMPAIGN_CHANNEL_IDS:
-    - 11
+    - 22
+    - 23
 
   SERMON_CHANNEL_ID: 21
 
@@ -170,129 +150,172 @@ ROCK_MAPPINGS:
   LIVESTREAM_CONTENT_CHANNEL_ID: 443
   LIVESTREAM_EVENT_CONTENT_CHANNEL_ID: 588
 
-HOME_HEADER_FEATURES:
-  
-
-HOME_FEATURES:
-  - type: ActionBar
-    actions: [{
-      title: Check In,
-      icon: check,
-      id: 123456789,
-      action: OPEN_AUTHENTICATED_URL,
-      relatedNode: {
-        __typename: Url,
-        url: 'https://crossings.church/self-checkin',
-      }
-    },
-    {
-      title: Give,
-      icon: plus,
-      id: 1234,
-      action: OPEN_URL,
-      relatedNode: {
-        __typename: Url,
-        url: 'https://crossings.church/give'
+TABS:
+  HOME:
+    - type: ActionBar
+      actions: [{
+        title: Check In,
+        icon: check,
+        id: 123456789,
+        action: OPEN_AUTHENTICATED_URL,
+        relatedNode: {
+          __typename: Url,
+          url: 'https://crossings.church/self-checkin',
+        }
       },
-    }]
-  #- algorithms: [DAILY_PRAYER]
-   # isCard: false
-    #type: PrayerList
-   # title: Daily Prayer
-    #subtitle: Join us in prayer
-  - algorithms: [UPCOMING_STREAMS]
-    type: LiveContentList
-    title: Live Now
-  - algorithms: [USER_FEED]
-    type: HeroList
-    title: Recent Sermon
-    limit: 1
-  # Commenting this out for now to be deployed after testing.
-  - algorithms: [CONTENT_CHANNEL]
-    contentChannelId: 19
-    title: Teaching Series
-    subtitle: Weekly Teachings
-    type: HorizontalCardList
-    limit: 5
-    primaryAction:
-      action: OPEN_CHANNEL
-      title: See More
-      relatedNode:
-        __typename: ContentChannel
-        id: 19
-  - algorithms: [CONTENT_CHANNEL]
-    contentChannelId: 23
-    title: Devotions
-    subtitle: Weekly Studies
-    type: HorizontalCardList
-    limit: 5
-    primaryAction:
-      action: OPEN_CHANNEL
-      title: See More
-      relatedNode:
-        __typename: ContentChannel
-        id: 23
-  - title: Upcoming Events
-    subtitle: What's happening at Crossings
-    type: ActionList
-    algorithms:
-      - type: UPCOMING_EVENTS
-  - title: FOR YOU
-    algorithms: [SERMON_CHILDREN, PERSONA_FEED]
-    subtitle: Explore what God calls you to today
-    type: ActionList
-  - algorithms: [PERSONA_FEED]
-    subtitle: Continue
-    type: HorizontalCardList
-  - title: RECOMMENDED
-    algorithms: [SERMON_CHILDREN]
-    subtitle: For Him
-    type: VerticalCardList
- 
+      {
+        title: Give,
+        icon: plus,
+        id: 1234,
+        action: OPEN_URL,
+        relatedNode: {
+          __typename: Url,
+          url: 'https://crossings.church/give'
+        },
+      }]
+    - algorithms: [UPCOMING_STREAMS]
+      type: LiveContentList
+      title: Live Now
+    - algorithms:
+      - type: CONTENT_FEED
+        arguments:
+          channelIds:
+            - 21
+          limit: 5
+      type: HeroList
+      title: Recent Sermons
+    #- algorithms: [CONTENT_CHANNEL]
+    #  contentChannelId: 19
+    #  title: Teaching Series
+    #  subtitle: Weekly Teachings
+    #  type: HorizontalCardList
+    #  limit: 5
+    #  primaryAction:
+    #    action: OPEN_CHANNEL
+    #    title: See More
+    #    relatedNode:
+    #      __typename: ContentChannel
+    #      id: 19
+    #- algorithms: [CONTENT_CHANNEL]
+    #  contentChannelId: 23
+    #  title: Devotions
+    #  subtitle: Weekly Studies
+    #  type: HorizontalCardList
+    #  limit: 5
+    #  primaryAction:
+    #    action: OPEN_CHANNEL
+    #    title: See More
+    #    relatedNode:
+    #      __typename: ContentChannel
+    #      id: 23
+    - title: Upcoming Events
+      subtitle: What's happening at Crossings
+      type: ActionList
+      algorithms:
+        - type: UPCOMING_EVENTS
+    - title: FOR YOU
+      algorithms: [SERMON_CHILDREN, PERSONA_FEED]
+      subtitle: Explore what God calls you to today
+      type: ActionList
+    - algorithms: [PERSONA_FEED]
+      subtitle: Continue
+      type: HorizontalCardList
+    - title: RECOMMENDED
+      algorithms: [SERMON_CHILDREN]
+      subtitle: For Him
+      type: VerticalCardList
+#NEED TO NAIL DOWN WHAT TO SHOW HERE.  
+  READ:
+      - algorithms:
+          - type: CONTENT_FEED
+            arguments:
+              channelIds:
+                - 23
+              limit: 5
+        type: HorizontalCardList
+        subtitle: Devotionals
+        primaryAction:
+          action: OPEN_CHANNEL
+          title: 'Read More'
+          relatedNode:
+            __typename: ContentChannel
+            id: 23
+            name: Devotionals
+  
+  WATCH:
+      - algorithms:
+          - type: LATEST_SERIES_CHILDREN
+            arguments:
+              channelId: 18
+        type: HeroList
+        title: Catch up
+        subtitle: Latest Sermon Series
+    #need to limit this one to not show all existing sermon series and to point to the read more action
+      - algorithms:
+          - type: CONTENT_FEED
+            arguments:
+              channelIds:
+                - 18
+        type: VerticalCardList
+        subtitle: All Sermon Series
+      - algorithms:
+          - type: CONTENT_FEED
+            arguments:
+              channelIds:
+                - 19
+                - 422
+              limit: 4
+        type: HorizontalCardList
+        subtitle: Latest Teaching Series
+      #- algorithms:
+      #    - type: CONTENT_FEED
+      #      arguments:
+      #        channelIds:
+      #          - 19
+      #          - 422
+      #        limit: 
+      #  type: HorizontalCardList
+      #  subtitle: Podcasts
+      #  primaryAction:
+      #    action: OPEN_CHANNEL
+      #    title: 'Read More'
+      #    relatedNode:
+      #      __typename: ContentChannel
+      #      id: 5
+      #      name: Podcasts
+      #- algorithms:
+      #    - type: CONTENT_FEED
+      #      arguments:
+      #        channelIds:
+      #          - 6
+      #        limit: 3
+      #  type: HorizontalCardList
+      #  title: Videos
+      #  primaryAction:
+      #    action: OPEN_CHANNEL
+      #    title: 'Read More'
+      #    relatedNode:
+      #      __typename: ContentChannel
+      #      id: 6
+      #      name: Videos
+      #- algorithms:
+      #    - type: CONTENT_FEED
+      #      arguments:
+      #        channelIds:
+      #          - 8
+      #        limit: 3
+      #  type: HorizontalCardList
+      #  subtitle: Something Else
 
-DISCOVER_FEATURES:
-  - algorithms:
-      - type: CONTENT_CHANNEL
-        arguments:
-          contentChannelId: 18
-          limit: 3
-    type: HorizontalCardList
-    subtitle: Sunday Messages
-    primaryAction:
-     action: OPEN_CHANNEL
-     title: 'show More'
-     relatedNode:
-       __typename: ContentChannel
-       id: 18
-       name: Teaching Series
-  - algorithms:
-      - type: CONTENT_CHANNEL
-        arguments:
-          contentChannelId: 19
-          limit: 3
-    type: HorizontalCardList
-    subtitle: Teaching Series
-    primaryAction:
-      action: OPEN_CHANNEL
-      title: 'show More'
-      relatedNode:
-        __typename: ContentChannel
-        id: 19
-        name: Teaching Series
-  - algorithms:
-      - type: CONTENT_CHANNEL
-        arguments:
-          contentChannelId: 423
-          limit: 3
-    type: HorizontalCardList
-    subtitle: The Gathering Series
-    primaryAction:
-      action: OPEN_CHANNEL
-      title: 'show More'
-      relatedNode:
-        __typename: ContentChannel
-        id: 422
-        name: The Gathering Series
+  PRAY:
+    - algorithms: [DAILY_PRAYER]
+      isCard: false
+      type: PrayerList
+      title: Daily Prayer
+    - type: VerticalPrayerList
+      title: Your Prayers
+
+
 
 # Default mapping of field types -> ids. There's probably no reason to edit this.
 ROCK_CONSTANTS:

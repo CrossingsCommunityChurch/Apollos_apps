@@ -53,12 +53,16 @@ const BorderWithPulse = withTheme()(({ theme, ...props }) => {
     });
   };
 
-  useEffect(() => {
-    fadeIn();
-  }, []);
+  useEffect(
+    () => {
+      fadeIn();
+    },
+    [fadeIn]
+  );
 
   return (
     <Animated.View
+      // eslint-disable-next-line react-native/no-inline-styles
       style={{
         opacity,
         height: themeSize,
