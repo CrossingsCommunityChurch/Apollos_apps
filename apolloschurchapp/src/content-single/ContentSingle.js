@@ -19,6 +19,7 @@ const PaddedNodeSingleConnected = styled(({ theme: { sizing } }) => ({
 
 const ContentSingle = (props) => {
   const nodeId = props.route?.params?.itemId;
+  console.log('type is ', typeof nodeId);
   const { data, loading } = useQuery(
     gql`
       query getContentNodeTitle($nodeId: ID!) {
