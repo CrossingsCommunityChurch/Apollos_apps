@@ -7,17 +7,17 @@ import {
 
 import * as Analytics from '@apollosproject/data-connector-analytics';
 import * as Scripture from '@apollosproject/data-connector-bible';
-import * as LiveStream from '@apollosproject/data-connector-church-online';
+// import * as LiveStream from '@apollosproject/data-connector-church-online';
 import * as Cloudinary from '@apollosproject/data-connector-cloudinary';
-import * as Search from '@apollosproject/data-connector-algolia-search';
+// import * as Search from '@apollosproject/data-connector-algolia-search';
 import * as Pass from '@apollosproject/data-connector-passes';
 import * as Cache from '@apollosproject/data-connector-redis-cache';
-import * as Sms from '@apollosproject/data-connector-twilio';
+// import * as Sms from '@apollosproject/data-connector-twilio';
 import {
   Followings,
   Interactions,
   RockConstants,
-  ContentItem,
+  // ContentItem,
   ContentChannel,
   Sharable,
   Auth,
@@ -27,15 +27,27 @@ import {
   Campus,
   Group,
   BinaryFiles,
-  Feature,
-  FeatureFeed,
-  ActionAlgorithm,
-  Event,
+  // Feature,
+  // FeatureFeed,
+  // ActionAlgorithm,
+  // Event,
   PrayerRequest,
   Persona,
-  Person as RockPerson,
+  // Person as RockPerson,
 } from '@apollosproject/data-connector-rock';
 
+import * as ContentItem from './content-items';
+import * as Event from './event';
+import * as Feature from './features';
+import * as FeatureFeed from './feature-feeds';
+import * as RockPerson from './person';
+import * as Sms from './clearstream';
+import * as ActionAlgorithm from './action-algorithms';
+import * as Search from './search';
+import * as LiveStream from './live';
+import * as Schedule from './schedule';
+
+// eslint-disable-next-line import/order
 import {
   Comment,
   UserFlag,
@@ -94,6 +106,7 @@ const data = {
   NotificationPreference,
   Person, // An extension of Postgres person. Will be eliminated in the near future so you can use just postgres/Person.
   OneSignal,
+  Schedule,
 };
 
 const {
