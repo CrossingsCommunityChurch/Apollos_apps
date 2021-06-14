@@ -113,6 +113,14 @@
         {
           "valueFrom": "JOBS_PASSWORD",
           "name": "JOBS_PASSWORD"
+        },
+        {
+          "valueFrom": "ROCK_URL",
+          "name": "ROCK_URL"
+        },
+        {
+          "valueFrom": "DATABASE_URL",
+          "name": "DATABASE_URL"
         }
       ],
       "mountPoints": [],
