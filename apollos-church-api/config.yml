@@ -17,6 +17,14 @@ APP:
   JOBS_PASSWORD: ${JOBS_PASSWORD}
 DATABASE:
   URL: ${DATABASE_URL}
+  OPTIONS: {
+    dialectOptions: {
+      ssl: {
+          require: true,
+          rejectUnauthorized: false
+      }
+    }
+  }
 BUGSNAG:
   API_KEY: ${BUGSNAG_KEY}
 ROCK:
@@ -43,7 +51,7 @@ CHURCH_ONLINE:
 ALGOLIA:
   APPLICATION_ID: ${ALGOLIASEARCH_APPLICATION_ID}
   API_KEY: ${ALGOLIASEARCH_API_KEY}
-  SEARCH_INDEX: Beta_ContentItem
+  SEARCH_INDEX: TEST_ContentItem
   # Configure Algolia custom settings here
   # https://www.algolia.com/doc/api-reference/settings-api-parameters/
   CONFIGURATION:
