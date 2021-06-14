@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-import { Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { styled, NavigationService } from '@apollosproject/ui-kit';
+import { NavigationService } from '@apollosproject/ui-kit';
 import { useApolloClient } from '@apollo/client';
 import { createFeatureFeedTab } from '@apollosproject/ui-connected';
 import { checkOnboardingStatusAndNavigate } from '@apollosproject/ui-onboarding';
