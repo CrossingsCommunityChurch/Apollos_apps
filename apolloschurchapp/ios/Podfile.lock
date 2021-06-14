@@ -265,7 +265,7 @@ PODS:
     - react-native-google-cast/RNGoogleCast
   - react-native-google-cast/RNGoogleCast (3.4.1):
     - React
-  - react-native-image-picker (3.8.0):
+  - react-native-image-picker (3.8.1):
     - React-Core
   - react-native-maps (0.27.1):
     - React
@@ -287,7 +287,7 @@ PODS:
     - react-native-video/Video (= 5.1.1)
   - react-native-video/Video (5.1.1):
     - React-Core
-  - react-native-webview (11.6.2):
+  - react-native-webview (11.6.4):
     - React-Core
   - React-RCTActionSheet (0.63.4):
     - React-Core/RCTActionSheetHeaders (= 0.63.4)
@@ -364,7 +364,7 @@ PODS:
     - React
   - RNCPicker (1.16.1):
     - React-Core
-  - RNDateTimePicker (3.5.0):
+  - RNDateTimePicker (3.5.2):
     - React-Core
   - RNDeviceInfo (4.0.1):
     - React
@@ -374,7 +374,7 @@ PODS:
     - React-Core
   - RNPermissions (2.2.2):
     - React-Core
-  - RNReanimated (2.1.0):
+  - RNReanimated (2.2.0):
     - DoubleConversion
     - FBLazyVector
     - FBReactNativeSpec
@@ -671,7 +671,7 @@ SPEC CHECKSUMS:
   react-native-geolocation: c956aeb136625c23e0dce0467664af2c437888c9
   react-native-geolocation-service: 7c9436da6dfdecd9526c62eac62ea2bc3f0cc8ea
   react-native-google-cast: 9ead682d0026c857318efa8ea9c6f58b6142651a
-  react-native-image-picker: ec63410edbcacc543acd77dcccfc056da39320ab
+  react-native-image-picker: 31971f6184e7c1dcb4fc1f122e1ba2c3fb11ef1e
   react-native-maps: f4b89da81626ad7f151a8bfcb79733295d31ce5c
   react-native-music-control: dcfe5b61e56a15898c4618579cb8ce612c9d21a8
   react-native-onesignal: ad2eaab1517951e50d19fa3eccd16d3048167181
@@ -680,7 +680,7 @@ SPEC CHECKSUMS:
   react-native-safe-area-context: f0906bf8bc9835ac9a9d3f97e8bde2a997d8da79
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
   react-native-video: 0bb76b6d6b77da3009611586c7dbf817b947f30e
-  react-native-webview: 193d233c29eacce1f42ca2637dab7ba79c25a6de
+  react-native-webview: 1a19adb5578cdf7f005b7961dcc50c1c6b70f41b
   React-RCTActionSheet: 89a0ca9f4a06c1f93c26067af074ccdce0f40336
   React-RCTAnimation: 1bde3ecc0c104c55df246eda516e0deb03c4e49b
   React-RCTBlob: a97d378b527740cc667e03ebfa183a75231ab0f0
@@ -698,12 +698,12 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
   RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
   RNCPicker: 61c7a0645b9e4ac67960aa7f22a3effcecfdfb8d
-  RNDateTimePicker: d4f276aabaf26386bb4dca86e8c92087e7151ba0
+  RNDateTimePicker: 7658208086d86d09e1627b5c34ba0cf237c60140
   RNDeviceInfo: 687c1b2ab6d86ff1ca1208783320cd144138c7f2
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNInAppBrowser: 48b95ba7a4eaff5cc223bca338d3e319561dbd1b
   RNPermissions: 5df468064df661a4c8c017e2791ce90d7695eea5
-  RNReanimated: 70f662b5232dd5d19ccff581e919a54ea73df51c
+  RNReanimated: d9da990fc90123f4ffbfdda93d00fc15174863a8
   RNScreens: c277bfc4b5bb7c2fe977d19635df6f974f95dfd6
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6

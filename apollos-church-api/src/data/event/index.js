@@ -1,5 +1,4 @@
 import { Event } from '@apollosproject/data-connector-rock';
-import ical from 'node-ical';
 import moment from 'moment-timezone';
 import ApollosConfig from '@apollosproject/config';
 import resolver from './resolver';
@@ -7,7 +6,7 @@ import resolver from './resolver';
 // Re-work this after Rock update to v12 to use the eventscheduledinstance lavatemplate.
 
 const { ROCK_CONSTANTS } = ApollosConfig;
-const imageURL = 'images.crossings.church';
+const imageURL = 'images.crossings.church/fit-in/700x700';
 
 class dataSource extends Event.dataSource {
   async getUpcomingEventsByCampus({ limit = null, campusId } = {}) {
