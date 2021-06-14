@@ -1,10 +1,13 @@
 import React from 'react';
 import { View, Platform } from 'react-native';
 import { styled, withTheme, Icon, UIText } from '@apollosproject/ui-kit';
+import { useNavigation } from '@react-navigation/native';
+import { SearchButton } from '../ui/Search';
 
 const Container = styled(({ theme }) => ({
+  width: '96%',
   alignItems: 'center',
-  justifyContent: 'flex-start',
+  justifyContent: 'space-between',
   paddingHorizontal: theme.sizing.baseUnit,
   paddingVertical: theme.sizing.baseUnit,
   flexDirection: 'row',
@@ -13,10 +16,11 @@ const Container = styled(({ theme }) => ({
 const Title = styled(({ theme }) => ({
   textTransform: 'uppercase',
   fontWeight: Platform.select({
-    ios: '900',
+    ios: '800',
     android: 'bold',
   }),
   marginLeft: 5,
+  marginRight: 7,
   fontSize: 16,
   color: theme.colors.text.primary,
   ...Platform.select({
@@ -31,11 +35,15 @@ const BrandIcon = withTheme(({ theme }) => ({
   size: 25,
 }))(Icon);
 
-const Logo = () => (
-  <Container>
-    <BrandIcon />
-    <Title>Crossings Community Church</Title>
-  </Container>
-);
+const Logo = () => {
+  const Navigation = () => useNavigation();
+  return (
+    <Container>
+      <BrandIcon />
+      <Title>Crossings Community Church</Title>
+      <SearchButton onPress={() => Navigation.navigate('Search')} />
+    </Container>
+  );
+};
 
 export default Logo;
