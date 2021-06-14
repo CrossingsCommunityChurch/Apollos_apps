@@ -56,8 +56,6 @@ ApollosConfig.loadJs({
       fragment LiveNodeFragment on LiveNode {
         liveStream {
           id
-          eventStartTime
-          eventEndTime
           isLive
           media {
             sources {
