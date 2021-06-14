@@ -249,7 +249,7 @@ TABS:
               channelId: 18
         type: HeroList
         title: Catch up
-        subtitle: Latest Sermon Series
+        subtitle: Latest Sermons
     #need to limit this one to not show all existing sermon series and to point to the read more action
       - algorithms:
           - type: CONTENT_FEED
@@ -257,6 +257,12 @@ TABS:
               channelIds:
                 - 18
               limit: 6
+        primaryAction:
+        action: OPEN_CHANNEL
+        title: See More
+        relatedNode:
+          __typename: ContentChannel
+          id: 18
         type: VerticalCardList
         subtitle: All Sermon Series
       - algorithms:
