@@ -14,8 +14,8 @@ class dataSource extends baseAlgorithms.dataSource {
   };
 
   async upcomingEventsAlgorithm() {
-    const { Event, Person } = this.context.dataSources;
-    const { campusId } = await Person.getCurrentUserCampusId();
+    const { Event, RockPerson } = this.context.dataSources;
+    const { campusId } = await RockPerson.getCurrentUserCampusId();
     if (!campusId) {
       return [];
     }
