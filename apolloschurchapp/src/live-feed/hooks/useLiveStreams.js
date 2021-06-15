@@ -39,6 +39,7 @@ const filterForValidStream = ({ eventStartTime, eventEndTime }) => {
 const filterForCurrentStreams = ({ eventStartTime, eventEndTime }) => {
   const start = parseISO(eventStartTime);
   const end = parseISO(eventEndTime);
+  // Need to modify this to show as being live 15 mins before to match website.
   return isWithinInterval(new Date(), { start, end });
 };
 
