@@ -1,4 +1,4 @@
-package church.crossings.rocks;
+package church.crossings.app;
 import android.os.Bundle;
 import org.devio.rn.splashscreen.SplashScreen;
 import com.facebook.react.ReactActivity;
