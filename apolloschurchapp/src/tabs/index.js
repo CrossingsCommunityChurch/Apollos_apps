@@ -65,7 +65,7 @@ const TabNavigator = () => {
   const client = useApolloClient();
   // this is only used by the tab loaded first
   // if there is a new version of the onboarding flow,
-  // we'll navigate there first to show new screen
+  // we'll navigate there first to show new screens
   useEffect(
     () => {
       checkOnboardingStatusAndNavigate({
