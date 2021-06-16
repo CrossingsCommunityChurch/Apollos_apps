@@ -2,7 +2,12 @@ import React from 'react';
 import { View, Image } from 'react-native';
 import { Query } from '@apollo/client/react/components';
 import PropTypes from 'prop-types';
-import { requestPermissions } from '@apollosproject/ui-notifications';
+import {
+  checkNotifications,
+  openSettings,
+  requestNotifications,
+  RESULTS,
+} from 'react-native-permissions';
 import {
   styled,
   BackgroundView,
@@ -85,7 +90,19 @@ function Onboarding({ navigation, route }) {
                 />
                 <AskNotificationsConnected
                   onPressPrimary={swipeForward}
-                  onRequestPushPermissions={requestPermissions}
+                  onRequestPushPermissions={(update) => {
+                    checkNotifications().then((checkRes) => {
+                      if (checkRes.status === RESULTS.DENIED) {
+                        requestNotifications(['alert', 'badge', 'sound']).then(
+                          () => {
+                            update();
+                          }
+                        );
+                      } else {
+                        openSettings();
+                      }
+                    });
+                  }}
                   BackgroundComponent={
                     <ImageContainer>
                       <StyledImage
