@@ -40,7 +40,7 @@ const Logo = () => {
   return (
     <Container>
       <BrandIcon />
-      <Title>Crossings Community Church</Title>
+      <Title>Crossings</Title>
       <SearchButton onPress={() => Navigation.navigate('Search')} />
     </Container>
   );
