@@ -77,9 +77,9 @@ PODS:
   - libevent (2.1.12)
   - OneSignal (2.15.2)
   - OpenSSL-Universal (1.1.180)
-  - Permission-Notifications (2.2.2):
+  - Permission-Notifications (3.0.4):
     - RNPermissions
-  - Permission-PhotoLibrary (2.2.2):
+  - Permission-PhotoLibrary (3.0.4):
     - RNPermissions
   - Protobuf (3.17.0)
   - RCTRequired (0.63.4)
@@ -372,7 +372,7 @@ PODS:
     - React-Core
   - RNInAppBrowser (3.5.1):
     - React-Core
-  - RNPermissions (2.2.2):
+  - RNPermissions (3.0.4):
     - React-Core
   - RNReanimated (2.2.0):
     - DoubleConversion
@@ -437,8 +437,8 @@ DEPENDENCIES:
   - FlipperKit/SKIOSNetworkPlugin (= 0.75.1)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
-  - Permission-Notifications (from `../node_modules/react-native-permissions/ios/Notifications.podspec`)
-  - Permission-PhotoLibrary (from `../node_modules/react-native-permissions/ios/PhotoLibrary.podspec`)
+  - Permission-Notifications (from `../node_modules/react-native-permissions/ios/Notifications`)
+  - Permission-PhotoLibrary (from `../node_modules/react-native-permissions/ios/PhotoLibrary`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
   - React (from `../node_modules/react-native/`)
@@ -526,9 +526,9 @@ EXTERNAL SOURCES:
   glog:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   Permission-Notifications:
-    :path: "../node_modules/react-native-permissions/ios/Notifications.podspec"
+    :path: "../node_modules/react-native-permissions/ios/Notifications"
   Permission-PhotoLibrary:
-    :path: "../node_modules/react-native-permissions/ios/PhotoLibrary.podspec"
+    :path: "../node_modules/react-native-permissions/ios/PhotoLibrary"
   RCTRequired:
     :path: "../node_modules/react-native/Libraries/RCTRequired"
   RCTTypeSafety:
@@ -653,8 +653,8 @@ SPEC CHECKSUMS:
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   OneSignal: 9531e385388565f4d31797ddadbe0fcc786430ec
   OpenSSL-Universal: 1aa4f6a6ee7256b83db99ec1ccdaa80d10f9af9b
-  Permission-Notifications: 9c6b5cc4f0e6599e9fc3395b77cebddc48f1be41
-  Permission-PhotoLibrary: 8227a6ed9f6a971537afe63742d54f5f23a38fe2
+  Permission-Notifications: 5b4a12a9b52866667423c93d3af8e43b81872cf4
+  Permission-PhotoLibrary: 440f206f0d36e5951c4c9b28567f60471fdddfb5
   Protobuf: 7327d4444215b5f18e560a97f879ff5503c4581c
   RCTRequired: 082f10cd3f905d6c124597fd1c14f6f2655ff65e
   RCTTypeSafety: 8c9c544ecbf20337d069e4ae7fd9a377aadf504b
@@ -702,13 +702,13 @@ SPEC CHECKSUMS:
   RNDeviceInfo: 687c1b2ab6d86ff1ca1208783320cd144138c7f2
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNInAppBrowser: 48b95ba7a4eaff5cc223bca338d3e319561dbd1b
-  RNPermissions: 5df468064df661a4c8c017e2791ce90d7695eea5
+  RNPermissions: c46788f4cd402287425983e04a4c9bb4356036eb
   RNReanimated: d9da990fc90123f4ffbfdda93d00fc15174863a8
   RNScreens: c277bfc4b5bb7c2fe977d19635df6f974f95dfd6
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 05a016179168f97baac4c05d1b3629c19b5e14b0
+PODFILE CHECKSUM: b040315142a290349ee397eafb9e45de429eaba7
 
 COCOAPODS: 1.10.1

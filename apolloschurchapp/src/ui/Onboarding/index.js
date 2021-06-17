@@ -4,6 +4,12 @@ import { Query } from '@apollo/client/react/components';
 import PropTypes from 'prop-types';
 import { requestPermissions } from '@apollosproject/ui-notifications';
 import {
+  checkNotifications,
+  openSettings,
+  requestNotifications,
+  RESULTS,
+} from 'react-native-permissions';
+import {
   styled,
   BackgroundView,
   NavigationService,
@@ -84,8 +90,25 @@ function Onboarding({ navigation, route }) {
                   }
                 />
                 <AskNotificationsConnected
+                  description={
+                    'Get updates when people pray for you, and receive reminders and announcements from your NewSpring family.'
+                  }
+                  onRequestPushPermissions={(update) => {
+                    checkNotifications().then((checkRes) => {
+                      console.log('checkRes is ', checkRes);
+                      if (checkRes.status === RESULTS.DENIED) {
+                        requestNotifications(['alert', 'badge', 'sound']).then(
+                          () => {
+                            update();
+                          }
+                        );
+                      } else {
+                        openSettings();
+                      }
+                    });
+                  }}
+                  primaryNavText={'Finish'}
                   onPressPrimary={swipeForward}
-                  onRequestPushPermissions={requestPermissions}
                   BackgroundComponent={
                     <ImageContainer>
                       <StyledImage
