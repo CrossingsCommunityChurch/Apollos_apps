@@ -104,9 +104,9 @@ const data = {
   Persona,
   Notification,
   NotificationPreference,
-  Person, // An extension of Postgres person. Will be eliminated in the near future so you can use just postgres/Person.
   OneSignal,
   Schedule,
+  Person, // An extension of Postgres person. Will be eliminated in the near future so you can use just postgres/Person.
 };
 
 const {

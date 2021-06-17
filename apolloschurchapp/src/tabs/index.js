@@ -55,7 +55,6 @@ const TabNavigator = () => {
       checkOnboardingStatusAndNavigate({
         client,
         navigation: NavigationService,
-        latestOnboardingVersion: ONBOARDING_VERSION,
         navigateHome: false,
       });
     },
