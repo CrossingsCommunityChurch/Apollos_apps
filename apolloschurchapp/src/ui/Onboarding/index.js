@@ -89,6 +89,7 @@ function Onboarding({ navigation, route }) {
                   }
                 />
                 <AskNotificationsConnected
+                  description="We'll let you know when important things are happening and keep you in the loop."
                   onPressPrimary={swipeForward}
                   onRequestPushPermissions={(update) => {
                     checkNotifications().then((checkRes) => {

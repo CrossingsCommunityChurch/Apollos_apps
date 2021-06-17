@@ -7,9 +7,15 @@ import { SearchButton } from '../ui/Search';
 const Container = styled(({ theme }) => ({
   width: '96%',
   alignItems: 'center',
-  justifyContent: 'space-between',
-  paddingHorizontal: theme.sizing.baseUnit,
+  paddingHorizontal: theme.sizing.baseUnit * 2,
   paddingVertical: theme.sizing.baseUnit,
+  flexDirection: 'row',
+}))(View);
+
+const BrandContainer = styled(() => ({
+  width: '100%',
+  alignItems: 'center',
+  justifyContent: 'center',
   flexDirection: 'row',
 }))(View);
 
@@ -30,17 +36,20 @@ const Title = styled(({ theme }) => ({
   }),
 }))(UIText);
 
-const BrandIcon = withTheme(({ theme }) => ({
+const BrandIcon = withTheme(() => ({
   name: 'BrandIcon',
   size: 25,
 }))(Icon);
 
 const Logo = () => {
   const Navigation = () => useNavigation();
+
   return (
     <Container>
-      <BrandIcon />
-      <Title>Crossings</Title>
+      <BrandContainer>
+        <BrandIcon />
+        <Title>Crossings</Title>
+      </BrandContainer>
       <SearchButton onPress={() => Navigation.navigate('Search')} />
     </Container>
   );

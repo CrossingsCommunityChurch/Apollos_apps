@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationService } from '@apollosproject/ui-kit';
 import { useApolloClient } from '@apollo/client';
@@ -29,16 +30,31 @@ const HomeTab = createFeatureFeedTab({
 });
 
 const ReadTab = createFeatureFeedTab({
+  screenOptions: {
+    headerHideShadow: true,
+    headerCenter: HeaderCenter,
+    headerLargeTitle: false,
+  },
   tabName: 'Read',
   feedName: 'READ',
 });
 
 const WatchTab = createFeatureFeedTab({
+  screenOptions: {
+    headerHideShadow: true,
+    headerCenter: HeaderCenter,
+    headerLargeTitle: false,
+  },
   tabName: 'Watch',
   feedName: 'WATCH',
 });
 
 const PrayTab = createFeatureFeedTab({
+  screenOptions: {
+    headerHideShadow: true,
+    headerCenter: HeaderCenter,
+    headerLargeTitle: false,
+  },
   tabName: 'Pray',
   feedName: 'PRAY',
 });
