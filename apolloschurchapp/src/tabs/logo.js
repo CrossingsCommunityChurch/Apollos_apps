@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Platform } from 'react-native';
 import { styled, withTheme, Icon, UIText } from '@apollosproject/ui-kit';
 import { useNavigation } from '@react-navigation/native';
-import { SearchButton } from '../ui/Search';
+import HomeSearchButton from '../ui/Search/SearchButton';
 
 const Container = styled(({ theme }) => ({
   width: '96%',
@@ -41,18 +41,16 @@ const BrandIcon = withTheme(() => ({
   size: 25,
 }))(Icon);
 
-const Logo = () => {
-  const Navigation = () => useNavigation();
-
-  return (
-    <Container>
-      <BrandContainer>
-        <BrandIcon />
-        <Title>Crossings</Title>
-      </BrandContainer>
-      <SearchButton onPress={() => Navigation.navigate('Search')} />
-    </Container>
-  );
+const Search = () => {
+  const navigation = useNavigation();
+  return <HomeSearchButton onPress={() => navigation.navigate('Search')} />;
 };
+const Logo = () => (
+  <Container>
+    <BrandIcon />
+    <Title>Crossings</Title>
+    <Search />
+  </Container>
+);
 
 export default Logo;

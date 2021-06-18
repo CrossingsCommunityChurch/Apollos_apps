@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import PropTypes from 'prop-types';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationService } from '@apollosproject/ui-kit';
 import { useApolloClient } from '@apollo/client';
 import { createFeatureFeedTab } from '@apollosproject/ui-connected';
 import { checkOnboardingStatusAndNavigate } from '@apollosproject/ui-onboarding';
-import { ONBOARDING_VERSION } from '../ui/Onboarding';
 import LiveStreamListFeatureConnected from '../live-feed/LiveStreamListFeatureConnected';
 import Connect from './connect';
 import tabBarIcon from './tabBarIcon';
@@ -71,7 +71,6 @@ const TabNavigator = () => {
       checkOnboardingStatusAndNavigate({
         client,
         navigation: NavigationService,
-        latestOnboardingVersion: ONBOARDING_VERSION,
         navigateHome: false,
       });
     },

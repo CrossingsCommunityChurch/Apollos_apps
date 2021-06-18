@@ -85,6 +85,37 @@ class dataSource extends ContentItem.dataSource {
     const currentLiveStreams = await this.getLiveFeed().get();
     return currentLiveStreams;
   };
+
+  getTags = async (root) => {
+    const lava =
+      // use lava here to pull the tags for this item. the category id is hardcoded for now.
+      `{%-taggeditem where:'EntityGuid == "${
+        root.guid
+      }"' iterator:'taggedItems'-%}
+      {%-tag where:'CategoryId == 495' iterator:'tags'%}
+        {%-for taggedItem in taggedItems-%}
+          {%-for tag in tags-%}
+            {%-if taggedItem.TagId == tag.Id-%}
+              {{ tag.Name }},
+            {%-endif-%}
+          {%-endfor-%}
+        {%-endfor-%}
+      {%-endtag-%}
+    {%-endtaggeditem-%}`;
+
+    /** Parse the response and get each property of the response */
+    const response = await this.post(
+      `/Lava/RenderTemplate`,
+      lava.replace(/\n/g, '')
+    );
+
+    /** Build the final return object with defaults taken into consideration */
+    if (response) {
+      return response;
+    }
+    // fallback
+    return null;
+  };
 }
 
 export { dataSource };

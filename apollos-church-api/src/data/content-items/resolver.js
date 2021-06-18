@@ -4,26 +4,16 @@ import { resolverMerge } from '@apollosproject/server-core';
 import { get, split } from 'lodash';
 
 const resolverExtensions = {
-  tags: ({ attributeValues }) =>
-    split(get(attributeValues, 'tags.value', ''), ','),
-  author: async ({ attributeValues }, args, { dataSources }) => {
+  tags: async (root, args, { dataSources: { ContentItem } }) => {
+    const tagString = await ContentItem.getTags(root);
+    return split(tagString, ',');
+  },
+  author: ({ attributeValues }) => {
     if (get(attributeValues, 'author.value', null)) {
-      const { id } = await dataSources.Person.getFromAliasId(
-        attributeValues.author.value
-      );
-
-      const person = await dataSources.Person.getFromId(id);
-
-      return person;
+      return attributeValues.author.valueFormatted;
     }
     if (get(attributeValues, 'speaker.value', null)) {
-      const { id } = await dataSources.Person.getFromAliasId(
-        attributeValues.speaker.value
-      );
-
-      const person = await dataSources.Person.getFromId(id);
-
-      return person;
+      return attributeValues.speaker.valueFormatted;
     }
 
     return null;

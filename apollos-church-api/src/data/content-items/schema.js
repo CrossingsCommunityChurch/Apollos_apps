@@ -6,27 +6,27 @@ export default gql`
 
   extend type DevotionalContentItem {
     tags: [String]
-    author: Person
+    author: String
   }
 
   extend type UniversalContentItem {
     tags: [String]
-    author: Person
+    author: String
   }
 
   extend type ContentSeriesContentItem {
     tags: [String]
-    author: Person
+    author: String
   }
 
   extend type MediaContentItem {
     tags: [String]
-    author: Person
+    author: String
   }
 
   extend type WeekendContentItem {
     tags: [String]
-    author: Person
+    author: String
   }
 
   type LiveContentItem implements ContentItem & Node {
