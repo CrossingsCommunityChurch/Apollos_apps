@@ -868,7 +868,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = church.crossings.rock1;
+				PRODUCT_BUNDLE_IDENTIFIER = church.crossings.rock;
 				PRODUCT_NAME = Crossings;
 				PROVISIONING_PROFILE_SPECIFIER = "match Development church.crossings.rock";
 				SWIFT_OBJC_BRIDGING_HEADER = "Crossings-Bridging-Header.h";
@@ -902,7 +902,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = church.crossings.rock1;
+				PRODUCT_BUNDLE_IDENTIFIER = church.crossings.rock;
 				PRODUCT_NAME = Crossings;
 				PROVISIONING_PROFILE_SPECIFIER = "match Development church.crossings.rock";
 				SWIFT_OBJC_BRIDGING_HEADER = "Crossings-Bridging-Header.h";
