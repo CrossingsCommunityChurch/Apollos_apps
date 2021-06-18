@@ -35,15 +35,16 @@ const BrandIcon = withTheme(({ theme }) => ({
   size: 25,
 }))(Icon);
 
-const Logo = () => {
-  const Navigation = () => useNavigation();
-  return (
-    <Container>
-      <BrandIcon />
-      <Title>Crossings</Title>
-      <HomeSearchButton onPress={() => Navigation.navigate('Search')} />
-    </Container>
-  );
+const Search = () => {
+  const navigation = useNavigation();
+  return <HomeSearchButton onPress={() => navigation.navigate('Search')} />;
 };
+const Logo = () => (
+  <Container>
+    <BrandIcon />
+    <Title>Crossings</Title>
+    <Search />
+  </Container>
+);
 
 export default Logo;
