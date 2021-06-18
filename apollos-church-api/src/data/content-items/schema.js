@@ -11,7 +11,7 @@ export default gql`
 
   extend type UniversalContentItem {
     tags: [String]
-    author: Person
+    author: String
   }
 
   extend type ContentSeriesContentItem {

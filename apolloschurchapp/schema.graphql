@@ -694,6 +694,7 @@ type Query {
   LiveFeedFeatures: FeatureFeed
   homeHeaderFeedFeatures: FeatureFeed
   followRequests: [Person]
+  usersFollowing: [Person]
 }
 
 type RockPersonDetails {
@@ -827,7 +828,7 @@ type UniversalContentItem implements ContentItem & Node & ContentNode & Card & V
   isLiked: Boolean
   likedCount: Int
   tags: [String]
-  author: Person
+  author: String
   sharing: SharableContentItem
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed

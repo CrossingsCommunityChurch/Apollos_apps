@@ -4,9 +4,9 @@ import { resolverMerge } from '@apollosproject/server-core';
 import { get, split } from 'lodash';
 
 const resolverExtensions = {
-  tags: (root, { dataSources: { ContentItem } }) => {
-    const tagString = ContentItem.getTags(root.guid);
-    console.log('tag value is: ', tagString);
+  tags: async (root, args, { dataSources: { ContentItem } }) => {
+    const tagString = await ContentItem.getTags(root);
+    return split(tagString, ',');
   },
   author: ({ attributeValues }) => {
     if (get(attributeValues, 'author.value', null)) {
