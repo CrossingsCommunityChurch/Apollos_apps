@@ -6,6 +6,7 @@ import HomeSearchButton from '../ui/Search/SearchButton';
 
 const Container = styled(({ theme }) => ({
   width: '96%',
+  display: 'flex',
   alignItems: 'center',
   paddingHorizontal: theme.sizing.baseUnit * 2,
   paddingVertical: theme.sizing.baseUnit,
@@ -45,10 +46,13 @@ const Search = () => {
   const navigation = useNavigation();
   return <HomeSearchButton onPress={() => navigation.navigate('Search')} />;
 };
+
 const Logo = () => (
   <Container>
-    <BrandIcon />
-    <Title>Crossings</Title>
+    <BrandContainer>
+      <BrandIcon />
+      <Title>Crossings</Title>
+    </BrandContainer>
     <Search />
   </Container>
 );
