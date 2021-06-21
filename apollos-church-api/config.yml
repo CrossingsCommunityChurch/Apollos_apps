@@ -60,6 +60,7 @@ ALGOLIA:
       - htmlContent
       - unordered(summary)
       - author
+      - tags
     #customRankings:
     # NOT CURRENTLY INCLUDED
     # This just demonstrates what's possible

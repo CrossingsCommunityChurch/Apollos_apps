@@ -285,7 +285,7 @@ type ContentSeriesContentItem implements ContentItem & Node & ContentNode & Card
   isLiked: Boolean
   likedCount: Int
   tags: [String]
-  author: Person
+  author: String
   sharing: SharableContentItem
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
@@ -315,7 +315,7 @@ type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & 
   isLiked: Boolean
   likedCount: Int
   tags: [String]
-  author: Person
+  author: String
   sharing: SharableContentItem
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
@@ -523,7 +523,7 @@ type MediaContentItem implements ContentItem & Node & ContentNode & Card & Video
   isLiked: Boolean
   likedCount: Int
   tags: [String]
-  author: Person
+  author: String
   sharing: SharableContentItem
 }
 
@@ -694,6 +694,7 @@ type Query {
   LiveFeedFeatures: FeatureFeed
   homeHeaderFeedFeatures: FeatureFeed
   followRequests: [Person]
+  usersFollowing: [Person]
 }
 
 type RockPersonDetails {
@@ -827,7 +828,7 @@ type UniversalContentItem implements ContentItem & Node & ContentNode & Card & V
   isLiked: Boolean
   likedCount: Int
   tags: [String]
-  author: Person
+  author: String
   sharing: SharableContentItem
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
@@ -923,7 +924,7 @@ type WeekendContentItem implements ContentItem & Node & ContentNode & Card & Vid
   isLiked: Boolean
   likedCount: Int
   tags: [String]
-  author: Person
+  author: String
   liveStream: LiveStream
   sharing: SharableContentItem
   features: [Feature] @deprecated(reason: "Use featureFeed")
