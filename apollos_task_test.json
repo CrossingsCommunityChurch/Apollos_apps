@@ -1,5 +1,5 @@
 {
-  "family": "ccc-apollos-api-dev",
+  "family": "ccc-apollos-api-prod",
   "executionRoleArn": "arn:aws:iam::630260715093:role/ecsTaskExecutionRole",
   "networkMode": "bridge",
   "containerDefinitions": [
@@ -21,7 +21,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "/ecs/ccc-apollos-api",
+          "awslogs-group": "apollos-prod-logs",
           "awslogs-region": "us-east-1",
           "awslogs-stream-prefix": "ecs"
         }
