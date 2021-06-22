@@ -34,7 +34,7 @@
         },
         {
           "name": "ALGOLIASEARCH_INDEX",
-          "vlaue": "Prod_AppItems"
+          "value": "Prod_AppItems"
         },
         {
           "name": "ROCK_SHOW_INACTIVE_CONTENT",
