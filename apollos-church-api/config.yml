@@ -51,7 +51,7 @@ CHURCH_ONLINE:
 ALGOLIA:
   APPLICATION_ID: ${ALGOLIASEARCH_APPLICATION_ID}
   API_KEY: ${ALGOLIASEARCH_API_KEY}
-  SEARCH_INDEX: TEST_ContentItem
+  SEARCH_INDEX: ${ALGOLIASEARCH_INDEX}
   # Configure Algolia custom settings here
   # https://www.algolia.com/doc/api-reference/settings-api-parameters/
   CONFIGURATION:
