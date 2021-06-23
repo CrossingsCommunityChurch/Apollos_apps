@@ -4,17 +4,12 @@ import PropTypes from 'prop-types';
 
 import { styled, withTheme, Touchable, Icon } from '@apollosproject/ui-kit';
 
-const SearchIcon = withTheme(({ theme: { colors, sizing: { baseUnit } } }) => ({
+const SearchIcon = withTheme(({ theme: { sizing: { baseUnit } } }) => ({
   name: 'search',
   size: baseUnit * 1.6,
-  fill: colors.primary,
 }))(Icon);
 
-const SearchButtonContainer = styled(({ theme: { sizing: { baseUnit } } }) => ({
-  // position: 'absolute',
-  // right: -8,
-  // top: -12,
-}))(Animated.View);
+const SearchButtonContainer = styled(() => ({}))(Animated.View);
 
 const HomeSearchButton = ({ onPress }) => (
   <SearchButtonContainer>

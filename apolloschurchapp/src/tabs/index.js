@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react';
-import { useNavigation } from '@react-navigation/native';
-import PropTypes from 'prop-types';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationService } from '@apollosproject/ui-kit';
 import { useApolloClient } from '@apollo/client';

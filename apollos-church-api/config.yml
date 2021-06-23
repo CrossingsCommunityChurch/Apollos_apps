@@ -174,7 +174,7 @@ TABS:
       },
       {
         title: Give,
-        icon: plus,
+        icon: Give,
         id: 1234,
         action: OPEN_URL,
         relatedNode: {
