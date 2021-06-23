@@ -1,7 +1,7 @@
-FROM arm64v8/node
+FROM node:12-alpine
 COPY . /usr/src/
 WORKDIR /usr/src
-RUN yarn --network-timeout 60000 --ignore-scripts
+RUN yarn --ignore-scripts
 WORKDIR ./apollos-church-api
 RUN yarn build
 EXPOSE 4000
