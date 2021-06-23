@@ -1,6 +1,7 @@
 // import styleOverrides from './styleOverrides';
-// import propOverrides from './propOverrides';
+// import propOverrides from './propOverrides';''
 import fonts from './fonts';
+import { UIConnectedOverrides } from './overrides';
 
 /* Add your custom theme definitions below. Anything that is supported in UI-Kit Theme can be
  overridden and/or customized here! */
@@ -9,8 +10,9 @@ import fonts from './fonts';
  * These get used by theme types (see /types directory) to color
  * specific parts of the interface. For more control on how certain
  * elements are colored, go there. The next level of control comes
- * on a per-component basis with "overrides"
+ * on a per-component basis with 'overrides'
  */
+
 const colors = {
   primary: '#313e48',
   secondary: '#236092',
@@ -34,10 +36,14 @@ const colors = {
   white: '#FFFFFF',
   transparent: 'transparent',
   wordOfChrist: '#8b0000', // only used in Scripture.
+
+  action: {
+    primary: '#d4aa67',
+  },
 };
 
 /* Base Typography sizing and fonts.
- * To control speicfic styles used on different type components (like H1, H2, etc), see "overrides"
+ * To control speicfic styles used on different type components (like H1, H2, etc), see 'overrides'
  */
 // const typography = {};
 
@@ -109,35 +115,7 @@ const overrides = {
   H6: {
     fontFamily: typography.sans.black.default,
   },
-  /* 'ui-prayer.PrayerExperience': () => ({
-    AddPrayerComponent: (props) => (
-      <AddPrayerScreenConnected
-        {...props}
-        AddedPrayerComponent={(props) => (
-          <ConfirmationDialogScreen
-            {...props}
-            title={
-              'Thanks for giving our community the opportunity to pray for you!'
-            }
-            body={
-              <Text>
-                <BodyText>
-                  In addition to our prayer community here on the LCBC App, your
-                  request has also been sent to the LCBC Ministry Team and a
-                  small trusted team of volunteers.
-                </BodyText>
-                {'\n\n'}
-                <BodyText>
-                  We hope you feel encouraged by God’s presence in your life and
-                  his love for you today!
-                </BodyText>
-              </Text>
-            }
-          />
-        )}
-      />
-    ),
-  }), * */
+  ...UIConnectedOverrides({ colors }),
 };
 
 export default { colors, overrides, typography };

@@ -16,3 +16,8 @@ yalc.lock
 terraform.tfvars
 
 apolloschurchapp/.env.production
+*.key
+*.pem
+*.p12
+*.certSigningRequest
+*.cer

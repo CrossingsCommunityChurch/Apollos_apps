@@ -9,61 +9,50 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* CrossingsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CrossingsTests.m */; };
 		01F091B02048490A8F9EF4FE /* Inter-UI-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63F6EE53A9B44B4388B5F1C2 /* Inter-UI-Italic.otf */; };
-		073F3D462565B0A700FBCCBD /* NunitoSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 073F3D382565B0A600FBCCBD /* NunitoSans-Light.ttf */; };
-		073F3D472565B0A700FBCCBD /* NunitoSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 073F3D392565B0A600FBCCBD /* NunitoSans-ExtraBoldItalic.ttf */; };
-		073F3D482565B0A700FBCCBD /* NunitoSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 073F3D3A2565B0A600FBCCBD /* NunitoSans-Black.ttf */; };
-		073F3D492565B0A700FBCCBD /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 073F3D3B2565B0A600FBCCBD /* NunitoSans-Bold.ttf */; };
-		073F3D4A2565B0A700FBCCBD /* NunitoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 073F3D3C2565B0A600FBCCBD /* NunitoSans-BoldItalic.ttf */; };
-		073F3D4B2565B0A700FBCCBD /* NunitoSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 073F3D3D2565B0A600FBCCBD /* NunitoSans-ExtraLightItalic.ttf */; };
-		073F3D4C2565B0A700FBCCBD /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 073F3D3E2565B0A600FBCCBD /* NunitoSans-Regular.ttf */; };
-		073F3D4D2565B0A700FBCCBD /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 073F3D3F2565B0A600FBCCBD /* NunitoSans-SemiBold.ttf */; };
-		073F3D4E2565B0A700FBCCBD /* NunitoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 073F3D402565B0A600FBCCBD /* NunitoSans-Italic.ttf */; };
-		073F3D4F2565B0A700FBCCBD /* NunitoSans-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 073F3D412565B0A600FBCCBD /* NunitoSans-BlackItalic.ttf */; };
-		073F3D502565B0A700FBCCBD /* NunitoSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 073F3D422565B0A600FBCCBD /* NunitoSans-SemiBoldItalic.ttf */; };
-		073F3D512565B0A700FBCCBD /* NunitoSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 073F3D432565B0A600FBCCBD /* NunitoSans-LightItalic.ttf */; };
-		073F3D522565B0A700FBCCBD /* NunitoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 073F3D442565B0A600FBCCBD /* NunitoSans-ExtraBold.ttf */; };
-		073F3D532565B0A700FBCCBD /* NunitoSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 073F3D452565B0A700FBCCBD /* NunitoSans-ExtraLight.ttf */; };
-		075AB7E625AF396F00EE4961 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AB7E525AF396F00EE4961 /* File.swift */; };
+		07A2B0C02677E76E0034F8DB /* NunitoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0B22677E76D0034F8DB /* NunitoSans-Italic.ttf */; };
+		07A2B0C12677E76E0034F8DB /* NunitoSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0B32677E76D0034F8DB /* NunitoSans-Light.ttf */; };
+		07A2B0C22677E76E0034F8DB /* NunitoSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0B42677E76D0034F8DB /* NunitoSans-ExtraLight.ttf */; };
+		07A2B0C32677E76E0034F8DB /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0B52677E76D0034F8DB /* NunitoSans-Regular.ttf */; };
+		07A2B0C42677E76E0034F8DB /* NunitoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0B62677E76D0034F8DB /* NunitoSans-BoldItalic.ttf */; };
+		07A2B0C52677E76E0034F8DB /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0B72677E76D0034F8DB /* NunitoSans-SemiBold.ttf */; };
+		07A2B0C62677E76E0034F8DB /* NunitoSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0B82677E76D0034F8DB /* NunitoSans-SemiBoldItalic.ttf */; };
+		07A2B0C72677E76E0034F8DB /* NunitoSans-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0B92677E76D0034F8DB /* NunitoSans-BlackItalic.ttf */; };
+		07A2B0C82677E76E0034F8DB /* NunitoSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0BA2677E76D0034F8DB /* NunitoSans-LightItalic.ttf */; };
+		07A2B0C92677E76E0034F8DB /* NunitoSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0BB2677E76D0034F8DB /* NunitoSans-ExtraLightItalic.ttf */; };
+		07A2B0CA2677E76E0034F8DB /* NunitoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0BC2677E76D0034F8DB /* NunitoSans-ExtraBold.ttf */; };
+		07A2B0CB2677E76E0034F8DB /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0BD2677E76D0034F8DB /* NunitoSans-Bold.ttf */; };
+		07A2B0CC2677E76E0034F8DB /* NunitoSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0BE2677E76E0034F8DB /* NunitoSans-ExtraBoldItalic.ttf */; };
+		07A2B0CD2677E76E0034F8DB /* NunitoSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0BF2677E76E0034F8DB /* NunitoSans-Black.ttf */; };
 		08CE105F17284254AD54AF84 /* DroidSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3B8A0AC5A6B4FABB3BDF6CB /* DroidSerif-Bold.ttf */; };
-		11A55876BFC8414F925A033D /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4EE6E465616491D84B21590 /* OpenSans-SemiBoldItalic.ttf */; };
-		12B8332CF9CE49578371E622 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D941BF5B2FB437EBF648108 /* OpenSans-LightItalic.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		1BF15451C61849CE91C8222D /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B8D2AF548C0434FAD8C7755 /* OpenSans-BoldItalic.ttf */; };
 		1C48DCDE11AC47C48E918489 /* Inter-UI-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DC74A378C1CC40E4B6192D7F /* Inter-UI-Medium.otf */; };
+		2AE17F608689DAE577F28E4D /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* CrossingsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CrossingsTests.m */; };
-		2F2D5D40614145DE9D5DA288 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C53D38F22304463BB9635B7A /* OpenSans-Light.ttf */; };
-		43F2E6D1C4F642FDBAD431ED /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB741CDEE78A4AC8BA37594E /* OpenSans-ExtraBoldItalic.ttf */; };
-		479AC214C487435E8D18EA02 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FADB4F98C474DC3BB0EB09A /* OpenSans-SemiBold.ttf */; };
-		53871377A55F4B748101DD6F /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D42AC3C24123456CB255AF6A /* OpenSans-Regular.ttf */; };
+		4CA6A042251BC0BF00DD0D97 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA6A041251BC0BF00DD0D97 /* SplashScreen.storyboard */; };
+		4CA6A043251BC0BF00DD0D97 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA6A041251BC0BF00DD0D97 /* SplashScreen.storyboard */; };
 		578FFEC1D7D54C9B871A9E5B /* Inter-UI-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5A5A2BC2998547F4816B82E4 /* Inter-UI-BlackItalic.otf */; };
+		5C75E4776A19FEDDCD05813E /* libPods-Crossings-tvOS-Crossings-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC02408E578A898123910157 /* libPods-Crossings-tvOS-Crossings-tvOSTests.a */; };
 		68D1351E80AA4A2C96288FD9 /* Inter-UI-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC21254B449443F99016EBFD /* Inter-UI-Black.otf */; };
 		7FBC6BC3CE8D48298F9850A9 /* Inter-UI-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5157D807E164356ADE87867 /* Inter-UI-Bold.otf */; };
-		82AAE52E24187BB500D1EEC7 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82AAE52D24187BB500D1EEC7 /* SplashScreen.storyboard */; };
-		82AAE52F24187BB500D1EEC7 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82AAE52D24187BB500D1EEC7 /* SplashScreen.storyboard */; };
-		82AAE53024187BB500D1EEC7 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82AAE52D24187BB500D1EEC7 /* SplashScreen.storyboard */; };
-		82AAE53124187BB500D1EEC7 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82AAE52D24187BB500D1EEC7 /* SplashScreen.storyboard */; };
 		82AAE537241888D100D1EEC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		82AAE538241888D200D1EEC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		894732A70B4740678E85B593 /* Inter-UI-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F5410F239E9477B9C2E86BD /* Inter-UI-BoldItalic.otf */; };
 		8EA9BDE542E09F685A47D9BE /* libPods-Crossings-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B9762ACA099D28C28DBB31 /* libPods-Crossings-tvOS.a */; };
 		90743C40BF544F10A810C43C /* DroidSerif-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADC3D2DB245545ADB1CAB3FE /* DroidSerif-Italic.ttf */; };
 		93A2B0A9328A46A4B7DD5EFA /* DroidSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E007B33EDD74B82AEF02C24 /* DroidSerif-Regular.ttf */; };
-		AA78F5F873623FA1AAC5DA6E /* libPods-Crossings-CrossingsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76DA529FA722A828E097B746 /* libPods-Crossings-CrossingsTests.a */; };
 		AB3BD177B8A14193A5EEDDF8 /* Inter-UI-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A613256118404CB691DE2C8E /* Inter-UI-Regular.otf */; };
-		AC880BA6C39644E7AE1A522C /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26E1A0C95D75437DB905B5DD /* OpenSans-Bold.ttf */; };
-		ADA4A2822D3702AB812AC366 /* libPods-Crossings-tvOS-Crossings-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB897EDCB5D4AE41DB521873 /* libPods-Crossings-tvOS-Crossings-tvOSTests.a */; };
 		B02F194A3F6A4FE29AC799B4 /* DroidSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A93F9D112A034626A9421759 /* DroidSerif-BoldItalic.ttf */; };
-		B7511D1B3EC340C7B90FF8DB /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBF77FDFC24418CA1DBF372 /* OpenSans-Italic.ttf */; };
-		D7F59A0CE2DA44338905CB9B /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FCDDE0E51AE4F859BEC98A1 /* OpenSans-ExtraBold.ttf */; };
+		BFC9F08425757C2D00FF49D7 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9F08325757C2D00FF49D7 /* File.swift */; };
 		E875558F3FB8FA2024EF7DC2 /* libPods-Crossings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6B5B7B6A0D1ECB68CF0DD /* libPods-Crossings.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
+		EF3A30A2E55D4F8352E116D3 /* libPods-Crossings-CrossingsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D0F1F316A88242D1FD60FB /* libPods-Crossings-CrossingsTests.a */; };
 		FCB3069DB5DD4170B2CAEFC4 /* Inter-UI-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A460FD7884FD4574A818005A /* Inter-UI-MediumItalic.otf */; };
 /* End PBXBuildFile section */
 
@@ -89,69 +78,59 @@
 		00E356EE1AD99517003FC87E /* CrossingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrossingsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* CrossingsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrossingsTests.m; sourceTree = "<group>"; };
-		073F3D382565B0A600FBCCBD /* NunitoSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Light.ttf"; path = "../assets/fonts/NunitoSans-Light.ttf"; sourceTree = "<group>"; };
-		073F3D392565B0A600FBCCBD /* NunitoSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraBoldItalic.ttf"; path = "../assets/fonts/NunitoSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		073F3D3A2565B0A600FBCCBD /* NunitoSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Black.ttf"; path = "../assets/fonts/NunitoSans-Black.ttf"; sourceTree = "<group>"; };
-		073F3D3B2565B0A600FBCCBD /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Bold.ttf"; path = "../assets/fonts/NunitoSans-Bold.ttf"; sourceTree = "<group>"; };
-		073F3D3C2565B0A600FBCCBD /* NunitoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-BoldItalic.ttf"; path = "../assets/fonts/NunitoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
-		073F3D3D2565B0A600FBCCBD /* NunitoSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraLightItalic.ttf"; path = "../assets/fonts/NunitoSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
-		073F3D3E2565B0A600FBCCBD /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Regular.ttf"; path = "../assets/fonts/NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
-		073F3D3F2565B0A600FBCCBD /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-SemiBold.ttf"; path = "../assets/fonts/NunitoSans-SemiBold.ttf"; sourceTree = "<group>"; };
-		073F3D402565B0A600FBCCBD /* NunitoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Italic.ttf"; path = "../assets/fonts/NunitoSans-Italic.ttf"; sourceTree = "<group>"; };
-		073F3D412565B0A600FBCCBD /* NunitoSans-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-BlackItalic.ttf"; path = "../assets/fonts/NunitoSans-BlackItalic.ttf"; sourceTree = "<group>"; };
-		073F3D422565B0A600FBCCBD /* NunitoSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-SemiBoldItalic.ttf"; path = "../assets/fonts/NunitoSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		073F3D432565B0A600FBCCBD /* NunitoSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-LightItalic.ttf"; path = "../assets/fonts/NunitoSans-LightItalic.ttf"; sourceTree = "<group>"; };
-		073F3D442565B0A600FBCCBD /* NunitoSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraBold.ttf"; path = "../assets/fonts/NunitoSans-ExtraBold.ttf"; sourceTree = "<group>"; };
-		073F3D452565B0A700FBCCBD /* NunitoSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraLight.ttf"; path = "../assets/fonts/NunitoSans-ExtraLight.ttf"; sourceTree = "<group>"; };
-		075AB7E425AF396F00EE4961 /* Crossings-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Crossings-Bridging-Header.h"; sourceTree = "<group>"; };
-		075AB7E525AF396F00EE4961 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		07A2B0B22677E76D0034F8DB /* NunitoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Italic.ttf"; path = "../assets/fonts/NunitoSans-Italic.ttf"; sourceTree = "<group>"; };
+		07A2B0B32677E76D0034F8DB /* NunitoSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Light.ttf"; path = "../assets/fonts/NunitoSans-Light.ttf"; sourceTree = "<group>"; };
+		07A2B0B42677E76D0034F8DB /* NunitoSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraLight.ttf"; path = "../assets/fonts/NunitoSans-ExtraLight.ttf"; sourceTree = "<group>"; };
+		07A2B0B52677E76D0034F8DB /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Regular.ttf"; path = "../assets/fonts/NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
+		07A2B0B62677E76D0034F8DB /* NunitoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-BoldItalic.ttf"; path = "../assets/fonts/NunitoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		07A2B0B72677E76D0034F8DB /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-SemiBold.ttf"; path = "../assets/fonts/NunitoSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		07A2B0B82677E76D0034F8DB /* NunitoSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-SemiBoldItalic.ttf"; path = "../assets/fonts/NunitoSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		07A2B0B92677E76D0034F8DB /* NunitoSans-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-BlackItalic.ttf"; path = "../assets/fonts/NunitoSans-BlackItalic.ttf"; sourceTree = "<group>"; };
+		07A2B0BA2677E76D0034F8DB /* NunitoSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-LightItalic.ttf"; path = "../assets/fonts/NunitoSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		07A2B0BB2677E76D0034F8DB /* NunitoSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraLightItalic.ttf"; path = "../assets/fonts/NunitoSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		07A2B0BC2677E76D0034F8DB /* NunitoSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraBold.ttf"; path = "../assets/fonts/NunitoSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		07A2B0BD2677E76D0034F8DB /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Bold.ttf"; path = "../assets/fonts/NunitoSans-Bold.ttf"; sourceTree = "<group>"; };
+		07A2B0BE2677E76E0034F8DB /* NunitoSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraBoldItalic.ttf"; path = "../assets/fonts/NunitoSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		07A2B0BF2677E76E0034F8DB /* NunitoSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Black.ttf"; path = "../assets/fonts/NunitoSans-Black.ttf"; sourceTree = "<group>"; };
 		0D480D95FC7F4569B8B934E3 /* libRCTOneSignal.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTOneSignal.a; sourceTree = "<group>"; };
-		0FCDDE0E51AE4F859BEC98A1 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-ExtraBold.ttf"; path = "../assets/fonts/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		12D0F1F316A88242D1FD60FB /* libPods-Crossings-CrossingsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Crossings-CrossingsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* Crossings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crossings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Crossings/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Crossings/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Crossings/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Crossings/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Crossings/main.m; sourceTree = "<group>"; };
+		1ECA88A0369BB1DDE56EE65D /* Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Crossings-tvOS-Crossings-tvOSTests/Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1F8F5BC4745C8F22C695573D /* Pods-Crossings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings.release.xcconfig"; path = "Target Support Files/Pods-Crossings/Pods-Crossings.release.xcconfig"; sourceTree = "<group>"; };
-		26E1A0C95D75437DB905B5DD /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Bold.ttf"; path = "../assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Crossings-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crossings-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Crossings-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Crossings-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F5410F239E9477B9C2E86BD /* Inter-UI-BoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-BoldItalic.otf"; path = "../assets/fonts/Inter-UI-BoldItalic.otf"; sourceTree = "<group>"; };
 		38B9762ACA099D28C28DBB31 /* libPods-Crossings-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Crossings-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B5185C0B3CA667008FBC0EC /* Pods-Crossings-CrossingsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-CrossingsTests.debug.xcconfig"; path = "Target Support Files/Pods-Crossings-CrossingsTests/Pods-Crossings-CrossingsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		3B8D2AF548C0434FAD8C7755 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-BoldItalic.ttf"; path = "../assets/fonts/OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
-		4D941BF5B2FB437EBF648108 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-LightItalic.ttf"; path = "../assets/fonts/OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		4CA6A041251BC0BF00DD0D97 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
+		4D3B523797B74698347A5317 /* Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Crossings-tvOS-Crossings-tvOSTests/Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		4E007B33EDD74B82AEF02C24 /* DroidSerif-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-Regular.ttf"; path = "../assets/fonts/DroidSerif-Regular.ttf"; sourceTree = "<group>"; };
 		54F271B8EB67A4997A2C7D96 /* Pods-Crossings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings.debug.xcconfig"; path = "Target Support Files/Pods-Crossings/Pods-Crossings.debug.xcconfig"; sourceTree = "<group>"; };
+		59218083CDDF8EF2ABA9BCD1 /* Pods-Crossings-CrossingsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-CrossingsTests.debug.xcconfig"; path = "Target Support Files/Pods-Crossings-CrossingsTests/Pods-Crossings-CrossingsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A5A2BC2998547F4816B82E4 /* Inter-UI-BlackItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-BlackItalic.otf"; path = "../assets/fonts/Inter-UI-BlackItalic.otf"; sourceTree = "<group>"; };
 		63F6EE53A9B44B4388B5F1C2 /* Inter-UI-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Italic.otf"; path = "../assets/fonts/Inter-UI-Italic.otf"; sourceTree = "<group>"; };
-		6FADB4F98C474DC3BB0EB09A /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-SemiBold.ttf"; path = "../assets/fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		745C835CA2F1E1EC2425152A /* Pods-Crossings-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Crossings-tvOS/Pods-Crossings-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		76DA529FA722A828E097B746 /* libPods-Crossings-CrossingsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Crossings-CrossingsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7CC6F9448A3B97303EEBDAFD /* Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Crossings-tvOS-Crossings-tvOSTests/Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		82AAE52D24187BB500D1EEC7 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = Crossings/SplashScreen.storyboard; sourceTree = "<group>"; };
 		A460FD7884FD4574A818005A /* Inter-UI-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-MediumItalic.otf"; path = "../assets/fonts/Inter-UI-MediumItalic.otf"; sourceTree = "<group>"; };
 		A613256118404CB691DE2C8E /* Inter-UI-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Regular.otf"; path = "../assets/fonts/Inter-UI-Regular.otf"; sourceTree = "<group>"; };
 		A93F9D112A034626A9421759 /* DroidSerif-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-BoldItalic.ttf"; path = "../assets/fonts/DroidSerif-BoldItalic.ttf"; sourceTree = "<group>"; };
 		AB44FC16DED929081698EDFD /* Pods-CrossingsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrossingsTests.debug.xcconfig"; path = "Target Support Files/Pods-CrossingsTests/Pods-CrossingsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AB741CDEE78A4AC8BA37594E /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-ExtraBoldItalic.ttf"; path = "../assets/fonts/OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		AB897EDCB5D4AE41DB521873 /* libPods-Crossings-tvOS-Crossings-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Crossings-tvOS-Crossings-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC02408E578A898123910157 /* libPods-Crossings-tvOS-Crossings-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Crossings-tvOS-Crossings-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC3D2DB245545ADB1CAB3FE /* DroidSerif-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-Italic.ttf"; path = "../assets/fonts/DroidSerif-Italic.ttf"; sourceTree = "<group>"; };
 		AE85030F59F256E90D5A4C2B /* Pods-Crossings-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Crossings-tvOS/Pods-Crossings-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		C38FF54C1317DF3E427CF450 /* Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Crossings-tvOS-Crossings-tvOSTests/Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		C53D38F22304463BB9635B7A /* OpenSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Light.ttf"; path = "../assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
-		CEBF77FDFC24418CA1DBF372 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Italic.ttf"; path = "../assets/fonts/OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		BFC9F08225757C2D00FF49D7 /* Crossings-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Crossings-Bridging-Header.h"; sourceTree = "<group>"; };
+		BFC9F08325757C2D00FF49D7 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		C6895BD78D40E00368BEB025 /* Pods-Crossings-CrossingsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-CrossingsTests.release.xcconfig"; path = "Target Support Files/Pods-Crossings-CrossingsTests/Pods-Crossings-CrossingsTests.release.xcconfig"; sourceTree = "<group>"; };
 		D394E3064D75710E81C51EB0 /* Pods-Crossings-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Crossings-tvOSTests/Pods-Crossings-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D42AC3C24123456CB255AF6A /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
-		D4EE6E465616491D84B21590 /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-SemiBoldItalic.ttf"; path = "../assets/fonts/OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		D5157D807E164356ADE87867 /* Inter-UI-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Bold.otf"; path = "../assets/fonts/Inter-UI-Bold.otf"; sourceTree = "<group>"; };
 		DA9745795726553C6FA9E7A8 /* Pods-Crossings-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Crossings-tvOSTests/Pods-Crossings-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		DC74A378C1CC40E4B6192D7F /* Inter-UI-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Medium.otf"; path = "../assets/fonts/Inter-UI-Medium.otf"; sourceTree = "<group>"; };
 		DCB1270C2429347200079762 /* Crossings.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Crossings.entitlements; path = Crossings/Crossings.entitlements; sourceTree = "<group>"; };
 		DDB6B5B7B6A0D1ECB68CF0DD /* libPods-Crossings.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Crossings.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DDEE0E63057C3857E996CE80 /* Pods-Crossings-CrossingsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-CrossingsTests.release.xcconfig"; path = "Target Support Files/Pods-Crossings-CrossingsTests/Pods-Crossings-CrossingsTests.release.xcconfig"; sourceTree = "<group>"; };
 		E3B8A0AC5A6B4FABB3BDF6CB /* DroidSerif-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-Bold.ttf"; path = "../assets/fonts/DroidSerif-Bold.ttf"; sourceTree = "<group>"; };
 		E98AC9782C338F13632EF710 /* Pods-CrossingsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrossingsTests.release.xcconfig"; path = "Target Support Files/Pods-CrossingsTests/Pods-CrossingsTests.release.xcconfig"; sourceTree = "<group>"; };
 		EC21254B449443F99016EBFD /* Inter-UI-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Black.otf"; path = "../assets/fonts/Inter-UI-Black.otf"; sourceTree = "<group>"; };
@@ -164,7 +143,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA78F5F873623FA1AAC5DA6E /* libPods-Crossings-CrossingsTests.a in Frameworks */,
+				2AE17F608689DAE577F28E4D /* (null) in Frameworks */,
+				EF3A30A2E55D4F8352E116D3 /* libPods-Crossings-CrossingsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADA4A2822D3702AB812AC366 /* libPods-Crossings-tvOS-Crossings-tvOSTests.a in Frameworks */,
+				5C75E4776A19FEDDCD05813E /* libPods-Crossings-tvOS-Crossings-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,9 +203,11 @@
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
-				82AAE52D24187BB500D1EEC7 /* SplashScreen.storyboard */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				4CA6A041251BC0BF00DD0D97 /* SplashScreen.storyboard */,
+				BFC9F08325757C2D00FF49D7 /* File.swift */,
+				BFC9F08225757C2D00FF49D7 /* Crossings-Bridging-Header.h */,
 			);
 			name = Crossings;
 			sourceTree = "<group>";
@@ -238,8 +220,8 @@
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 				DDB6B5B7B6A0D1ECB68CF0DD /* libPods-Crossings.a */,
 				38B9762ACA099D28C28DBB31 /* libPods-Crossings-tvOS.a */,
-				76DA529FA722A828E097B746 /* libPods-Crossings-CrossingsTests.a */,
-				AB897EDCB5D4AE41DB521873 /* libPods-Crossings-tvOS-Crossings-tvOSTests.a */,
+				AC02408E578A898123910157 /* libPods-Crossings-tvOS-Crossings-tvOSTests.a */,
+				12D0F1F316A88242D1FD60FB /* libPods-Crossings-CrossingsTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -247,20 +229,20 @@
 		58D6A3E05A234CD89DC0BCE1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				073F3D3A2565B0A600FBCCBD /* NunitoSans-Black.ttf */,
-				073F3D412565B0A600FBCCBD /* NunitoSans-BlackItalic.ttf */,
-				073F3D3B2565B0A600FBCCBD /* NunitoSans-Bold.ttf */,
-				073F3D3C2565B0A600FBCCBD /* NunitoSans-BoldItalic.ttf */,
-				073F3D442565B0A600FBCCBD /* NunitoSans-ExtraBold.ttf */,
-				073F3D392565B0A600FBCCBD /* NunitoSans-ExtraBoldItalic.ttf */,
-				073F3D452565B0A700FBCCBD /* NunitoSans-ExtraLight.ttf */,
-				073F3D3D2565B0A600FBCCBD /* NunitoSans-ExtraLightItalic.ttf */,
-				073F3D402565B0A600FBCCBD /* NunitoSans-Italic.ttf */,
-				073F3D382565B0A600FBCCBD /* NunitoSans-Light.ttf */,
-				073F3D432565B0A600FBCCBD /* NunitoSans-LightItalic.ttf */,
-				073F3D3E2565B0A600FBCCBD /* NunitoSans-Regular.ttf */,
-				073F3D3F2565B0A600FBCCBD /* NunitoSans-SemiBold.ttf */,
-				073F3D422565B0A600FBCCBD /* NunitoSans-SemiBoldItalic.ttf */,
+				07A2B0BF2677E76E0034F8DB /* NunitoSans-Black.ttf */,
+				07A2B0B92677E76D0034F8DB /* NunitoSans-BlackItalic.ttf */,
+				07A2B0BD2677E76D0034F8DB /* NunitoSans-Bold.ttf */,
+				07A2B0B62677E76D0034F8DB /* NunitoSans-BoldItalic.ttf */,
+				07A2B0BC2677E76D0034F8DB /* NunitoSans-ExtraBold.ttf */,
+				07A2B0BE2677E76E0034F8DB /* NunitoSans-ExtraBoldItalic.ttf */,
+				07A2B0B42677E76D0034F8DB /* NunitoSans-ExtraLight.ttf */,
+				07A2B0BB2677E76D0034F8DB /* NunitoSans-ExtraLightItalic.ttf */,
+				07A2B0B22677E76D0034F8DB /* NunitoSans-Italic.ttf */,
+				07A2B0B32677E76D0034F8DB /* NunitoSans-Light.ttf */,
+				07A2B0BA2677E76D0034F8DB /* NunitoSans-LightItalic.ttf */,
+				07A2B0B52677E76D0034F8DB /* NunitoSans-Regular.ttf */,
+				07A2B0B72677E76D0034F8DB /* NunitoSans-SemiBold.ttf */,
+				07A2B0B82677E76D0034F8DB /* NunitoSans-SemiBoldItalic.ttf */,
 				E3B8A0AC5A6B4FABB3BDF6CB /* DroidSerif-Bold.ttf */,
 				A93F9D112A034626A9421759 /* DroidSerif-BoldItalic.ttf */,
 				ADC3D2DB245545ADB1CAB3FE /* DroidSerif-Italic.ttf */,
@@ -273,16 +255,6 @@
 				DC74A378C1CC40E4B6192D7F /* Inter-UI-Medium.otf */,
 				A460FD7884FD4574A818005A /* Inter-UI-MediumItalic.otf */,
 				A613256118404CB691DE2C8E /* Inter-UI-Regular.otf */,
-				26E1A0C95D75437DB905B5DD /* OpenSans-Bold.ttf */,
-				3B8D2AF548C0434FAD8C7755 /* OpenSans-BoldItalic.ttf */,
-				0FCDDE0E51AE4F859BEC98A1 /* OpenSans-ExtraBold.ttf */,
-				AB741CDEE78A4AC8BA37594E /* OpenSans-ExtraBoldItalic.ttf */,
-				CEBF77FDFC24418CA1DBF372 /* OpenSans-Italic.ttf */,
-				C53D38F22304463BB9635B7A /* OpenSans-Light.ttf */,
-				4D941BF5B2FB437EBF648108 /* OpenSans-LightItalic.ttf */,
-				D42AC3C24123456CB255AF6A /* OpenSans-Regular.ttf */,
-				6FADB4F98C474DC3BB0EB09A /* OpenSans-SemiBold.ttf */,
-				D4EE6E465616491D84B21590 /* OpenSans-SemiBoldItalic.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -298,10 +270,10 @@
 				DA9745795726553C6FA9E7A8 /* Pods-Crossings-tvOSTests.release.xcconfig */,
 				AB44FC16DED929081698EDFD /* Pods-CrossingsTests.debug.xcconfig */,
 				E98AC9782C338F13632EF710 /* Pods-CrossingsTests.release.xcconfig */,
-				3B5185C0B3CA667008FBC0EC /* Pods-Crossings-CrossingsTests.debug.xcconfig */,
-				DDEE0E63057C3857E996CE80 /* Pods-Crossings-CrossingsTests.release.xcconfig */,
-				7CC6F9448A3B97303EEBDAFD /* Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig */,
-				C38FF54C1317DF3E427CF450 /* Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig */,
+				59218083CDDF8EF2ABA9BCD1 /* Pods-Crossings-CrossingsTests.debug.xcconfig */,
+				C6895BD78D40E00368BEB025 /* Pods-Crossings-CrossingsTests.release.xcconfig */,
+				1ECA88A0369BB1DDE56EE65D /* Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig */,
+				4D3B523797B74698347A5317 /* Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -324,7 +296,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				075AB7E525AF396F00EE4961 /* File.swift */,
 				13B07FAE1A68108700A75B9A /* Crossings */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* CrossingsTests */,
@@ -333,7 +304,6 @@
 				58D6A3E05A234CD89DC0BCE1 /* Resources */,
 				79CEBF9D223011FC00D8F685 /* Recovered References */,
 				76EC01CF690166B3232686FE /* Pods */,
-				075AB7E425AF396F00EE4961 /* Crossings-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -362,8 +332,8 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				47EA63EAE70422BB245E3C4E /* [CP] Copy Pods Resources */,
-				40FDD94E4C660A2F2B57CA73 /* [CP] Embed Pods Frameworks */,
+				892ED59C47CEB9B13B75EC71 /* [CP] Copy Pods Resources */,
+				3E2635F41ADA8FBB628BB92D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -380,12 +350,13 @@
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Crossings" */;
 			buildPhases = (
 				DEEF24CE4F76789E5E8C369D /* [CP] Check Pods Manifest.lock */,
+				4C006E292656868900EE9158 /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				43D579D8398224D7B09F58F6 /* [CP] Copy Pods Resources */,
-				2076FDF1F03FC5C96C23FD32 /* [CP] Embed Pods Frameworks */,
+				84E19E444A56C704431362B6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -440,8 +411,8 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 940;
-				ORGANIZATIONNAME = Facebook;
+				LastUpgradeCheck = 1170;
+				ORGANIZATIONNAME = Apollos;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
@@ -449,11 +420,12 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 83DP3WM45E;
-						LastSwiftMigration = 1230;
-						ProvisioningStyle = Automatic;
+						LastSwiftMigration = 1220;
+						ProvisioningStyle = Manual;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 1230;
 						ProvisioningStyle = Automatic;
 					};
 					2D02E48F1E0B4A5D006451C7 = {
@@ -491,7 +463,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				82AAE537241888D100D1EEC7 /* Images.xcassets in Resources */,
-				82AAE52F24187BB500D1EEC7 /* SplashScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,44 +470,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07A2B0CA2677E76E0034F8DB /* NunitoSans-ExtraBold.ttf in Resources */,
+				07A2B0C72677E76E0034F8DB /* NunitoSans-BlackItalic.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				073F3D4E2565B0A700FBCCBD /* NunitoSans-Italic.ttf in Resources */,
+				07A2B0CB2677E76E0034F8DB /* NunitoSans-Bold.ttf in Resources */,
 				08CE105F17284254AD54AF84 /* DroidSerif-Bold.ttf in Resources */,
-				073F3D502565B0A700FBCCBD /* NunitoSans-SemiBoldItalic.ttf in Resources */,
 				B02F194A3F6A4FE29AC799B4 /* DroidSerif-BoldItalic.ttf in Resources */,
+				07A2B0C92677E76E0034F8DB /* NunitoSans-ExtraLightItalic.ttf in Resources */,
+				07A2B0C22677E76E0034F8DB /* NunitoSans-ExtraLight.ttf in Resources */,
 				90743C40BF544F10A810C43C /* DroidSerif-Italic.ttf in Resources */,
-				073F3D4B2565B0A700FBCCBD /* NunitoSans-ExtraLightItalic.ttf in Resources */,
-				073F3D512565B0A700FBCCBD /* NunitoSans-LightItalic.ttf in Resources */,
-				073F3D472565B0A700FBCCBD /* NunitoSans-ExtraBoldItalic.ttf in Resources */,
+				07A2B0C52677E76E0034F8DB /* NunitoSans-SemiBold.ttf in Resources */,
 				93A2B0A9328A46A4B7DD5EFA /* DroidSerif-Regular.ttf in Resources */,
-				073F3D522565B0A700FBCCBD /* NunitoSans-ExtraBold.ttf in Resources */,
 				68D1351E80AA4A2C96288FD9 /* Inter-UI-Black.otf in Resources */,
+				07A2B0CD2677E76E0034F8DB /* NunitoSans-Black.ttf in Resources */,
+				07A2B0C32677E76E0034F8DB /* NunitoSans-Regular.ttf in Resources */,
 				578FFEC1D7D54C9B871A9E5B /* Inter-UI-BlackItalic.otf in Resources */,
+				07A2B0C12677E76E0034F8DB /* NunitoSans-Light.ttf in Resources */,
 				7FBC6BC3CE8D48298F9850A9 /* Inter-UI-Bold.otf in Resources */,
-				073F3D4C2565B0A700FBCCBD /* NunitoSans-Regular.ttf in Resources */,
+				07A2B0C82677E76E0034F8DB /* NunitoSans-LightItalic.ttf in Resources */,
 				894732A70B4740678E85B593 /* Inter-UI-BoldItalic.otf in Resources */,
 				01F091B02048490A8F9EF4FE /* Inter-UI-Italic.otf in Resources */,
-				073F3D4D2565B0A700FBCCBD /* NunitoSans-SemiBold.ttf in Resources */,
+				07A2B0CC2677E76E0034F8DB /* NunitoSans-ExtraBoldItalic.ttf in Resources */,
+				07A2B0C62677E76E0034F8DB /* NunitoSans-SemiBoldItalic.ttf in Resources */,
 				1C48DCDE11AC47C48E918489 /* Inter-UI-Medium.otf in Resources */,
-				073F3D4F2565B0A700FBCCBD /* NunitoSans-BlackItalic.ttf in Resources */,
-				073F3D532565B0A700FBCCBD /* NunitoSans-ExtraLight.ttf in Resources */,
+				07A2B0C42677E76E0034F8DB /* NunitoSans-BoldItalic.ttf in Resources */,
 				FCB3069DB5DD4170B2CAEFC4 /* Inter-UI-MediumItalic.otf in Resources */,
-				073F3D462565B0A700FBCCBD /* NunitoSans-Light.ttf in Resources */,
-				073F3D4A2565B0A700FBCCBD /* NunitoSans-BoldItalic.ttf in Resources */,
-				073F3D482565B0A700FBCCBD /* NunitoSans-Black.ttf in Resources */,
-				073F3D492565B0A700FBCCBD /* NunitoSans-Bold.ttf in Resources */,
+				07A2B0C02677E76E0034F8DB /* NunitoSans-Italic.ttf in Resources */,
 				AB3BD177B8A14193A5EEDDF8 /* Inter-UI-Regular.otf in Resources */,
-				82AAE52E24187BB500D1EEC7 /* SplashScreen.storyboard in Resources */,
-				AC880BA6C39644E7AE1A522C /* OpenSans-Bold.ttf in Resources */,
-				1BF15451C61849CE91C8222D /* OpenSans-BoldItalic.ttf in Resources */,
-				D7F59A0CE2DA44338905CB9B /* OpenSans-ExtraBold.ttf in Resources */,
-				43F2E6D1C4F642FDBAD431ED /* OpenSans-ExtraBoldItalic.ttf in Resources */,
-				B7511D1B3EC340C7B90FF8DB /* OpenSans-Italic.ttf in Resources */,
-				2F2D5D40614145DE9D5DA288 /* OpenSans-Light.ttf in Resources */,
-				12B8332CF9CE49578371E622 /* OpenSans-LightItalic.ttf in Resources */,
-				53871377A55F4B748101DD6F /* OpenSans-Regular.ttf in Resources */,
-				479AC214C487435E8D18EA02 /* OpenSans-SemiBold.ttf in Resources */,
-				11A55876BFC8414F925A033D /* OpenSans-SemiBoldItalic.ttf in Resources */,
+				4CA6A042251BC0BF00DD0D97 /* SplashScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,7 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
-				82AAE53024187BB500D1EEC7 /* SplashScreen.storyboard in Resources */,
+				4CA6A043251BC0BF00DD0D97 /* SplashScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,7 +515,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				82AAE538241888D200D1EEC7 /* Images.xcassets in Resources */,
-				82AAE53124187BB500D1EEC7 /* SplashScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,24 +534,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
-		};
-		2076FDF1F03FC5C96C23FD32 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Crossings/Pods-Crossings-frameworks.sh",
-				"${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-ios-4.3.0/GoogleCast.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleCast.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Crossings/Pods-Crossings-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		2C62ED438C51D0F43EC7017B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -629,18 +571,18 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		40FDD94E4C660A2F2B57CA73 /* [CP] Embed Pods Frameworks */ = {
+		3E2635F41ADA8FBB628BB92D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Crossings-CrossingsTests/Pods-Crossings-CrossingsTests-frameworks.sh",
-				"${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-ios-4.3.0/GoogleCast.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleCast.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -655,17 +597,58 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Crossings/Pods-Crossings-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+				"${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-ios-4.6.1_static/GoogleCast.framework/GoogleCastCoreResources.bundle",
+				"${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-ios-4.6.1_static/GoogleCast.framework/GoogleCastUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleCastCoreResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleCastUIResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Crossings/Pods-Crossings-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		47EA63EAE70422BB245E3C4E /* [CP] Copy Pods Resources */ = {
+		4C006E292656868900EE9158 /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		84E19E444A56C704431362B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Crossings/Pods-Crossings-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Crossings/Pods-Crossings-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		892ED59C47CEB9B13B75EC71 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -673,10 +656,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Crossings-CrossingsTests/Pods-Crossings-CrossingsTests-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+				"${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-ios-4.6.1_static/GoogleCast.framework/GoogleCastCoreResources.bundle",
+				"${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-ios-4.6.1_static/GoogleCast.framework/GoogleCastUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleCastCoreResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleCastUIResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -765,7 +752,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				075AB7E625AF396F00EE4961 /* File.swift in Sources */,
+				BFC9F08425757C2D00FF49D7 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -805,7 +792,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B5185C0B3CA667008FBC0EC /* Pods-Crossings-CrossingsTests.debug.xcconfig */;
+			baseConfigurationReference = 59218083CDDF8EF2ABA9BCD1 /* Pods-Crossings-CrossingsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -833,7 +820,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DDEE0E63057C3857E996CE80 /* Pods-Crossings-CrossingsTests.release.xcconfig */;
+			baseConfigurationReference = C6895BD78D40E00368BEB025 /* Pods-Crossings-CrossingsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -860,22 +847,22 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 54F271B8EB67A4997A2C7D96 /* Pods-Crossings.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Crossings/Crossings.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 510;
-				DEAD_CODE_STRIPPING = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 174;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 83DP3WM45E;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 				INFOPLIST_FILE = Crossings/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -883,7 +870,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = church.crossings.rock;
 				PRODUCT_NAME = Crossings;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development church.crossings.rock";
 				SWIFT_OBJC_BRIDGING_HEADER = "Crossings-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -895,21 +882,21 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1F8F5BC4745C8F22C695573D /* Pods-Crossings.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Crossings/Crossings.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 510;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 174;
 				DEVELOPMENT_TEAM = 83DP3WM45E;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 				INFOPLIST_FILE = Crossings/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -917,7 +904,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = church.crossings.rock;
 				PRODUCT_NAME = Crossings;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development church.crossings.rock";
 				SWIFT_OBJC_BRIDGING_HEADER = "Crossings-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -931,6 +918,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -951,6 +939,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Crossings-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Crossings-tvOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
@@ -963,6 +954,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -983,6 +975,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Crossings-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Crossings-tvOS-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
@@ -990,8 +984,9 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7CC6F9448A3B97303EEBDAFD /* Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 1ECA88A0369BB1DDE56EE65D /* Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1021,8 +1016,9 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C38FF54C1317DF3E427CF450 /* Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 4D3B523797B74698347A5317 /* Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1054,6 +1050,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1079,6 +1076,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1096,7 +1094,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(inherited)",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1107,6 +1111,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1132,6 +1137,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1142,7 +1148,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(inherited)",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

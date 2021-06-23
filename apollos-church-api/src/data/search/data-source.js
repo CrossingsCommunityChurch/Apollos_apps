@@ -22,6 +22,8 @@ query getItem {
       summary
       htmlContent
       objectID: id
+      tags: [String]
+      author: Person
       __typename
       coverImage { sources { uri } }
     }
@@ -31,6 +33,8 @@ query getItem {
       summary
       author{firstName lastName}
       objectID: id
+      tags: [String]
+      author: Person
       __typename
       coverImage { sources { uri } }
     }
@@ -41,6 +45,8 @@ query getItem {
       htmlContent
       author{firstName lastName}
       objectID: id
+      tags: [String]
+      author: Person
       __typename
       coverImage { sources { uri } }
     }
@@ -51,6 +57,8 @@ query getItem {
       htmlContent
       author{firstName lastName}
       objectID: id
+      tags: [String]
+      author: Person
       __typename
       coverImage { sources { uri } }
     }
@@ -61,6 +69,8 @@ query getItem {
       htmlContent
       author{firstName lastName}
       objectID: id
+      tags: [String]
+      author: Person
       __typename
       coverImage { sources { uri } }
     }
@@ -72,6 +82,7 @@ query getItem {
     return data.node;
   }
 
+  // Add functionality here that will add in the events to be searched.
   async deltaIndex() {
     const { ContentItem } = this.context.dataSources;
     let itemsLeft = true;
@@ -95,6 +106,7 @@ query getItem {
     }
   }
 
+  // Add functionality here to allow events to eb indexed. Possibly add for groupas.
   async indexAll() {
     await new Promise((resolve, reject) =>
       this.index.clearIndex((err, result) => {

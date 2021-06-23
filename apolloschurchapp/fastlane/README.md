@@ -16,16 +16,11 @@ or alternatively using `brew install fastlane`
 
 # Available Actions
 ## iOS
-### ios certificates
-```
-fastlane ios certificates
-```
-Fetch certificates and provisioning profiles
 ### ios deploy
 ```
 fastlane ios deploy
 ```
-Push a new beta build to TestFlight
+Push a new internal build to TestFlight
 
 ----
 

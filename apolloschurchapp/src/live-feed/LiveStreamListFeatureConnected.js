@@ -24,7 +24,7 @@ const AVATAR_MULTIPLIER = 0.8;
 const LiveItemContainer = styled(({ theme, withMargin }) => ({
   flexDirection: 'column',
   justifyContent: 'center',
-  alignContent: 'center',
+  alignItems: 'center',
   marginRight: theme.sizing.baseUnit * (withMargin ? 0.5 : 0),
 }))(TouchableScale);
 
@@ -53,12 +53,16 @@ const BorderWithPulse = withTheme()(({ theme, ...props }) => {
     });
   };
 
-  useEffect(() => {
-    fadeIn();
-  }, []);
+  useEffect(
+    () => {
+      fadeIn();
+    },
+    [fadeIn]
+  );
 
   return (
     <Animated.View
+      // eslint-disable-next-line react-native/no-inline-styles
       style={{
         opacity,
         height: themeSize,
@@ -107,6 +111,13 @@ const Title = compose(
   pure
 )(H6);
 
+const LiveImageContainer = styled(({ theme, withMargin }) => ({
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignContent: 'center',
+  marginRight: theme.sizing.baseUnit * (withMargin ? 0.5 : 0),
+}))(View);
+
 const LiveTouchable = ({ coverImage, withMargin, onPressItem, url, title }) => (
   <LiveItemContainer
     withMargin={withMargin}
@@ -117,10 +128,13 @@ const LiveTouchable = ({ coverImage, withMargin, onPressItem, url, title }) => (
       })
     }
   >
-    <BorderWithPulse />
-    <CircularImagePosition>
-      <CirclularImage source={get(coverImage, 'sources[0]')} />
-    </CircularImagePosition>
+    <LiveImageContainer>
+      <BorderWithPulse />
+      <CircularImagePosition>
+        <CirclularImage source={get(coverImage, 'sources[0]')} />
+      </CircularImagePosition>
+    </LiveImageContainer>
+    <Title>{title}</Title>
   </LiveItemContainer>
 );
 

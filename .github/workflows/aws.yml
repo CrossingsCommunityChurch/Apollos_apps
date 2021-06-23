@@ -49,7 +49,7 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
-
+      
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
         env:
@@ -57,9 +57,9 @@ jobs:
           ECR_REPOSITORY: ccc_graphapi
           IMAGE_TAG: latest
         run: |
+          # create buildx builder and use it to
           # Build a docker container and
           # push it to ECR so that it can
-          # be deployed to ECS.
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
@@ -75,6 +75,6 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: apollos-test
-          cluster: cccApollosTest
+          service: APP-prod-service
+          cluster: Apollos-prod
           wait-for-service-stability: true

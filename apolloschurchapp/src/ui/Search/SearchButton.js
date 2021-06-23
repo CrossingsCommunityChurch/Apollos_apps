@@ -6,14 +6,14 @@ import { styled, withTheme, Touchable, Icon } from '@apollosproject/ui-kit';
 
 const SearchIcon = withTheme(({ theme: { colors, sizing: { baseUnit } } }) => ({
   name: 'search',
-  size: baseUnit * 2,
+  size: baseUnit * 1.6,
   fill: colors.primary,
 }))(Icon);
 
 const SearchButtonContainer = styled(({ theme: { sizing: { baseUnit } } }) => ({
-  position: 'absolute',
-  right: baseUnit,
-  top: baseUnit / 2,
+  // position: 'absolute',
+  // right: -8,
+  // top: -12,
 }))(Animated.View);
 
 const HomeSearchButton = ({ onPress }) => (
