@@ -61,7 +61,9 @@ jobs:
           # Build a docker container and
           # push it to ECR so that it can
           # be deployed to ECS.
-          docker buildx create --name awsbuilder --use
+          docker buildx create --name awsbuilder
+          docker buildx use awsbuilder
+          docker buildx inspect --bootstrap
           docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
