@@ -79,7 +79,7 @@ jobs:
           cluster: Apollos-prod
           wait-for-service-stability: true
 
-    ios:
+  ios:
     defaults:
       run:
         working-directory: apolloschurchapp
