@@ -84,7 +84,7 @@ jobs:
       run:
         working-directory: apolloschurchapp
 
-    runs-on: macos-11
+    runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v2
