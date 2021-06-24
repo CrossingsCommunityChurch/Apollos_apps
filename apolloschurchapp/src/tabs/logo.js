@@ -38,7 +38,7 @@ const Title = styled(({ theme }) => ({
 }))(UIText);
 
 const BrandIcon = withTheme(() => ({
-  name: 'BrandIcon',
+  name: 'brand-icon',
   size: 25,
 }))(Icon);
 
