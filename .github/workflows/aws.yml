@@ -75,8 +75,8 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: APP-prod-service
-          cluster: Apollos-prod
+          service: Apollos-Prod
+          cluster: Apollos-Prod
           wait-for-service-stability: true
 
   ios:

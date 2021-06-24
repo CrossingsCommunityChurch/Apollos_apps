@@ -853,7 +853,7 @@
 				CODE_SIGN_ENTITLEMENTS = Crossings/Crossings.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 174;
+				CURRENT_PROJECT_VERSION = 207;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 83DP3WM45E;
 				HEADER_SEARCH_PATHS = (
@@ -888,7 +888,7 @@
 				CODE_SIGN_ENTITLEMENTS = Crossings/Crossings.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 174;
+				CURRENT_PROJECT_VERSION = 207;
 				DEVELOPMENT_TEAM = 83DP3WM45E;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
