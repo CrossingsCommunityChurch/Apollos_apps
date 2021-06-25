@@ -174,7 +174,7 @@ TABS:
       },
       {
         title: Give,
-        icon: give,
+        icon: hands,
         id: 1234,
         action: OPEN_URL,
         relatedNode: {
