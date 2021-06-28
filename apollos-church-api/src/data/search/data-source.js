@@ -22,8 +22,6 @@ query getItem {
       summary
       htmlContent
       objectID: id
-      tags: [String]
-      author: Person
       __typename
       coverImage { sources { uri } }
     }
@@ -31,10 +29,9 @@ query getItem {
        id
       title
       summary
-      author{firstName lastName}
       objectID: id
-      tags: [String]
-      author: Person
+      tags
+      author
       __typename
       coverImage { sources { uri } }
     }
@@ -43,10 +40,9 @@ query getItem {
       title
       summary
       htmlContent
-      author{firstName lastName}
       objectID: id
-      tags: [String]
-      author: Person
+      tags
+      author
       __typename
       coverImage { sources { uri } }
     }
@@ -55,10 +51,9 @@ query getItem {
       title
       summary
       htmlContent
-      author{firstName lastName}
       objectID: id
-      tags: [String]
-      author: Person
+      tags
+      author
       __typename
       coverImage { sources { uri } }
     }
@@ -67,10 +62,9 @@ query getItem {
       title
       summary
       htmlContent
-      author{firstName lastName}
       objectID: id
-      tags: [String]
-      author: Person
+      tags
+      author
       __typename
       coverImage { sources { uri } }
     }
