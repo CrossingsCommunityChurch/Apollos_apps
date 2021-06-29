@@ -1,1 +1,1 @@
-export { default as UIConnectedOverrides } from './ui-kit-actionbar';
+export { default as UIConnectedOverrides } from './ui-kit-overrides';

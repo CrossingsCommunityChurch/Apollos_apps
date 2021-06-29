@@ -4,18 +4,30 @@ import { NavigationService } from '@apollosproject/ui-kit';
 import { useApolloClient } from '@apollo/client';
 import { createFeatureFeedTab } from '@apollosproject/ui-connected';
 import { checkOnboardingStatusAndNavigate } from '@apollosproject/ui-onboarding';
+import { useNavigation } from '@react-navigation/native';
 import LiveStreamListFeatureConnected from '../live-feed/LiveStreamListFeatureConnected';
+import HomeSearchButton from '../ui/Search/SearchButton';
 import Connect from './connect';
 import tabBarIcon from './tabBarIcon';
 import Logo from './logo';
 
+const Search = () => {
+  const navigation = useNavigation();
+  return <HomeSearchButton onPress={() => navigation.navigate('Search')} />;
+};
+
 const HeaderCenter = () => <Logo />;
+const HeaderRight = () => {
+  const navigation = useNavigation();
+  return <Search onPress={() => navigation.navigate('Search')} />;
+};
 
 // we nest stack inside of tabs so we can use all the fancy native header features
 const HomeTab = createFeatureFeedTab({
   screenOptions: {
     headerHideShadow: true,
     headerCenter: HeaderCenter,
+    headerRight: HeaderRight,
     headerLargeTitle: false,
   },
   tabProps: {
@@ -31,6 +43,7 @@ const ReadTab = createFeatureFeedTab({
   screenOptions: {
     headerHideShadow: true,
     headerCenter: HeaderCenter,
+    headerRight: HeaderRight,
     headerLargeTitle: false,
   },
   tabName: 'Read',
@@ -41,6 +54,7 @@ const WatchTab = createFeatureFeedTab({
   screenOptions: {
     headerHideShadow: true,
     headerCenter: HeaderCenter,
+    headerRight: HeaderRight,
     headerLargeTitle: false,
   },
   tabName: 'Watch',
@@ -51,6 +65,7 @@ const PrayTab = createFeatureFeedTab({
   screenOptions: {
     headerHideShadow: true,
     headerCenter: HeaderCenter,
+    headerRight: HeaderRight,
     headerLargeTitle: false,
   },
   tabName: 'Pray',

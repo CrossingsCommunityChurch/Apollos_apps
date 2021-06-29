@@ -88,6 +88,8 @@ const colors = {
 
 export const typography = {
   ...fonts,
+  baseFontSize: 16,
+  baseLineHeight: 23.04, // 1.44 ratio
 };
 
 const overrides = {

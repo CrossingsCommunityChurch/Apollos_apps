@@ -16,7 +16,7 @@ const Toolbar = () => {
           />
           <ActionBarItem
             onPress={() => openUrl('https://crossings.church/give')}
-            icon="Give"
+            icon="give"
             label="Give"
           />
           <ActionBarItem
