@@ -59,6 +59,7 @@ import {
   Person as PostgresPerson,
   Media as PostgresMedia,
   ContentItem as PostgresContentItem,
+  ContentItemsConnection,
 } from '@apollosproject/data-connector-postgres';
 
 import * as Theme from './theme';
@@ -77,6 +78,7 @@ const data = {
   PostgresPerson, // Postgres person for now, as we extend this dataSource in the 'rockWithPostgres' file
   PostgresMedia,
   PostgresContentItem,
+  ContentItemsConnection,
   Cloudinary,
   Auth,
   AuthSms,
