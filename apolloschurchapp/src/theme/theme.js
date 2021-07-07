@@ -40,6 +40,9 @@ const colors = {
   action: {
     primary: '#d4aa67',
   },
+  text: {
+    tertiary: '#bd9a5f',
+  },
 };
 
 /* Base Typography sizing and fonts.
@@ -88,6 +91,8 @@ const colors = {
 
 export const typography = {
   ...fonts,
+  baseFontSize: 16,
+  baseLineHeight: 23.04, // 1.44 ratio
 };
 
 const overrides = {
