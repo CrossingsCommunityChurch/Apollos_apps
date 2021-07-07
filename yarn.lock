@@ -5081,6 +5081,16 @@ apollo-reporting-protobuf@^0.8.0:
   dependencies:
     "@apollo/protobufjs" "1.2.2"
 
+apollo-server-cache-redis@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/apollo-server-cache-redis/-/apollo-server-cache-redis-1.5.0.tgz#7520cd8beadff46f4802a90770e30784485b82b2"
+  integrity sha512-A8ZyHTU8wiJOYINNqyIQSbvif0VW7FL9izhiEL4Sh62ZzoG3nwrhzCS2HUh5WwNw6flyEhvSKRCl9DNA6XnFLA==
+  dependencies:
+    apollo-server-caching "^0.7.0"
+    apollo-server-env "^3.1.0"
+    dataloader "^2.0.0"
+    ioredis "^4.0.0"
+
 apollo-server-caching@0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/apollo-server-caching/-/apollo-server-caching-0.2.2.tgz#38f71847aacc7d984c4423ec86318ac5d9887ee1"
@@ -5228,6 +5238,15 @@ apollo-server-plugin-base@^0.13.0:
   integrity sha512-L3TMmq2YE6BU6I4Tmgygmd0W55L+6XfD9137k+cWEBFu50vRY4Re+d+fL5WuPkk5xSPKd/PIaqzidu5V/zz8Kg==
   dependencies:
     apollo-server-types "^0.9.0"
+
+apollo-server-plugin-response-cache@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/apollo-server-plugin-response-cache/-/apollo-server-plugin-response-cache-0.9.0.tgz#774192ae2f19cdc826036488e529665d9c700812"
+  integrity sha512-NgJx+qWFDVbW04+vwol740GHIb/KsNGKPgxZtz6F5eBSVvWKaH1l07yOGLJKb12OOzVEBMEFbGwr0FQBmt9UuA==
+  dependencies:
+    apollo-cache-control "^0.14.0"
+    apollo-server-caching "^0.7.0"
+    apollo-server-plugin-base "^0.13.0"
 
 apollo-server-types@^0.5.0:
   version "0.5.1"
@@ -7391,6 +7410,11 @@ data-urls@^1.1.0:
     abab "^2.0.0"
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
+
+dataloader@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/dataloader/-/dataloader-2.0.0.tgz#41eaf123db115987e21ca93c005cd7753c55fe6f"
+  integrity sha512-YzhyDAwA4TaQIhM5go+vCLmU0UikghC/t9DTQYZR2M/UvZ1MdOhPezSDZcjj9uqQJOMqjLcpWtyW2iNINdlatQ==
 
 datauri@^1.1.0:
   version "1.1.0"
@@ -10272,6 +10296,22 @@ ioredis@4.14.1:
     redis-errors "^1.2.0"
     redis-parser "^3.0.0"
     standard-as-callback "^2.0.1"
+
+ioredis@^4.0.0, ioredis@^4.27.6:
+  version "4.27.6"
+  resolved "https://registry.yarnpkg.com/ioredis/-/ioredis-4.27.6.tgz#a53d427d3fe75fbd10ed7ad150ce00559df8dcf8"
+  integrity sha512-6W3ZHMbpCa8ByMyC1LJGOi7P2WiOKP9B3resoZOVLDhi+6dDBOW+KNsRq3yI36Hmnb2sifCxHX+YSarTeXh48A==
+  dependencies:
+    cluster-key-slot "^1.1.0"
+    debug "^4.3.1"
+    denque "^1.1.0"
+    lodash.defaults "^4.2.0"
+    lodash.flatten "^4.4.0"
+    p-map "^2.1.0"
+    redis-commands "1.7.0"
+    redis-errors "^1.2.0"
+    redis-parser "^3.0.0"
+    standard-as-callback "^2.1.0"
 
 ioredis@^4.27.0, ioredis@^4.5.1:
   version "4.27.5"
