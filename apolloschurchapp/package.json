@@ -43,6 +43,9 @@
       "./jest.setup.js"
     ]
   },
+  "resolutions": {
+    "react-devtools-core": "4.13.4"
+  },
   "dependencies": {
     "@apollo/client": "3.3.0-rc.2",
     "@apollo/react-hooks": "^3.1.3",
