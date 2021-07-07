@@ -40,6 +40,9 @@ const colors = {
   action: {
     primary: '#d4aa67',
   },
+  text: {
+    tertiary: '#bd9a5f',
+  },
 };
 
 /* Base Typography sizing and fonts.
