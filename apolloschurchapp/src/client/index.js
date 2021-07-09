@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ApolloProvider, ApolloClient, ApolloLink } from '@apollo/client';
 import { getVersion, getApplicationName } from 'react-native-device-info';
@@ -75,7 +75,7 @@ wipeData();
 // Ensure that media player still works after logout.
 client.onClearStore(() => wipeData());
 
-class ClientProvider extends PureComponent {
+class ClientProvider extends Component {
   static propTypes = {
     client: PropTypes.shape({
       cache: PropTypes.shape({}),
