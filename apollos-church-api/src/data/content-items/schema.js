@@ -5,28 +5,28 @@ export default gql`
   ${ContentItem.schema}
 
   extend type DevotionalContentItem {
-    tags: [String]
-    author: String
+    tags: [String] @cacheControl(maxAge: 6400)
+    author: String @cacheControl(maxAge: 6400)
   }
 
   extend type UniversalContentItem {
-    tags: [String]
-    author: String
+    tags: [String] @cacheControl(maxAge: 6400)
+    author: String @cacheControl(maxAge: 6400)
   }
 
   extend type ContentSeriesContentItem {
-    tags: [String]
-    author: String
+    tags: [String] @cacheControl(maxAge: 6400)
+    author: String @cacheControl(maxAge: 6400)
   }
 
   extend type MediaContentItem {
-    tags: [String]
-    author: String
+    tags: [String] @cacheControl(maxAge: 6400)
+    author: String @cacheControl(maxAge: 6400)
   }
 
   extend type WeekendContentItem {
-    tags: [String]
-    author: String
+    tags: [String] @cacheControl(maxAge: 6400)
+    author: String @cacheControl(maxAge: 6400)
   }
 
   type LiveContentItem implements ContentItem & Node {
@@ -37,8 +37,8 @@ export default gql`
     images: [ImageMedia]
     videos: [VideoMedia]
     audios: [AudioMedia]
-    webviewURL: String
-    mediaURL: String
+    webviewURL: String @cacheControl(maxAge: 2400)
+    mediaURL: String @cacheControl(maxAge: 2400)
     htmlContent: String
     summary: String
     childContentItemsConnection(
