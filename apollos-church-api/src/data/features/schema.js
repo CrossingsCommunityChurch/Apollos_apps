@@ -19,6 +19,6 @@ export default gql`
     liveStreams: [LiveStream]
   }
   extend type Query {
-    LiveFeedFeatures: FeatureFeed @cacheControl(maxAge: 0)
+    LiveFeedFeatures: FeatureFeed @cacheControl(maxAge: 120)
   }
 `;
