@@ -57,6 +57,16 @@ const lightColors = {
   },
 };
 
+const darkColors = {
+  primary: '#313e48',
+  secondary: '#236092',
+  tertiary: '#bd9a5f',
+  text: {
+    tertiary: '#bd9a5f',
+    action: '#236092',
+  },
+};
+
 /* Base Typography sizing and fonts.
  * To control speicfic styles used on different type components (like H1, H2, etc), see 'overrides'
  */
@@ -129,4 +139,4 @@ const overrides = {
   ...UIConnectedOverrides({ colors }),
 };
 
-export default { colors, lightColors, overrides, typography };
+export default { colors, lightColors, darkColors, overrides, typography };
