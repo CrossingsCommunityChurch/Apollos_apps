@@ -108,18 +108,6 @@ export const typography = {
 };
 
 const overrides = {
-  'ui-kit.FeaturedCard.Label': {
-    type: 'secondary',
-  },
-  'ui-kit.HighlightCard.Label': {
-    type: 'secondary',
-  },
-  'ui-connected.LikeButtonConnected.LikeButton.LikeIcon': {
-    fill: lightColors.secondary,
-  },
-  'ui-connected.ShareButtonConnected.ShareButton.ShareIcon': {
-    fill: lightColors.secondary,
-  },
   H1: {
     fontFamily: typography.sans.black.default,
   },
