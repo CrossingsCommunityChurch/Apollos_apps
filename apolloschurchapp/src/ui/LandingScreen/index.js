@@ -19,7 +19,7 @@ const LandingScreenSlide = ({ navigation }) => (
   <ThemedLandingScreen
     onPressPrimary={() => navigation.push('Auth')}
     BackgroundComponent={
-      <FullScreenImage source={require('./img/landing.jpg')} />
+      <FullScreenImage source={require('../../../assets/Photo-1.jpg')} />
     }
     primaryNavText={"Let's go!"}
   />

@@ -11,12 +11,12 @@ const Toolbar = () => {
         <ActionBar>
           <ActionBarItem
             onPress={() => navigation.navigate('Passes')}
-            icon="check"
+            icon="qr-code"
             label="Check-in"
           />
           <ActionBarItem
             onPress={() => openUrl('https://crossings.church/give')}
-            icon="give"
+            icon="hands"
             label="Give"
           />
         </ActionBar>
