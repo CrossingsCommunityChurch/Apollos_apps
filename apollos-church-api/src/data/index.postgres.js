@@ -60,6 +60,8 @@ import {
   Media as PostgresMedia,
   ContentItem as PostgresContentItem,
   ContentItemsConnection,
+  ContentItemCategory,
+  Tag,
 } from '@apollosproject/data-connector-postgres';
 
 import * as Theme from './theme';
@@ -79,6 +81,8 @@ const data = {
   PostgresMedia,
   PostgresContentItem,
   ContentItemsConnection,
+  ContentItemCategory,
+  Tag,
   Cloudinary,
   Auth,
   AuthSms,

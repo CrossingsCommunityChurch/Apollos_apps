@@ -39,9 +39,31 @@ const colors = {
 
   action: {
     primary: '#d4aa67',
+    secondary: '#236092',
   },
   text: {
     tertiary: '#bd9a5f',
+    action: '#bd9a5f',
+  },
+};
+
+const lightColors = {
+  primary: '#313e48',
+  secondary: '#236092',
+  tertiary: '#bd9a5f',
+  text: {
+    tertiary: '#bd9a5f',
+    action: '#236092',
+  },
+};
+
+const darkColors = {
+  primary: '#313e48',
+  secondary: '#236092',
+  tertiary: '#bd9a5f',
+  text: {
+    tertiary: '#bd9a5f',
+    action: '#236092',
   },
 };
 
@@ -96,12 +118,6 @@ export const typography = {
 };
 
 const overrides = {
-  'ui-kit.FeaturedCard.Label': {
-    type: 'secondary',
-  },
-  'ui-kit.HighlightCard.Label': {
-    type: 'secondary',
-  },
   H1: {
     fontFamily: typography.sans.black.default,
   },
@@ -123,4 +139,4 @@ const overrides = {
   ...UIConnectedOverrides({ colors }),
 };
 
-export default { colors, overrides, typography };
+export default { colors, lightColors, darkColors, overrides, typography };
