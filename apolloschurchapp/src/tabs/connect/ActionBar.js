@@ -11,7 +11,7 @@ const Toolbar = () => {
         <ActionBar>
           <ActionBarItem
             onPress={() => navigation.navigate('Passes')}
-            icon="check"
+            icon="qr-code"
             label="Check-in"
           />
           <ActionBarItem
