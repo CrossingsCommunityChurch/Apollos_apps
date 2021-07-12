@@ -1,5 +1,8 @@
 // import styleOverrides from './styleOverrides';
 // import propOverrides from './propOverrides';''
+import React from 'react';
+import { Image, StyleSheet } from 'react-native';
+import { styled } from '@apollosproject/ui-kit';
 import fonts from './fonts';
 import { UIConnectedOverrides } from './overrides';
 
@@ -117,6 +120,19 @@ export const typography = {
   baseLineHeight: 23.04, // 1.44 ratio
 };
 
+const FullScreenImage = styled({
+  resizeMode: 'cover',
+  ...StyleSheet.absoluteFill,
+  width: '100%',
+  height: '105%',
+  top: '-2%',
+})(Image);
+
+const HalfScreenImage = styled({
+  width: '100%',
+  height: '50%',
+})(Image);
+
 const overrides = {
   H1: {
     fontFamily: typography.sans.black.default,
@@ -137,6 +153,83 @@ const overrides = {
     fontFamily: typography.sans.black.default,
   },
   ...UIConnectedOverrides({ colors }),
+
+  // Onboarding
+  'ui-onboarding.Landing.Title': {
+    textAlign: 'center',
+  },
+  'ui-onboarding.Landing.Subtitle': {
+    textAlign: 'center',
+    fontWeight: '900',
+    marginBottom: '70%',
+  },
+  'ui-onboarding.Landing.BrandIcon': {
+    paddingRight: '100%',
+    size: '70px',
+  },
+  'ui-onboarding.Landing': {
+    slideTitle: "We're glad you're here.",
+    description: 'Live by Faith, Be a voice of hope, be known by love!',
+    textColor: colors.white,
+    // eslint-disable-next-line react/display-name
+    BackgroundComponent: () => (
+      <FullScreenImage source={require('../../assets/Landing.png')} />
+    ),
+  },
+  'ui-onboarding.Slide.SlideContent.Title': {
+    textAlign: 'center',
+  },
+  'ui-onboarding.Slide.SlideContent.Description': {
+    textAlign: 'center',
+  },
+  'ui-onboarding.Features': {
+    description:
+      "We'd like to help personalize your profile to make the most of your online experience.",
+    // eslint-disable-next-line react/display-name
+    BackgroundComponent: () => (
+      // eslint-disable-next-line react/react-in-jsx-scope
+      <Image
+        alignSelf={'center'}
+        marginTop={'15%'}
+        source={require('../../assets/Welcome.png')}
+      />
+    ),
+  },
+  'ui-onboarding.LocationFinder': {
+    description:
+      "We'll use your location to connect you with your nearby campus and community.",
+    // eslint-disable-next-line react/display-name
+    BackgroundComponent: () => (
+      <HalfScreenImage
+        alignSelf={'center'}
+        marginTop={'15%'}
+        source={require('../../assets/Photo-3.jpg')}
+      />
+    ),
+  },
+  'ui-onboarding.AskNotifications': {
+    description:
+      "We'll let you know when important things are happening and keep you in the loop.",
+    // eslint-disable-next-line react/display-name
+    BackgroundComponent: () => (
+      <HalfScreenImage
+        alignSelf={'center'}
+        marginTop={'15%'}
+        source={require('../../assets/Photo-4.jpg')}
+      />
+    ),
+  },
+  'ui-onboarding.Follow': {
+    description: 'Follow others to stay up to date with your community.',
+    // eslint-disable-next-line react/display-name
+    BackgroundComponent: () => (
+      <Image
+        alignSelf={'center'}
+        marginTop={'15%'}
+        source={require('../../assets/Connect.png')}
+      />
+    ),
+  },
 };
 
 export default { colors, lightColors, darkColors, overrides, typography };

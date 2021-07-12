@@ -2,3 +2,4 @@
 export { default as BrandIcon } from './brand-icon';
 export { default as Give } from './give';
 export { default as Hands } from './hands';
+export { default as QrCode } from './qr-code';
