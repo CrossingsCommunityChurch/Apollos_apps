@@ -266,14 +266,14 @@ TABS:
               channelIds:
                 - 18
               limit: 6
-        primaryAction:
-        action: OPEN_CHANNEL
-        title: See More
-        relatedNode:
-          __typename: ContentChannel
-          id: 18
-        type: VerticalCardList
+        type: HorizontalCardList
         subtitle: All Sermon Series
+        primaryAction:
+          action: OPEN_CHANNEL
+          title: See More
+          relatedNode:
+            __typename: ContentChannel
+            id: 18
       - algorithms:
           - type: CONTENT_FEED
             arguments:
