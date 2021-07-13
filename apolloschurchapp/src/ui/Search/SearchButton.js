@@ -10,7 +10,6 @@ const SearchIcon = withTheme(({ theme: { sizing: { baseUnit } } }) => ({
 }))(Icon);
 
 const SearchButtonContainer = styled(() => ({
-  position: 'absolute',
   right: 6,
 }))(Animated.View);
 

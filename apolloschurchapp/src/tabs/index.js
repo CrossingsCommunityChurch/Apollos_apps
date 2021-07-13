@@ -11,15 +11,10 @@ import Connect from './connect';
 import tabBarIcon from './tabBarIcon';
 import Logo from './logo';
 
-const Search = () => {
-  const navigation = useNavigation();
-  return <HomeSearchButton onPress={() => navigation.navigate('Search')} />;
-};
-
 const HeaderCenter = () => <Logo />;
 const HeaderRight = () => {
   const navigation = useNavigation();
-  return <Search onPress={() => navigation.navigate('Search')} />;
+  return <HomeSearchButton onPress={() => navigation.navigate('Search')} />;
 };
 
 // we nest stack inside of tabs so we can use all the fancy native header features
