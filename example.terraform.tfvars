@@ -12,6 +12,6 @@ rock_token = ""
 # Optional vars, based on what you use:
 bible_api_key = ""
 
-engine_api_key = ""
+apollo_key = ""
 
 one_signal_rest_key = ""

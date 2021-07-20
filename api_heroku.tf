@@ -29,7 +29,7 @@ variable "bible_api_key" {
   description = "Optional Bible.API key. Use if you render scripture."
 }
 
-variable "engine_api_key" {
+variable "apollo_key" {
   type        = "string"
   default     = ""
   description = "Optional Apollo Engine API Key. Apollo Engine is an APM for GraphQL services."
@@ -61,7 +61,7 @@ resource "heroku_app" "staging" {
 
   config_vars {
     BIBLE_API_KEY       = "${var.bible_api_key}"
-    ENGINE_API_KEY      = "${var.engine_api_key}"
+    APOLLO_KEY      = "${var.apollo_key}"
     ROCK_TOKEN          = "${var.rock_token}"
     ONE_SIGNAL_REST_KEY = "${var.one_signal_rest_key}"
   }
@@ -79,7 +79,7 @@ resource "heroku_app" "production" {
 
   config_vars {
     BIBLE_API_KEY       = "${var.bible_api_key}"
-    ENGINE_API_KEY      = "${var.engine_api_key}"
+    APOLLO_KEY      = "${var.apollo_key}"
     ROCK_TOKEN          = "${var.rock_token}"
     ONE_SIGNAL_REST_KEY = "${var.one_signal_rest_key}"
   }

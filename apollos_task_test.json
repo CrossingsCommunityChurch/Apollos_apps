@@ -95,8 +95,8 @@
           "name": "ONE_SIGNAL_REST_KEY"
         },
         {
-          "valueFrom": "ENGINE_API_KEY",
-          "name": "ENGINE_API_KEY"
+          "valueFrom": "APOLLO_KEY",
+          "name": "APOLLO_KEY"
         },
         {
           "valueFrom": "BUGSNAG_KEY",

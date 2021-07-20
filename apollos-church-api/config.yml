@@ -95,7 +95,7 @@ CLOUDINARY:
   # cloudinary://123123123:adkfnla_adASDv_adAS@test
   URL: ${CLOUDINARY_URL}
 ENGINE:
-  API_KEY: ${ENGINE_API_KEY}
+  API_KEY: ${APOLLO_KEY}
   SCHEMA_TAG: ${ENGINE_SCHEMA_TAG}
 
 # This key holds various properties that allow our GraphQL server to map to your Rock Instance
