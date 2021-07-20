@@ -10,7 +10,7 @@
 APP:
   # This variable is used for generating deep links.
   # It should match whatver is in your Info.plist `CFBundleURLTypes`
-  DEEP_LINK_HOST: Crossings
+  DEEP_LINK_HOST: crossings
   UNIVERSAL_LINK_HOST: ${UNIVERSAL_LINK_HOST}
   ROOT_API_URL: ${ROOT_URL}
   JOBS_USERNAME: ${JOBS_USERNAME}
@@ -36,7 +36,7 @@ UNIVERSAL_LINKS:
   # This should be your app's team ID, as found in Xcode
   APPLE_TEAM_ID: 83DP3WM45E
   # Where should a user be redirected if they don't have your app installed?
-  APP_STORE_LINK: https://crossings.church/app
+  APP_STORE_LINK: https://apps.apple.com/us/app/crossings-church-new/id1501893128
   PLAY_STORE_LINK: https://crossings.church/app
   # Your app Id, as found in your app/build.gradle.
   GOOGLE_APP_ID: church.crossings.rock

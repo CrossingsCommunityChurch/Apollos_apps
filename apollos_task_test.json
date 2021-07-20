@@ -39,6 +39,10 @@
         {
           "name": "ROCK_SHOW_INACTIVE_CONTENT",
           "value": "False"
+        },
+        {
+          "name": "UNIVERSAL_LINK_HOST",
+          "value": "https://apollo.crossings.church"
         }
       ],
       "secrets": [
