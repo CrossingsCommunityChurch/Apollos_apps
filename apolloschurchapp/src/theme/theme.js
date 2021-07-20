@@ -58,6 +58,10 @@ const lightColors = {
     tertiary: '#bd9a5f',
     action: '#236092',
   },
+  action: {
+    primary: '#bd9a5f',
+    secondary: '#236092',
+  },
 };
 
 const darkColors = {
@@ -67,6 +71,10 @@ const darkColors = {
   text: {
     tertiary: '#bd9a5f',
     action: '#236092',
+  },
+  action: {
+    primary: '#d4aa67',
+    secondary: '#236092',
   },
 };
 
