@@ -1,28 +1,26 @@
 import React from 'react';
 import { ActionBar, ActionBarItem } from '@apollosproject/ui-kit';
-import { useNavigation } from '@react-navigation/native';
 import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 
-const Toolbar = () => {
-  const navigation = useNavigation();
-  return (
-    <RockAuthedWebBrowser>
-      {(openUrl) => (
-        <ActionBar>
-          <ActionBarItem
-            onPress={() => navigation.navigate('Passes')}
-            icon="qr-code"
-            label="Check-in"
-          />
-          <ActionBarItem
-            onPress={() => openUrl('https://crossings.church/give')}
-            icon="hands"
-            label="Give"
-          />
-        </ActionBar>
-      )}
-    </RockAuthedWebBrowser>
-  );
-};
+const Toolbar = () => (
+  <RockAuthedWebBrowser>
+    {(openUrl) => (
+      <ActionBar title="Test">
+        <ActionBarItem
+          onPress={() =>
+            openUrl('https://crossings.church/locations/okc/serve/')
+          }
+          icon="HandShake"
+          label="Serve"
+        />
+        <ActionBarItem
+          onPress={() => openUrl('https://crossings.church/group-finder')}
+          icon="groups"
+          label="Find Groups"
+        />
+      </ActionBar>
+    )}
+  </RockAuthedWebBrowser>
+);
 
 export default Toolbar;

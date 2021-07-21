@@ -37,23 +37,49 @@ const ActionTable = () => (
         </RowHeader>
         <TableView>
           <Touchable
+            onPress={() => openUrl('https://crossings.church/contact-us')}
+          >
+            <Cell>
+              <CellText>Contact Us</CellText>
+              <CellIcon name="arrow-next" />
+            </Cell>
+          </Touchable>
+          <Divider />
+
+          <Touchable
+            onPress={() => openUrl('https://crossings.church/locations')}
+          >
+            <Cell>
+              <CellText>Locations & Times</CellText>
+              <CellIcon name="arrow-next" />
+            </Cell>
+          </Touchable>
+          <Divider />
+        </TableView>
+
+        <TableView>
+          <Touchable
             onPress={() =>
-              openUrl('https://crossings.church/locations/okc/serve/')
+              openUrl(
+                'https://docs.google.com/forms/d/e/1FAIpQLScWBlamg3lpBknEIWlWd6nrz1KbYMrkSis3Mdo2dWlvATHxKg/viewform?usp=sf_link'
+              )
             }
           >
             <Cell>
-              <CellText>Find a serving opportunity</CellText>
+              <CellText>Report Bug</CellText>
               <CellIcon name="arrow-next" />
             </Cell>
           </Touchable>
           <Divider />
           <Touchable
             onPress={() =>
-              openUrl('https://crossings.church/prayer/prayer-request')
+              openUrl(
+                'https://docs.google.com/forms/d/e/1FAIpQLSf05zyDAZLj717LGP0kwle4VPH1hALgDPtGoxrFgpgGjuTK7A/viewform?usp=sf_link'
+              )
             }
           >
             <Cell>
-              <CellText>I need prayer</CellText>
+              <CellText>Request Feature</CellText>
               <CellIcon name="arrow-next" />
             </Cell>
           </Touchable>
