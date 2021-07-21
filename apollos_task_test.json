@@ -39,6 +39,10 @@
         {
           "name": "ROCK_SHOW_INACTIVE_CONTENT",
           "value": "False"
+        },
+        {
+          "name": "UNIVERSAL_LINK_HOST",
+          "value": "https://apollo.crossings.church"
         }
       ],
       "secrets": [
@@ -95,8 +99,8 @@
           "name": "ONE_SIGNAL_REST_KEY"
         },
         {
-          "valueFrom": "ENGINE_API_KEY",
-          "name": "ENGINE_API_KEY"
+          "valueFrom": "APOLLO_KEY",
+          "name": "APOLLO_KEY"
         },
         {
           "valueFrom": "BUGSNAG_KEY",

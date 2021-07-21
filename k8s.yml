@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ccc-apollos-api
+spec:
+  selector:
+    matchLabels:
+      app: ccc-apollos-api
+  template:
+    metadata:
+      labels:
+        app: ccc-apollos-api
+    spec:
+      containers:
+        - name: ccc-apollos-api
+          image: registryrockapi.azurecr.io/ccc_apollos_api
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 4000
