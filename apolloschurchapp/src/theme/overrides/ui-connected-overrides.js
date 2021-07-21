@@ -1,6 +1,6 @@
-export default ({ colors: themeColors }) => ({
+export default () => ({
   'ui-connected.RockAuthedWebBrowser': {
     primary: '#fff',
-    paper: themeColors.black,
+    paper: 'black',
   },
 });
