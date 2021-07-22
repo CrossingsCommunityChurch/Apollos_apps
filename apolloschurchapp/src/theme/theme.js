@@ -4,7 +4,7 @@ import React from 'react';
 import { Image, StyleSheet } from 'react-native';
 import { styled } from '@apollosproject/ui-kit';
 import fonts from './fonts';
-import { UIKitOverrides, UIConnectedOverrides } from './overrides';
+import { UIConnectedOverrides } from './overrides';
 
 /* Add your custom theme definitions below. Anything that is supported in UI-Kit Theme can be
  overridden and/or customized here! */
@@ -16,40 +16,6 @@ import { UIKitOverrides, UIConnectedOverrides } from './overrides';
  * on a per-component basis with 'overrides'
  */
 
-const colors = {
-  primary: '#313e48',
-  secondary: '#236092',
-  tertiary: '#bd9a5f',
-  screen: '#F8F7F4',
-  paper: '#FFFFFF',
-  alert: '#c64f55',
-
-  // Dark shades
-  darkPrimary: '#1d242b',
-  darkSecondary: '#1e436e',
-  darkTertiary: '#9c7d4c',
-
-  // Light shades
-  lightPrimary: '#ffffff',
-  lightSecondary: '#f7f7f7',
-  lightTertiary: '#d4aa67',
-
-  // Statics
-  black: '#000000',
-  white: '#FFFFFF',
-  transparent: 'transparent',
-  wordOfChrist: '#8b0000', // only used in Scripture.
-
-  action: {
-    primary: '#d4aa67',
-    secondary: '#236092',
-  },
-  text: {
-    tertiary: '#bd9a5f',
-    action: '#bd9a5f',
-  },
-};
-
 const lightColors = {
   primary: '#313e48',
   secondary: '#236092',
@@ -57,6 +23,10 @@ const lightColors = {
   text: {
     tertiary: '#bd9a5f',
     action: '#236092',
+  },
+  action: {
+    primary: '#bd9a5f',
+    secondary: '#236092',
   },
 };
 
@@ -68,6 +38,18 @@ const darkColors = {
     tertiary: '#bd9a5f',
     action: '#236092',
   },
+  action: {
+    primary: '#d4aa67',
+    secondary: '#236092',
+  },
+};
+
+const breakpoints = {
+  xs: 320,
+  sm: 496,
+  // md: 800,
+  md: 1200,
+  lg: 1200,
 };
 
 /* Base Typography sizing and fonts.
@@ -152,8 +134,7 @@ const overrides = {
   H6: {
     fontFamily: typography.sans.black.default,
   },
-  ...UIConnectedOverrides({ colors }),
-  ...UIKitOverrides({ colors }),
+  ...UIConnectedOverrides(),
 
   // Onboarding
   'ui-onboarding.Landing.Title': {
@@ -171,7 +152,7 @@ const overrides = {
   'ui-onboarding.Landing': {
     slideTitle: "We're glad you're here!",
     description: 'Live By Faith. Be Voice Of Hope. Be Known By Love.',
-    textColor: colors.white,
+    textColor: 'white',
     // eslint-disable-next-line react/display-name
     BackgroundComponent: () => (
       <FullScreenImage source={require('../../assets/Landing.png')} />
@@ -233,4 +214,4 @@ const overrides = {
   },
 };
 
-export default { colors, lightColors, darkColors, overrides, typography };
+export default { lightColors, darkColors, breakpoints, overrides, typography };

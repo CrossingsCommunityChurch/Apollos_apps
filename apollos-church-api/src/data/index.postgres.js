@@ -31,7 +31,7 @@ import {
   // FeatureFeed,
   // ActionAlgorithm,
   // Event,
-  PrayerRequest,
+  // PrayerRequest,
   Persona,
   // Person as RockPerson,
 } from '@apollosproject/data-connector-rock';
@@ -46,6 +46,7 @@ import * as ActionAlgorithm from './action-algorithms';
 import * as Search from './search';
 import * as LiveStream from './live';
 import * as Schedule from './schedule';
+import * as PrayerRequest from './prayer';
 
 // eslint-disable-next-line import/order
 import {
