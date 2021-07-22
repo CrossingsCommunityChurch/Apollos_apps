@@ -1,4 +1,3 @@
-import React from 'react';
 import LiveStreamListFeatureConnected from '../live-feed/LiveStreamListFeatureConnected';
 
 /* Export your custom prop overrides here. */

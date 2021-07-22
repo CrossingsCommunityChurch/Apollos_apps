@@ -4,7 +4,7 @@ import React from 'react';
 import { Image, StyleSheet } from 'react-native';
 import { styled } from '@apollosproject/ui-kit';
 import fonts from './fonts';
-import { UIKitOverrides, UIConnectedOverrides } from './overrides';
+import { UIConnectedOverrides } from './overrides';
 
 /* Add your custom theme definitions below. Anything that is supported in UI-Kit Theme can be
  overridden and/or customized here! */
@@ -135,7 +135,6 @@ const overrides = {
     fontFamily: typography.sans.black.default,
   },
   ...UIConnectedOverrides(),
-  ...UIKitOverrides(),
 
   // Onboarding
   'ui-onboarding.Landing.Title': {
