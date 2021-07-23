@@ -8,9 +8,15 @@ import {
 } from '@apollosproject/server-core';
 
 class Search extends coreSearch {
-  async mapItemToAlgolia(item) {
-    const { ContentItem } = this.context.dataSources;
-    const type = await ContentItem.resolveType(item);
+  async mapItemToAlgolia(item, passedType) {
+    let type = null;
+    if (passedType === 'Content_Items') {
+      const { ContentItem } = this.context.dataSources;
+      type = await ContentItem.resolveType(item);
+    }
+    if (passedType === 'Event') {
+      type = 'Event';
+    }
     const { data } = await graphql(
       this.context.schema,
       `
@@ -68,6 +74,16 @@ query getItem {
       __typename
       coverImage { sources { uri } }
     }
+    ... on Event{
+      id
+      title
+      htmlContent
+      location
+      start
+      end
+      coverImage{ sources {uri}}
+      __typename
+    }
   }
 }`,
       {},
@@ -77,13 +93,13 @@ query getItem {
   }
 
   // Add functionality here that will add in the events to be searched.
-  async deltaIndex() {
+  async deltaIndex({ datetime }) {
     const { ContentItem } = this.context.dataSources;
     let itemsLeft = true;
     const args = { after: null, first: 100 };
     while (itemsLeft) {
       const { edges } = await ContentItem.paginate({
-        cursor: await ContentItem.forSearchDateAndActive(),
+        cursor: await ContentItem.byDateAndActive({ datetime }),
         args,
       });
 
@@ -115,7 +131,7 @@ query getItem {
     const args = { after: null, first: 100 };
     while (itemsLeft) {
       const { edges } = await ContentItem.paginate({
-        cursor: ContentItem.forSearch(),
+        cursor: ContentItem.byActive(),
         args,
       });
 
@@ -126,7 +142,7 @@ query getItem {
       if (itemsLeft) args.after = result[result.length - 1].cursor;
 
       const indexableItems = await Promise.all(
-        items.map((item) => this.mapItemToAlgolia(item))
+        items.map((item) => this.mapItemToAlgolia(item, 'Content_Items'))
       );
 
       await this.addObjects(indexableItems);

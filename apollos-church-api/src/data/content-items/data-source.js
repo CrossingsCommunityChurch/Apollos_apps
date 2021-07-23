@@ -45,15 +45,15 @@ class dataSource extends ContentItem.dataSource {
     }));
   };
 
-  forSearch = () =>
-    this.request()
-      .filterOneOf(
-        ROCK_MAPPINGS.SEARCH_CONTENT_CHANNEL_IDS.map(
-          (id) => `ContentChannelId eq ${id}`
-        )
-      )
-      .cache({ ttl: 60 })
-      .andFilter(this.LIVE_CONTENT());
+  // forSearch = () =>
+  //   this.request()
+  //     .filterOneOf(
+  //       ROCK_MAPPINGS.SEARCH_CONTENT_CHANNEL_IDS.map(
+  //         (id) => `ContentChannelId eq ${id}`
+  //       )
+  //     )
+  //     .cache({ ttl: 60 })
+  //     .andFilter(this.LIVE_CONTENT());
 
   forSearchDateAndActive = async () =>
     this.request()
