@@ -14787,7 +14787,7 @@ react-colorful@^5.1.2:
   resolved "https://registry.yarnpkg.com/react-colorful/-/react-colorful-5.2.3.tgz#579faf42542e32645c5dee66c8530292b2d61646"
   integrity sha512-lAge4syxosZg9SX8fJiwOLd9ZJSW3poPBtypnz1aMiFoHsRnK5G3+INGGx9DGtsrso4h5uFYbiFpjAfWyK3Kag==
 
-react-devtools-core@^4.6.0:
+react-devtools-core@4.13.4, react-devtools-core@^4.6.0:
   version "4.13.4"
   resolved "https://registry.yarnpkg.com/react-devtools-core/-/react-devtools-core-4.13.4.tgz#9d763715f537df666cefe0414e8732bd9695d4d7"
   integrity sha512-su/lI4LdiK5P1YgZpbm8K1iNQX6s0Lq5fJLa1ZcnpewvrqP5V14svHrbPmrU5ptMUSiwjZ3/CBmc/JCZOuuiHQ==
@@ -14850,6 +14850,11 @@ react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-native-amplitude-analytics@^0.2.12:
+  version "0.2.12"
+  resolved "https://registry.yarnpkg.com/react-native-amplitude-analytics/-/react-native-amplitude-analytics-0.2.12.tgz#bf9b4fdd2d7ba6058964ead3c0d3b9eecc1a22b5"
+  integrity sha512-5pL048n7j0LeCPOjdDgADsijxdgoy1FBFZj75U9KjW+pP6TBTpROnVzgZuo4/Xd5f+xiB+Vz7gn8SCEAHv8IJg==
 
 react-native-bootsplash@^2.0.5:
   version "2.2.8"

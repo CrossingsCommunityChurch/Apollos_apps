@@ -46,6 +46,18 @@ class dataSource extends Event.dataSource {
     return sortedEvents;
   }
 
+  getAllActive = () => {
+    let request = this.request();
+    request = this.request(
+      `Apollos/GetEventItemOccurencesByCalendarId?id=${1}`
+    );
+    return request
+      .cache({ ttl: 60 })
+      .expand('Schedule')
+      .orderBy('Schedule/EffectiveStartDate')
+      .filter('Schedule/EffectiveStartDate ne null');
+  };
+
   getNextStart = async (event) => {
     const lava = `{% schedule id:'${event.schedule.id}' %}
        {

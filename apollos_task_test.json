@@ -43,6 +43,10 @@
         {
           "name": "UNIVERSAL_LINK_HOST",
           "value": "https://apollo.crossings.church"
+        },
+        {
+          "name": "APOLLO_KEY",
+          "value": "service:CCCApollo:veS09pIW4PKiITzESgXzWg"
         }
       ],
       "secrets": [

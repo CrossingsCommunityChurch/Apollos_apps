@@ -114,6 +114,24 @@ query getItem {
 
       await this.addObjects(indexableItems);
     }
+    // itemsLeft = true;
+    // while (itemsLeft) {
+    //   const { edges } = await ContentItem.paginate({
+    //     cursor: await Event.byDateAndActive({ datetime }),
+    //     args,
+    //   });
+
+    //   const result = await edges;
+    //   const items = result.map(({ node }) => node);
+    //   itemsLeft = items.length === 100;
+
+    //   if (itemsLeft) args.after = result[result.length - 1].cursor;
+    //   const indexableItems = await Promise.all(
+    //     items.map((item) => this.mapItemToAlgolia(item))
+    //   );
+
+    //   await this.addObjects(indexableItems);
+    // }
   }
 
   // Add functionality here to allow events to eb indexed. Possibly add for groupas.
