@@ -24,15 +24,14 @@ import { MapViewConnected as Location } from '@apollosproject/ui-mapview';
 import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
 import { Landing, Onboarding } from '@apollosproject/ui-onboarding';
 
-import {
-  ContentFeedConnected,
-  SearchScreenConnected,
-} from '@apollosproject/ui-connected';
+import { ContentFeedConnected } from '@apollosproject/ui-connected';
 import Providers from './Providers';
 import ContentSingle from './content-single';
 import Event from './event';
 import Tabs from './tabs';
 import customTheme, { customIcons } from './theme';
+
+import SearchScreenConnected from './ui/Search/SearchScreenConnected';
 
 enableScreens(); // improves performance for react-navigation
 
