@@ -1,30 +1,57 @@
 import { Event } from '@apollosproject/data-connector-rock';
 import moment from 'moment-timezone';
 import ApollosConfig from '@apollosproject/config';
+import { get } from 'lodash';
 import resolver from './resolver';
 
 // Re-work this after Rock update to v12 to use the eventscheduledinstance lavatemplate.
 
-const { ROCK_CONSTANTS } = ApollosConfig;
+const { ROCK_CONSTANTS, ROCK_MAPPINGS } = ApollosConfig;
 const imageURL = 'images.crossings.church/fit-in/700x700';
 
 class dataSource extends Event.dataSource {
-  async getUpcomingEventsByCampus({ limit = null, campusId } = {}) {
-    // Get the first three persona items.
-    const events = await this.findRecent()
-      .andFilter(`CampusId eq ${campusId}`)
-      .andFilter(
-        `(Schedule/EffectiveEndDate ge datetime'${moment()
-          // we need to subtract a day. The EffectiveEndDate is often the morning of the current day.
-          // It's okay to get already occured events, because we filter them out later on.
-          .subtract(1, 'day')
-          .toISOString()}' or Schedule/EffectiveEndDate eq null)`
-      )
-      .get();
+  calIds = ROCK_MAPPINGS.ALL_CALIDS;
 
+  findRecent = (calId) => {
+    let request = this.request();
+    if (!get(ApollosConfig, 'ROCK.USE_PLUGIN', false)) {
+      console.warn(
+        'Fetching public campuses is not possible without the Apollos Plugin\n\nReturning all campuses.'
+      );
+    } else {
+      request = this.request(
+        `Apollos/GetEventItemOccurencesByCalendarId?id=${calId}`
+      );
+    }
+    return request
+      .cache({ ttl: 60 })
+      .expand('Schedule')
+      .orderBy('Schedule/EffectiveStartDate')
+      .filter('Schedule/EffectiveStartDate ne null');
+  };
+
+  async getUpcomingEventsByCampus({ limit = null, campusId } = {}) {
+    const allEvents = [];
+    // Get the first three persona items.
+    await Promise.all(
+      this.calIds.map(async (id) => {
+        const events = await this.findRecent(id)
+          .andFilter(`CampusId eq ${campusId}`)
+          .andFilter(
+            `(Schedule/EffectiveEndDate ge datetime'${moment()
+              // we need to subtract a day. The EffectiveEndDate is often the morning of the current day.
+              // It's okay to get already occured events, because we filter them out later on.
+              .subtract(1, 'day')
+              .toISOString()}' or Schedule/EffectiveEndDate eq null)`
+          )
+          .get();
+        allEvents.push(...events);
+      })
+    );
     // Phew - this gets tricky. We have to parse the iCal to figure out the REAL start date
+    console.log('WE HAVE ALL ENVENTS MAYBEE?');
     const eventsWithMostRecentOccurence = await Promise.all(
-      events.map(async (event) => ({
+      allEvents.map(async (event) => ({
         ...event,
         mostRecentOccurence: await this.getNextStart(event),
       }))
@@ -34,29 +61,19 @@ class dataSource extends Event.dataSource {
         ({ mostRecentOccurence }) =>
           mostRecentOccurence && new Date(mostRecentOccurence) > new Date()
       )
-      .sort((a, b) => a.mostRecentOccurence - b.mostRecentOccurence);
+      .sort(
+        (a, b) =>
+          new Date(a.mostRecentOccurence) - new Date(b.mostRecentOccurence)
+      );
 
     if (limit != null) {
       // eslint-disable-next-line prettier/prettier
-      // console.log(JSON.stringify(sortedEvents));
-      return sortedEvents.slice(0, 5);
+      console.log("SORTED EVENTS ARE: ",JSON.stringify(sortedEvents));
+      return sortedEvents.slice(0, limit);
     }
     // eslint-disable-next-line prettier/prettier
-    // console.log(JSON.stringify(sortedEvents));
     return sortedEvents;
   }
-
-  getAllActive = () => {
-    let request = this.request();
-    request = this.request(
-      `Apollos/GetEventItemOccurencesByCalendarId?id=${1}`
-    );
-    return request
-      .cache({ ttl: 60 })
-      .expand('Schedule')
-      .orderBy('Schedule/EffectiveStartDate')
-      .filter('Schedule/EffectiveStartDate ne null');
-  };
 
   getNextStart = async (event) => {
     const lava = `{% schedule id:'${event.schedule.id}' %}

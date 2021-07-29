@@ -146,6 +146,13 @@ ROCK_MAPPINGS:
     - 22
     - 23
 
+  ALL_CALIDS:
+    - 4
+    - 3
+    - 1
+    - 5
+    - 6
+    
   SERMON_CHANNEL_ID: 21
 
   SERVING_GROUP_TYPE_ID: 23
