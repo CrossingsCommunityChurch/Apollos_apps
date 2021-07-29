@@ -6,8 +6,14 @@ import {
   createCursor,
   createGlobalId,
 } from '@apollosproject/server-core';
+import moment from 'moment-timezone';
 
+import ApollosConfig from '@apollosproject/config';
+
+const { ROCK_MAPPINGS } = ApollosConfig;
 class Search extends coreSearch {
+  calIds = ROCK_MAPPINGS.ALL_CALIDS;
+
   async mapItemToAlgolia(item, passedType) {
     let type = null;
     if (passedType === 'Content_Items') {
@@ -144,7 +150,7 @@ query getItem {
         resolve(result);
       })
     );
-    const { ContentItem } = this.context.dataSources;
+    const { ContentItem, Event } = this.context.dataSources;
     let itemsLeft = true;
     const args = { after: null, first: 100 };
     while (itemsLeft) {
@@ -165,6 +171,24 @@ query getItem {
 
       await this.addObjects(indexableItems);
     }
+    await Promise.all(
+      this.calIds.map(async (id) => {
+        const events = await Event.findRecent(id)
+          .andFilter(
+            `(Schedule/EffectiveEndDate ge datetime'${moment()
+              // we need to subtract a day. The EffectiveEndDate is often the morning of the current day.
+              // It's okay to get already occured events, because we filter them out later on.
+              .subtract(1, 'day')
+              .toISOString()}' or Schedule/EffectiveEndDate eq null)`
+          )
+          .get();
+        const indexableItems = await Promise.all(
+          events.map((item) => this.mapItemToAlgolia(item, 'Event'))
+        );
+
+        await this.addObjects(indexableItems);
+      })
+    );
   }
 
   async byPaginatedQuery({ query, after, first = 20 }) {

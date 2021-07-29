@@ -49,7 +49,6 @@ class dataSource extends Event.dataSource {
       })
     );
     // Phew - this gets tricky. We have to parse the iCal to figure out the REAL start date
-    console.log('WE HAVE ALL ENVENTS MAYBEE?');
     const eventsWithMostRecentOccurence = await Promise.all(
       allEvents.map(async (event) => ({
         ...event,
@@ -68,7 +67,6 @@ class dataSource extends Event.dataSource {
 
     if (limit != null) {
       // eslint-disable-next-line prettier/prettier
-      console.log("SORTED EVENTS ARE: ",JSON.stringify(sortedEvents));
       return sortedEvents.slice(0, limit);
     }
     // eslint-disable-next-line prettier/prettier
