@@ -742,6 +742,8 @@ type SearchResult {
   summary: String
   coverImage: ImageMedia
   node: Node
+  tags: [String]
+  author: String
 }
 
 type SearchResultsConnection {
