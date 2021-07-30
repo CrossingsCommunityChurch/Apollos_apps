@@ -1,11 +1,6 @@
 import { ContentItem } from '@apollosproject/data-connector-rock';
 import { get } from 'lodash';
 import ApollosConfig from '@apollosproject/config';
-import {
-  createGlobalId,
-  parseGlobalId,
-  generateAppLink,
-} from '@apollosproject/server-core';
 
 const { ROCK_MAPPINGS, ROCK_CONSTANTS } = ApollosConfig;
 const imageURL = 'images.crossings.church/fit-in/700x700';
@@ -45,25 +40,25 @@ class dataSource extends ContentItem.dataSource {
     }));
   };
 
-  forSearch = () =>
-    this.request()
-      .filterOneOf(
-        ROCK_MAPPINGS.SEARCH_CONTENT_CHANNEL_IDS.map(
-          (id) => `ContentChannelId eq ${id}`
-        )
-      )
-      .cache({ ttl: 60 })
-      .andFilter(this.LIVE_CONTENT());
+  // forSearch = () =>
+  //   this.request()
+  //     .filterOneOf(
+  //       ROCK_MAPPINGS.SEARCH_CONTENT_CHANNEL_IDS.map(
+  //         (id) => `ContentChannelId eq ${id}`
+  //       )
+  //     )
+  //     .cache({ ttl: 60 })
+  //     .andFilter(this.LIVE_CONTENT());
 
-  forSearchDateAndActive = async () =>
-    this.request()
-      .filterOneOf(
-        ROCK_MAPPINGS.SEARCH_CONTENT_CHANNEL_IDS.map(
-          (id) => `ContentChannelId eq ${id}`
-        )
-      )
-      .cache({ ttl: 60 })
-      .andFilter(this.LIVE_CONTENT());
+  // forSearchDateAndActive = async () =>
+  //   this.request()
+  //     .filterOneOf(
+  //       ROCK_MAPPINGS.SEARCH_CONTENT_CHANNEL_IDS.map(
+  //         (id) => `ContentChannelId eq ${id}`
+  //       )
+  //     )
+  //     .cache({ ttl: 60 })
+  //     .andFilter(this.LIVE_CONTENT());
 
   getLiveFeed() {
     return this.byContentChannelId(
