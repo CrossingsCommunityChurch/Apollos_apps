@@ -100,7 +100,7 @@ query getItem {
 
   // Add functionality here that will add in the events to be searched.
   async deltaIndex({ datetime }) {
-    const { ContentItem } = this.context.dataSources;
+    const { ContentItem, Event } = this.context.dataSources;
     let itemsLeft = true;
     const args = { after: null, first: 100 };
     while (itemsLeft) {
@@ -120,24 +120,23 @@ query getItem {
 
       await this.addObjects(indexableItems);
     }
-    // itemsLeft = true;
-    // while (itemsLeft) {
-    //   const { edges } = await ContentItem.paginate({
-    //     cursor: await Event.byDateAndActive({ datetime }),
-    //     args,
-    //   });
-
-    //   const result = await edges;
-    //   const items = result.map(({ node }) => node);
-    //   itemsLeft = items.length === 100;
-
-    //   if (itemsLeft) args.after = result[result.length - 1].cursor;
-    //   const indexableItems = await Promise.all(
-    //     items.map((item) => this.mapItemToAlgolia(item))
-    //   );
-
-    //   await this.addObjects(indexableItems);
-    // }
+    await Promise.all(
+      this.calIds.map(async (id) => {
+        const events = await Event.findRecent(id)
+          .andFilter(
+            `(Schedule/EffectiveEndDate ge datetime'${moment()
+              // we need to subtract a day. The EffectiveEndDate is often the morning of the current day.
+              // It's okay to get already occured events, because we filter them out later on.
+              .subtract(1, 'day')
+              .toISOString()}' or Schedule/EffectiveEndDate eq null)`
+          )
+          .get();
+        const indexableItems = await Promise.all(
+          events.map((item) => this.mapItemToAlgolia(item, 'Event'))
+        );
+        await this.addObjects(indexableItems);
+      })
+    );
   }
 
   // Add functionality here to allow events to eb indexed. Possibly add for groupas.
@@ -185,7 +184,6 @@ query getItem {
         const indexableItems = await Promise.all(
           events.map((item) => this.mapItemToAlgolia(item, 'Event'))
         );
-        console.log('events to push to Search are: ', indexableItems);
         await this.addObjects(indexableItems);
       })
     );
