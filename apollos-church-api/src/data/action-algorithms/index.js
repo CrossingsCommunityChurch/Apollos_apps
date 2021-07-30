@@ -22,7 +22,7 @@ class dataSource extends baseAlgorithms.dataSource {
 
     const events = await Event.getUpcomingEventsByCampus({
       campusId,
-      limit: 3,
+      limit: 8,
     });
 
     // Map them into specific actions.

@@ -21,7 +21,7 @@
     tslib "^1.10.0"
     zen-observable "^0.8.14"
 
-"@apollo/client@^3.2.5":
+"@apollo/client@3.3.20", "@apollo/client@^3.2.5":
   version "3.3.20"
   resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.3.20.tgz#8f0935fa991857e9cf2e73c9bd378ad7ec97caf8"
   integrity sha512-hS7UmBwJweudw/J3M0RAcusMHNiRuGqkRH6g91PM2ev8cXScIMdXr/++9jo7wD1nAITMCMF4HQQ3LFaw/Or0Bw==
@@ -266,6 +266,13 @@
   dependencies:
     graphql-tag "^2.10.0"
 
+"@apollosproject/data-schema@^2.27.3-canary.7+4946de92":
+  version "2.27.3-canary.7"
+  resolved "https://registry.yarnpkg.com/@apollosproject/data-schema/-/data-schema-2.27.3-canary.7.tgz#c5c9b9a3d5486d4e2bd2fe360e6be7123375570d"
+  integrity sha512-Eslx42WimrSTBzXzhw0RHfB+BZryZHPlL47ws1Ko2ibViPVnz+5/zqzu1F2ReuNSq6gkPxcNOVfZV3WUypnCdQ==
+  dependencies:
+    "@apollo/client" "3.3.20"
+
 "@apollosproject/eslint-config@^2.26.0":
   version "2.26.0"
   resolved "https://registry.yarnpkg.com/@apollosproject/eslint-config/-/eslint-config-2.26.0.tgz#036d3532a9eaf6a8119b445c544e45a6fe90a255"
@@ -285,6 +292,20 @@
     apollo-server-env "^2.3.0"
     lodash "^4.17.11"
     with-query "^1.1.2"
+
+"@apollosproject/server-core@2.27.3-canary.7":
+  version "2.27.3-canary.7"
+  resolved "https://registry.yarnpkg.com/@apollosproject/server-core/-/server-core-2.27.3-canary.7.tgz#2af6d410ded234799c081a7adb28e98006e4156d"
+  integrity sha512-Jxh4eRBRDr0KM3WS/Ox+4j5Toc65fi4+0bHTgZaK7hVXOL7Hx1sZ28hWjTDHQYzcBPhZiIOo1kzJTKm+ePAtpg==
+  dependencies:
+    "@apollo/client" "3.3.20"
+    "@apollosproject/data-schema" "^2.27.3-canary.7+4946de92"
+    apollo-server-caching "^0.4.0"
+    bull "^3.11.0"
+    bull-board "^0.1.1"
+    express-basic-auth "^1.2.0"
+    graphql-parse-resolve-info "^4.4.5"
+    lodash "^4.17.11"
 
 "@apollosproject/server-core@^2.26.0":
   version "2.26.0"
@@ -14850,6 +14871,11 @@ react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-native-amplitude-analytics@^0.2.12:
+  version "0.2.12"
+  resolved "https://registry.yarnpkg.com/react-native-amplitude-analytics/-/react-native-amplitude-analytics-0.2.12.tgz#bf9b4fdd2d7ba6058964ead3c0d3b9eecc1a22b5"
+  integrity sha512-5pL048n7j0LeCPOjdDgADsijxdgoy1FBFZj75U9KjW+pP6TBTpROnVzgZuo4/Xd5f+xiB+Vz7gn8SCEAHv8IJg==
 
 react-native-bootsplash@^2.0.5:
   version "2.2.8"

@@ -6,11 +6,23 @@ import {
   createCursor,
   createGlobalId,
 } from '@apollosproject/server-core';
+import moment from 'moment-timezone';
 
+import ApollosConfig from '@apollosproject/config';
+
+const { ROCK_MAPPINGS } = ApollosConfig;
 class Search extends coreSearch {
-  async mapItemToAlgolia(item) {
-    const { ContentItem } = this.context.dataSources;
-    const type = await ContentItem.resolveType(item);
+  calIds = ROCK_MAPPINGS.ALL_CALIDS;
+
+  async mapItemToAlgolia(item, passedType) {
+    let type = null;
+    if (passedType === 'Content_Items') {
+      const { ContentItem } = this.context.dataSources;
+      type = await ContentItem.resolveType(item);
+    }
+    if (passedType === 'Event') {
+      type = 'Event';
+    }
     const { data } = await graphql(
       this.context.schema,
       `
@@ -68,6 +80,16 @@ query getItem {
       __typename
       coverImage { sources { uri } }
     }
+    ... on Event{
+      id
+      title
+      htmlContent
+      location
+      start
+      end
+      coverImage{ sources {uri}}
+      __typename
+    }
   }
 }`,
       {},
@@ -77,13 +99,13 @@ query getItem {
   }
 
   // Add functionality here that will add in the events to be searched.
-  async deltaIndex() {
+  async deltaIndex({ datetime }) {
     const { ContentItem } = this.context.dataSources;
     let itemsLeft = true;
     const args = { after: null, first: 100 };
     while (itemsLeft) {
       const { edges } = await ContentItem.paginate({
-        cursor: await ContentItem.forSearchDateAndActive(),
+        cursor: await ContentItem.byDateAndActive({ datetime }),
         args,
       });
 
@@ -98,6 +120,24 @@ query getItem {
 
       await this.addObjects(indexableItems);
     }
+    // itemsLeft = true;
+    // while (itemsLeft) {
+    //   const { edges } = await ContentItem.paginate({
+    //     cursor: await Event.byDateAndActive({ datetime }),
+    //     args,
+    //   });
+
+    //   const result = await edges;
+    //   const items = result.map(({ node }) => node);
+    //   itemsLeft = items.length === 100;
+
+    //   if (itemsLeft) args.after = result[result.length - 1].cursor;
+    //   const indexableItems = await Promise.all(
+    //     items.map((item) => this.mapItemToAlgolia(item))
+    //   );
+
+    //   await this.addObjects(indexableItems);
+    // }
   }
 
   // Add functionality here to allow events to eb indexed. Possibly add for groupas.
@@ -110,12 +150,12 @@ query getItem {
         resolve(result);
       })
     );
-    const { ContentItem } = this.context.dataSources;
+    const { ContentItem, Event } = this.context.dataSources;
     let itemsLeft = true;
     const args = { after: null, first: 100 };
     while (itemsLeft) {
       const { edges } = await ContentItem.paginate({
-        cursor: ContentItem.forSearch(),
+        cursor: ContentItem.byActive(),
         args,
       });
 
@@ -126,11 +166,29 @@ query getItem {
       if (itemsLeft) args.after = result[result.length - 1].cursor;
 
       const indexableItems = await Promise.all(
-        items.map((item) => this.mapItemToAlgolia(item))
+        items.map((item) => this.mapItemToAlgolia(item, 'Content_Items'))
       );
 
       await this.addObjects(indexableItems);
     }
+    await Promise.all(
+      this.calIds.map(async (id) => {
+        const events = await Event.findRecent(id)
+          .andFilter(
+            `(Schedule/EffectiveEndDate ge datetime'${moment()
+              // we need to subtract a day. The EffectiveEndDate is often the morning of the current day.
+              // It's okay to get already occured events, because we filter them out later on.
+              .subtract(1, 'day')
+              .toISOString()}' or Schedule/EffectiveEndDate eq null)`
+          )
+          .get();
+        const indexableItems = await Promise.all(
+          events.map((item) => this.mapItemToAlgolia(item, 'Event'))
+        );
+        console.log('events to push to Search are: ', indexableItems);
+        await this.addObjects(indexableItems);
+      })
+    );
   }
 
   async byPaginatedQuery({ query, after, first = 20 }) {

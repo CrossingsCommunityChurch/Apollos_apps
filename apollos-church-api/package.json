@@ -54,7 +54,7 @@
     "@apollosproject/data-connector-twilio": "^2.26.0",
     "@apollosproject/data-schema": "^2.26.0",
     "@apollosproject/rock-apollo-data-source": "^2.26.0",
-    "@apollosproject/server-core": "^2.26.0",
+    "@apollosproject/server-core": "2.27.3-canary.7",
     "apollo-server": "^2.24.1",
     "apollo-server-cache-redis": "^1.5.0",
     "apollo-server-express": "2.14.2",
