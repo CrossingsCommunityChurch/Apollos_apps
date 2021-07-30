@@ -185,7 +185,7 @@ query getItem {
         const indexableItems = await Promise.all(
           events.map((item) => this.mapItemToAlgolia(item, 'Event'))
         );
-
+        console.log('events to push to Search are: ', indexableItems);
         await this.addObjects(indexableItems);
       })
     );
