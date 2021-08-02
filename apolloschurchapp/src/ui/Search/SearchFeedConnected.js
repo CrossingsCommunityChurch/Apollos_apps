@@ -6,7 +6,8 @@ import PropTypes from 'prop-types';
 
 import { FeedView } from '@apollosproject/ui-kit';
 
-import { NoResults, SearchInputHeader } from '@apollosproject/ui-connected';
+import { SearchInputHeader } from '@apollosproject/ui-connected/src/SearchFeedConnected/SearchInputHeader';
+import NoResults from '@apollosproject/ui-connected/src/SearchFeedConnected/NoResults';
 import GET_SEARCH_RESULTS from '@apollosproject/ui-connected/src/SearchFeedConnected/getSearchResults';
 import SearchCardConnected from './SearchCardConnected';
 
