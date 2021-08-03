@@ -85,7 +85,7 @@ const TabNavigator = () => {
     [client]
   );
   return (
-    <Navigator lazy>
+    <Navigator lazy={false}>
       <Screen
         name="Home"
         component={HomeTab}
