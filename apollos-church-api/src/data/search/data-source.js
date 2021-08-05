@@ -87,6 +87,7 @@ query getItem {
       location
       start
       end
+      objecID: id
       coverImage{ sources {uri}}
       __typename
     }
