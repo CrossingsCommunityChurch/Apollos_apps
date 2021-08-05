@@ -58,32 +58,40 @@ import {
   NotificationPreference,
   Campus as PostgresCampus,
   Person as PostgresPerson,
-  Media as PostgresMedia,
-  ContentItem as PostgresContentItem,
-  ContentItemsConnection,
-  ContentItemCategory,
-  Tag,
+  // Media as PostgresMedia,
+  // Feature,
+  // Tag,
+  // ContentItem,
+  // ContentItemsConnection,
+  // ContentItemCategory as ContentChannel,
+  // ActionAlgorithm,
 } from '@apollosproject/data-connector-postgres';
 
 import * as Theme from './theme';
 
 // This modules ties together certain updates so they occurs in both Rock and Postgres.
 // Will be eliminated in the future through an enhancement to the Shovel
-import { Person, OneSignal } from './rockWithPostgres';
+import {
+  Person,
+  OneSignal,
+  Followings as FollowingsPostgresBridge,
+} from './rockWithPostgres';
 
 const data = {
   Interfaces,
   Followings,
-  ContentChannel,
-  ContentItem,
+  FollowingsPostgresBridge, // This entry needs to come after Followings.
+  FeatureFeed,
+  ActionAlgorithm,
   RockPerson, // This entry needs to come before (postgres) Person
   BinaryFiles, // This entry needs to come before (postgres) Person
   PostgresPerson, // Postgres person for now, as we extend this dataSource in the 'rockWithPostgres' file
-  PostgresMedia,
-  PostgresContentItem,
-  ContentItemsConnection,
-  ContentItemCategory,
-  Tag,
+  // PostgresMedia,
+  Feature,
+  // Tag,
+  // ContentItem,
+  // ContentItemsConnection,
+  ContentChannel,
   Cloudinary,
   Auth,
   AuthSms,
@@ -101,9 +109,6 @@ const data = {
   Template,
   Campus,
   Group,
-  Feature,
-  FeatureFeed,
-  ActionAlgorithm,
   Event,
   Cache,
   PrayerRequest,
@@ -112,12 +117,12 @@ const data = {
   UserFlag,
   Follow,
   PostgresCampus,
-  Persona,
   Notification,
   NotificationPreference,
   OneSignal,
   Schedule,
   Person, // An extension of Postgres person. Will be eliminated in the near future so you can use just postgres/Person.
+  Persona,
 };
 
 const {
