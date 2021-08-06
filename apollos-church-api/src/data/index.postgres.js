@@ -18,7 +18,7 @@ import {
   Interactions,
   RockConstants,
   // ContentItem,
-  ContentChannel,
+  // ContentChannel,
   Sharable,
   Auth,
   PersonalDevice,
@@ -32,17 +32,17 @@ import {
   // ActionAlgorithm,
   // Event,
   // PrayerRequest,
-  Persona,
+  // Persona,
   // Person as RockPerson,
 } from '@apollosproject/data-connector-rock';
 
-import * as ContentItem from './content-items';
+// import * as ContentItem from './content-items';
 import * as Event from './event';
-import * as Feature from './features';
+// import * as Feature from './features';
 import * as FeatureFeed from './feature-feeds';
 import * as RockPerson from './person';
 import * as Sms from './clearstream';
-import * as ActionAlgorithm from './action-algorithms';
+// import * as ActionAlgorithm from './action-algorithms';
 import * as Search from './search';
 import * as LiveStream from './live';
 import * as Schedule from './schedule';
@@ -59,31 +59,39 @@ import {
   Campus as PostgresCampus,
   Person as PostgresPerson,
   Media as PostgresMedia,
-  ContentItem as PostgresContentItem,
-  ContentItemsConnection,
-  ContentItemCategory,
+  Feature,
   Tag,
+  ContentItem,
+  ContentItemsConnection,
+  ContentItemCategory as ContentChannel,
+  ActionAlgorithm,
 } from '@apollosproject/data-connector-postgres';
 
 import * as Theme from './theme';
 
 // This modules ties together certain updates so they occurs in both Rock and Postgres.
 // Will be eliminated in the future through an enhancement to the Shovel
-import { Person, OneSignal } from './rockWithPostgres';
+import {
+  Person,
+  OneSignal,
+  Followings as FollowingsPostgresBridge,
+} from './rockWithPostgres';
 
 const data = {
   Interfaces,
   Followings,
-  ContentChannel,
-  ContentItem,
+  FollowingsPostgresBridge, // This entry needs to come after Followings.
+  FeatureFeed,
+  ActionAlgorithm,
   RockPerson, // This entry needs to come before (postgres) Person
   BinaryFiles, // This entry needs to come before (postgres) Person
   PostgresPerson, // Postgres person for now, as we extend this dataSource in the 'rockWithPostgres' file
   PostgresMedia,
-  PostgresContentItem,
-  ContentItemsConnection,
-  ContentItemCategory,
+  Feature,
   Tag,
+  ContentItem,
+  ContentItemsConnection,
+  ContentChannel,
   Cloudinary,
   Auth,
   AuthSms,
@@ -101,9 +109,6 @@ const data = {
   Template,
   Campus,
   Group,
-  Feature,
-  FeatureFeed,
-  ActionAlgorithm,
   Event,
   Cache,
   PrayerRequest,
@@ -112,7 +117,6 @@ const data = {
   UserFlag,
   Follow,
   PostgresCampus,
-  Persona,
   Notification,
   NotificationPreference,
   OneSignal,
