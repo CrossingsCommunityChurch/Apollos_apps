@@ -136,15 +136,15 @@ ROCK_MAPPINGS:
 
   # Todo add events to be returnable type 
   SEARCH_CONTENT_CHANNEL_IDS:
-    - 21
-    - 22
-    - 423
-    - 23
+    - f88d88d6-33d2-4189-9484-a94cb5164f41
+    - a220055c-31c9-4e46-baf6-493b5ce45985
+    - dc7d5f6e-b0f8-4e01-9b4a-3fde325a1d83
+    - 8260787d-cada-453a-91c0-4f0ede534d53
 
   ALL_CONTENT_CHANNELS:
-    - 21
-    - 22
-    - 23
+    - f88d88d6-33d2-4189-9484-a94cb5164f41
+    - a220055c-31c9-4e46-baf6-493b5ce45985
+    - 8260787d-cada-453a-91c0-4f0ede534d53
 
   ALL_CALIDS:
     - 4
@@ -153,7 +153,7 @@ ROCK_MAPPINGS:
     - 5
     - 6
     
-  SERMON_CHANNEL_ID: 21
+  SERMON_CHANNEL_ID: f88d88d6-33d2-4189-9484-a94cb5164f41
 
   SERVING_GROUP_TYPE_ID: 23
   COMMUNITY_GROUP_TYPE_ID: 25
@@ -196,7 +196,7 @@ TABS:
       - type: CONTENT_FEED
         arguments:
           channelIds:
-            - 21
+            - f88d88d6-33d2-4189-9484-a94cb5164f41
           limit: 5
       type: HeroList
       title: Recent Sermons
@@ -246,7 +246,7 @@ TABS:
           - type: CONTENT_FEED
             arguments:
               channelIds:
-                - 23
+                - 8260787d-cada-453a-91c0-4f0ede534d53
               limit: 5
         type: HorizontalCardList
         subtitle: Devotionals
@@ -255,14 +255,14 @@ TABS:
           title: 'Read More'
           relatedNode:
             __typename: ContentChannel
-            id: 23
+            id: 8260787d-cada-453a-91c0-4f0ede534d53
             name: Devotionals
   
   WATCH:
       - algorithms:
           - type: LATEST_SERIES_CHILDREN
             arguments:
-              channelId: 18
+              channelId: e848a74f-d2d9-4dcf-824c-373fe0db4327
         type: HeroList
         title: Catch up
         subtitle: Latest Sermons
@@ -271,7 +271,7 @@ TABS:
           - type: CONTENT_FEED
             arguments:
               channelIds:
-                - 18
+                - e848a74f-d2d9-4dcf-824c-373fe0db4327
               limit: 6
         type: HorizontalCardList
         subtitle: All Sermon Series
@@ -280,13 +280,13 @@ TABS:
           title: See More
           relatedNode:
             __typename: ContentChannel
-            id: 18
+            id: e848a74f-d2d9-4dcf-824c-373fe0db4327
       - algorithms:
           - type: CONTENT_FEED
             arguments:
               channelIds:
-                - 19
-                - 422
+                - 85d16d40-4485-41cb-91fe-180ec06c83b6
+                - 42a4f1cf0-61fd-4231-9592-ea1b076e1bc2
               limit: 4
         type: HorizontalCardList
         subtitle: Latest Teaching Series

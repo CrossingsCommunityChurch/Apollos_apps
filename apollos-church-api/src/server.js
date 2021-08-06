@@ -73,6 +73,7 @@ const apolloServer = new ApolloServer({
         calculateHttpHeaders: true,
         defaultMaxAge: 3600,
       },
+  uploads: false,
 });
 
 const app = express();

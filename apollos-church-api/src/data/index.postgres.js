@@ -18,7 +18,7 @@ import {
   Interactions,
   RockConstants,
   // ContentItem,
-  ContentChannel,
+  // ContentChannel,
   Sharable,
   Auth,
   PersonalDevice,
@@ -32,17 +32,17 @@ import {
   // ActionAlgorithm,
   // Event,
   // PrayerRequest,
-  Persona,
+  // Persona,
   // Person as RockPerson,
 } from '@apollosproject/data-connector-rock';
 
-import * as ContentItem from './content-items';
+// import * as ContentItem from './content-items';
 import * as Event from './event';
-import * as Feature from './features';
+// import * as Feature from './features';
 import * as FeatureFeed from './feature-feeds';
 import * as RockPerson from './person';
 import * as Sms from './clearstream';
-import * as ActionAlgorithm from './action-algorithms';
+// import * as ActionAlgorithm from './action-algorithms';
 import * as Search from './search';
 import * as LiveStream from './live';
 import * as Schedule from './schedule';
@@ -58,13 +58,13 @@ import {
   NotificationPreference,
   Campus as PostgresCampus,
   Person as PostgresPerson,
-  // Media as PostgresMedia,
-  // Feature,
-  // Tag,
-  // ContentItem,
-  // ContentItemsConnection,
-  // ContentItemCategory as ContentChannel,
-  // ActionAlgorithm,
+  Media as PostgresMedia,
+  Feature,
+  Tag,
+  ContentItem,
+  ContentItemsConnection,
+  ContentItemCategory as ContentChannel,
+  ActionAlgorithm,
 } from '@apollosproject/data-connector-postgres';
 
 import * as Theme from './theme';
@@ -86,11 +86,11 @@ const data = {
   RockPerson, // This entry needs to come before (postgres) Person
   BinaryFiles, // This entry needs to come before (postgres) Person
   PostgresPerson, // Postgres person for now, as we extend this dataSource in the 'rockWithPostgres' file
-  // PostgresMedia,
+  PostgresMedia,
   Feature,
-  // Tag,
-  // ContentItem,
-  // ContentItemsConnection,
+  Tag,
+  ContentItem,
+  ContentItemsConnection,
   ContentChannel,
   Cloudinary,
   Auth,
@@ -122,7 +122,6 @@ const data = {
   OneSignal,
   Schedule,
   Person, // An extension of Postgres person. Will be eliminated in the near future so you can use just postgres/Person.
-  Persona,
 };
 
 const {
