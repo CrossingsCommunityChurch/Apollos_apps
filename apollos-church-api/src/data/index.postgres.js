@@ -28,7 +28,7 @@ import {
   Group,
   BinaryFiles,
   // Feature,
-  // FeatureFeed,
+  FeatureFeed,
   // ActionAlgorithm,
   // Event,
   // PrayerRequest,
@@ -39,7 +39,7 @@ import {
 // import * as ContentItem from './content-items';
 import * as Event from './event';
 // import * as Feature from './features';
-import * as FeatureFeed from './feature-feeds';
+// import * as FeatureFeed from './feature-feeds';
 import * as RockPerson from './person';
 import * as Sms from './clearstream';
 // import * as ActionAlgorithm from './action-algorithms';

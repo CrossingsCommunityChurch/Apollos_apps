@@ -631,7 +631,6 @@ type Query {
   _placeholder: Boolean
   node(id: ID!): Node
   likedContent(first: Int, after: String): ContentItemsConnection
-  homeHeaderFeedFeatures: FeatureFeed
   suggestedFollows: [Person]
   searchPeople(name: String, first: Int, after: String): SearchPeopleResultsConnection
   tabFeedFeatures(tab: Tab!, campusId: ID): FeatureFeed

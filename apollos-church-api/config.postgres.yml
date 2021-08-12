@@ -59,7 +59,7 @@ CLOUDINARY:
   URL: ${CLOUDINARY_URL}
 
 CONTENT:
-  SERMON_CHANNEL_ID: f88d88d6-33d2-4189-9484-a94cb5164f41
+  SERMON_CHANNEL_ID: 88c4def4-3258-4816-aa6e-eda67a4957bd
   TYPES:
     - ContentSeriesContentItem
     - DevotionalContentItem
@@ -74,15 +74,15 @@ CONTENT:
 
   # Todo add events to be returnable type 
   SEARCH_CONTENT_CHANNEL_IDS:
-    - f88d88d6-33d2-4189-9484-a94cb5164f41
-    - a220055c-31c9-4e46-baf6-493b5ce45985
-    - dc7d5f6e-b0f8-4e01-9b4a-3fde325a1d83
-    - 8260787d-cada-453a-91c0-4f0ede534d53
+    - 88c4def4-3258-4816-aa6e-eda67a4957bd
+    - 340a1ce2-c934-4d1e-9459-1267cb2eaf7f
+    - 2d87b351-fbf2-42bc-b7f4-7903ec1d2137
+    - e23968c8-2570-432d-a87b-c7519bd5fe0b
 
   ALL_CONTENT_CHANNELS:
-    - f88d88d6-33d2-4189-9484-a94cb5164f41
-    - a220055c-31c9-4e46-baf6-493b5ce45985
-    - 8260787d-cada-453a-91c0-4f0ede534d53
+    - 88c4def4-3258-4816-aa6e-eda67a4957bd
+    - 2d87b351-fbf2-42bc-b7f4-7903ec1d2137
+    - e23968c8-2570-432d-a87b-c7519bd5fe0b
 
   ALL_CALIDS:
     - 4
@@ -124,17 +124,17 @@ TABS:
         action: OPEN_URL,
         relatedNode: {
           __typename: Url,
-          url: 'https://crossings.church/give'
+          url: 'https://app.crossings.church/mobile/give'
         },
       }]
-    - algorithms: [UPCOMING_STREAMS]
-      type: LiveContentList
-      title: Live Now
+    #- algorithms: [UPCOMING_STREAMS]
+     # type: LiveContentList
+     # title: Live Now
     - algorithms:
       - type: CONTENT_FEED
         arguments:
           channelIds:
-            - f88d88d6-33d2-4189-9484-a94cb5164f41
+            - 88c4def4-3258-4816-aa6e-eda67a4957bd
           limit: 5
       type: HeroList
       title: Recent Sermons
@@ -184,7 +184,7 @@ TABS:
           - type: CONTENT_FEED
             arguments:
               channelIds:
-                - 8260787d-cada-453a-91c0-4f0ede534d53
+                - e23968c8-2570-432d-a87b-c7519bd5fe0b
               limit: 5
         type: HorizontalCardList
         subtitle: Devotionals
@@ -193,14 +193,14 @@ TABS:
           title: 'Read More'
           relatedNode:
             __typename: ContentChannel
-            id: 8260787d-cada-453a-91c0-4f0ede534d53
-            name: Devotionals
+            apollosId: ContentChannele23968c8-2570-432d-a87b-c7519bd5fe0b
+            title: Devotionals
   
   WATCH:
       - algorithms:
           - type: LATEST_SERIES_CHILDREN
             arguments:
-              channelId: e848a74f-d2d9-4dcf-824c-373fe0db4327
+              channelId: 88c4def4-3258-4816-aa6e-eda67a4957bd
         type: HeroList
         title: Catch up
         subtitle: Latest Sermons
@@ -209,7 +209,7 @@ TABS:
           - type: CONTENT_FEED
             arguments:
               channelIds:
-                - e848a74f-d2d9-4dcf-824c-373fe0db4327
+                - 88c4def4-3258-4816-aa6e-eda67a4957bd
               limit: 6
         type: HorizontalCardList
         subtitle: All Sermon Series
@@ -218,14 +218,14 @@ TABS:
           title: See More
           relatedNode:
             __typename: ContentChannel
-            id: e848a74f-d2d9-4dcf-824c-373fe0db4327
+            apollosId: ContentChannel88c4def4-3258-4816-aa6e-eda67a4957bd
       - algorithms:
           - type: CONTENT_FEED
             arguments:
               channelIds:
-                - 85d16d40-4485-41cb-91fe-180ec06c83b6
-                - 42a4f1cf0-61fd-4231-9592-ea1b076e1bc2
-              limit: 4
+                - 340a1ce2-c934-4d1e-9459-1267cb2eaf7f
+                - 2d87b351-fbf2-42bc-b7f4-7903ec1d2137
+              limit: 8
         type: HorizontalCardList
         subtitle: Latest Teaching Series
       #- algorithms:
