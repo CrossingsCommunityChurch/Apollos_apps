@@ -59,7 +59,7 @@ CLOUDINARY:
   URL: ${CLOUDINARY_URL}
 
 CONTENT:
-  SERMON_CHANNEL_ID: f88d88d6-33d2-4189-9484-a94cb5164f41
+  SERMON_CHANNEL_ID: f8b05204-f99c-4f40-93c3-0f4726d0b265
   TYPES:
     - ContentSeriesContentItem
     - DevotionalContentItem
@@ -74,15 +74,15 @@ CONTENT:
 
   # Todo add events to be returnable type 
   SEARCH_CONTENT_CHANNEL_IDS:
-    - f88d88d6-33d2-4189-9484-a94cb5164f41
-    - a220055c-31c9-4e46-baf6-493b5ce45985
-    - dc7d5f6e-b0f8-4e01-9b4a-3fde325a1d83
-    - 8260787d-cada-453a-91c0-4f0ede534d53
+    - f8b05204-f99c-4f40-93c3-0f4726d0b265
+    - 592e144b-6735-4604-9c0a-df81a623d411
+    - 531d3fea-10a1-4ee4-86da-fbba0a09562a
+    - a83fe07f-06ce-477e-956a-d95ce088dce6
 
   ALL_CONTENT_CHANNELS:
-    - f88d88d6-33d2-4189-9484-a94cb5164f41
-    - a220055c-31c9-4e46-baf6-493b5ce45985
-    - 8260787d-cada-453a-91c0-4f0ede534d53
+    - f8b05204-f99c-4f40-93c3-0f4726d0b265
+    - 592e144b-6735-4604-9c0a-df81a623d411
+    - 531d3fea-10a1-4ee4-86da-fbba0a09562a
 
   ALL_CALIDS:
     - 4
@@ -127,14 +127,14 @@ TABS:
           url: 'https://crossings.church/give'
         },
       }]
-    - algorithms: [UPCOMING_STREAMS]
-      type: LiveContentList
-      title: Live Now
+    #- algorithms: [UPCOMING_STREAMS]
+    #  type: LiveContentList
+    #  title: Live Now
     - algorithms:
       - type: CONTENT_FEED
         arguments:
           channelIds:
-            - f88d88d6-33d2-4189-9484-a94cb5164f41
+            - f8b05204-f99c-4f40-93c3-0f4726d0b265
           limit: 5
       type: HeroList
       title: Recent Sermons
@@ -184,7 +184,7 @@ TABS:
           - type: CONTENT_FEED
             arguments:
               channelIds:
-                - 8260787d-cada-453a-91c0-4f0ede534d53
+                - a83fe07f-06ce-477e-956a-d95ce088dce6
               limit: 5
         type: HorizontalCardList
         subtitle: Devotionals
@@ -193,14 +193,14 @@ TABS:
           title: 'Read More'
           relatedNode:
             __typename: ContentChannel
-            id: 8260787d-cada-453a-91c0-4f0ede534d53
+            apollosId: ContentChannela83fe07f-06ce-477e-956a-d95ce088dce6
             name: Devotionals
   
   WATCH:
       - algorithms:
           - type: LATEST_SERIES_CHILDREN
             arguments:
-              channelId: e848a74f-d2d9-4dcf-824c-373fe0db4327
+              channelId: f8b05204-f99c-4f40-93c3-0f4726d0b265
         type: HeroList
         title: Catch up
         subtitle: Latest Sermons
@@ -209,7 +209,7 @@ TABS:
           - type: CONTENT_FEED
             arguments:
               channelIds:
-                - e848a74f-d2d9-4dcf-824c-373fe0db4327
+                - b5a7b930-7924-46a3-8365-e449abe8e644
               limit: 6
         type: HorizontalCardList
         subtitle: All Sermon Series
@@ -218,13 +218,13 @@ TABS:
           title: See More
           relatedNode:
             __typename: ContentChannel
-            id: e848a74f-d2d9-4dcf-824c-373fe0db4327
+            apollosId: ContentChannelb5a7b930-7924-46a3-8365-e449abe8e644
       - algorithms:
           - type: CONTENT_FEED
             arguments:
               channelIds:
-                - 85d16d40-4485-41cb-91fe-180ec06c83b6
-                - 42a4f1cf0-61fd-4231-9592-ea1b076e1bc2
+                - 067ad7bd-26c1-4f67-b950-d6bcdcd2f5e8
+                - 955ed0f8-03f6-4f0b-b48e-b095e9bf6000
               limit: 4
         type: HorizontalCardList
         subtitle: Latest Teaching Series
