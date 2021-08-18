@@ -59,7 +59,7 @@ CLOUDINARY:
   URL: ${CLOUDINARY_URL}
 
 CONTENT:
-  SERMON_CHANNEL_ID: f8b05204-f99c-4f40-93c3-0f4726d0b265
+  SERMON_CHANNEL_ID: 1d14f86d-fe99-4bcd-8456-ef22adc0d43f
   TYPES:
     - ContentSeriesContentItem
     - DevotionalContentItem
@@ -74,15 +74,15 @@ CONTENT:
 
   # Todo add events to be returnable type 
   SEARCH_CONTENT_CHANNEL_IDS:
-    - f8b05204-f99c-4f40-93c3-0f4726d0b265
-    - 592e144b-6735-4604-9c0a-df81a623d411
-    - 531d3fea-10a1-4ee4-86da-fbba0a09562a
-    - a83fe07f-06ce-477e-956a-d95ce088dce6
+    - 1d14f86d-fe99-4bcd-8456-ef22adc0d43f #Sermon message id 21
+    - 13ffb055-56e0-4bb8-b349-022336ef3239 #teaching Message id 22
+    - a51d4c7c-53ad-4e90-80cc-a5db8f9d6f92 #Gathering message id 423
+    - a9d3319c-d06d-4e16-bed7-530e6555ae5e #Devotionals id 23
 
   ALL_CONTENT_CHANNELS:
-    - f8b05204-f99c-4f40-93c3-0f4726d0b265
-    - 592e144b-6735-4604-9c0a-df81a623d411
-    - 531d3fea-10a1-4ee4-86da-fbba0a09562a
+    - 1d14f86d-fe99-4bcd-8456-ef22adc0d43f #Sermon message id 21
+    - 13ffb055-56e0-4bb8-b349-022336ef3239 #teaching Message id 22
+    - a51d4c7c-53ad-4e90-80cc-a5db8f9d6f92 #Gathering message id 423
 
   ALL_CALIDS:
     - 4
@@ -101,8 +101,8 @@ CONTENT:
 
   SUNDAY_SERMON_SCHEDULE_CATEGORY_ID: 406
 
-  LIVESTREAM_CONTENT_CHANNEL_ID: 443
-  LIVESTREAM_EVENT_CONTENT_CHANNEL_ID: 588
+  LIVESTREAM_CONTENT_CHANNEL_ID: 03210db9-9f7e-49a2-881f-ad3040859fc4
+  
 
 TABS:
   HOME:
@@ -114,7 +114,7 @@ TABS:
         action: OPEN_AUTHENTICATED_URL,
         relatedNode: {
           __typename: Url,
-          url: 'https://crossings.church/self-checkin',
+          url: 'https://app.crossings.church/self-checkin',
         }
       },
       {
@@ -134,34 +134,10 @@ TABS:
       - type: CONTENT_FEED
         arguments:
           channelIds:
-            - f8b05204-f99c-4f40-93c3-0f4726d0b265
+            - 1d14f86d-fe99-4bcd-8456-ef22adc0d43f
           limit: 5
       type: HeroList
       title: Recent Sermons
-    #- algorithms: [CONTENT_CHANNEL]
-    #  contentChannelId: 19
-    #  title: Teaching Series
-    #  subtitle: Weekly Teachings
-    #  type: HorizontalCardList
-    #  limit: 5
-    #  primaryAction:
-    #    action: OPEN_CHANNEL
-    #    title: See More
-    #    relatedNode:
-    #      __typename: ContentChannel
-    #      id: 19
-    #- algorithms: [CONTENT_CHANNEL]
-    #  contentChannelId: 23
-    #  title: Devotions
-    #  subtitle: Weekly Studies
-    #  type: HorizontalCardList
-    #  limit: 5
-    #  primaryAction:
-    #    action: OPEN_CHANNEL
-    #    title: See More
-    #    relatedNode:
-    #      __typename: ContentChannel
-    #      id: 23
     - title: Upcoming Events
       subtitle: What's happening at Crossings
       type: ActionList
@@ -184,7 +160,7 @@ TABS:
           - type: CONTENT_FEED
             arguments:
               channelIds:
-                - a83fe07f-06ce-477e-956a-d95ce088dce6
+                - a9d3319c-d06d-4e16-bed7-530e6555ae5e
               limit: 5
         type: HorizontalCardList
         subtitle: Devotionals
@@ -193,14 +169,14 @@ TABS:
           title: 'Read More'
           relatedNode:
             __typename: ContentChannel
-            apollosId: ContentChannela83fe07f-06ce-477e-956a-d95ce088dce6
+            apollosId: ContentChannel:a9d3319c-d06d-4e16-bed7-530e6555ae5e
             name: Devotionals
   
   WATCH:
       - algorithms:
           - type: LATEST_SERIES_CHILDREN
             arguments:
-              channelId: f8b05204-f99c-4f40-93c3-0f4726d0b265
+              channelId: 72e659ba-754f-4227-ba0f-ae60eac674f1
         type: HeroList
         title: Catch up
         subtitle: Latest Sermons
@@ -209,7 +185,7 @@ TABS:
           - type: CONTENT_FEED
             arguments:
               channelIds:
-                - b5a7b930-7924-46a3-8365-e449abe8e644
+                - 72e659ba-754f-4227-ba0f-ae60eac674f1
               limit: 6
         type: HorizontalCardList
         subtitle: All Sermon Series
@@ -218,16 +194,35 @@ TABS:
           title: See More
           relatedNode:
             __typename: ContentChannel
-            apollosId: ContentChannelb5a7b930-7924-46a3-8365-e449abe8e644
+            apollosId: ContentChannel:72e659ba-754f-4227-ba0f-ae60eac674f1
       - algorithms:
           - type: CONTENT_FEED
             arguments:
               channelIds:
-                - 067ad7bd-26c1-4f67-b950-d6bcdcd2f5e8
-                - 955ed0f8-03f6-4f0b-b48e-b095e9bf6000
-              limit: 4
+                - bee639de-4185-46a4-81c3-fe82e72596b6
+              limit: 6
         type: HorizontalCardList
         subtitle: Latest Teaching Series
+        primaryAction:
+          action: OPEN_CHANNEL
+          title: See More
+          relatedNode:
+            __typename: ContentChannel
+            apollosId: ContentChannel:bee639de-4185-46a4-81c3-fe82e72596b6
+      - algorithms:
+          - type: CONTENT_FEED
+            arguments:
+              channelIds:
+                - 2dac29bb-f7b7-4e7e-a22d-26174ab2ef60
+              limit: 6
+        type: HorizontalCardList
+        subtitle: Latest The Gathering Series
+        primaryAction:
+          action: OPEN_CHANNEL
+          title: See More
+          relatedNode:
+            __typename: ContentChannel
+            apollosId: ContentChannel:2dac29bb-f7b7-4e7e-a22d-26174ab2ef60
       #- algorithms:
       #    - type: CONTENT_FEED
       #      arguments:
