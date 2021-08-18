@@ -60,6 +60,7 @@ CLOUDINARY:
 
 CONTENT:
   SERMON_CHANNEL_ID: 1d14f86d-fe99-4bcd-8456-ef22adc0d43f
+  
   TYPES:
     - ContentSeriesContentItem
     - DevotionalContentItem
@@ -124,7 +125,7 @@ TABS:
         action: OPEN_URL,
         relatedNode: {
           __typename: Url,
-          url: 'https://crossings.church/give'
+          url: 'https://app.crossings.church/mobile/give'
         },
       }]
     #- algorithms: [UPCOMING_STREAMS]
