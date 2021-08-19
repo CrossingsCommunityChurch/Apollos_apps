@@ -10,66 +10,38 @@
 APP:
   # This variable is used for generating deep links.
   # It should match whatver is in your Info.plist `CFBundleURLTypes`
-  DEEP_LINK_HOST: crossings
+  DEEP_LINK_HOST: ${DEEP_LINK_HOST}
   UNIVERSAL_LINK_HOST: ${UNIVERSAL_LINK_HOST}
   ROOT_API_URL: ${ROOT_URL}
   JOBS_USERNAME: ${JOBS_USERNAME}
   JOBS_PASSWORD: ${JOBS_PASSWORD}
 DATABASE:
   URL: ${DATABASE_URL}
-  OPTIONS: {
-    dialectOptions: {
-      ssl: {
-          require: true,
-          rejectUnauthorized: true
-      }
-    }
-  }
 BUGSNAG:
   API_KEY: ${BUGSNAG_KEY}
 ROCK:
   URL: ${ROCK_URL}
   API_TOKEN: ${ROCK_TOKEN}
 UNIVERSAL_LINKS:
-  # This should be your app's bundle ID, as found in your info.plist.
-  APPLE_APP_ID: church.crossings.rock
-  # This should be your app's team ID, as found in Xcode
-  APPLE_TEAM_ID: 83DP3WM45E
-  # Where should a user be redirected if they don't have your app installed?
-  APP_STORE_LINK: https://apps.apple.com/us/app/crossings-church-new/id1501893128
-  PLAY_STORE_LINK: https://crossings.church/app
-  # Your app Id, as found in your app/build.gradle.
-  GOOGLE_APP_ID: church.crossings.rock
-  # https://docs.getsocial.im/knowledge-base/android-signing-key-sha256/
-  GOOGLE_KEYSTORE_SHA256: EC:6E:B5:5A:62:53:1E:53:FF:C4:BA:A7:CB:29:77:57:71:9D:65:2F:AF:69:41:A3:AD:2B:C4:55:A1:7A:07:03
+  APPLE_APP_ID: ${APPLE_APP_ID}
+  APPLE_TEAM_ID: ${APPLE_TEAM_ID}
+  APP_STORE_LINK: ${IOS_REDIRECT}
+  PLAY_STORE_LINK: ${ANDROID_REDIRECT}
+  GOOGLE_APP_ID: ${GOOGLE_APP_ID}
+  GOOGLE_KEYSTORE_SHA256: ${GOOGLE_KEYSTORE_SHA256}
 ONE_SIGNAL:
-  APP_ID: 144c1d64-5745-429c-8c50-3c45891711cd
+  APP_ID: ${ONE_SIGNAL_APP_ID}
   REST_KEY: ${ONE_SIGNAL_REST_KEY}
 CHURCH_ONLINE:
-  URL: https://venue.online.church/
-  WEB_VIEW_URL: https://venue.online.church/
+  URL: ${CHURCH_ONLINE_URL}
+  WEB_VIEW_URL: https://apollos.online.church/
 ALGOLIA:
   APPLICATION_ID: ${ALGOLIASEARCH_APPLICATION_ID}
   API_KEY: ${ALGOLIASEARCH_API_KEY}
-  SEARCH_INDEX: ${ALGOLIASEARCH_INDEX}
-  # Configure Algolia custom settings here
-  # https://www.algolia.com/doc/api-reference/settings-api-parameters/
-  CONFIGURATION:
-    searchableAttributes:
-      - title
-      - htmlContent
-      - unordered(summary)
-      - author
-      - tags
-    #customRankings:
-    # NOT CURRENTLY INCLUDED
-    # This just demonstrates what's possible
-    # To include likedCount (or any other field) override search package
-    # and add field to config below
-    #- desc(likedCount)
-CLEARSTREAM:
-  API_KEY: ${CLEARSTREAM_API_KEY}
-  FROM_NUMBER: ${CLEARSTREAM_FROM_NUMBER}
+TWILIO:
+  ACCOUNT_SID: ${TWILIO_ACCOUNT_SID}
+  AUTH_TOKEN: ${TWILIO_AUTH_TOKEN}
+  FROM_NUMBER: ${TWILIO_FROM_NUMBER}
 PASS:
   TEMPLATES:
     CHECKIN: ${PWD}/wallet-passes/checkin.pass
@@ -78,57 +50,24 @@ PASS:
     SIGNER_CERT: ${PASS_SIGNER_CERT}
     SIGNER_KEY: ${PASS_SIGNER_KEY}
     SIGNER_KEY_PASSPHRASE: ${PASS_SIGNER_PASSPHRASE}
-ANALYTICS:
-  # Filling out these fields will automatically enable analytics tracking
-  # on the accompanying service
-  SEGMENT_KEY:
-  GA_ID:
-  USE_ROCK: false
 BIBLE_API:
   KEY: ${BIBLE_API_KEY}
   BIBLE_ID:
-    KJV: 'de4e12af7f28f599-01'
-    
+    WEB: '9879dbb7cfe39e4d-01'
+    KJV: 'de4e12af7f28f599-02'
 CLOUDINARY:
-  # Cloudinary is used to improve image loading
-  # value should look something like
-  # cloudinary://123123123:adkfnla_adASDv_adAS@test
   URL: ${CLOUDINARY_URL}
-ENGINE:
-  API_KEY: ${APOLLO_KEY}
-  SCHEMA_TAG: ${ENGINE_SCHEMA_TAG}
 
-# This key holds various properties that allow our GraphQL server to map to your Rock Instance
-ROCK_MAPPINGS:
-  INTERACTIONS:
-    # Name of the InteractionChannel that will be created per EntityType
-    CHANNEL_NAME: Apollos Crossings App
-    # Prefix for the name of the InteractionComponent that will be created per Entity
-    COMPONENT_NAME: Apollos Crossings App Component
-    # 512 is "Mobile App"
-    CHANNEL_MEDIUM_TYPE_ID: 512
-
-  CONTENT_ITEM:
-    ContentSeriesContentItem:
-      # When resolving "ContentSeriesContentItem" look in rock for a "ContentChannelItem"
-      EntityType: ContentChannelItem
-      # Used to define the subset of content channels types that use this specific type.
-      ContentChannelTypeId: [6, 11]
-    DevotionalContentItem:
-      EntityType: ContentChannelItem
-      ContentChannelTypeId: [12]
-    MediaContentItem:
-      EntityType: ContentChannelItem
-    UniversalContentItem:
-      EntityType: ContentChannelItem
-    WeekendContentItem:
-      ContentChannelId: [21]
-      EntityType: ContentChannelItem
-    LiveContentItem:
-      ContentChannelTypeId: [156]
-      EntityType: ContentChannelItem
-    ContentItem:
-      EntityType: ContentChannelItem
+CONTENT:
+  SERMON_CHANNEL_ID: 1d14f86d-fe99-4bcd-8456-ef22adc0d43f
+  
+  TYPES:
+    - ContentSeriesContentItem
+    - DevotionalContentItem
+    - MediaContentItem
+    - UniversalContentItem
+    - WeekendContentItem
+    - ContentItem
 
   DATAVIEW_CATEGORIES:
     # Id of the category used to store all persona dataviews
@@ -136,15 +75,15 @@ ROCK_MAPPINGS:
 
   # Todo add events to be returnable type 
   SEARCH_CONTENT_CHANNEL_IDS:
-    - f88d88d6-33d2-4189-9484-a94cb5164f41
-    - a220055c-31c9-4e46-baf6-493b5ce45985
-    - dc7d5f6e-b0f8-4e01-9b4a-3fde325a1d83
-    - 8260787d-cada-453a-91c0-4f0ede534d53
+    - 1d14f86d-fe99-4bcd-8456-ef22adc0d43f #Sermon message id 21
+    - 13ffb055-56e0-4bb8-b349-022336ef3239 #teaching Message id 22
+    - a51d4c7c-53ad-4e90-80cc-a5db8f9d6f92 #Gathering message id 423
+    - a9d3319c-d06d-4e16-bed7-530e6555ae5e #Devotionals id 23
 
   ALL_CONTENT_CHANNELS:
-    - f88d88d6-33d2-4189-9484-a94cb5164f41
-    - a220055c-31c9-4e46-baf6-493b5ce45985
-    - 8260787d-cada-453a-91c0-4f0ede534d53
+    - 1d14f86d-fe99-4bcd-8456-ef22adc0d43f #Sermon message id 21
+    - 13ffb055-56e0-4bb8-b349-022336ef3239 #teaching Message id 22
+    - a51d4c7c-53ad-4e90-80cc-a5db8f9d6f92 #Gathering message id 423
 
   ALL_CALIDS:
     - 4
@@ -153,7 +92,7 @@ ROCK_MAPPINGS:
     - 5
     - 6
     
-  SERMON_CHANNEL_ID: f88d88d6-33d2-4189-9484-a94cb5164f41
+ 
 
   SERVING_GROUP_TYPE_ID: 23
   COMMUNITY_GROUP_TYPE_ID: 25
@@ -163,8 +102,8 @@ ROCK_MAPPINGS:
 
   SUNDAY_SERMON_SCHEDULE_CATEGORY_ID: 406
 
-  LIVESTREAM_CONTENT_CHANNEL_ID: 443
-  LIVESTREAM_EVENT_CONTENT_CHANNEL_ID: 588
+  LIVESTREAM_CONTENT_CHANNEL_ID: 03210db9-9f7e-49a2-881f-ad3040859fc4
+  
 
 TABS:
   HOME:
@@ -176,7 +115,7 @@ TABS:
         action: OPEN_AUTHENTICATED_URL,
         relatedNode: {
           __typename: Url,
-          url: 'https://crossings.church/self-checkin',
+          url: 'https://app.crossings.church/self-checkin',
         }
       },
       {
@@ -186,44 +125,26 @@ TABS:
         action: OPEN_URL,
         relatedNode: {
           __typename: Url,
-          url: 'https://crossings.church/give'
+          url: 'https://app.crossings.church/mobile/give'
         },
       }]
-    - algorithms: [UPCOMING_STREAMS]
-      type: LiveContentList
-      title: Live Now
+    #- algorithms: [UPCOMING_STREAMS]
+    #  type: LiveContentList
+    #  title: Live Now
     - algorithms:
       - type: CONTENT_FEED
         arguments:
           channelIds:
-            - f88d88d6-33d2-4189-9484-a94cb5164f41
+            - 1d14f86d-fe99-4bcd-8456-ef22adc0d43f
           limit: 5
       type: HeroList
       title: Recent Sermons
-    #- algorithms: [CONTENT_CHANNEL]
-    #  contentChannelId: 19
-    #  title: Teaching Series
-    #  subtitle: Weekly Teachings
-    #  type: HorizontalCardList
-    #  limit: 5
-    #  primaryAction:
-    #    action: OPEN_CHANNEL
-    #    title: See More
-    #    relatedNode:
-    #      __typename: ContentChannel
-    #      id: 19
-    #- algorithms: [CONTENT_CHANNEL]
-    #  contentChannelId: 23
-    #  title: Devotions
-    #  subtitle: Weekly Studies
-    #  type: HorizontalCardList
-    #  limit: 5
-    #  primaryAction:
-    #    action: OPEN_CHANNEL
-    #    title: See More
-    #    relatedNode:
-    #      __typename: ContentChannel
-    #      id: 23
+      primaryAction:
+        action: OPEN_CHANNEL
+        title: See More
+        relatedNode:
+          __typename: ContentChannel
+          apollosId: ContentChannel:1d14f86d-fe99-4bcd-8456-ef22adc0d43f
     - title: Upcoming Events
       subtitle: What's happening at Crossings
       type: ActionList
@@ -246,7 +167,7 @@ TABS:
           - type: CONTENT_FEED
             arguments:
               channelIds:
-                - 8260787d-cada-453a-91c0-4f0ede534d53
+                - a9d3319c-d06d-4e16-bed7-530e6555ae5e
               limit: 5
         type: HorizontalCardList
         subtitle: Devotionals
@@ -255,14 +176,14 @@ TABS:
           title: 'Read More'
           relatedNode:
             __typename: ContentChannel
-            id: 8260787d-cada-453a-91c0-4f0ede534d53
+            apollosId: ContentChannel:a9d3319c-d06d-4e16-bed7-530e6555ae5e
             name: Devotionals
   
   WATCH:
       - algorithms:
           - type: LATEST_SERIES_CHILDREN
             arguments:
-              channelId: e848a74f-d2d9-4dcf-824c-373fe0db4327
+              channelId: 72e659ba-754f-4227-ba0f-ae60eac674f1
         type: HeroList
         title: Catch up
         subtitle: Latest Sermons
@@ -271,7 +192,7 @@ TABS:
           - type: CONTENT_FEED
             arguments:
               channelIds:
-                - e848a74f-d2d9-4dcf-824c-373fe0db4327
+                - 72e659ba-754f-4227-ba0f-ae60eac674f1
               limit: 6
         type: HorizontalCardList
         subtitle: All Sermon Series
@@ -280,16 +201,35 @@ TABS:
           title: See More
           relatedNode:
             __typename: ContentChannel
-            id: e848a74f-d2d9-4dcf-824c-373fe0db4327
+            apollosId: ContentChannel:72e659ba-754f-4227-ba0f-ae60eac674f1
       - algorithms:
           - type: CONTENT_FEED
             arguments:
               channelIds:
-                - 85d16d40-4485-41cb-91fe-180ec06c83b6
-                - 42a4f1cf0-61fd-4231-9592-ea1b076e1bc2
-              limit: 4
+                - bee639de-4185-46a4-81c3-fe82e72596b6
+              limit: 6
         type: HorizontalCardList
         subtitle: Latest Teaching Series
+        primaryAction:
+          action: OPEN_CHANNEL
+          title: See More
+          relatedNode:
+            __typename: ContentChannel
+            apollosId: ContentChannel:bee639de-4185-46a4-81c3-fe82e72596b6
+      - algorithms:
+          - type: CONTENT_FEED
+            arguments:
+              channelIds:
+                - 2dac29bb-f7b7-4e7e-a22d-26174ab2ef60
+              limit: 6
+        type: HorizontalCardList
+        subtitle: Latest The Gathering Series
+        primaryAction:
+          action: OPEN_CHANNEL
+          title: See More
+          relatedNode:
+            __typename: ContentChannel
+            apollosId: ContentChannel:2dac29bb-f7b7-4e7e-a22d-26174ab2ef60
       #- algorithms:
       #    - type: CONTENT_FEED
       #      arguments:

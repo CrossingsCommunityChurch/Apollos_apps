@@ -78,7 +78,7 @@ const ActionTable = () => (
             }
           >
             <Cell>
-              <CellText>Request Feature</CellText>
+              <CellText>Request Feature On App</CellText>
               <CellIcon name="arrow-next" />
             </Cell>
           </Touchable>

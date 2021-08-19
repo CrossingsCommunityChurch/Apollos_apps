@@ -1,4 +1,4 @@
-import { ActionAlgorithm as baseAlgorithms } from '@apollosproject/data-connector-rock';
+import { ActionAlgorithm as baseAlgorithms } from '@apollosproject/data-connector-postgres';
 import moment from 'moment-timezone';
 
 class dataSource extends baseAlgorithms.dataSource {

@@ -73,9 +73,14 @@ const apolloServer = new ApolloServer({
         calculateHttpHeaders: true,
         defaultMaxAge: 3600,
       },
+  uploads: false,
 });
 
 const app = express();
+
+app.get('/health', (req, res) => {
+  res.send('ok');
+});
 
 // password reset
 app.get('/forgot-password', (req, res) => {
