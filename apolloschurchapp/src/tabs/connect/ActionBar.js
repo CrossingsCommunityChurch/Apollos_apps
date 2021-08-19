@@ -16,7 +16,7 @@ const Toolbar = () => (
         <ActionBarItem
           onPress={() => openUrl('https://crossings.church/group-finder')}
           icon="groups"
-          label="Find Groups"
+          label="Find a Group"
         />
       </ActionBar>
     )}
