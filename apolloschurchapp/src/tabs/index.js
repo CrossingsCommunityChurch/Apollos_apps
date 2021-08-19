@@ -85,7 +85,7 @@ const TabNavigator = () => {
     [client]
   );
   return (
-    <Navigator lazy={false}>
+    <Navigator lazy>
       <Screen
         name="Home"
         component={HomeTab}
@@ -97,7 +97,7 @@ const TabNavigator = () => {
         options={{ tabBarIcon: tabBarIcon('sections') }}
       />
       <Screen
-        name="Watch"
+        name="Media"
         component={WatchTab}
         options={{ tabBarIcon: tabBarIcon('video') }}
       />
@@ -107,7 +107,7 @@ const TabNavigator = () => {
         options={{ tabBarIcon: tabBarIcon('like') }}
       />
       <Screen
-        name="Connect"
+        name="Profile"
         component={Connect}
         options={{ tabBarIcon: tabBarIcon('profile') }}
       />
