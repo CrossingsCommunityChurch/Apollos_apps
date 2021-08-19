@@ -28,57 +28,9 @@ on:
     branches:
       - master
 
-name: Deploy api to Amazon ECS and build IOS
+name: build and deploy IOS
 
 jobs:
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
-
-      - name: Login to Amazon ECR
-        id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v1
-      
-      - name: Build, tag, and push image to Amazon ECR
-        id: build-image
-        env:
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: ccc_graphapi
-          IMAGE_TAG: latest
-        run: |
-          # create buildx builder and use it to
-          # Build a docker container and
-          # push it to ECR so that it can
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
-      - name: Fill in the new image ID in the Amazon ECS task definition
-        id: task-def
-        uses: aws-actions/amazon-ecs-render-task-definition@v1
-        with:
-          task-definition: apollos_task_test.json
-          container-name: ccc_graphapi
-          image: ${{ steps.build-image.outputs.image }}
-
-      - name: Deploy Amazon ECS task definition
-        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-        with:
-          task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: Apollos-Prod
-          cluster: Apollos-Prod
-          wait-for-service-stability: true
-
   ios:
     defaults:
       run:
@@ -87,34 +39,34 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
-    - name: Setup Node
-      uses: actions/setup-node@v2
-      with:
-        node-version: '12'
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "12"
 
-    - name: Install Bundler
-      run: gem install bundler
+      - name: Install Bundler
+        run: gem install bundler
 
-    - name: Decrypt Environment Variables and Apple API Key
-      run: (npx @apollosproject/apollos-cli secrets -d ${{ secrets.ENCRYPTION_PASSWORD }})
+      - name: Decrypt Environment Variables and Apple API Key
+        run: (npx @apollosproject/apollos-cli secrets -d ${{ secrets.ENCRYPTION_PASSWORD }})
 
-    - run: cp .env.shared .env
+      - run: cp .env.shared .env
 
-    - name: Install Dependencies
-      run: yarn
+      - name: Install Dependencies
+        run: yarn
 
-    # required to build
-    - name: Generate Stories
-      run: yarn generate-stories
+      # required to build
+      - name: Generate Stories
+        run: yarn generate-stories
 
-    - name: Generate Fragment Types
-      run: node ./scripts/get-introspection-data.js
-      env:
-        APP_DATA_URL: ${{ secrets.APP_DATA_URL }}
+      - name: Generate Fragment Types
+        run: node ./scripts/get-introspection-data.js
+        env:
+          APP_DATA_URL: ${{ secrets.APP_DATA_URL }}
 
-    - name: Fastlane Deploy
-      run: bundle exec fastlane ios deploy
+      - name: Fastlane Deploy
+        run: bundle exec fastlane ios deploy
