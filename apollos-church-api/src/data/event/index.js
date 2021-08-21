@@ -6,11 +6,11 @@ import resolver from './resolver';
 
 // Re-work this after Rock update to v12 to use the eventscheduledinstance lavatemplate.
 
-const { ROCK_CONSTANTS, ROCK_MAPPINGS } = ApollosConfig;
+const { ROCK_CONSTANTS, CONTENT } = ApollosConfig;
 const imageURL = 'images.crossings.church/fit-in/700x700';
 
 class dataSource extends Event.dataSource {
-  calIds = ROCK_MAPPINGS.ALL_CALIDS;
+  calIds = CONTENT.ALL_CALIDS;
 
   findRecent = (calId) => {
     let request = this.request();

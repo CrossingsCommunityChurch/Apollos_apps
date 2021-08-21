@@ -1,16 +1,11 @@
-import { ActionAlgorithm as baseAlgorithms } from '@apollosproject/data-connector-postgres';
+import { ActionAlgorithm } from '@apollosproject/data-connector-postgres';
 import moment from 'moment-timezone';
 
-class dataSource extends baseAlgorithms.dataSource {
-  expanded = true;
-
-  /** Base Attrs and Methods from the Core DataSource */
-  /** baseAlgorithms = this.ACTION_ALGORITHIMS; */
-
+class dataSource extends ActionAlgorithm.dataSource {
   ACTION_ALGORITHMS = {
     ...this.ACTION_ALGORITHMS,
     UPCOMING_EVENTS: this.upcomingEventsAlgorithm.bind(this),
-    UPCOMING_STREAMS: this.allLiveStreamContentAlgorithm.bind(this),
+    // UPCOMING_STREAMS: this.allLiveStreamContentAlgorithm.bind(this),
   };
 
   async upcomingEventsAlgorithm() {
@@ -24,7 +19,7 @@ class dataSource extends baseAlgorithms.dataSource {
       campusId,
       limit: 8,
     });
-
+    console.log('EVENTS ARE ', events);
     // Map them into specific actions.
     return events.map((event, i) => ({
       id: `${event.id}${i}`,
@@ -41,20 +36,20 @@ class dataSource extends baseAlgorithms.dataSource {
     }));
   }
 
-  async upcomingStreamsAlgorithm() {
-    const { LiveStream, ContentItem } = this.context.dataSources;
-    const liveStreams = await LiveStream.getLiveStreams({});
-    // Map them into specific actions.
-    return liveStreams.map((stream, i) => ({
-      id: `1234${i}`,
-      title: 'Test title',
-      subtitle: 'Test Subtitle',
-      relatedNode: { ...stream.url, __type: 'Url' },
-      image: ContentItem.getCoverImage(stream.contentItem),
-      action: 'OPEN_URL',
-      summary: '',
-    }));
-  }
+  // async upcomingStreamsAlgorithm() {
+  //   const { LiveStream, ContentItem } = this.context.dataSources;
+  //   const liveStreams = await LiveStream.getLiveStreams({});
+  //   // Map them into specific actions.
+  //   return liveStreams.map((stream, i) => ({
+  //     id: `1234${i}`,
+  //     title: 'Test title',
+  //     subtitle: 'Test Subtitle',
+  //     relatedNode: { ...stream.url, __type: 'Url' },
+  //     image: ContentItem.getCoverImage(stream.contentItem),
+  //     action: 'OPEN_URL',
+  //     summary: '',
+  //   }));
+  // }
 
   async allLiveStreamContentAlgorithm() {
     const { LiveStream } = this.context.dataSources;

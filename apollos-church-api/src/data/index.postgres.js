@@ -42,7 +42,7 @@ import * as Event from './event';
 // import * as FeatureFeed from './feature-feeds';
 import * as RockPerson from './person';
 import * as Sms from './clearstream';
-// import * as ActionAlgorithm from './action-algorithms';
+import * as ActionAlgorithm from './action-algorithms';
 import * as Search from './search';
 import * as LiveStream from './live';
 import * as Schedule from './schedule';
@@ -64,7 +64,7 @@ import {
   ContentItem,
   ContentItemsConnection,
   ContentItemCategory as ContentChannel,
-  ActionAlgorithm,
+  // ActionAlgorithm,
 } from '@apollosproject/data-connector-postgres';
 
 import * as Theme from './theme';
