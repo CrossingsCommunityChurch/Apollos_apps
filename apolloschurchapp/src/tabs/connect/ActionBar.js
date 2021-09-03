@@ -11,7 +11,7 @@ const Toolbar = () => (
             openUrl('https://crossings.church/locations/okc/serve/')
           }
           icon="HandShake"
-          label="Serve"
+          label="Volunteer"
         />
         <ActionBarItem
           onPress={() => openUrl('https://crossings.church/group-finder')}
