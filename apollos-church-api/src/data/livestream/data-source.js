@@ -93,9 +93,7 @@ export default class LiveStream extends RESTDataSource {
     if (livefeed === undefined) return { isLive: false };
     const accessToken = await this.getAccessToken(livefeed);
     this.url = livefeed.CHOP;
-    console.log('url is ', this.url);
     this.baseURL = livefeed.CHOP;
-    console.log('making call to ', this.baseURL);
     const result = await this.post(
       'graphql',
       {
@@ -110,7 +108,6 @@ export default class LiveStream extends RESTDataSource {
     );
     // TODO: The cookie above won't last forever.
     const { data } = result;
-    console.log('data is ', result);
     return {
       isLive: get(data, 'currentService.content.videoStarted', false),
       eventStartTime: get(data, 'currentService.startTime'),
