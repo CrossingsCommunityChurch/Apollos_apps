@@ -65,7 +65,7 @@
     "dotenv": "6.0.0",
     "express": "^4.17.0",
     "graphql": "14.6.0",
-    "ioredis": "^4.27.6",
+    "ioredis": "^4.27.2",
     "keyword-extractor": "^0.0.19",
     "node-ical": "^0.12.1",
     "object-sizeof": "^1.6.1",

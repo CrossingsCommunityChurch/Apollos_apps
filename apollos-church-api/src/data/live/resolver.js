@@ -1,5 +1,4 @@
-import { resolver as baseLive } from '@apollosproject/data-connector-church-online';
-import { resolverMerge } from '@apollosproject/server-core';
+// import { resolver as baseLive } from '@apollosproject/data-connector-church-online';
 import { createGlobalId } from '@apollosproject/server-core/lib/node';
 
 const resolver = {
@@ -16,6 +15,7 @@ const resolver = {
       createGlobalId(root?.contentItem?.guid, parentType.name),
     eventStartTime: async (root, _, { dataSources }) => {
       const { LiveStream } = dataSources;
+      console.log('ROOT is ', root);
       const nextInstance = await LiveStream.getNextInstance(root.contentItem);
       if (nextInstance) {
         const { start } = nextInstance;
@@ -37,4 +37,4 @@ const resolver = {
   },
 };
 
-export default resolverMerge(resolver, baseLive);
+export default resolver;

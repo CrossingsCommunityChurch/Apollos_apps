@@ -5,7 +5,7 @@ class dataSource extends ActionAlgorithm.dataSource {
   ACTION_ALGORITHMS = {
     ...this.ACTION_ALGORITHMS,
     UPCOMING_EVENTS: this.upcomingEventsAlgorithm.bind(this),
-    // UPCOMING_STREAMS: this.allLiveStreamContentAlgorithm.bind(this),
+    UPCOMING_STREAMS: this.allLiveStreamContentAlgorithm.bind(this),
   };
 
   async upcomingEventsAlgorithm() {
@@ -19,7 +19,6 @@ class dataSource extends ActionAlgorithm.dataSource {
       campusId,
       limit: 8,
     });
-    console.log('EVENTS ARE ', events);
     // Map them into specific actions.
     return events.map((event, i) => ({
       id: `${event.id}${i}`,
@@ -35,21 +34,6 @@ class dataSource extends ActionAlgorithm.dataSource {
       summary: '',
     }));
   }
-
-  // async upcomingStreamsAlgorithm() {
-  //   const { LiveStream, ContentItem } = this.context.dataSources;
-  //   const liveStreams = await LiveStream.getLiveStreams({});
-  //   // Map them into specific actions.
-  //   return liveStreams.map((stream, i) => ({
-  //     id: `1234${i}`,
-  //     title: 'Test title',
-  //     subtitle: 'Test Subtitle',
-  //     relatedNode: { ...stream.url, __type: 'Url' },
-  //     image: ContentItem.getCoverImage(stream.contentItem),
-  //     action: 'OPEN_URL',
-  //     summary: '',
-  //   }));
-  // }
 
   async allLiveStreamContentAlgorithm() {
     const { LiveStream } = this.context.dataSources;

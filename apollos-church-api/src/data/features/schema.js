@@ -1,5 +1,5 @@
 import gql from 'graphql-tag';
-import { Feature } from '@apollosproject/data-connector-rock';
+import { Feature } from '@apollosproject/data-connector-postgres';
 
 export default gql`
   ${Feature.schema}
