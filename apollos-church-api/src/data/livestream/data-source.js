@@ -43,16 +43,16 @@ export default class LiveStream extends RESTDataSource {
   //     return 'https://ccctest.online.church';
   //   }
 
-  get mediaUrls() {
-    return ApollosConfig.CHURCH_ONLINE.MEDIA_URLS || [];
-  }
+  // get mediaUrls() {
+  //   return ApollosConfig.CHURCH_ONLINE.MEDIA_URLS || [];
+  // }
 
-  get webViewUrl() {
-    return (
-      ApollosConfig.CHURCH_ONLINE.WEB_VIEW_URL ||
-      ApollosConfig.CHURCH_ONLINE.URL
-    );
-  }
+  // get webViewUrl() {
+  //   return (
+  //     ApollosConfig.CHURCH_ONLINE.WEB_VIEW_URL ||
+  //     ApollosConfig.CHURCH_ONLINE.URL
+  //   );
+  // }
 
   async getAccessToken(livefeed) {
     const { Cache } = this.context.dataSources;
@@ -75,15 +75,6 @@ export default class LiveStream extends RESTDataSource {
     return {
       isLive: true,
       eventStartTime: '',
-      media: () =>
-        this.mediaUrls.length
-          ? {
-              sources: this.mediaUrls.map((uri) => ({
-                uri,
-              })),
-            }
-          : null,
-      webViewUrl: this.webViewUrl,
     };
   }
 
