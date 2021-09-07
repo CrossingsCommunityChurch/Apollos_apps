@@ -42,7 +42,7 @@ CHURCH_ONLINE:
       ROCKID: 1741
       CHOP: https://venue.crossings.church
       HLS: ""
-    - NAME: Sanctuay
+    - NAME: Sanctuary
       ROCKID: 1761
       CHOP: https://sanct.crossings.church
       HLS: ""
@@ -146,9 +146,9 @@ TABS:
           url: 'https://app.crossings.church/mobile/give'
         },
       }]
-    # - algorithms: [UPCOMING_STREAMS]
-    #   type: LiveContentList
-    #   title: Live Now
+    - algorithms: [UPCOMING_STREAMS]
+      type: LiveContentList
+      title: Live Now
     - algorithms:
       - type: CONTENT_FEED
         arguments:

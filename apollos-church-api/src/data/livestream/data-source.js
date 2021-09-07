@@ -102,15 +102,9 @@ export default class LiveStream extends RESTDataSource {
     return {
       isLive: get(data, 'currentService.content.videoStarted', false),
       eventStartTime: get(data, 'currentService.startTime'),
-      media: () =>
-        this.mediaUrls.length
-          ? {
-              sources: this.mediaUrls.map((uri) => ({
-                uri,
-              })),
-            }
-          : null,
-      webViewUrl: this.webViewUrl,
+      eventEndTime: get(data, 'currentService.endTime'),
+      media: get(data, 'currentService.content.video.url'),
+      webViewUrl: livefeed.CHOP,
     };
   }
 

@@ -38,7 +38,7 @@ import {
 
 import * as ContentItem from './content-items';
 import * as Event from './event';
-// import * as Feature from './features';
+import * as Feature from './features';
 // import * as FeatureFeed from './feature-feeds';
 import * as RockPerson from './person';
 import * as Sms from './clearstream';
@@ -59,7 +59,7 @@ import {
   Campus as PostgresCampus,
   Person as PostgresPerson,
   Media as PostgresMedia,
-  Feature,
+  // Feature,
   Tag,
   // ContentItem,
   ContentItemsConnection,

@@ -480,6 +480,24 @@ type LiveStream {
   id: ID!
   name: String
   action: ACTION_FEATURE_ACTION
+  eventEndTime: String
+}
+
+type LiveStreamAction {
+  relatedNode: Node
+  action: ACTION_FEATURE_ACTION
+  title: String
+  duration: Int
+  image: String
+  start: Int
+}
+
+type LiveStreamListFeature implements Feature & Node {
+  id: ID!
+  order: Int
+  title: String
+  subtitle: String
+  liveStreams: [LiveStream]
 }
 
 interface Media {
@@ -660,6 +678,7 @@ type Query {
   userFeedFeatures: [Feature] @deprecated(reason: "Use homeFeedFeatures or discoverFeedFeatures")
   homeFeedFeatures(campusId: ID): FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: HOME)")
   discoverFeedFeatures: FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: DISCOVER)")
+  LiveFeedFeatures: FeatureFeed
   campaigns: ContentItemsConnection
   userFeed(first: Int, after: String): ContentItemsConnection
   personaFeed(first: Int, after: String): ContentItemsConnection

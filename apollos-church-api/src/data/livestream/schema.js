@@ -8,5 +8,6 @@ export default gql`
     id: ID!
     name: String
     action: ACTION_FEATURE_ACTION
+    eventEndTime: String
   }
 `;

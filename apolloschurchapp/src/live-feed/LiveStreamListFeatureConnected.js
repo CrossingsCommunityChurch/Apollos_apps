@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Animated, FlatList, View, Text } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { Animated, FlatList, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { get, isEmpty, isNumber } from 'lodash';
+import { get, isEmpty } from 'lodash';
 import { useQuery } from '@apollo/client';
 import {
   ConnectedImage,
@@ -33,7 +32,7 @@ const BorderWithPulse = withTheme()(({ theme, ...props }) => {
   const MIN = 0.3;
   const MAX = 1;
   const duration = 1000;
-  const [opacity, setOpacity] = useState(new Animated.Value(MIN));
+  const [opacity] = useState(new Animated.Value(MIN));
   const fadeIn = () => {
     Animated.timing(opacity, {
       toValue: MAX,
@@ -76,7 +75,7 @@ const BorderWithPulse = withTheme()(({ theme, ...props }) => {
   );
 });
 
-const CirclularImage = withTheme(({ theme }) => {
+const CircularImage = withTheme(({ theme }) => {
   const themeSize = theme.sizing.avatar.medium * AVATAR_MULTIPLIER - 8;
   return {
     minAspectRatio: 1,
@@ -90,6 +89,7 @@ const CirclularImage = withTheme(({ theme }) => {
   };
 })(ConnectedImage);
 
+// eslint-disable-next-line no-unused-vars
 const CircularImagePosition = styled(({ theme }) => ({
   position: 'absolute',
   top: 0,
@@ -118,6 +118,7 @@ const LiveImageContainer = styled(({ theme, withMargin }) => ({
   marginRight: theme.sizing.baseUnit * (withMargin ? 0.5 : 0),
 }))(View);
 
+// eslint-disable-next-line react/prop-types
 const LiveTouchable = ({ coverImage, withMargin, onPressItem, url, title }) => (
   <LiveItemContainer
     withMargin={withMargin}
@@ -131,7 +132,7 @@ const LiveTouchable = ({ coverImage, withMargin, onPressItem, url, title }) => (
     <LiveImageContainer>
       <BorderWithPulse />
       <CircularImagePosition>
-        <CirclularImage source={get(coverImage, 'sources[0]')} />
+        <CircularImage source={coverImage} />
       </CircularImagePosition>
     </LiveImageContainer>
     <Title>{title}</Title>
@@ -139,22 +140,25 @@ const LiveTouchable = ({ coverImage, withMargin, onPressItem, url, title }) => (
 );
 
 const renderItem = ({ item, index, dataLength, ...props }) => {
-  const { relatedNode, media, webViewUrl } = item;
+  const { media, webViewUrl } = item;
   return (
     <LiveTouchable
-      {...relatedNode}
       url={webViewUrl}
       media={media}
+      coverImage={item.contentItem.coverImage.sources[0].uri}
+      title={item.name}
       withMargin={index < dataLength - 1}
       {...props}
     />
   );
 };
 
+// eslint-disable-next-line react/prop-types
 const LiveStreamsFeedFeature = ({ liveStreams, ...props }) => (
   <FlatList
     data={liveStreams}
     renderItem={(items) =>
+      // eslint-disable-next-line react/prop-types
       renderItem({ ...items, dataLength: liveStreams.length, ...props })
     }
     horizontal
@@ -163,6 +167,7 @@ const LiveStreamsFeedFeature = ({ liveStreams, ...props }) => (
 
 const LiveStreamListFeatureConnected = ({
   featureId,
+  // eslint-disable-next-line react/prop-types
   onPressActionItem,
   ...props
 }) => {
@@ -182,6 +187,7 @@ const LiveStreamListFeatureConnected = ({
   const style = liveStreams.length === 1 ? { alignItems: 'center' } : {};
 
   return currentStreams.length > 0 ? (
+    // eslint-disable-next-line react-native/no-inline-styles
     <View style={{ flexDirection: 'row' }}>
       <HorizontalFeatureFeed
         Component={LiveStreamsFeedFeature}
