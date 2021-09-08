@@ -1,21 +1,70 @@
 import React, { useEffect } from 'react';
+import { Image, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationService } from '@apollosproject/ui-kit';
+import PropTypes from 'prop-types';
+import {
+  NavigationService,
+  withTheme,
+  Icon,
+  Touchable,
+} from '@apollosproject/ui-kit';
 import { useApolloClient } from '@apollo/client';
-import { createFeatureFeedTab } from '@apollosproject/ui-connected';
+import {
+  createFeatureFeedTab,
+  UserAvatarConnected,
+  ConnectScreenConnected,
+} from '@apollosproject/ui-connected';
 import { checkOnboardingStatusAndNavigate } from '@apollosproject/ui-onboarding';
 import { useNavigation } from '@react-navigation/native';
+import ActionTable from '../ui/ActionTable';
+import ActionBar from '../ui/ActionBar';
 import LiveStreamListFeatureConnected from '../live-feed/LiveStreamListFeatureConnected';
 import HomeSearchButton from '../ui/Search/SearchButton';
-import Connect from './connect';
 import tabBarIcon from './tabBarIcon';
 import Logo from './logo';
 
+const Avatar = withTheme(({ theme: { sizing: { baseUnit } } }) => ({
+  size: 'small',
+  containerStyle: {
+    paddingBottom: baseUnit * 0.25,
+  },
+}))(UserAvatarConnected);
+
+const ProfileButton = ({ onPress }) => (
+  <Touchable onPress={onPress}>
+    <View>
+      <Avatar />
+    </View>
+  </Touchable>
+);
+
+ProfileButton.propTypes = {
+  onPress: PropTypes.func,
+};
+
+const HeaderLeft = () => {
+  const navigation = useNavigation();
+  return (
+    <ProfileButton
+      onPress={() => {
+        navigation.navigate('UserSettingsNavigator');
+      }}
+    />
+  );
+};
 const HeaderCenter = () => <Logo />;
 const HeaderRight = () => {
   const navigation = useNavigation();
   return <HomeSearchButton onPress={() => navigation.navigate('Search')} />;
 };
+
+const CustomConnectScreen = () => (
+  <ConnectScreenConnected
+    showAvatar={false}
+    ActionTable={ActionTable}
+    ActionBar={ActionBar}
+  />
+);
 
 // we nest stack inside of tabs so we can use all the fancy native header features
 const HomeTab = createFeatureFeedTab({
@@ -23,6 +72,7 @@ const HomeTab = createFeatureFeedTab({
     headerHideShadow: true,
     headerCenter: HeaderCenter,
     headerRight: HeaderRight,
+    headerLeft: HeaderLeft,
     headerLargeTitle: false,
   },
   tabProps: {
@@ -39,6 +89,7 @@ const ReadTab = createFeatureFeedTab({
     headerHideShadow: true,
     headerCenter: HeaderCenter,
     headerRight: HeaderRight,
+    headerLeft: HeaderLeft,
     headerLargeTitle: false,
   },
   tabName: 'Read',
@@ -50,6 +101,7 @@ const WatchTab = createFeatureFeedTab({
     headerHideShadow: true,
     headerCenter: HeaderCenter,
     headerRight: HeaderRight,
+    headerLeft: HeaderLeft,
     headerLargeTitle: false,
   },
   tabName: 'Watch',
@@ -61,6 +113,7 @@ const PrayTab = createFeatureFeedTab({
     headerHideShadow: true,
     headerCenter: HeaderCenter,
     headerRight: HeaderRight,
+    headerLeft: HeaderLeft,
     headerLargeTitle: false,
   },
   tabName: 'Pray',
@@ -108,7 +161,7 @@ const TabNavigator = () => {
       />
       <Screen
         name="Profile"
-        component={Connect}
+        component={CustomConnectScreen}
         options={{ tabBarIcon: tabBarIcon('profile') }}
       />
     </Navigator>

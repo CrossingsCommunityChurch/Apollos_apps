@@ -48,8 +48,5 @@ export default gql`
     ): ContentItemsConnection
     parentChannel: ContentChannel
     theme: Theme
-    # sharing: SharableContentItem
-    # isLiked: Boolean
-    # likedCount: Int
   }
 `;

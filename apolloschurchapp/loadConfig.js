@@ -18,7 +18,7 @@ const TYPEMAP = fragmentTypes.__schema.types.reduce((acc, curr) => {
 }, {});
 
 ApollosConfig.loadJs({
-  SCHEMA_VERSION: '2021.09.07.3',
+  SCHEMA_VERSION: '2021.09.08',
   FRAGMENTS: {
     ...FRAGMENTS,
     LIVE_STREAM_LIST_FEATURE_FRAGMENT: gql`
@@ -71,17 +71,6 @@ ApollosConfig.loadJs({
         media {
           sources {
             uri
-          }
-        }
-        relatedNode {
-          id
-          ... on ContentNode {
-            title
-            coverImage {
-              sources {
-                uri
-              }
-            }
           }
         }
       }
