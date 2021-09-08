@@ -1,13 +1,8 @@
-import { ContentItem as coreContentItem } from '@apollosproject/data-connector-rock';
-import { resolverMerge } from '@apollosproject/server-core';
+import { ContentItem as coreContentItem } from '@apollosproject/data-connector-postgres';
 
-import { get, split } from 'lodash';
+import { get } from 'lodash';
 
 const resolverExtensions = {
-  tags: async (root, args, { dataSources: { ContentItem } }) => {
-    const tagString = await ContentItem.getTags(root);
-    return split(tagString, ',');
-  },
   author: ({ attributeValues }) => {
     if (get(attributeValues, 'author.value', null)) {
       return attributeValues.author.valueFormatted;
@@ -22,14 +17,10 @@ const resolverExtensions = {
 
 const liveResolver = {
   ...coreContentItem.resolver.ContentItem,
-  webviewURL: (root, args, { dataSources: { ContentItem } }) =>
-    ContentItem.getWebviewURL(root),
-
-  mediaURL: (root, args, { dataSources: { ContentItem } }) =>
-    ContentItem.getMediaURL(root),
 };
 
 const resolver = {
+  ...coreContentItem.resolver,
   DevotionalContentItem: {
     ...resolverExtensions,
   },
@@ -46,8 +37,9 @@ const resolver = {
     ...resolverExtensions,
   },
   LiveContentItem: {
+    ...coreContentItem.resolver.MediaContentItem,
     ...liveResolver,
   },
 };
 
-export default resolverMerge(resolver, coreContentItem);
+export default resolver;

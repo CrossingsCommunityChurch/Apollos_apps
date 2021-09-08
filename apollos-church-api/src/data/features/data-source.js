@@ -1,7 +1,7 @@
-import { Feature as coreFeatures } from '@apollosproject/data-connector-rock';
+import { Feature as coreFeatures } from '@apollosproject/data-connector-postgres';
 
 export default class Feature extends coreFeatures.dataSource {
-  expanded = true;
+  modelName = 'feature';
 
   async createLiveStreamListFeature({ algorithms, title, subtitle }) {
     const { ActionAlgorithm } = this.context.dataSources;
@@ -33,6 +33,8 @@ export default class Feature extends coreFeatures.dataSource {
         switch (featureConfig.type) {
           case 'ActionBar':
             return this.createActionBarFeature(finalConfig);
+          case 'ActionTable':
+            return this.createActionTableFeature(finalConfig);
           case 'VerticalCardList':
             return this.createVerticalCardListFeature(finalConfig);
           case 'HorizontalCardList':

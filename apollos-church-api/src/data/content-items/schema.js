@@ -1,31 +1,26 @@
-import { ContentItem } from '@apollosproject/data-connector-rock';
+import { ContentItem } from '@apollosproject/data-connector-postgres';
 import gql from 'graphql-tag';
 
 export default gql`
   ${ContentItem.schema}
 
   extend type DevotionalContentItem {
-    tags: [String] @cacheControl(maxAge: 6400)
     author: String @cacheControl(maxAge: 6400)
   }
 
   extend type UniversalContentItem {
-    tags: [String] @cacheControl(maxAge: 6400)
     author: String @cacheControl(maxAge: 6400)
   }
 
   extend type ContentSeriesContentItem {
-    tags: [String] @cacheControl(maxAge: 6400)
     author: String @cacheControl(maxAge: 6400)
   }
 
   extend type MediaContentItem {
-    tags: [String] @cacheControl(maxAge: 6400)
     author: String @cacheControl(maxAge: 6400)
   }
 
   extend type WeekendContentItem {
-    tags: [String] @cacheControl(maxAge: 6400)
     author: String @cacheControl(maxAge: 6400)
   }
 
@@ -53,5 +48,8 @@ export default gql`
     ): ContentItemsConnection
     parentChannel: ContentChannel
     theme: Theme
+    # sharing: SharableContentItem
+    # isLiked: Boolean
+    # likedCount: Int
   }
 `;

@@ -286,6 +286,7 @@ type ContentSeriesContentItem implements ContentItem & Node & ContentNode & Card
   likedCount: Int
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
+  author: String
   sharing: SharableContentItem
 }
 
@@ -314,6 +315,7 @@ type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & 
   likedCount: Int
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
+  author: String
   sharing: SharableContentItem
 }
 
@@ -444,20 +446,58 @@ input LikeEntityInput {
   operation: LIKE_OPERATION!
 }
 
+type LiveContentItem implements ContentItem & Node {
+  id: ID!
+  title(hyphenated: Boolean): String
+  publishDate: String
+  coverImage: ImageMedia
+  images: [ImageMedia]
+  videos: [VideoMedia]
+  audios: [AudioMedia]
+  webviewURL: String
+  mediaURL: String
+  htmlContent: String
+  summary: String
+  childContentItemsConnection(first: Int, after: String, orderBy: ContentItemsConnectionOrderInput): ContentItemsConnection
+  siblingContentItemsConnection(first: Int, after: String, orderBy: ContentItemsConnectionOrderInput): ContentItemsConnection
+  parentChannel: ContentChannel
+  theme: Theme
+  isLiked: Boolean
+  likedCount: Int
+  sharing: SharableContentItem
+}
+
 interface LiveNode {
   liveStream: LiveStream
 }
 
 type LiveStream {
-  id: ID!
   isLive: Boolean
   eventStartTime: String
-  eventEndTime: String
   media: VideoMedia
   webViewUrl: String
   contentItem: ContentItem
+  id: ID!
+  name: String
   action: ACTION_FEATURE_ACTION
+  eventEndTime: String
+}
+
+type LiveStreamAction {
   relatedNode: Node
+  action: ACTION_FEATURE_ACTION
+  title: String
+  duration: Int
+  image: String
+  start: Int
+}
+
+type LiveStreamListFeature implements Feature & Node {
+  id: ID!
+  order: Int
+  title: String
+  subtitle: String
+  liveStreams: [LiveStream]
 }
 
 interface Media {
@@ -483,6 +523,7 @@ type MediaContentItem implements ContentItem & Node & ContentNode & Card & Video
   scriptures: [Scripture]
   isLiked: Boolean
   likedCount: Int
+  author: String
   sharing: SharableContentItem
 }
 
@@ -637,6 +678,7 @@ type Query {
   userFeedFeatures: [Feature] @deprecated(reason: "Use homeFeedFeatures or discoverFeedFeatures")
   homeFeedFeatures(campusId: ID): FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: HOME)")
   discoverFeedFeatures: FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: DISCOVER)")
+  LiveFeedFeatures: FeatureFeed
   campaigns: ContentItemsConnection
   userFeed(first: Int, after: String): ContentItemsConnection
   personaFeed(first: Int, after: String): ContentItemsConnection
@@ -696,8 +738,6 @@ type SearchResult {
   summary: String
   coverImage: ImageMedia
   node: Node
-  tags: [String]
-  author: String
 }
 
 type SearchResultsConnection {
@@ -788,6 +828,7 @@ type UniversalContentItem implements ContentItem & Node & ContentNode & Card & V
   likedCount: Int
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
+  author: String
   sharing: SharableContentItem
 }
 
@@ -882,6 +923,7 @@ type WeekendContentItem implements ContentItem & Node & ContentNode & Card & Vid
   likedCount: Int
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
+  author: String
   liveStream: LiveStream
   sharing: SharableContentItem
 }

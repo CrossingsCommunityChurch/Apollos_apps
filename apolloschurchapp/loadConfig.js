@@ -18,7 +18,7 @@ const TYPEMAP = fragmentTypes.__schema.types.reduce((acc, curr) => {
 }, {});
 
 ApollosConfig.loadJs({
-  SCHEMA_VERSION: '2021.07.29',
+  SCHEMA_VERSION: '2021.09.07.3',
   FRAGMENTS: {
     ...FRAGMENTS,
     LIVE_STREAM_LIST_FEATURE_FRAGMENT: gql`
@@ -28,24 +28,21 @@ ApollosConfig.loadJs({
         subtitle
         liveStreams {
           id
-          eventStartTime
           eventEndTime
+          eventStartTime
           isLive
+          name
           webViewUrl
           action
-          media {
-            sources {
-              uri
+          contentItem {
+            coverImage {
+              sources {
+                uri
+              }
             }
-          }
-          relatedNode {
-            id
-            ... on LiveContentItem {
-              title
-              coverImage {
-                sources {
-                  uri
-                }
+            videos {
+              sources {
+                uri
               }
             }
           }

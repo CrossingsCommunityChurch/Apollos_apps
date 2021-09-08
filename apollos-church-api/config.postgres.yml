@@ -33,8 +33,24 @@ ONE_SIGNAL:
   APP_ID: ${ONE_SIGNAL_APP_ID}
   REST_KEY: ${ONE_SIGNAL_REST_KEY}
 CHURCH_ONLINE:
-  URL: ${CHURCH_ONLINE_URL}
-  WEB_VIEW_URL: https://apollos.online.church/
+  URLS: 
+    - NAME: Test
+      ROCKID: 1972
+      CHOP: https://ccctest.online.church
+      HLS: https://crossings.church
+    - NAME: Venue
+      ROCKID: 1741
+      CHOP: https://venue.crossings.church
+      HLS: ""
+    - NAME: Sanctuary
+      ROCKID: 1761
+      CHOP: https://sanct.crossings.church
+      HLS: ""
+    - NAME: Edmond
+      ROCKID: 1762
+      CHOP: https://edmond.crossings.church
+      HLS: ""
+  WEB_VIEW_URL: https://ccctest.online.church/
 ALGOLIA:
   APPLICATION_ID: ${ALGOLIASEARCH_APPLICATION_ID}
   API_KEY: ${ALGOLIASEARCH_API_KEY}
@@ -67,6 +83,7 @@ CONTENT:
     - MediaContentItem
     - UniversalContentItem
     - WeekendContentItem
+    - LiveContentItem
     - ContentItem
 
   DATAVIEW_CATEGORIES:
@@ -102,7 +119,8 @@ CONTENT:
 
   SUNDAY_SERMON_SCHEDULE_CATEGORY_ID: 406
 
-  LIVESTREAM_CONTENT_CHANNEL_ID: 03210db9-9f7e-49a2-881f-ad3040859fc4
+  LIVESTREAM_CONTENT_CHANNEL_IDS: 
+    - d5f7c59d-079a-479b-8bd1-6ab8e0c2da1f
   
 
 TABS:
@@ -128,9 +146,9 @@ TABS:
           url: 'https://app.crossings.church/mobile/give'
         },
       }]
-    #- algorithms: [UPCOMING_STREAMS]
-    #  type: LiveContentList
-    #  title: Live Now
+    - algorithms: [UPCOMING_STREAMS]
+      type: LiveContentList
+      title: Live Now
     - algorithms:
       - type: CONTENT_FEED
         arguments:
@@ -180,13 +198,6 @@ TABS:
             name: Devotionals
   
   WATCH:
-      - algorithms:
-          - type: LATEST_SERIES_CHILDREN
-            arguments:
-              channelId: 72e659ba-754f-4227-ba0f-ae60eac674f1
-        type: HeroList
-        title: Catch up
-        subtitle: Latest Sermons
     #need to limit this one to not show all existing sermon series and to point to the read more action
       - algorithms:
           - type: CONTENT_FEED

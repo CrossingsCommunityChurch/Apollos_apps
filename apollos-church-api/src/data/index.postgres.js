@@ -9,7 +9,7 @@ import * as Analytics from '@apollosproject/data-connector-analytics';
 import * as Scripture from '@apollosproject/data-connector-bible';
 // import * as LiveStream from '@apollosproject/data-connector-church-online';
 import * as Cloudinary from '@apollosproject/data-connector-cloudinary';
-// import * as Search from '@apollosproject/data-connector-algolia-search';
+import * as Search from '@apollosproject/data-connector-algolia-search';
 import * as Pass from '@apollosproject/data-connector-passes';
 import * as Cache from '@apollosproject/data-connector-redis-cache';
 // import * as Sms from '@apollosproject/data-connector-twilio';
@@ -36,15 +36,15 @@ import {
   // Person as RockPerson,
 } from '@apollosproject/data-connector-rock';
 
-// import * as ContentItem from './content-items';
+import * as ContentItem from './content-items';
 import * as Event from './event';
-// import * as Feature from './features';
+import * as Feature from './features';
 // import * as FeatureFeed from './feature-feeds';
 import * as RockPerson from './person';
 import * as Sms from './clearstream';
-// import * as ActionAlgorithm from './action-algorithms';
-import * as Search from './search';
-import * as LiveStream from './live';
+import * as ActionAlgorithm from './action-algorithms';
+// import * as Search from './search';
+import * as LiveStream from './livestream';
 import * as Schedule from './schedule';
 import * as PrayerRequest from './prayer';
 
@@ -59,12 +59,12 @@ import {
   Campus as PostgresCampus,
   Person as PostgresPerson,
   Media as PostgresMedia,
-  Feature,
+  // Feature,
   Tag,
-  ContentItem,
+  // ContentItem,
   ContentItemsConnection,
   ContentItemCategory as ContentChannel,
-  ActionAlgorithm,
+  // ActionAlgorithm,
 } from '@apollosproject/data-connector-postgres';
 
 import * as Theme from './theme';

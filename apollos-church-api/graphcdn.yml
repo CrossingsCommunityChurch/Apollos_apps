@@ -1,0 +1,12 @@
+name: cccapollo
+originUrl: 'https://apollo.crossings.church'
+scopes:
+  AUTHENTICATED: 'cookie:session.sig|header:Authorization'
+rules:
+  - description: Cache everything (default)
+    maxAge: 3600
+    scope: AUTHENTICATED
+    swr: 900
+    types:
+      Query: true
+schema: 'https://apollo.crossings.church'
