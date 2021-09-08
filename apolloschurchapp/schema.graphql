@@ -413,9 +413,16 @@ type ImageMediaSource implements MediaSource {
   uri: String
 }
 
+type Interaction implements Node {
+  id: ID!
+  action: InteractionAction
+  node: Node
+}
+
 enum InteractionAction {
   VIEW
   COMPLETE
+  SERIES_START
   PRAY
 }
 
@@ -689,6 +696,7 @@ type Query {
   liveStreams: [LiveStream]
   scripture(query: String!, version: VERSION): Scripture @deprecated(reason: "Use 'scriptures' instead.")
   scriptures(query: String!, version: VERSION): [Scripture]
+  interactions(personId: ID!, nodeId: ID, action: InteractionAction): [Interaction]
   userPass: Pass
   search(query: String!, first: Int, after: String): SearchResultsConnection
   campuses(location: CampusLocationInput): [Campus]
