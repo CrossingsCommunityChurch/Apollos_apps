@@ -376,7 +376,7 @@ PODS:
     - React
   - RNGestureHandler (1.10.3):
     - React-Core
-  - RNInAppBrowser (3.6.3):
+  - RNInAppBrowser (3.5.1):
     - React-Core
   - RNPermissions (2.2.2):
     - React-Core
@@ -718,7 +718,7 @@ SPEC CHECKSUMS:
   RNDateTimePicker: 7658208086d86d09e1627b5c34ba0cf237c60140
   RNDeviceInfo: 687c1b2ab6d86ff1ca1208783320cd144138c7f2
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
-  RNInAppBrowser: 3ff3a3b8f458aaf25aaee879d057352862edf357
+  RNInAppBrowser: 48b95ba7a4eaff5cc223bca338d3e319561dbd1b
   RNPermissions: 5df468064df661a4c8c017e2791ce90d7695eea5
   RNReanimated: d9da990fc90123f4ffbfdda93d00fc15174863a8
   RNScreens: c277bfc4b5bb7c2fe977d19635df6f974f95dfd6

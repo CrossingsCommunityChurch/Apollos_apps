@@ -18,7 +18,7 @@ import {
   Interactions as RockInteractions,
   RockConstants,
   // ContentItem,
-  // ContentChannel,
+  ContentChannel,
   Sharable,
   Auth,
   PersonalDevice,
@@ -28,25 +28,26 @@ import {
   BinaryFiles,
   // Feature,
   FeatureFeed,
-  Campus as RockCampus,
-  // ActionAlgorithm,
   // Event,
-  // PrayerRequest,
-  // Persona,
+  PrayerRequest,
   // Person as RockPerson,
+  ContentItem as RockContentItem,
+  Campus as RockCampus,
+  Feature as RockFeature,
+  ActionAlgorithm as RockActionAlgorithm,
 } from '@apollosproject/data-connector-rock';
 
-import * as ContentItem from './content-items';
+import * as PostgresContentItem from './content-items';
 import * as Event from './event';
-import * as Feature from './features';
+import * as PostgresFeature from './features';
 // import * as FeatureFeed from './feature-feeds';
 import * as RockPerson from './person';
 import * as Sms from './clearstream';
-import * as ActionAlgorithm from './action-algorithms';
+import * as PostgresActionAlgorithm from './action-algorithms';
 // import * as Search from './search';
 import * as LiveStream from './livestream';
 import * as Schedule from './schedule';
-import * as PrayerRequest from './prayer';
+// import * as PrayerRequest from './prayer';
 
 // eslint-disable-next-line import/order
 import {
@@ -62,11 +63,12 @@ import {
   Campus,
   Person as PostgresPerson,
   Media as PostgresMedia,
-  // Feature,
-  // ContentItem,
+  // Feature as PostgresFeature,
+  // ContentItem as PostgresContentItem,
   ContentItemsConnection,
-  ContentItemCategory as ContentChannel,
-  // ActionAlgorithm,
+  ContentItemCategory,
+  // ActionAlgorithm as PostgresActionAlgorithm,
+  PrayerRequest as PostgresPrayerRequest,
 } from '@apollosproject/data-connector-postgres';
 
 import * as Theme from './theme';
@@ -84,14 +86,14 @@ import {
 const postgresContentModules = {
   Interactions,
   Likes,
-  ActionAlgorithm,
-  Feature,
+  ActionAlgorithm: PostgresActionAlgorithm,
+  Feature: PostgresFeature,
   PostgresMedia,
   Tag,
-  ContentItem,
+  ContentItem: PostgresContentItem,
   ContentItemsConnection,
-  ContentChannel,
-  PrayerRequest,
+  ContentChannel: ContentItemCategory,
+  PrayerRequest: PostgresPrayerRequest,
   RockCampus: { dataSource: RockCampus.dataSource },
   Campus,
   PostgresDefaultCampusOverride,
@@ -101,9 +103,9 @@ const rockContentModules = {
   Interactions: RockInteractions,
   Followings,
   FollowingsPostgresBridge, // This entry needs to come after Followings.
-  ActionAlgorithm,
-  Feature,
-  ContentItem,
+  ActionAlgorithm: RockActionAlgorithm,
+  Feature: RockFeature,
+  ContentItem: RockContentItem,
   ContentChannel,
   PrayerRequest,
   PostgresCampus: { dataSource: Campus.dataSource },
