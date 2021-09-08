@@ -16,5 +16,4 @@ jobs:
           tenant: ${{ secrets.tenant }}
           registry: ${{ secrets.registry }}
           repository: ${{ secrets.repository }}
-          image: ccc-apollos-api
           dockerfile: ./Dockerfile
