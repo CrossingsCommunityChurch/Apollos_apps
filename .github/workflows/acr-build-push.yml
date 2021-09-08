@@ -1,8 +1,8 @@
 name: build_api
 on:
   push:
-    paths:
-      - "apollos-church-api/**"
+    branches:
+      - "master"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,4 +16,5 @@ jobs:
           tenant: ${{ secrets.tenant }}
           registry: ${{ secrets.registry }}
           repository: ${{ secrets.repository }}
+          tag: latest
           dockerfile: ./Dockerfile
