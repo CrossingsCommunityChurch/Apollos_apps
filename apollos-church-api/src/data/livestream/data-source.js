@@ -61,7 +61,6 @@ export default class LiveStream extends RESTDataSource {
     });
     if (cachedAccessToken) return cachedAccessToken;
     this.baseURL = livefeed.CHOP;
-    console.log('making token call to ', this.baseURL);
     const authResponse = await this.post('auth/guest');
     const accessToken = authResponse.access_token;
     await Cache.set({

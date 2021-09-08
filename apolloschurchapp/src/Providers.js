@@ -1,3 +1,4 @@
+import querystring from 'querystring';
 import React from 'react';
 import PropTypes from 'prop-types';
 import ApollosConfig from '@apollosproject/config';
@@ -16,8 +17,8 @@ import ClientProvider, { client } from './client';
 
 const amplitude = new RNAmplitude(ApollosConfig.AMPLITUDE_API_KEY);
 
-const AppProviders = (props) => (
-  <ClientProvider {...props}>
+const AppProviders = ({ children }) => (
+  <ClientProvider>
     <NotificationsProvider
       oneSignalKey={ApollosConfig.ONE_SIGNAL_KEY}
       // TODO deprecated prop
@@ -27,11 +28,13 @@ const AppProviders = (props) => (
         const [route, location] = path.split('/');
         if (route === 'content')
           NavigationService.navigate('ContentSingle', { itemId: location });
-        if (route === 'nav')
+        if (route === 'nav') {
           NavigationService.navigate(
             // turns "home" into "Home"
-            location[0].toUpperCase() + location.substring(1)
+            location[0].toUpperCase() + location.substring(1),
+            args
           );
+        }
       }}
       actionMap={{
         // accept a follow request when someone taps "accept" in a follow request push notification
@@ -58,7 +61,7 @@ const AppProviders = (props) => (
               amplitude.logEvent(eventName, properties),
           ]}
         >
-          <LiveProvider>{props.children}</LiveProvider>
+          <LiveProvider>{children}</LiveProvider>
         </AnalyticsProvider>
       </AuthProvider>
     </NotificationsProvider>

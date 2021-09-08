@@ -1,60 +1,40 @@
 {
   "name": "apollos-church-api",
-  "version": "1.3.1",
+  "version": "1.0.0",
   "private": true,
   "main": "lib/index.js",
   "scripts": {
-    "start": "./scripts/generateLocalSchema.sh & yarn start:dev",
-    "start:dev": "linkemon ./src/index.js --exec babel-node --delay 2",
-    "start:prod": "NODE_ENV=production node ./lib/index.js",
+    "setup": "./scripts/init.sh",
+    "migrator": "node ./lib/migrator.js",
+    "start": "NODE_ENV=production node ./lib/index.js",
+    "start:dev": "linkemon ./src/index.js --exec babel-node --delay 2 -e js,yaml,json,yml",
     "postinstall": "yarn build",
-    "link-packages": "node ./scripts/link-packages",
-    "unlink-packages": "node ./scripts/link-packages remove",
     "build": "NODE_ENV=production rm -rf ./lib && mkdir -p lib && babel ./src -d ./lib",
     "test": "echo \"No tests in apollos-church-api, all tested code is located in @apollosproject npm modules\"",
     "lint": "eslint ./src --ext .js",
-    "fixlint": "eslint ./src --ext .js --fix",
-    "codecov": "cat ./coverage/lcov.info | codecov",
-    "version": "node ../../scripts/update-apollos-version.js && git add apollos.json",
-    "schema-diff": "./scripts/schemaDiff.sh",
-    "schema-lint": "graphql-schema-linter local.graphql",
-    "upgrade": "npx @apollosproject/upgrade-tools upgrade"
+    "translate": "node scripts/translate.js"
   },
   "engines": {
-    "node": ">=8.11.x"
-  },
-  "jest": {
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
-      "<rootDir>/src/**/?(*.)(spec|test|tests).{js,jsx,mjs}"
-    ],
-    "testEnvironment": "node",
-    "reporters": [
-      "<rootDir>/../../scripts/fingers-crossed-reporter.js"
-    ]
+    "node": ">=14"
   },
   "dependencies": {
     "@apollosproject/babel-preset-apollos": "^1.7.0",
     "@apollosproject/bugsnag": "^2.26.0",
-    "@apollosproject/config": "^2.29.3",
-    "@apollosproject/data-connector-algolia-search": "^2.29.3",
-    "@apollosproject/data-connector-analytics": "^2.29.3",
-    "@apollosproject/data-connector-bible": "^2.29.3",
-    "@apollosproject/data-connector-church-online": "^2.29.3",
-    "@apollosproject/data-connector-cloudinary": "^2.29.3",
-    "@apollosproject/data-connector-onesignal": "^2.29.3",
-    "@apollosproject/data-connector-passes": "^2.29.3",
-    "@apollosproject/data-connector-postgres": "^2.29.3",
-    "@apollosproject/data-connector-redis-cache": "^2.29.3",
-    "@apollosproject/data-connector-rock": "^2.29.3",
-    "@apollosproject/data-connector-twilio": "^2.29.3",
-    "@apollosproject/data-schema": "^2.29.3",
-    "@apollosproject/rock-apollo-data-source": "^2.29.3",
-    "@apollosproject/server-core": "^2.29.3",
+    "@apollosproject/config": "^2.32.1",
+    "@apollosproject/data-connector-algolia-search": "^2.32.1",
+    "@apollosproject/data-connector-analytics": "^2.32.1",
+    "@apollosproject/data-connector-bible": "^2.32.1",
+    "@apollosproject/data-connector-church-online": "^2.32.1",
+    "@apollosproject/data-connector-cloudinary": "^2.32.1",
+    "@apollosproject/data-connector-onesignal": "^2.32.1",
+    "@apollosproject/data-connector-passes": "^2.32.1",
+    "@apollosproject/data-connector-postgres": "^2.32.1",
+    "@apollosproject/data-connector-redis-cache": "^2.32.1",
+    "@apollosproject/data-connector-rock": "^2.32.1",
+    "@apollosproject/data-connector-twilio": "^2.32.1",
+    "@apollosproject/data-schema": "^2.32.1",
+    "@apollosproject/rock-apollo-data-source": "^2.32.1",
+    "@apollosproject/server-core": "^2.32.1",
     "apollo-server": "^2.24.1",
     "apollo-server-cache-redis": "^1.5.0",
     "apollo-server-express": "2.14.2",
@@ -78,9 +58,9 @@
     "graphql-upload": "^12.0.0"
   },
   "devDependencies": {
-    "@apollosproject/apollo-server-env-mock": "^2.29.3",
-    "@apollosproject/babel-preset-apollos": "^2.29.3",
-    "@apollosproject/eslint-config": "^2.29.3",
+    "@apollosproject/apollo-server-env-mock": "^2.32.1",
+    "@apollosproject/babel-preset-apollos": "^2.32.1",
+    "@apollosproject/eslint-config": "^2.32.1",
     "@babel/cli": "^7.4.5",
     "@babel/core": "^7.4.5",
     "@babel/node": "^7.7.4",

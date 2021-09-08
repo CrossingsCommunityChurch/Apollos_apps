@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { ApolloProvider, ApolloClient, ApolloLink } from '@apollo/client';
 import { createPersistedQueryLink } from '@apollo/client/link/persisted-queries';
-import { sha256 } from 'crypto-hash';
+import { sha256 } from 'react-native-sha256';
 import { getVersion, getApplicationName } from 'react-native-device-info';
 import { Platform } from 'react-native';
 import { createUploadLink } from 'apollo-upload-client';
@@ -13,7 +13,6 @@ import { authLink, buildErrorLink } from '@apollosproject/ui-auth';
 import { NavigationService } from '@apollosproject/ui-kit';
 import { resolvers, schema, defaults, GET_ALL_DATA } from '../store';
 
-// import httpLink from './httpLink';
 import cache, { ensureCacheHydration } from './cache';
 import MARK_CACHE_LOADED from './markCacheLoaded';
 
@@ -21,12 +20,12 @@ const goToAuth = () => NavigationService.resetToAuth();
 const wipeData = () =>
   cache.writeQuery({ query: GET_ALL_DATA, data: defaults });
 
-let clearStore;
 let storeIsResetting = false;
 const onAuthError = async () => {
   if (!storeIsResetting) {
     storeIsResetting = true;
-    await clearStore();
+    await client.stop();
+    await client.clearStore();
   }
   storeIsResetting = false;
   goToAuth();
@@ -39,8 +38,7 @@ const androidUri = ApollosConfig.ANDROID_URL || '10.0.2.2';
 if (Platform.OS === 'android') uri = uri.replace('localhost', androidUri);
 
 const errorLink = buildErrorLink(onAuthError);
-
-const appLink = createPersistedQueryLink({
+const apqLink = createPersistedQueryLink({
   sha256,
   useGETForHashedQueries: true,
 });
@@ -48,7 +46,7 @@ const appLink = createPersistedQueryLink({
 const link = ApolloLink.from([
   authLink,
   errorLink,
-  appLink,
+  apqLink,
   createUploadLink({ uri }),
 ]);
 
@@ -78,15 +76,11 @@ export const client = new ApolloClient({
   },
 });
 
-// Hack to give auth link access to method on client;
-// eslint-disable-next-line prefer-destructuring
-clearStore = client.clearStore;
-
 wipeData();
 // Ensure that media player still works after logout.
 client.onClearStore(() => wipeData());
 
-class ClientProvider extends Component {
+class ClientProvider extends PureComponent {
   static propTypes = {
     client: PropTypes.shape({
       cache: PropTypes.shape({}),

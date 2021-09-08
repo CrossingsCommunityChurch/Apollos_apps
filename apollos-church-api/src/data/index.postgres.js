@@ -15,38 +15,39 @@ import * as Cache from '@apollosproject/data-connector-redis-cache';
 // import * as Sms from '@apollosproject/data-connector-twilio';
 import {
   Followings,
-  Interactions,
+  Interactions as RockInteractions,
   RockConstants,
   // ContentItem,
-  // ContentChannel,
+  ContentChannel,
   Sharable,
   Auth,
   PersonalDevice,
   Template,
   AuthSms,
-  Campus,
   Group,
   BinaryFiles,
   // Feature,
   FeatureFeed,
-  // ActionAlgorithm,
   // Event,
-  // PrayerRequest,
-  // Persona,
+  PrayerRequest,
   // Person as RockPerson,
+  ContentItem as RockContentItem,
+  Campus as RockCampus,
+  Feature as RockFeature,
+  ActionAlgorithm as RockActionAlgorithm,
 } from '@apollosproject/data-connector-rock';
 
-import * as ContentItem from './content-items';
+import * as PostgresContentItem from './content-items';
 import * as Event from './event';
-import * as Feature from './features';
+import * as PostgresFeature from './features';
 // import * as FeatureFeed from './feature-feeds';
 import * as RockPerson from './person';
 import * as Sms from './clearstream';
-import * as ActionAlgorithm from './action-algorithms';
+import * as PostgresActionAlgorithm from './action-algorithms';
 // import * as Search from './search';
 import * as LiveStream from './livestream';
 import * as Schedule from './schedule';
-import * as PrayerRequest from './prayer';
+// import * as PrayerRequest from './prayer';
 
 // eslint-disable-next-line import/order
 import {
@@ -54,17 +55,20 @@ import {
   UserFlag,
   UserLike,
   Follow,
+  Interactions,
+  Likes,
   Notification,
   NotificationPreference,
-  Campus as PostgresCampus,
+  Tag,
+  Campus,
   Person as PostgresPerson,
   Media as PostgresMedia,
-  // Feature,
-  Tag,
-  // ContentItem,
+  // Feature as PostgresFeature,
+  // ContentItem as PostgresContentItem,
   ContentItemsConnection,
-  ContentItemCategory as ContentChannel,
-  // ActionAlgorithm,
+  ContentItemCategory,
+  // ActionAlgorithm as PostgresActionAlgorithm,
+  PrayerRequest as PostgresPrayerRequest,
 } from '@apollosproject/data-connector-postgres';
 
 import * as Theme from './theme';
@@ -75,23 +79,49 @@ import {
   Person,
   OneSignal,
   Followings as FollowingsPostgresBridge,
+  PostgresDefaultCampusOverride,
+  RockDefaultCampusOverride,
 } from './rockWithPostgres';
+
+const postgresContentModules = {
+  Interactions,
+  Likes,
+  ActionAlgorithm: PostgresActionAlgorithm,
+  Feature: PostgresFeature,
+  PostgresMedia,
+  Tag,
+  ContentItem: PostgresContentItem,
+  ContentItemsConnection,
+  ContentChannel: ContentItemCategory,
+  PrayerRequest: PostgresPrayerRequest,
+  RockCampus: { dataSource: RockCampus.dataSource },
+  Campus,
+  PostgresDefaultCampusOverride,
+};
+
+const rockContentModules = {
+  Interactions: RockInteractions,
+  Followings,
+  FollowingsPostgresBridge, // This entry needs to come after Followings.
+  ActionAlgorithm: RockActionAlgorithm,
+  Feature: RockFeature,
+  ContentItem: RockContentItem,
+  ContentChannel,
+  PrayerRequest,
+  PostgresCampus: { dataSource: Campus.dataSource },
+  Campus: RockCampus,
+  RockDefaultCampusOverride,
+};
 
 const data = {
   Interfaces,
-  Followings,
-  FollowingsPostgresBridge, // This entry needs to come after Followings.
   FeatureFeed,
-  ActionAlgorithm,
   RockPerson, // This entry needs to come before (postgres) Person
   BinaryFiles, // This entry needs to come before (postgres) Person
   PostgresPerson, // Postgres person for now, as we extend this dataSource in the 'rockWithPostgres' file
-  PostgresMedia,
-  Feature,
-  Tag,
-  ContentItem,
-  ContentItemsConnection,
-  ContentChannel,
+  ...(process.env.DATABASE_CONTENT
+    ? postgresContentModules
+    : rockContentModules),
   Cloudinary,
   Auth,
   AuthSms,
@@ -99,7 +129,6 @@ const data = {
   LiveStream,
   Theme,
   Scripture,
-  Interactions,
   RockConstants,
   Sharable,
   Analytics,
@@ -107,16 +136,13 @@ const data = {
   Pass,
   Search,
   Template,
-  Campus,
   Group,
   Event,
   Cache,
-  PrayerRequest,
   Comment,
   UserLike,
   UserFlag,
   Follow,
-  PostgresCampus,
   Notification,
   NotificationPreference,
   OneSignal,

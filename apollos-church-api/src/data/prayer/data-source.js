@@ -1,4 +1,4 @@
-import { PrayerRequest as corePrayer } from '@apollosproject/data-connector-rock';
+import { PrayerRequest as corePrayer } from '@apollosproject/data-connector-postgres';
 import moment from 'moment-timezone';
 import ApollosConfig from '@apollosproject/config';
 
