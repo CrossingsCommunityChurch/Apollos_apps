@@ -17,5 +17,4 @@ jobs:
           registry: ${{ secrets.registry }}
           repository: ${{ secrets.repository }}
           image: ccc-apollos-api
-          folder: ./apollos-church-api
           dockerfile: ./Dockerfile
