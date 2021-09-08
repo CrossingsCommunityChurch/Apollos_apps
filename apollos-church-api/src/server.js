@@ -50,7 +50,7 @@ const apolloServer = new ApolloServer({
       shouldReadFromCache: () => !isDev,
       shouldWriteToCache: () => !isDev,
     }),
-    // new BugsnagPlugin(),
+    new BugsnagPlugin(),
   ],
   formatError: (error) => {
     console.error(get(error, 'extensions.exception.stacktrace', []).join('\n'));

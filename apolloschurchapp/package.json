@@ -103,6 +103,7 @@
     "memoize-one": "4.0.0",
     "moment": "2.22.2",
     "node-fetch": "2.6.1",
+    "querystring": "^0.2.1",
     "react": "16.13.1",
     "react-apollo": "2.5.5",
     "react-native": "0.63.4",
@@ -127,6 +128,7 @@
     "react-native-safe-area-context": "^3.0.7",
     "react-native-safe-area-view": "0.13.1",
     "react-native-screens": "3.2.0",
+    "react-native-sha256": "^1.4.7",
     "react-native-splash-screen": "^3.2.0",
     "react-native-svg": "^9.4.0",
     "react-native-video": "^5.0.0",
@@ -136,8 +138,7 @@
     "rn-fetch-blob": "^0.10.16",
     "stream": "^0.0.2",
     "wml": "^0.0.83",
-    "yup": "0.26.6",
-    "querystring": "^0.2.1"
+    "yup": "0.26.6"
   },
   "devDependencies": {
     "@apollosproject/eslint-config": "^2.32.1",
