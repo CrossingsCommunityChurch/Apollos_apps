@@ -1,4 +1,4 @@
-# This workflow will use Fastly to build and push IOS and Android mobile apps 
+# This workflow will use Fastly to build and push IOS and Android mobile apps
 # it will only run when something changes in the .apolloschurchapp folder
 #
 # To use this workflow, you will need to complete the following set-up steps:
@@ -9,7 +9,7 @@ on:
     branches:
       - master
     paths:
-      - '.apolloschurchapp/*'
+      - .apolloschurchapp/**
 
 name: build and deploy IOS
 
