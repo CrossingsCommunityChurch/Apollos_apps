@@ -30,7 +30,7 @@ import {
   FeatureFeed,
   // Event,
   PrayerRequest,
-  // Person as RockPerson,
+  Person as RockPerson,
   ContentItem as RockContentItem,
   Campus as RockCampus,
   Feature as RockFeature,
@@ -41,7 +41,7 @@ import * as PostgresContentItem from './content-items';
 import * as Event from './event';
 import * as PostgresFeature from './features';
 // import * as FeatureFeed from './feature-feeds';
-import * as RockPerson from './person';
+// import * as RockPerson from './person';
 import * as Sms from './clearstream';
 import * as PostgresActionAlgorithm from './action-algorithms';
 // import * as Search from './search';
@@ -78,7 +78,6 @@ import * as Theme from './theme';
 import {
   Person,
   OneSignal,
-  Followings as FollowingsPostgresBridge,
   PostgresDefaultCampusOverride,
   RockDefaultCampusOverride,
 } from './rockWithPostgres';
@@ -102,7 +101,6 @@ const postgresContentModules = {
 const rockContentModules = {
   Interactions: RockInteractions,
   Followings,
-  FollowingsPostgresBridge, // This entry needs to come after Followings.
   ActionAlgorithm: RockActionAlgorithm,
   Feature: RockFeature,
   ContentItem: RockContentItem,

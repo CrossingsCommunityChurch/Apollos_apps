@@ -1,4 +1,4 @@
-import { Person as personData } from '@apollosproject/data-connector-rock';
+import { Person as personData } from '@apollosproject/data-connector-postgres';
 
 class Person extends personData.dataSource {
   async getCurrentUserCampusId() {
