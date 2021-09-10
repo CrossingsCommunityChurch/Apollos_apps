@@ -1,0 +1,66 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ccc-apollos-api-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ccc-apollos-api
+  template:
+    metadata:
+      labels:
+        app: ccc-apollos-api
+    spec:
+      containers:
+        - name: ccc-apollos-api
+          image: registryrockapi.azurecr.io/ccc-apollos-api:latest
+          envFrom:
+            - configMapRef:
+                name: apollo-api-env-config
+          resources:
+            limits:
+              cpu: 150m
+              memory: 150Mi
+          ports:
+            - containerPort: 4000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ccc-apollos-api
+  labels:
+    app: ccc-apollos-api
+spec:
+  selector:
+    app: ccc-apollos-api
+  ports:
+    - port: 80
+      targetPort: 4000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ccc-apollos-api-ingress
+  labels:
+    name: ccc-apollos-api-ingress
+  annotations:
+    kubernetes.io/ingress.class: azure/application-gateway
+    appgw.ingress.kubernetes.io/appgw-ssl-certificate: "apollo-crossings-church"
+    appgw.ingress.kubernetes.io/backend-protocol: "http"
+    appgw.ingress.kubernetes.io/health-probe-hostname: "localhost"
+    appgw.ingress.kubernetes.io/health-probe-path: "/health"
+    appgw.ingress.kubernetes.io/health-probe-unhealthy-threshold: "5"
+spec:
+  rules:
+    - host: apollo.crossings.church
+      http:
+        paths:
+          - path: "/"
+            pathType: Prefix
+            backend:
+              service:
+                name: ccc-apollos-api
+                port:
+                  number: 80
