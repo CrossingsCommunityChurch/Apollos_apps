@@ -30,13 +30,12 @@ class dataSource extends Event.dataSource {
       .filter('Schedule/EffectiveStartDate ne null');
   };
 
-  async getUpcomingEventsByCampus({ limit = null, campusId } = {}) {
+  async getUpcomingEventsByCampus({ limit = null } = {}) {
     const allEvents = [];
     // Get the first three persona items.
     await Promise.all(
       this.calIds.map(async (id) => {
         const events = await this.findRecent(id)
-          .andFilter(`CampusId eq ${campusId}`)
           .andFilter(
             `(Schedule/EffectiveEndDate ge datetime'${moment()
               // we need to subtract a day. The EffectiveEndDate is often the morning of the current day.

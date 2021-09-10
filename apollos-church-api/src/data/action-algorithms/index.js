@@ -9,14 +9,9 @@ class dataSource extends ActionAlgorithm.dataSource {
   };
 
   async upcomingEventsAlgorithm() {
-    const { Event, RockPerson } = this.context.dataSources;
-    const { campusId } = await RockPerson.getCurrentUserCampusId();
-    if (!campusId) {
-      return [];
-    }
+    const { Event } = this.context.dataSources;
 
     const events = await Event.getUpcomingEventsByCampus({
-      campusId,
       limit: 8,
     });
     // Map them into specific actions.

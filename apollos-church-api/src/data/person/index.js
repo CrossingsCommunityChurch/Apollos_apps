@@ -1,6 +1,6 @@
-import { Person } from '@apollosproject/data-connector-rock';
+import { Person } from '@apollosproject/data-connector-postgres';
 import dataSource from './data-source';
 
-const { resolver, schema } = Person;
+const { resolver, schema, migrations, models } = Person;
 
-export { resolver, schema, dataSource };
+export { resolver, schema, migrations, models, dataSource };
