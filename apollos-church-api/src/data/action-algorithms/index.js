@@ -25,7 +25,7 @@ class dataSource extends ActionAlgorithm.dataSource {
       // image: Event.getImage(event),
       // Current app design calls for no user-supplied images.
       image: Event.getImage(event),
-      action: 'READ_EVENT',
+      action: 'READ_CONTENT',
       summary: '',
     }));
   }
