@@ -2,18 +2,18 @@ import { ContentItem as coreContentItem } from '@apollosproject/data-connector-p
 
 import { get } from 'lodash';
 
-const resolverExtensions = {
-  author: ({ attributeValues }) => {
-    if (get(attributeValues, 'author.value', null)) {
-      return attributeValues.author.valueFormatted;
-    }
-    if (get(attributeValues, 'speaker.value', null)) {
-      return attributeValues.speaker.valueFormatted;
-    }
+// const resolverExtensions = {
+//   author: ({ attributeValues }) => {
+//     if (get(attributeValues, 'author.value', null)) {
+//       return attributeValues.author.valueFormatted;
+//     }
+//     if (get(attributeValues, 'speaker.value', null)) {
+//       return attributeValues.speaker.valueFormatted;
+//     }
 
-    return null;
-  },
-};
+//     return null;
+//   },
+// };
 
 const liveResolver = {
   ...coreContentItem.resolver.ContentItem,
@@ -21,21 +21,6 @@ const liveResolver = {
 
 const resolver = {
   ...coreContentItem.resolver,
-  DevotionalContentItem: {
-    ...resolverExtensions,
-  },
-  UniversalContentItem: {
-    ...resolverExtensions,
-  },
-  ContentSeriesContentItem: {
-    ...resolverExtensions,
-  },
-  MediaContentItem: {
-    ...resolverExtensions,
-  },
-  WeekendContentItem: {
-    ...resolverExtensions,
-  },
   LiveContentItem: {
     ...coreContentItem.resolver.MediaContentItem,
     ...liveResolver,

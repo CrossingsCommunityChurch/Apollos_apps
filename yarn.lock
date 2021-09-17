@@ -106,10 +106,10 @@
     http-errors "^1.7.3"
     object-path "^0.11.4"
 
-"@apollosproject/apollo-server-env-mock@^2.33.0":
-  version "2.33.1"
-  resolved "https://registry.yarnpkg.com/@apollosproject/apollo-server-env-mock/-/apollo-server-env-mock-2.33.1.tgz#a1d2b5e98c917d31ba7c4eb44b4e3786e81ac701"
-  integrity sha512-8Inwzz8WsjMeVbNlxb8NmJ7ILgD7DrMO5VzY7i4xmapVK5DtP/1cj4W/Ne0WPO0dlrrPZ4FfVx0vyuc09aAlMg==
+"@apollosproject/apollo-server-env-mock@^2.33.2":
+  version "2.33.2"
+  resolved "https://registry.yarnpkg.com/@apollosproject/apollo-server-env-mock/-/apollo-server-env-mock-2.33.2.tgz#bccdc6ccf020578c1da8d202777f2554e332b617"
+  integrity sha512-Zeyn91h3G9yw1dWfxOZageJK/7cYXUPwz1yaNXuk70F44nadP4yFRtT+4LnKEU29I+f0d3bCSMFNFcgKMT5row==
 
 "@apollosproject/babel-preset-apollos@^1.7.0":
   version "1.8.0"
@@ -267,11 +267,6 @@
   integrity sha512-CHoyuqSZxEN4MBQlK+egVbcWOYG6ylIY79b/AlhsrJ0jnEGylhbaCp2IYCrs5CvSSYEZIhhmpig5ZDzC9TVzGw==
   dependencies:
     "@apollo/client" "3.3.20"
-
-"@apollosproject/eslint-config@^2.33.0":
-  version "2.33.1"
-  resolved "https://registry.yarnpkg.com/@apollosproject/eslint-config/-/eslint-config-2.33.1.tgz#bac3aef007207756f7735a2e85805d3a0b121355"
-  integrity sha512-GSv0fLL3ii9ZzpS31JBxcU9Qq9VuAvSKJ2nPdsNAdezDpqy1AF52QwZqPt7tBFnmLcV/6jT+dvSQhPu+mu/4eQ==
 
 "@apollosproject/eslint-config@^2.33.2":
   version "2.33.2"

@@ -287,7 +287,6 @@ type ContentSeriesContentItem implements ContentItem & Node & ContentNode & Card
   likedCount: Int
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
-  author: String
   sharing: SharableContentItem
 }
 
@@ -316,7 +315,6 @@ type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & 
   likedCount: Int
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
-  author: String
   sharing: SharableContentItem
 }
 
@@ -491,23 +489,6 @@ type LiveStream {
   eventEndTime: String
 }
 
-type LiveStreamAction {
-  relatedNode: Node
-  action: ACTION_FEATURE_ACTION
-  title: String
-  duration: Int
-  image: String
-  start: Int
-}
-
-type LiveStreamListFeature implements Feature & Node {
-  id: ID!
-  order: Int
-  title: String
-  subtitle: String
-  liveStreams: [LiveStream]
-}
-
 interface Media {
   name: String
   key: String
@@ -531,7 +512,6 @@ type MediaContentItem implements ContentItem & Node & ContentNode & Card & Video
   scriptures: [Scripture]
   isLiked: Boolean
   likedCount: Int
-  author: String
   sharing: SharableContentItem
 }
 
@@ -687,7 +667,6 @@ type Query {
   userFeedFeatures: [Feature] @deprecated(reason: "Use homeFeedFeatures or discoverFeedFeatures")
   homeFeedFeatures(campusId: ID): FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: HOME)")
   discoverFeedFeatures: FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: DISCOVER)")
-  LiveFeedFeatures: FeatureFeed
   campaigns: ContentItemsConnection
   userFeed(first: Int, after: String): ContentItemsConnection
   personaFeed(first: Int, after: String): ContentItemsConnection
@@ -837,7 +816,6 @@ type UniversalContentItem implements ContentItem & Node & ContentNode & Card & V
   likedCount: Int
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
-  author: String
   sharing: SharableContentItem
 }
 
@@ -932,7 +910,6 @@ type WeekendContentItem implements ContentItem & Node & ContentNode & Card & Vid
   likedCount: Int
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
-  author: String
   liveStream: LiveStream
   sharing: SharableContentItem
 }

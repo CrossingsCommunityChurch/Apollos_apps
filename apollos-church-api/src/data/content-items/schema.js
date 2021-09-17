@@ -4,26 +4,6 @@ import gql from 'graphql-tag';
 export default gql`
   ${ContentItem.schema}
 
-  extend type DevotionalContentItem {
-    author: String @cacheControl(maxAge: 6400)
-  }
-
-  extend type UniversalContentItem {
-    author: String @cacheControl(maxAge: 6400)
-  }
-
-  extend type ContentSeriesContentItem {
-    author: String @cacheControl(maxAge: 6400)
-  }
-
-  extend type MediaContentItem {
-    author: String @cacheControl(maxAge: 6400)
-  }
-
-  extend type WeekendContentItem {
-    author: String @cacheControl(maxAge: 6400)
-  }
-
   type LiveContentItem implements ContentItem & Node {
     id: ID!
     title(hyphenated: Boolean): String
