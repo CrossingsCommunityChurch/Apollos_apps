@@ -7,6 +7,7 @@ enum ACTION_FEATURE_ACTION {
   OPEN_AUTHENTICATED_URL
   OPEN_NODE
   OPEN_CHANNEL
+  COMPLETE_NODE
 }
 
 type ActionBarAction {
@@ -286,7 +287,6 @@ type ContentSeriesContentItem implements ContentItem & Node & ContentNode & Card
   likedCount: Int
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
-  author: String
   sharing: SharableContentItem
 }
 
@@ -315,7 +315,6 @@ type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & 
   likedCount: Int
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
-  author: String
   sharing: SharableContentItem
 }
 
@@ -530,7 +529,6 @@ type MediaContentItem implements ContentItem & Node & ContentNode & Card & Video
   scriptures: [Scripture]
   isLiked: Boolean
   likedCount: Int
-  author: String
   sharing: SharableContentItem
 }
 
@@ -836,7 +834,6 @@ type UniversalContentItem implements ContentItem & Node & ContentNode & Card & V
   likedCount: Int
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
-  author: String
   sharing: SharableContentItem
 }
 
@@ -931,7 +928,6 @@ type WeekendContentItem implements ContentItem & Node & ContentNode & Card & Vid
   likedCount: Int
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
-  author: String
   liveStream: LiveStream
   sharing: SharableContentItem
 }

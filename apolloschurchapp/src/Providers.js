@@ -1,7 +1,7 @@
 import querystring from 'querystring';
+import ApollosConfig from '@apollosproject/config';
 import React from 'react';
 import PropTypes from 'prop-types';
-import ApollosConfig from '@apollosproject/config';
 import { NavigationService } from '@apollosproject/ui-kit';
 import { AuthProvider } from '@apollosproject/ui-auth';
 import { AnalyticsProvider } from '@apollosproject/ui-analytics';
@@ -20,7 +20,6 @@ const amplitude = new RNAmplitude(ApollosConfig.AMPLITUDE_API_KEY);
 const AppProviders = ({ children }) => (
   <ClientProvider>
     <NotificationsProvider
-      oneSignalKey={ApollosConfig.ONE_SIGNAL_KEY}
       // TODO deprecated prop
       navigate={NavigationService.navigate}
       handleExternalLink={(url) => {
@@ -29,9 +28,11 @@ const AppProviders = ({ children }) => (
         if (route === 'content')
           NavigationService.navigate('ContentSingle', { itemId: location });
         if (route === 'nav') {
+          const [component, params] = location.split('?');
+          const args = querystring.parse(params);
           NavigationService.navigate(
             // turns "home" into "Home"
-            location[0].toUpperCase() + location.substring(1),
+            component[0].toUpperCase() + component.substring(1),
             args
           );
         }

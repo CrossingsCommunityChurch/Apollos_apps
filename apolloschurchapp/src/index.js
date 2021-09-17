@@ -112,13 +112,20 @@ const App = () => {
                 name="ProtectedRoute"
                 component={ProtectedRouteWithSplashScreen}
               />
-              <Screen name="Tabs" component={Tabs} />
+              <Screen
+                name="Tabs"
+                component={Tabs}
+                options={{
+                  gestureEnabled: false,
+                  stackPresentation: 'push',
+                }}
+              />
               <Screen
                 name="ContentSingle"
                 component={WrappedContentSingleConnected}
                 options={{
                   title: 'Content',
-                  stackPresentation: 'push',
+                  stackPresentation: 'fullScreenModal',
                 }}
               />
               <Screen
