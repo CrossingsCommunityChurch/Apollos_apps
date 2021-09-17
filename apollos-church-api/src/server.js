@@ -34,6 +34,18 @@ export { resolvers, schema, testSchema };
 const isDev =
   process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test';
 
+const extensions = isDev ? [() => new RockLoggingExtension()] : [];
+
+const cacheOptions = isDev
+  ? {}
+  : {
+      cacheControl: {
+        stripFormattedExtensions: false,
+        calculateHttpHeaders: true,
+        defaultMaxAge: 3600,
+      },
+    };
+
 const { ROCK, APP } = ApollosConfig;
 
 const apolloServer = new ApolloServer({
@@ -42,16 +54,7 @@ const apolloServer = new ApolloServer({
   dataSources,
   context,
   introspection: true,
-  extensions: isDev ? [() => new RockLoggingExtension()] : [],
-  plugins: [
-    responseCachePlugin({
-      sessionId: (requestContext) =>
-        requestContext.request.http.headers.get('authorization') || null,
-      shouldReadFromCache: () => !isDev,
-      shouldWriteToCache: () => !isDev,
-    }),
-    new BugsnagPlugin(),
-  ],
+  extensions,
   formatError: (error) => {
     console.error(get(error, 'extensions.exception.stacktrace', []).join('\n'));
     return error;
@@ -61,19 +64,8 @@ const apolloServer = new ApolloServer({
       'editor.cursorShape': 'line',
     },
   },
-  cache: process.env.REDIS_URL
-    ? new BaseRedisCache({
-        client: new Redis(process.env.REDIS_URL),
-      })
-    : null,
-  cacheControl: isDev
-    ? {}
-    : {
-        stripFormattedExtensions: false,
-        calculateHttpHeaders: true,
-        defaultMaxAge: 3600,
-      },
   uploads: false,
+  ...cacheOptions,
 });
 
 const app = express();
