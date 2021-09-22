@@ -17,8 +17,8 @@ import ClientProvider, { client } from './client';
 
 const amplitude = new RNAmplitude(ApollosConfig.AMPLITUDE_API_KEY);
 
-const AppProviders = ({ children }) => (
-  <ClientProvider>
+const AppProviders = (props) => (
+  <ClientProvider {...props}>
     <NotificationsProvider
       // TODO deprecated prop
       navigate={NavigationService.navigate}
@@ -62,7 +62,7 @@ const AppProviders = ({ children }) => (
               amplitude.logEvent(eventName, properties),
           ]}
         >
-          <LiveProvider>{children}</LiveProvider>
+          <LiveProvider>{props.children}</LiveProvider>
         </AnalyticsProvider>
       </AuthProvider>
     </NotificationsProvider>
