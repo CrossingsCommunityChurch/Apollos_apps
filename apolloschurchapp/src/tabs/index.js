@@ -60,7 +60,7 @@ const HeaderRight = () => {
 
 const CustomConnectScreen = () => (
   <ConnectScreenConnected
-    showAvatar={false}
+    showAvatar
     ActionTable={ActionTable}
     ActionBar={ActionBar}
   />
