@@ -1,27 +1,24 @@
 import React, { useEffect } from 'react';
-import { Image, View } from 'react-native';
+import { View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import PropTypes from 'prop-types';
 import {
   NavigationService,
   withTheme,
-  Icon,
   Touchable,
 } from '@apollosproject/ui-kit';
 import { useApolloClient } from '@apollo/client';
 import {
   createFeatureFeedTab,
   UserAvatarConnected,
-  ConnectScreenConnected,
 } from '@apollosproject/ui-connected';
 import { checkOnboardingStatusAndNavigate } from '@apollosproject/ui-onboarding';
 import { useNavigation } from '@react-navigation/native';
-import ActionTable from '../ui/ActionTable';
-import ActionBar from '../ui/ActionBar';
 import LiveStreamListFeatureConnected from '../live-feed/LiveStreamListFeatureConnected';
 import HomeSearchButton from '../ui/Search/SearchButton';
 import tabBarIcon from './tabBarIcon';
 import Logo from './logo';
+import Connect from './connect';
 
 const Avatar = withTheme(({ theme: { sizing: { baseUnit } } }) => ({
   size: 'small',
@@ -57,14 +54,6 @@ const HeaderRight = () => {
   const navigation = useNavigation();
   return <HomeSearchButton onPress={() => navigation.navigate('Search')} />;
 };
-
-const CustomConnectScreen = () => (
-  <ConnectScreenConnected
-    showAvatar={false}
-    ActionTable={ActionTable}
-    ActionBar={ActionBar}
-  />
-);
 
 // we nest stack inside of tabs so we can use all the fancy native header features
 const HomeTab = createFeatureFeedTab({
@@ -160,8 +149,8 @@ const TabNavigator = () => {
         options={{ tabBarIcon: tabBarIcon('like') }}
       />
       <Screen
-        name="Profile"
-        component={CustomConnectScreen}
+        name="Connect"
+        component={Connect}
         options={{ tabBarIcon: tabBarIcon('profile') }}
       />
     </Navigator>
