@@ -36,16 +36,6 @@ const isDev =
 
 const extensions = isDev ? [() => new RockLoggingExtension()] : [];
 
-const cacheOptions = isDev
-  ? {}
-  : {
-      cacheControl: {
-        stripFormattedExtensions: false,
-        calculateHttpHeaders: true,
-        defaultMaxAge: 3600,
-      },
-    };
-
 const { ROCK, APP } = ApollosConfig;
 
 const apolloServer = new ApolloServer({
@@ -55,6 +45,14 @@ const apolloServer = new ApolloServer({
   context,
   introspection: true,
   extensions,
+  plugins: [
+    responseCachePlugin({
+      sessionId: (requestContext) =>
+        requestContext.request.http.headers.get('authorization') || null,
+      shouldReadFromCache: () => !isDev,
+      shouldWriteToCache: () => !isDev,
+    }),
+  ],
   formatError: (error) => {
     console.error(get(error, 'extensions.exception.stacktrace', []).join('\n'));
     return error;
@@ -65,7 +63,18 @@ const apolloServer = new ApolloServer({
     },
   },
   uploads: false,
-  ...cacheOptions,
+  ...(process.env.REDIS_URL
+    ? {
+        cache: new BaseRedisCache({
+          client: new Redis(process.env.REDIS_URL),
+        }),
+      }
+    : {}),
+  cacheControl: {
+    stripFormattedExtensions: false,
+    calculateHttpHeaders: true,
+    defaultMaxAge: 3600,
+  },
 });
 
 const app = express();
