@@ -55,6 +55,7 @@ const HeaderRight = () => {
   return <HomeSearchButton onPress={() => navigation.navigate('Search')} />;
 };
 
+
 // we nest stack inside of tabs so we can use all the fancy native header features
 const HomeTab = createFeatureFeedTab({
   screenOptions: {
