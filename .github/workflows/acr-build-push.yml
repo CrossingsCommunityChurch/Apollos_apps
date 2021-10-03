@@ -7,6 +7,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Check For API Changes
+        run: if [[ $(git diff HEAD apollos-church-api) == "" ]]; then exit; fi
+
       - name: ACR build
         id: acr
         uses: ams0/acr-task-github-action@v2
