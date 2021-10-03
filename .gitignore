@@ -21,3 +21,4 @@ apolloschurchapp/.env.production
 *.p12
 *.certSigningRequest
 *.cer
+.vscode/settings.json
