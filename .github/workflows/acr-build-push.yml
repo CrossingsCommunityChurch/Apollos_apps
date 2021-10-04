@@ -6,8 +6,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Check For API Changes
+        uses: actions/checkout@v2
         run: if [[ $(git diff HEAD apollos-church-api) == "" ]]; then exit; fi
 
       - name: ACR build
