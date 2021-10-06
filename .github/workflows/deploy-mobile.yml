@@ -24,9 +24,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Check For App Changes
-        run: if [[ $(git diff HEAD ../apolloschurchapp/) == "" ]]; then exit 1; fi
-
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
