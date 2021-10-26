@@ -1,5 +1,4 @@
 import querystring from 'querystring';
-import ApollosConfig from '@apollosproject/config';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavigationService } from '@apollosproject/ui-kit';
@@ -11,14 +10,11 @@ import {
   ACCEPT_FOLLOW_REQUEST,
 } from '@apollosproject/ui-connected';
 import { checkOnboardingStatusAndNavigate } from '@apollosproject/ui-onboarding';
-import RNAmplitude from 'react-native-amplitude-analytics';
 
 import ClientProvider, { client } from './client';
 
-const amplitude = new RNAmplitude(ApollosConfig.AMPLITUDE_API_KEY);
-
-const AppProviders = (props) => (
-  <ClientProvider {...props}>
+const AppProviders = ({ children }) => (
+  <ClientProvider>
     <NotificationsProvider
       // TODO deprecated prop
       navigate={NavigationService.navigate}
@@ -56,13 +52,8 @@ const AppProviders = (props) => (
           })
         }
       >
-        <AnalyticsProvider
-          trackFunctions={[
-            ({ eventName, properties }) =>
-              amplitude.logEvent(eventName, properties),
-          ]}
-        >
-          <LiveProvider>{props.children}</LiveProvider>
+        <AnalyticsProvider>
+          <LiveProvider>{children}</LiveProvider>
         </AnalyticsProvider>
       </AuthProvider>
     </NotificationsProvider>

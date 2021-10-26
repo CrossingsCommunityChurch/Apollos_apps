@@ -34,7 +34,7 @@ export { resolvers, schema, testSchema };
 const isDev =
   process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test';
 
-const extensions = isDev ? [() => new RockLoggingExtension()] : [];
+// const extensions = isDev ? [() => new RockLoggingExtension()] : [];
 
 const { ROCK, APP } = ApollosConfig;
 
@@ -44,7 +44,7 @@ const apolloServer = new ApolloServer({
   dataSources,
   context,
   introspection: true,
-  extensions,
+  extensions: isDev ? [() => new RockLoggingExtension()] : [],
   plugins: [
     responseCachePlugin({
       sessionId: (requestContext) =>
