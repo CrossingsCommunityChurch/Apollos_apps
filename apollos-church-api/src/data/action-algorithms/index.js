@@ -9,8 +9,11 @@ class dataSource extends ActionAlgorithm.dataSource {
   };
 
   async upcomingEventsAlgorithm() {
-    const { Event } = this.context.dataSources;
-
+    const { Event, Campus, PostgresPerson } = this.context.dataSources;
+    const person = await PostgresPerson.getCurrentPerson();
+    if (!person) return [];
+    const campusId = await Campus.getForPerson(person);
+    console.log('CAMPUS ID IS ', campusId);
     const events = await Event.getUpcomingEventsByCampus({
       limit: 8,
     });
