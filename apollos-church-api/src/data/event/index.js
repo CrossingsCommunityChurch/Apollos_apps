@@ -30,7 +30,9 @@ class dataSource extends Event.dataSource {
       .filter('Schedule/EffectiveStartDate ne null');
   };
 
-  async getUpcomingEventsByCampus({ limit = null } = {}) {
+  // TODO: Need to implement events by campus id here. Need to loop over all calendars for the time being.
+
+  async getAllEvents({ limit = null } = {}) {
     const allEvents = [];
     // Get the first three persona items.
     await Promise.all(
