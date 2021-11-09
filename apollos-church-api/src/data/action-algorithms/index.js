@@ -18,6 +18,7 @@ class dataSource extends ActionAlgorithm.dataSource {
     // TODO: get events by campus ID here keep all events in the evnents component.
     const events = await Event.getUpcomingEventsByCampus({
       limit: 8,
+      campusId: campus.id,
     });
     // Map them into specific actions.
     return events.map((event, i) => ({
