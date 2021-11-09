@@ -13,12 +13,10 @@ class dataSource extends ActionAlgorithm.dataSource {
     const person = await PostgresPerson.getCurrentPerson();
     if (!person) return [];
     const campus = await Campus.getForPerson(person);
-    console.log('CAMPUS ID IS ', campus);
-    // this is actually the entire campus object need to pull either campus id or campus guid
-    // TODO: get events by campus ID here keep all events in the evnents component.
+    const campusID = campus.dataValues.originId;
     const events = await Event.getUpcomingEventsByCampus({
-      limit: 8,
-      campusId: campus.id,
+      limit: 4,
+      campusId: campusID,
     });
     // Map them into specific actions.
     return events.map((event, i) => ({

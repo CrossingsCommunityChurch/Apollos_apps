@@ -30,9 +30,7 @@ class dataSource extends Event.dataSource {
       .filter('Schedule/EffectiveStartDate ne null');
   };
 
-  // TODO: Need to implement events by campus id here. Need to loop over all calendars for the time being.
-
-  async getUpcomingEventsByCampus({ limit = null, cmapusId = null } = {}) {
+  async getUpcomingEventsByCampus({ limit = null, campusId = null } = {}) {
     const campusEvents = [];
     await Promise.all(
       this.calIds.map(async (id) => {
@@ -40,7 +38,7 @@ class dataSource extends Event.dataSource {
           .andFilter(
             `(Schedule/EffectiveEndDate ge datetime'${moment()
               .subtract(1, 'day')
-              .toISOString()}' or Schedule/EffectiveEndDate eq null) and CampusId eq ${cmapusId}`
+              .toISOString()}' or Schedule/EffectiveEndDate eq null) and CampusId eq ${campusId}`
           )
           .get();
         campusEvents.push(...events);
@@ -77,6 +75,7 @@ class dataSource extends Event.dataSource {
     await Promise.all(
       this.calIds.map(async (id) => {
         const events = await this.findRecent(id)
+
           .andFilter(
             `(Schedule/EffectiveEndDate ge datetime'${moment()
               // we need to subtract a day. The EffectiveEndDate is often the morning of the current day.
@@ -114,9 +113,10 @@ class dataSource extends Event.dataSource {
   }
 
   getNextStart = async (event) => {
+    // TODO: need to update this to not use depercated lava.
     const lava = `{% schedule id:'${event.schedule.id}' %}
        {
-           "nextStartDateTime": "{{ schedule.GetNextStartDateTime( RockDateTime.Now ) | Date:'yyyy-MM-dd HH:mm' }}"
+        "nextStartDateTime": "{{ schedule.NextStartDateTime | Date:'yyyy-MM-dd HH:mm' }}"
        }
    {% endschedule %}`;
 
@@ -145,8 +145,8 @@ class dataSource extends Event.dataSource {
     const lava = `{% schedule id:'${schedule.id}' %}
     {% assign duration = schedule.DurationInMinutes %}
         {
-            "nextStartDateTime": "{{ schedule.GetNextStartDateTime( RockDateTime.Now ) | Date:'yyyy-MM-dd HH:mm' }}",
-            "endTime": "{{ schedule.GetNextStartDateTime( RockDateTime.Now ) | DateAdd:duration,'m' | Date:'yyy-MM-dd HH:mm' }}"
+          "nextStartDateTime": "{{ schedule.NextStartDateTime | Date:'yyyy-MM-dd HH:mm' }}"
+            "endTime": "{{ schedule.NextStartDateTime | DateAdd:duration,'m' | Date:'yyy-MM-dd HH:mm' }}"
         }
     {% endschedule %}`;
 
