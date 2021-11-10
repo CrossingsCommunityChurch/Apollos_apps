@@ -90,17 +90,11 @@ CONTENT:
     # Id of the category used to store all persona dataviews
     PersonaId: 498
 
-  # Todo add events to be returnable type 
-  SEARCH_CONTENT_CHANNEL_IDS:
-    - 1d14f86d-fe99-4bcd-8456-ef22adc0d43f #Sermon message id 21
-    - 13ffb055-56e0-4bb8-b349-022336ef3239 #teaching Message id 22
-    - a51d4c7c-53ad-4e90-80cc-a5db8f9d6f92 #Gathering message id 423
-    - a9d3319c-d06d-4e16-bed7-530e6555ae5e #Devotionals id 23
-
   ALL_CONTENT_CHANNELS:
     - 1d14f86d-fe99-4bcd-8456-ef22adc0d43f #Sermon message id 21
     - 13ffb055-56e0-4bb8-b349-022336ef3239 #teaching Message id 22
     - a51d4c7c-53ad-4e90-80cc-a5db8f9d6f92 #Gathering message id 423
+    - a9d3319c-d06d-4e16-bed7-530e6555ae5e #Devotionals id 23
 
   ALL_CALIDS:
     - 4
