@@ -129,7 +129,7 @@ TABS:
       actions: [{
         title: Check In,
         icon: check,
-        id: 123456789,
+        id: 120,
         action: OPEN_AUTHENTICATED_URL,
         relatedNode: {
           __typename: Url,
@@ -139,13 +139,24 @@ TABS:
       {
         title: Give,
         icon: hands,
-        id: 1234,
+        id: 121,
         action: OPEN_URL,
         relatedNode: {
           __typename: Url,
           url: 'https://app.crossings.church/mobile/give'
         },
-      }]
+      },
+      {
+        title: Calendar,
+        icon: calendar,
+        id: 122,
+        action: OPEN_CHANNEL,
+          relatedNode: {
+            __typename: 'ContentChannel',
+            apollosId: 'ContentChannel:b80faa86-97ec-4034-b56b-f086a083834e'
+          }
+      }
+      ]
     - algorithms: [UPCOMING_STREAMS]
       type: LiveContentList
       title: Live Now
@@ -156,7 +167,7 @@ TABS:
             - 1d14f86d-fe99-4bcd-8456-ef22adc0d43f
           limit: 5
       type: HeroList
-      title: Recent Sermons
+      title: Recent Messages
       primaryAction:
         action: OPEN_CHANNEL
         title: See More
@@ -167,7 +178,7 @@ TABS:
       subtitle: What's happening at Crossings
       type: ActionList
       algorithms:
-        - type: UPCOMING_EVENTS
+        - type: UPCOMING_EVENTS          
     - title: FOR YOU
       algorithms: [SERMON_CHILDREN, PERSONA_FEED]
       subtitle: Explore what God calls you to today
@@ -186,16 +197,8 @@ TABS:
             arguments:
               channelIds:
                 - a9d3319c-d06d-4e16-bed7-530e6555ae5e
-              limit: 5
-        type: HorizontalCardList
-        subtitle: Devotionals
-        primaryAction:
-          action: OPEN_CHANNEL
-          title: 'Read More'
-          relatedNode:
-            __typename: ContentChannel
-            apollosId: ContentChannel:a9d3319c-d06d-4e16-bed7-530e6555ae5e
-            name: Devotionals
+        type: HeroList
+        title: Devotionals
   
   WATCH:
     #need to limit this one to not show all existing sermon series and to point to the read more action
