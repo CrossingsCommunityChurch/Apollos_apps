@@ -166,6 +166,12 @@ TABS:
     - title: Upcoming Events
       subtitle: What's happening at Crossings
       type: ActionList
+      primaryAction:
+        action: OPEN_URL
+        title: Load All Events
+        relatedNode:
+          __typename: Url
+          url: 'Crossings://crossings/app-link/nav/EventFeed'
       algorithms:
         - type: UPCOMING_EVENTS
     - title: FOR YOU
