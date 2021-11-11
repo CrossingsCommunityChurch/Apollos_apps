@@ -1,12 +1,19 @@
 import gql from 'graphql-tag';
 
 export default gql`
-  query getLiveStreamListFeature($featureId: ID!) {
-    node(id: $featureId) {
-      ... on LiveStreamListFeature {
-        ...LiveStreamListFeatureFragment
+  query allEvents {
+    allEvents {
+      id
+      htmlContent
+      title
+      start
+      end
+      location
+      coverImage {
+        sources {
+          uri
+        }
       }
     }
   }
-  ${ApollosConfig.FRAGMENTS.LIVE_STREAM_LIST_FEATURE_FRAGMENT}
 `;

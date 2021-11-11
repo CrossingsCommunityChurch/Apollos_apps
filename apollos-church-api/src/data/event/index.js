@@ -70,13 +70,12 @@ class dataSource extends Event.dataSource {
     return sortedEvents;
   }
 
-  async getAllEvents({ limit = null } = {}) {
+  async getAllEvents({ limit = 10 } = {}) {
     const allEvents = [];
     // Get the first three persona items.
     await Promise.all(
       this.calIds.map(async (id) => {
         const events = await this.findRecent(id)
-
           .andFilter(
             `(Schedule/EffectiveEndDate ge datetime'${moment()
               // we need to subtract a day. The EffectiveEndDate is often the morning of the current day.
@@ -146,7 +145,7 @@ class dataSource extends Event.dataSource {
     const lava = `{% schedule id:'${schedule.id}' %}
     {% assign duration = schedule.DurationInMinutes %}
         {
-          "nextStartDateTime": "{{ schedule.NextStartDateTime | Date:'yyyy-MM-dd HH:mm' }}"
+          "nextStartDateTime": "{{ schedule.NextStartDateTime | Date:'yyyy-MM-dd HH:mm' }}",
             "endTime": "{{ schedule.NextStartDateTime | DateAdd:duration,'m' | Date:'yyy-MM-dd HH:mm' }}"
         }
     {% endschedule %}`;
