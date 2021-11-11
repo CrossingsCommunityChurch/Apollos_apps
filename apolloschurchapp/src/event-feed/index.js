@@ -1,19 +1,30 @@
 import React, { PureComponent } from 'react';
-import { Query } from 'react-apollo';
-import { get } from 'lodash';
+import { Query } from '@apollo/client/react/components';
 import PropTypes from 'prop-types';
+import {
+  getStatusBarHeight,
+  getBottomSpace,
+} from 'react-native-iphone-x-helper';
 
-import { BackgroundView, FeedView } from '@apollosproject/ui-kit';
+import { BackgroundView, FeedView, styled } from '@apollosproject/ui-kit';
 import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 import NoResults from '@apollosproject/ui-connected/src/SearchFeedConnected/NoResults';
 
+import { SafeAreaView } from 'react-native-safe-area-context';
 import EventCard from './EventCard';
 
-import GET_EVENTS from './getEvents';
+import GET_ALL_EVENTS from './getEvents';
+
+const StatusBarHeight = getStatusBarHeight(true);
+const BottomHeight = getBottomSpace();
 /**
  * This is where the component description lives
  * A FeedView wrapped in a query to pull content data.
  */
+const BackgroundContainer = styled(() => ({
+  paddingTop: StatusBarHeight,
+  paddingBottom: BottomHeight,
+}))(BackgroundView);
 class ContentFeed extends PureComponent {
   /** Function for React Navigation to set information in the header. */
   static navigationOptions = () => ({
@@ -34,27 +45,31 @@ class ContentFeed extends PureComponent {
     return (
       <RockAuthedWebBrowser>
         {(openUrl) => (
-          <BackgroundView>
-            <Query query={GET_EVENTS} fetchPolicy="cache-and-network">
-              {({ loading, error, data, refetch }) => (
-                <FeedView
-                  ListItemComponent={EventCard}
-                  content={get(data, 'currentUser.profile.campus.events', [])}
-                  ListEmptyComponent={() => <NoResults />}
-                  isLoading={loading}
-                  error={error}
-                  refetch={refetch}
-                  onPressItem={() =>
-                    openUrl(
-                      'https://crossings.church',
-                      {},
-                      { useRockToken: true }
-                    )
-                  }
-                />
-              )}
-            </Query>
-          </BackgroundView>
+          <BackgroundContainer>
+            <SafeAreaView edges={['right', 'left']}>
+              <Query query={GET_ALL_EVENTS} fetchPolicy="cache-and-network">
+                {({ loading, error, data, refetch }) => (
+                  <FeedView
+                    ListItemComponent={EventCard}
+                    content={data.allEvents}
+                    ListEmptyComponent={() => <NoResults />}
+                    isLoading={loading}
+                    error={error}
+                    refetch={refetch}
+                    onPressItem={(event) =>
+                      openUrl(
+                        `Crossings://crossings/app-link/nav/ContentSingle?itemId=${
+                          event.id
+                        }&transitionKey=2`,
+                        {},
+                        { useRockToken: true }
+                      )
+                    }
+                  />
+                )}
+              </Query>
+            </SafeAreaView>
+          </BackgroundContainer>
         )}
       </RockAuthedWebBrowser>
     );
