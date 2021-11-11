@@ -2,6 +2,7 @@ import { Event } from '@apollosproject/data-connector-rock';
 import moment from 'moment-timezone';
 import ApollosConfig from '@apollosproject/config';
 import { get } from 'lodash';
+import schema from './schema';
 import resolver from './resolver';
 
 // Re-work this after Rock update to v12 to use the eventscheduledinstance lavatemplate.
@@ -235,5 +236,5 @@ class dataSource extends Event.dataSource {
   };
 }
 
-const { schema } = Event;
+// const { schema } = Event;
 export { schema, resolver, dataSource };
