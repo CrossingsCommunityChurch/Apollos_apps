@@ -698,6 +698,7 @@ type Query {
   scriptures(query: String!, version: VERSION): [Scripture]
   userPass: Pass
   search(query: String!, first: Int, after: String): SearchResultsConnection
+  allEvents: [Event]
   followRequests: [Person]
   usersFollowing: [Person]
 }

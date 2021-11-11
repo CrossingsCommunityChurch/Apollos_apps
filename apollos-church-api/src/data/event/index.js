@@ -2,6 +2,7 @@ import { Event } from '@apollosproject/data-connector-rock';
 import moment from 'moment-timezone';
 import ApollosConfig from '@apollosproject/config';
 import { get } from 'lodash';
+import schema from './schema';
 import resolver from './resolver';
 
 // Re-work this after Rock update to v12 to use the eventscheduledinstance lavatemplate.
@@ -30,7 +31,46 @@ class dataSource extends Event.dataSource {
       .filter('Schedule/EffectiveStartDate ne null');
   };
 
-  async getUpcomingEventsByCampus({ limit = null } = {}) {
+  async getUpcomingEventsByCampus({ limit = null, campusId = null } = {}) {
+    const campusEvents = [];
+    await Promise.all(
+      this.calIds.map(async (id) => {
+        const events = await this.findRecent(id)
+          .andFilter(
+            `(Schedule/EffectiveEndDate ge datetime'${moment()
+              .subtract(1, 'day')
+              .toISOString()}' or Schedule/EffectiveEndDate eq null) and CampusId eq ${campusId}`
+          )
+          .get();
+        campusEvents.push(...events);
+      })
+    );
+    // Phew - this gets tricky. We have to parse the iCal to figure out the REAL start date
+    const eventsWithMostRecentOccurence = await Promise.all(
+      campusEvents.map(async (event) => ({
+        ...event,
+        mostRecentOccurence: await this.getNextStart(event),
+      }))
+    );
+    const sortedEvents = eventsWithMostRecentOccurence
+      .filter(
+        ({ mostRecentOccurence }) =>
+          mostRecentOccurence && new Date(mostRecentOccurence) > new Date()
+      )
+      .sort(
+        (a, b) =>
+          new Date(a.mostRecentOccurence) - new Date(b.mostRecentOccurence)
+      );
+
+    if (limit != null) {
+      // eslint-disable-next-line prettier/prettier
+      return sortedEvents.slice(0, limit);
+    }
+    // eslint-disable-next-line prettier/prettier
+    return sortedEvents;
+  }
+
+  async getAllEvents({ limit = 10 } = {}) {
     const allEvents = [];
     // Get the first three persona items.
     await Promise.all(
@@ -73,9 +113,10 @@ class dataSource extends Event.dataSource {
   }
 
   getNextStart = async (event) => {
+    // TODO: need to update this to not use depercated lava.
     const lava = `{% schedule id:'${event.schedule.id}' %}
        {
-           "nextStartDateTime": "{{ schedule.NextStartDateTime | Date:'yyyy-MM-dd HH:mm' }}"
+        "nextStartDateTime": "{{ schedule.NextStartDateTime | Date:'yyyy-MM-dd HH:mm' }}"
        }
    {% endschedule %}`;
 
@@ -104,7 +145,7 @@ class dataSource extends Event.dataSource {
     const lava = `{% schedule id:'${schedule.id}' %}
     {% assign duration = schedule.DurationInMinutes %}
         {
-            "nextStartDateTime": "{{ schedule.NextStartDateTime | Date:'yyyy-MM-dd HH:mm' }}",
+          "nextStartDateTime": "{{ schedule.NextStartDateTime | Date:'yyyy-MM-dd HH:mm' }}",
             "endTime": "{{ schedule.NextStartDateTime | DateAdd:duration,'m' | Date:'yyy-MM-dd HH:mm' }}"
         }
     {% endschedule %}`;
@@ -194,5 +235,5 @@ class dataSource extends Event.dataSource {
   };
 }
 
-const { schema } = Event;
+// const { schema } = Event;
 export { schema, resolver, dataSource };
