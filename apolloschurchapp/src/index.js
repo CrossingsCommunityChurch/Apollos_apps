@@ -33,6 +33,7 @@ import {
 import Providers from './Providers';
 import Tabs from './tabs';
 import customTheme, { customIcons } from './theme';
+import EventFeed from './event-feed';
 
 import UserSettingsNavigator from './user-settings';
 
@@ -135,6 +136,11 @@ const App = () => {
                   title: route.params.itemTitle || 'Content Feed',
                   stackPresentation: 'push',
                 })}
+              />
+              <Screen
+                component={EventFeed}
+                name="EventFeed"
+                options={{ stackPresentation: 'fullScreenModal' }}
               />
               <Screen
                 name="Auth"
