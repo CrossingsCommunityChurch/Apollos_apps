@@ -1,10 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Query } from '@apollo/client/react/components';
 import PropTypes from 'prop-types';
-import {
-  getStatusBarHeight,
-  getBottomSpace,
-} from 'react-native-iphone-x-helper';
 
 import { BackgroundView, FeedView, styled } from '@apollosproject/ui-kit';
 import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
@@ -15,15 +11,13 @@ import EventCard from './EventCard';
 
 import GET_ALL_EVENTS from './getEvents';
 
-const StatusBarHeight = getStatusBarHeight(true);
-const BottomHeight = getBottomSpace();
 /**
  * This is where the component description lives
  * A FeedView wrapped in a query to pull content data.
  */
-const BackgroundContainer = styled(() => ({
-  paddingTop: StatusBarHeight,
-  paddingBottom: BottomHeight,
+const BackgroundContainer = styled(({ theme }) => ({
+  backgroundColor: theme.colors.background.paper,
+  paddingTop: theme.sizing.baseUnit,
 }))(BackgroundView);
 class ContentFeed extends PureComponent {
   /** Function for React Navigation to set information in the header. */
