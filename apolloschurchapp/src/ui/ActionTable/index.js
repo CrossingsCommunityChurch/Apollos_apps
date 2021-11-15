@@ -106,35 +106,6 @@ const ActionTable = () => (
           </Touchable>
           <Divider />
         </TableView>
-
-        {/* Google Forms */}
-        <TableView>
-          <Touchable
-            onPress={() =>
-              openUrl(
-                'https://docs.google.com/forms/d/e/1FAIpQLScWBlamg3lpBknEIWlWd6nrz1KbYMrkSis3Mdo2dWlvATHxKg/viewform?usp=sf_link'
-              )
-            }
-          >
-            <Cell>
-              <CellText>Report Bug</CellText>
-              <CellIcon name="arrow-next" />
-            </Cell>
-          </Touchable>
-          <Divider />
-          <Touchable
-            onPress={() =>
-              openUrl(
-                'https://docs.google.com/forms/d/e/1FAIpQLSf05zyDAZLj717LGP0kwle4VPH1hALgDPtGoxrFgpgGjuTK7A/viewform?usp=sf_link'
-              )
-            }
-          >
-            <Cell>
-              <CellText>Request Feature On App</CellText>
-              <CellIcon name="arrow-next" />
-            </Cell>
-          </Touchable>
-        </TableView>
       </View>
     )}
   </RockAuthedWebBrowser>

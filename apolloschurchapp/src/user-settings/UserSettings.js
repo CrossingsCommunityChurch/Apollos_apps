@@ -149,16 +149,30 @@ const UserSettings = () => {
               </StyledPaddedView>
               <TableView>
                 <Touchable
-                  onPress={() => {
-                    openUrl('mailto:software@crossings.church');
-                  }}
+                  onPress={() =>
+                    openUrl(
+                      'https://docs.google.com/forms/d/e/1FAIpQLScWBlamg3lpBknEIWlWd6nrz1KbYMrkSis3Mdo2dWlvATHxKg/viewform?usp=sf_link'
+                    )
+                  }
                 >
                   <Cell>
-                    <CellText>Give Feedback</CellText>
+                    <CellText>Report Bug</CellText>
                     <StyledCellIcon name="arrow-next" />
                   </Cell>
                 </Touchable>
                 <Divider />
+                <Touchable
+                  onPress={() =>
+                    openUrl(
+                      'https://docs.google.com/forms/d/e/1FAIpQLSf05zyDAZLj717LGP0kwle4VPH1hALgDPtGoxrFgpgGjuTK7A/viewform?usp=sf_link'
+                    )
+                  }
+                >
+                  <Cell>
+                    <CellText>Request App Feature</CellText>
+                    <StyledCellIcon name="arrow-next" />
+                  </Cell>
+                </Touchable>
                 <Touchable
                   onPress={() => openUrl('https://apollosrock.newspring.cc/')}
                 >
