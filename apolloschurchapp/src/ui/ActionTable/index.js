@@ -29,6 +29,57 @@ const ActionTable = () => (
   <RockAuthedWebBrowser>
     {(openUrl) => (
       <View>
+        {/* Worship */}
+        <RowHeader>
+          <Name>
+            <H4>{'Worship Music'}</H4>
+          </Name>
+        </RowHeader>
+        <TableView>
+          <Touchable
+            onPress={() =>
+              openUrl(
+                'https://soundcloud.com/mycrossings/sets/night-of-the-fathers-love'
+              )
+            }
+          >
+            <Cell>
+              <CellText>The Chapel</CellText>
+              <CellIcon name="arrow-next" />
+            </Cell>
+          </Touchable>
+          <Divider />
+
+          <Touchable
+            onPress={() =>
+              openUrl(
+                'https://open.spotify.com/artist/5TDTdiy6gQp410tR40JKK7?si=n3qBjYiWQli9hyiCjp6OKQ'
+              )
+            }
+          >
+            <Cell>
+              <CellText>The Sanctuary</CellText>
+              <CellIcon name="arrow-next" />
+            </Cell>
+          </Touchable>
+          <Divider />
+
+          <Touchable
+            onPress={() =>
+              openUrl(
+                'https://open.spotify.com/artist/4PrVL5oTh1q9oXdT0tXLtw?si=bbuE4WzKQgml2hij5aRy_w'
+              )
+            }
+          >
+            <Cell>
+              <CellText>The Venue</CellText>
+              <CellIcon name="arrow-next" />
+            </Cell>
+          </Touchable>
+          <Divider />
+        </TableView>
+
+        {/* Connect */}
         <RowHeader>
           <Name>
             <H4>{'Connect with Crossings'}</H4>
@@ -56,6 +107,7 @@ const ActionTable = () => (
           <Divider />
         </TableView>
 
+        {/* Google Forms */}
         <TableView>
           <Touchable
             onPress={() =>
