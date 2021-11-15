@@ -137,11 +137,7 @@ const App = () => {
                   stackPresentation: 'push',
                 })}
               />
-              <Screen
-                component={EventFeed}
-                name="EventFeed"
-                options={{ stackPresentation: 'fullScreenModal' }}
-              />
+              <Screen component={EventFeed} name="EventFeed" />
               <Screen
                 name="Auth"
                 component={Auth}
