@@ -237,7 +237,7 @@ TABS:
                 - 2dac29bb-f7b7-4e7e-a22d-26174ab2ef60
               limit: 6
         type: HorizontalCardList
-        subtitle: Latest The Gathering Series
+        subtitle: The Gathering Series
         primaryAction:
           action: OPEN_CHANNEL
           title: See More
