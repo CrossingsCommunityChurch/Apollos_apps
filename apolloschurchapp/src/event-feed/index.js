@@ -45,7 +45,7 @@ class ContentFeed extends PureComponent {
                 {({ loading, error, data, refetch }) => (
                   <FeedView
                     ListItemComponent={EventCard}
-                    content={data.allEvents}
+                    content={data.allEvents ? data.allEvents : {}}
                     ListEmptyComponent={() => <NoResults />}
                     isLoading={loading}
                     error={error}

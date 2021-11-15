@@ -142,7 +142,7 @@ TABS:
       },
       {
         title: Calendar,
-        icon: calendar,
+        icon: cal,
         id: 122,
         action: OPEN_CHANNEL,
           relatedNode: {
@@ -197,8 +197,15 @@ TABS:
             arguments:
               channelIds:
                 - a9d3319c-d06d-4e16-bed7-530e6555ae5e
+              limit: 5
         type: HeroList
         title: Devotions
+        primaryAction:
+          action: OPEN_CHANNEL
+          title: See More
+          relatedNode:
+            __typename: ContentChannel
+            apollosId: ContentChannel:a9d3319c-d06d-4e16-bed7-530e6555ae5e
   
   WATCH:
     #need to limit this one to not show all existing sermon series and to point to the read more action
