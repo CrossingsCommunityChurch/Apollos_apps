@@ -47,7 +47,7 @@ class PrayerRequest extends corePrayer.dataSource {
     return this.getFromId(prayerId);
   };
 
-  byDailyPrayerFeed = async ({ personId, numberDaysSincePrayer = 3 }) => {
+  byDailyPrayerFeed = async ({ personId, numberDaysSincePrayer = 7 }) => {
     const {
       dataSources: { Auth },
     } = this.context;
