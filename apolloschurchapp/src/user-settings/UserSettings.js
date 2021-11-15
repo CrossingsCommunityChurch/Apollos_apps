@@ -174,7 +174,7 @@ const UserSettings = () => {
                   </Cell>
                 </Touchable>
                 <Touchable
-                  onPress={() => openUrl('https://apollosrock.newspring.cc/')}
+                  onPress={() => openUrl('https://crossings.church/appprivacy')}
                 >
                   <Cell>
                     <CellText>Privacy Policy</CellText>
@@ -183,7 +183,7 @@ const UserSettings = () => {
                 </Touchable>
                 <Divider />
                 <Touchable
-                  onPress={() => openUrl('https://apollosrock.newspring.cc/')}
+                  onPress={() => openUrl('https://crossings.church/appterms')}
                 >
                   <Cell>
                     <CellText>Terms of Use</CellText>
