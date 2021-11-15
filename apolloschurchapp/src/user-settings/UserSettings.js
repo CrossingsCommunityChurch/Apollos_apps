@@ -117,7 +117,7 @@ const UserSettings = () => {
                   }}
                 >
                   <Cell>
-                    <CellText>Location</CellText>
+                    <CellText>Choose Campus</CellText>
                     <StyledCellIcon name="arrow-next" />
                   </Cell>
                 </Touchable>
