@@ -198,7 +198,7 @@ TABS:
               channelIds:
                 - a9d3319c-d06d-4e16-bed7-530e6555ae5e
         type: HeroList
-        title: Devotionals
+        title: Devotions
   
   WATCH:
     #need to limit this one to not show all existing sermon series and to point to the read more action
