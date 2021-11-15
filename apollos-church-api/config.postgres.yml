@@ -198,7 +198,7 @@ TABS:
               channelIds:
                 - a9d3319c-d06d-4e16-bed7-530e6555ae5e
         type: HeroList
-        title: Devotionals
+        title: Devotions
   
   WATCH:
     #need to limit this one to not show all existing sermon series and to point to the read more action
@@ -209,7 +209,7 @@ TABS:
                 - 72e659ba-754f-4227-ba0f-ae60eac674f1
               limit: 6
         type: HorizontalCardList
-        subtitle: All Sermon Series
+        subtitle: Sermon Series
         primaryAction:
           action: OPEN_CHANNEL
           title: See More
@@ -223,7 +223,7 @@ TABS:
                 - bee639de-4185-46a4-81c3-fe82e72596b6
               limit: 6
         type: HorizontalCardList
-        subtitle: Latest Teaching Series
+        subtitle: Teaching Series
         primaryAction:
           action: OPEN_CHANNEL
           title: See More
@@ -237,7 +237,7 @@ TABS:
                 - 2dac29bb-f7b7-4e7e-a22d-26174ab2ef60
               limit: 6
         type: HorizontalCardList
-        subtitle: Latest The Gathering Series
+        subtitle: The Gathering Series
         primaryAction:
           action: OPEN_CHANNEL
           title: See More
