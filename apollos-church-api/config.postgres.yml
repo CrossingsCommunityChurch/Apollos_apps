@@ -290,7 +290,7 @@ TABS:
       type: PrayerList
       title: Daily Prayer
     - type: VerticalPrayerList
-      title: Your Prayers
+      title: Your prayers
   CONNECT:
     - type: ActionTable
       title: Connect to Apollos

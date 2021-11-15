@@ -33,7 +33,7 @@ import {
   // FeatureFeed,
   // ActionAlgorithm,
   // Event,
-  // PrayerRequest,
+  PrayerRequest,
   Persona,
 } from '@apollosproject/data-connector-rock';
 
@@ -53,7 +53,7 @@ import * as ActionAlgorithm from './action-algorithms';
 import * as Search from './search';
 import * as LiveStream from './live';
 import * as Schedule from './schedule';
-import * as PrayerRequest from './prayer';
+// import * as PrayerRequest from './prayer';
 
 // This modules ties together certain updates so they occurs in both Rock and Postgres.
 // Will be eliminated in the future through an enhancement to the Shovel
