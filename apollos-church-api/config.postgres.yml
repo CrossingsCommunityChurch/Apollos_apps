@@ -209,7 +209,7 @@ TABS:
                 - 72e659ba-754f-4227-ba0f-ae60eac674f1
               limit: 6
         type: HorizontalCardList
-        subtitle: All Sermon Series
+        subtitle: Sermon Series
         primaryAction:
           action: OPEN_CHANNEL
           title: See More
@@ -223,7 +223,7 @@ TABS:
                 - bee639de-4185-46a4-81c3-fe82e72596b6
               limit: 6
         type: HorizontalCardList
-        subtitle: Latest Teaching Series
+        subtitle: Teaching Series
         primaryAction:
           action: OPEN_CHANNEL
           title: See More
