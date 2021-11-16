@@ -20,6 +20,7 @@ import { checkOnboardingStatusAndNavigate } from '@apollosproject/ui-onboarding'
 import ActionTable from '../ui/ActionTable';
 import ActionBar from '../ui/ActionBar';
 import tabBarIcon from './tabBarIcon';
+import Logo from './logo';
 
 const HeaderLogo = () => <Logo />;
 
