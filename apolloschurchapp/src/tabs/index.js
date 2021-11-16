@@ -72,8 +72,8 @@ const HomeTab = createFeatureFeedTab({
 const ReadTab = createFeatureFeedTab({
   screenOptions: {
     headerHideShadow: true,
-    headerCenter: HeaderCenter,
-    headerRight: HeaderRight,
+    headerCenter: HeaderLogo,
+    headerRight: SearchButton,
     headerLeft: ProfileButton,
     headerLargeTitle: false,
   },
@@ -84,8 +84,8 @@ const ReadTab = createFeatureFeedTab({
 const WatchTab = createFeatureFeedTab({
   screenOptions: {
     headerHideShadow: true,
-    headerCenter: HeaderCenter,
-    headerRight: HeaderRight,
+    headerCenter: HeaderLogo,
+    headerRight: SearchButton,
     headerLeft: ProfileButton,
     headerLargeTitle: false,
   },
@@ -96,8 +96,8 @@ const WatchTab = createFeatureFeedTab({
 const PrayTab = createFeatureFeedTab({
   screenOptions: {
     headerHideShadow: true,
-    headerCenter: HeaderCenter,
-    headerRight: HeaderRight,
+    headerCenter: HeaderLogo,
+    headerRight: SearchButton,
     headerLeft: ProfileButton,
     headerLargeTitle: false,
   },

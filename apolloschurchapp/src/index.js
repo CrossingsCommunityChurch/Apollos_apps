@@ -35,8 +35,10 @@ import Tabs from './tabs';
 import customTheme, { customIcons } from './theme';
 import EventFeed from './event-feed';
 
-import UserSettingsNavigator from './user-settings';
+// replaced by UserSettingsConnected
+// import UserSettingsNavigator from './user-settings';
 
+// Use after utilizing postgress
 // import SearchScreenConnected from './ui/Search/SearchScreenConnected';
 
 enableScreens(); // improves performance for react-navigation
@@ -127,6 +129,7 @@ const App = () => (
                 stackPresentation: 'push',
               })}
             />
+            <Screen component={EventFeed} name="EventFeed" />
             <Screen
               name="Auth"
               component={Auth}
