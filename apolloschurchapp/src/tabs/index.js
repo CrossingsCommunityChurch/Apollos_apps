@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Image, View } from 'react-native';
+import { View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';

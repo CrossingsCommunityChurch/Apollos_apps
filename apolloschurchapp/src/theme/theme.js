@@ -60,10 +60,14 @@ const breakpoints = {
 /* Responsive breakpoints */
 // export const breakpoints = {};
 
-/* Base sizing units. These are used to scale
- * space, and size components relatively to one another.
- */
-// export const sizing = {};
+//  Base sizing units. These are used to scale
+//  space, and size components relatively to one another.
+
+const sizing = {
+  avatar: {
+    xsmall: 36,
+  },
+};
 
 /* Base alpha values. These are used to keep transparent values across the app consistant */
 // export const alpha = {};
@@ -214,4 +218,11 @@ const overrides = {
   },
 };
 
-export default { lightColors, darkColors, breakpoints, overrides, typography };
+export default {
+  lightColors,
+  darkColors,
+  breakpoints,
+  overrides,
+  typography,
+  sizing,
+};
