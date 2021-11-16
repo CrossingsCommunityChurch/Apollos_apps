@@ -21,8 +21,14 @@ import ActionTable from '../ui/ActionTable';
 import ActionBar from '../ui/ActionBar';
 import tabBarIcon from './tabBarIcon';
 import Logo from './logo';
+import HomeSearchButton from '../ui/Search/SearchButton';
 
 const HeaderLogo = () => <Logo />;
+
+const SearchButton = () => {
+  const navigation = useNavigation();
+  return <HomeSearchButton onPress={() => navigation.navigate('Search')} />;
+};
 
 const ProfileButton = () => {
   const navigation = useNavigation();
@@ -35,24 +41,6 @@ const ProfileButton = () => {
       <View>
         <UserAvatarConnected size="xsmall" />
       </View>
-    </Touchable>
-  );
-};
-
-const SearchButton = () => {
-  const navigation = useNavigation();
-  const theme = useTheme();
-  return (
-    <Touchable
-      onPress={() => {
-        navigation.navigate('Search');
-      }}
-    >
-      <Icon
-        name="search"
-        size={theme.sizing.baseUnit * 2}
-        fill={theme.colors.primary}
-      />
     </Touchable>
   );
 };
