@@ -155,7 +155,7 @@ const overrides = {
   },
   'ui-onboarding.Landing': {
     slideTitle: "We're glad you're here!",
-    description: 'Live By Faith. Be Voice Of Hope. Be Known By Love.',
+    description: 'Live By Faith. Be A Voice Of Hope. Be Known By Love.',
     textColor: 'white',
     // eslint-disable-next-line react/display-name
     BackgroundComponent: () => (
