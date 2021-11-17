@@ -137,7 +137,7 @@ TABS:
         action: OPEN_URL,
         relatedNode: {
           __typename: Url,
-          url: 'https://app.crossings.church/mobile/give'
+          url: 'Crossings://crossings/app-link/nav/Giving'
         },
       },
       {
