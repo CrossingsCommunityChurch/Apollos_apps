@@ -33,23 +33,15 @@ export default class Giving extends Component {
 
   render() {
     const htmlsource = `
-    <html>
-      <head></head>
-      <body><script type="text/javascript" src="https://merlin.simpledonation.com/js/installScript.js"></script><a href="#" class="open-merlin" data-merlin-key="01E4ESB8Z1ANNJZ95F7JHP20Y6" data-merlin-autoload="true">Give Now</a>
-      </body>
-      </html>
+    <script src="https://merlin.simpledonation.com/js/installScript.js"></script><a href="#" class="open-merlin" data-merlin-key="01E4ESB8Z1ANNJZ95F7JHP20Y6" data-merlin-autoload="true">Give Now</a>
   `;
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <WebView
           javaScriptEnabled={true}
-          injectedJavaScriptForMainFrameOnly="false"
           originWhitelist={['*']}
-          source={{ uri: 'https://app.crossings.church/mobile/Giving' }}
+          source={{ html: htmlsource }}
           mixedContentMode="always"
-          onMessage={(event) => {
-            console.log('event: ', event);
-          }}
         />
       </SafeAreaView>
     );
