@@ -103,16 +103,13 @@ const ConnectTabStackNavigator = () => (
   <ConnectTabStack.Navigator
     screenOptions={{
       headerHideShadow: true,
-      headerLargeTitle: true,
+      headerLargeTitle: false,
+      headerCenter: HeaderLogo,
+      headerRight: SearchButton,
+      headerLeft: ProfileButton,
     }}
   >
-    <ConnectTabStack.Screen
-      name={'Connect'}
-      component={CustomConnectScreen}
-      options={{
-        headerLeft: ProfileButton,
-      }}
-    />
+    <ConnectTabStack.Screen name={'Connect'} component={CustomConnectScreen} />
   </ConnectTabStack.Navigator>
 );
 
