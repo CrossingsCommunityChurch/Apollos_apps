@@ -103,7 +103,7 @@ query getItem {
 
         while (itemsLeft) {
           const { edges } = await ContentItem.paginate({
-            cursor: await ContentItem.byContentChannelId(channelId).andFilter(
+            cursor: await ContentItem.getFromCategoryIds([channelId]).andFilter(
               `(CreatedDateTime gt datetime'${datetime}') or (ModifiedDateTime gt datetime'${datetime}')`
             ),
             args,
@@ -159,7 +159,7 @@ query getItem {
 
         while (itemsLeft) {
           const { edges } = await ContentItem.paginate({
-            cursor: await ContentItem.byContentChannelId(channelId),
+            cursor: await ContentItem.getFromCategoryIds([channelId]),
             args,
           });
 
