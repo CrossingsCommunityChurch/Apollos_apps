@@ -10,9 +10,11 @@ import moment from 'moment-timezone';
 
 import ApollosConfig from '@apollosproject/config';
 
-const { ROCK_MAPPINGS } = ApollosConfig;
+const { CONTENT } = ApollosConfig;
 class Search extends coreSearch {
-  calIds = ROCK_MAPPINGS.ALL_CALIDS;
+  calIds = CONTENT.ALL_CALIDS;
+
+  contentIds = CONTENT.ALL_CONTENT_CHANNELS;
 
   async mapItemToAlgolia(item, passedType) {
     let type = null;
@@ -42,8 +44,6 @@ query getItem {
       title
       summary
       objectID: id
-      tags
-      author
       __typename
       coverImage { sources { uri } }
     }
@@ -53,8 +53,6 @@ query getItem {
       summary
       htmlContent
       objectID: id
-      tags
-      author
       __typename
       coverImage { sources { uri } }
     }
@@ -64,8 +62,6 @@ query getItem {
       summary
       htmlContent
       objectID: id
-      tags
-      author
       __typename
       coverImage { sources { uri } }
     }
@@ -75,8 +71,6 @@ query getItem {
       summary
       htmlContent
       objectID: id
-      tags
-      author
       __typename
       coverImage { sources { uri } }
     }
@@ -102,25 +96,32 @@ query getItem {
   // Add functionality here that will add in the events to be searched.
   async deltaIndex({ datetime }) {
     const { ContentItem, Event } = this.context.dataSources;
-    let itemsLeft = true;
-    const args = { after: null, first: 100 };
-    while (itemsLeft) {
-      const { edges } = await ContentItem.paginate({
-        cursor: await ContentItem.byDateAndActive({ datetime }),
-        args,
-      });
+    await Promise.all(
+      this.contentIds.map(async (channelId) => {
+        let itemsLeft = true;
+        const args = { after: null, first: 100 };
 
-      const result = await edges;
-      const items = result.map(({ node }) => node);
-      itemsLeft = items.length === 100;
+        while (itemsLeft) {
+          const { edges } = await ContentItem.paginate({
+            cursor: await ContentItem.byContentChannelId(channelId).andFilter(
+              `(CreatedDateTime gt datetime'${datetime}') or (ModifiedDateTime gt datetime'${datetime}')`
+            ),
+            args,
+          });
 
-      if (itemsLeft) args.after = result[result.length - 1].cursor;
-      const indexableItems = await Promise.all(
-        items.map((item) => this.mapItemToAlgolia(item))
-      );
+          const result = await edges;
+          const items = result.map(({ node }) => node);
+          itemsLeft = items.length === 100;
 
-      await this.addObjects(indexableItems);
-    }
+          if (itemsLeft) args.after = result[result.length - 1].cursor;
+          const indexableItems = await Promise.all(
+            items.map((item) => this.mapItemToAlgolia(item))
+          );
+
+          await this.addObjects(indexableItems);
+        }
+      })
+    );
     await Promise.all(
       this.calIds.map(async (id) => {
         const events = await Event.findRecent(id)
@@ -151,26 +152,31 @@ query getItem {
       })
     );
     const { ContentItem, Event } = this.context.dataSources;
-    let itemsLeft = true;
-    const args = { after: null, first: 100 };
-    while (itemsLeft) {
-      const { edges } = await ContentItem.paginate({
-        cursor: ContentItem.byActive(),
-        args,
-      });
+    await Promise.all(
+      this.contentIds.map(async (channelId) => {
+        let itemsLeft = true;
+        const args = { after: null, first: 100 };
 
-      const result = await edges;
-      const items = result.map(({ node }) => node);
-      itemsLeft = items.length === 100;
+        while (itemsLeft) {
+          const { edges } = await ContentItem.paginate({
+            cursor: await ContentItem.byContentChannelId(channelId),
+            args,
+          });
 
-      if (itemsLeft) args.after = result[result.length - 1].cursor;
+          const result = await edges;
+          const items = result.map(({ node }) => node);
+          itemsLeft = items.length === 100;
 
-      const indexableItems = await Promise.all(
-        items.map((item) => this.mapItemToAlgolia(item, 'Content_Items'))
-      );
+          if (itemsLeft) args.after = result[result.length - 1].cursor;
 
-      await this.addObjects(indexableItems);
-    }
+          const indexableItems = await Promise.all(
+            items.map((item) => this.mapItemToAlgolia(item))
+          );
+
+          await this.addObjects(indexableItems);
+        }
+      })
+    );
     await Promise.all(
       this.calIds.map(async (id) => {
         const events = await Event.findRecent(id)

@@ -129,7 +129,7 @@
 		<key>apiKey</key>
 		<string>d867b2f3d9bd1959aca73f13d196a7af</string>
 		<key>releaseStage</key>
-  		<string>production</string>
+		<string>production</string>
 	</dict>
 </dict>
 </plist>
