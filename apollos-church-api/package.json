@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@apollosproject/babel-preset-apollos": "^1.7.0",
-    "@apollosproject/bugsnag": "^2.26.0",
+    "@apollosproject/bugsnag": "^2.38.0",
     "@apollosproject/config": "^2.38.0",
     "@apollosproject/data-connector-algolia-search": "^2.38.0",
     "@apollosproject/data-connector-analytics": "^2.38.0",
@@ -45,6 +45,7 @@
     "dotenv": "6.0.0",
     "express": "^4.17.0",
     "graphql": "14.6.0",
+    "graphql-upload": "^12.0.0",
     "ioredis": "^4.27.2",
     "keyword-extractor": "^0.0.19",
     "node-ical": "^0.12.1",
@@ -54,8 +55,7 @@
     "randomcolor": "0.5.3",
     "sanitize-html": "^2.3.2",
     "sqlite3": "^5.0.1",
-    "umzug": "^3.0.0-beta.15",
-    "graphql-upload": "^12.0.0"
+    "umzug": "^3.0.0-beta.15"
   },
   "devDependencies": {
     "@apollosproject/apollo-server-env-mock": "^2.38.0",
