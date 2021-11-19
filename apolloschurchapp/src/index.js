@@ -23,20 +23,17 @@ import { MapViewConnected as Location } from '@apollosproject/ui-mapview';
 import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
 import { Landing, Onboarding } from '@apollosproject/ui-onboarding';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import UserSettingsNavigator from './user-settings/UserSettings';
 
 import {
   ContentSingleConnected,
   ContentFeedConnected,
   SearchScreenConnected,
-  UserSettingsConnected,
 } from '@apollosproject/ui-connected';
 import Providers from './Providers';
 import Tabs from './tabs';
 import customTheme, { customIcons } from './theme';
 import EventFeed from './event-feed';
-
-// replaced by UserSettingsConnected
-// import UserSettingsNavigator from './user-settings';
 
 // Use after utilizing postgress
 // import SearchScreenConnected from './ui/Search/SearchScreenConnected';
@@ -170,7 +167,7 @@ const App = () => {
               <Screen name="Search" component={SearchScreenConnected} />
               <Screen
                 name="UserSettingsNavigator"
-                component={UserSettingsConnected}
+                component={UserSettingsNavigator}
               />
             </Navigator>
           </Providers>
