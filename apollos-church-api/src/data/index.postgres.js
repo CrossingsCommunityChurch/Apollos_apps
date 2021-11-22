@@ -26,7 +26,7 @@ import {
   BinaryFiles,
   FeatureFeed,
   // Event,
-  PrayerRequest,
+  // PrayerRequest,
   Person as RockPerson,
   ContentItem as RockContentItem,
   Campus as RockCampus,
@@ -45,7 +45,7 @@ import * as PostgresActionAlgorithm from './action-algorithms';
 // import * as Search from './search';
 import * as LiveStream from './livestream';
 import * as Schedule from './schedule';
-// import * as PrayerRequest from './prayer';
+import * as PrayerRequest from './prayer';
 
 // eslint-disable-next-line import/order
 import {
@@ -66,7 +66,7 @@ import {
   ContentItemsConnection,
   ContentItemCategory,
   // ActionAlgorithm as PostgresActionAlgorithm,
-  PrayerRequest as PostgresPrayerRequest,
+  // PrayerRequest as PostgresPrayerRequest,
 } from '@apollosproject/data-connector-postgres';
 
 import * as Theme from './theme';
@@ -90,7 +90,7 @@ const postgresContentModules = {
   ContentItem: PostgresContentItem,
   ContentItemsConnection,
   ContentChannel: ContentItemCategory,
-  PrayerRequest: PostgresPrayerRequest,
+  // PrayerRequest: PostgresPrayerRequest,
   RockCampus: { dataSource: RockCampus.dataSource },
   Campus,
   PostgresDefaultCampusOverride,
@@ -104,7 +104,12 @@ const rockContentModules = {
   ContentItem: RockContentItem,
   ContentChannel,
   PrayerRequest,
-  PostgresCampus: { dataSource: Campus.dataSource },
+  PostgresCampus: {
+    // essentially everything but the resolvers
+    dataSource: Campus.dataSource,
+    models: Campus.models,
+    migrations: Campus.migrations,
+  },
   Campus: RockCampus,
   RockDefaultCampusOverride,
 };
@@ -119,6 +124,7 @@ const data = {
     ? postgresContentModules
     : rockContentModules),
   Cloudinary,
+  PrayerRequest,
   Auth,
   AuthSms,
   Sms,

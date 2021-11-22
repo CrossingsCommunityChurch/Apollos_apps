@@ -61,8 +61,9 @@ type AddCommentFeature implements Feature & Node {
   id: ID!
   order: Int
   relatedNode: Node!
-  addPrompt: String
-  initialPrompt: String
+  addPrompt: String @deprecated(reason: "Use prompt")
+  initialPrompt: String @deprecated(reason: "Use prompt")
+  prompt: String
 }
 
 input AnalyticsDeviceInfo {
@@ -555,8 +556,8 @@ type Mutation {
   interactWithNode(action: InteractionAction!, nodeId: ID!, data: [InteractionDataField]): InteractionResult
   updateLikeEntity(input: LikeEntityInput!): ContentItem @deprecated(reason: "Use the more general updateLikeNode instead")
   updateLikeNode(input: LikeEntityInput!): Node
-  addPrayer(text: String!, isAnonymous: Boolean): PrayerRequest
   updateUserCampus(campusId: String!): Person
+  addPrayer(text: String!, isAnonymous: Boolean): PrayerRequest
   authenticate(identity: String!, password: String!): Authentication
   changePassword(password: String!): Authentication
   registerPerson(email: String!, password: String!, userProfile: [UpdateProfileInput]): Authentication
@@ -638,8 +639,8 @@ type Person implements Node {
   gender: GENDER
   birthDate: String
   photo: ImageMediaSource
-  prayers: [PrayerRequest]
   campus: Campus
+  prayers: [PrayerRequest]
   devices: [Device]
   groups(type: GROUP_TYPE, asLeader: Boolean): [Group]
   currentUserFollowing: Follow
@@ -678,13 +679,14 @@ type Query {
   node(id: ID!): Node
   suggestedFollows: [Person]
   searchPeople(name: String, first: Int, after: String): SearchPeopleResultsConnection
-  interactions(personId: ID!, nodeId: ID, action: InteractionAction): [Interaction]
+  interactions(nodeId: ID, action: InteractionAction): [Interaction]
   likedContent(first: Int, after: String): ContentItemsConnection
-  tabFeedFeatures(tab: Tab!, campusId: ID): FeatureFeed
+  tabFeedFeatures(tab: Tab!, campusId: ID, tags: [String]): FeatureFeed
   userFeedFeatures: [Feature] @deprecated(reason: "Use homeFeedFeatures or discoverFeedFeatures")
   homeFeedFeatures(campusId: ID): FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: HOME)")
   discoverFeedFeatures: FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: DISCOVER)")
   LiveFeedFeatures: FeatureFeed
+  contentItemTags: [String]
   campaigns: ContentItemsConnection
   userFeed(first: Int, after: String): ContentItemsConnection
   personaFeed(first: Int, after: String): ContentItemsConnection
@@ -698,6 +700,7 @@ type Query {
   scriptures(query: String!, version: VERSION): [Scripture]
   userPass: Pass
   search(query: String!, first: Int, after: String): SearchResultsConnection
+  allEvents: [Event]
   followRequests: [Person]
   usersFollowing: [Person]
 }

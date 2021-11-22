@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { ApolloProvider, ApolloClient, ApolloLink, gql } from '@apollo/client';
 import { createPersistedQueryLink } from '@apollo/client/link/persisted-queries';
@@ -45,7 +45,9 @@ let uri = ApollosConfig.APP_DATA_URL;
 const androidUri = ApollosConfig.ANDROID_URL || '10.0.2.2';
 
 // Android's emulator requires localhost network traffic to go through 10.0.2.2
-if (Platform.OS === 'android') uri = uri.replace('localhost', androidUri);
+if (Platform.OS === 'android') {
+  uri = uri.replace('localhost', androidUri);
+}
 
 const errorLink = buildErrorLink(onAuthError);
 const apqLink = createPersistedQueryLink({
@@ -57,7 +59,14 @@ const link = ApolloLink.from([
   authLink,
   errorLink,
   apqLink,
-  createUploadLink({ uri }),
+  createUploadLink({
+    uri,
+    headers: {
+      ...(ApollosConfig.CHURCH_HEADER
+        ? { 'x-church': ApollosConfig.CHURCH_HEADER }
+        : {}),
+    },
+  }),
 ]);
 
 export const client = new ApolloClient({

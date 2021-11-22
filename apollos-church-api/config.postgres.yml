@@ -90,17 +90,11 @@ CONTENT:
     # Id of the category used to store all persona dataviews
     PersonaId: 498
 
-  # Todo add events to be returnable type 
-  SEARCH_CONTENT_CHANNEL_IDS:
-    - 1d14f86d-fe99-4bcd-8456-ef22adc0d43f #Sermon message id 21
-    - 13ffb055-56e0-4bb8-b349-022336ef3239 #teaching Message id 22
-    - a51d4c7c-53ad-4e90-80cc-a5db8f9d6f92 #Gathering message id 423
-    - a9d3319c-d06d-4e16-bed7-530e6555ae5e #Devotionals id 23
-
   ALL_CONTENT_CHANNELS:
     - 1d14f86d-fe99-4bcd-8456-ef22adc0d43f #Sermon message id 21
     - 13ffb055-56e0-4bb8-b349-022336ef3239 #teaching Message id 22
     - a51d4c7c-53ad-4e90-80cc-a5db8f9d6f92 #Gathering message id 423
+    - a9d3319c-d06d-4e16-bed7-530e6555ae5e #Devotionals id 23
 
   ALL_CALIDS:
     - 4
@@ -129,7 +123,7 @@ TABS:
       actions: [{
         title: Check In,
         icon: check,
-        id: 123456789,
+        id: 120,
         action: OPEN_AUTHENTICATED_URL,
         relatedNode: {
           __typename: Url,
@@ -139,13 +133,24 @@ TABS:
       {
         title: Give,
         icon: hands,
-        id: 1234,
+        id: 121,
         action: OPEN_URL,
         relatedNode: {
           __typename: Url,
-          url: 'https://app.crossings.church/mobile/give'
+          url: 'Crossings://crossings/app-link/nav/Giving'
         },
-      }]
+      },
+      {
+        title: Calendar,
+        icon: cal,
+        id: 122,
+        action: OPEN_CHANNEL,
+          relatedNode: {
+            __typename: 'ContentChannel',
+            apollosId: 'ContentChannel:b80faa86-97ec-4034-b56b-f086a083834e'
+          }
+      }
+      ]
     - algorithms: [UPCOMING_STREAMS]
       type: LiveContentList
       title: Live Now
@@ -156,7 +161,7 @@ TABS:
             - 1d14f86d-fe99-4bcd-8456-ef22adc0d43f
           limit: 5
       type: HeroList
-      title: Recent Sermons
+      title: Recent Messages
       primaryAction:
         action: OPEN_CHANNEL
         title: See More
@@ -166,8 +171,14 @@ TABS:
     - title: Upcoming Events
       subtitle: What's happening at Crossings
       type: ActionList
+      primaryAction:
+        action: OPEN_URL
+        title: See More Events
+        relatedNode:
+          __typename: Url
+          url: 'Crossings://crossings/app-link/nav/EventFeed'
       algorithms:
-        - type: UPCOMING_EVENTS
+        - type: UPCOMING_EVENTS          
     - title: FOR YOU
       algorithms: [SERMON_CHILDREN, PERSONA_FEED]
       subtitle: Explore what God calls you to today
@@ -187,15 +198,14 @@ TABS:
               channelIds:
                 - a9d3319c-d06d-4e16-bed7-530e6555ae5e
               limit: 5
-        type: HorizontalCardList
-        subtitle: Devotionals
+        type: HeroList
+        title: Devotions
         primaryAction:
           action: OPEN_CHANNEL
-          title: 'Read More'
+          title: See More
           relatedNode:
             __typename: ContentChannel
             apollosId: ContentChannel:a9d3319c-d06d-4e16-bed7-530e6555ae5e
-            name: Devotionals
   
   WATCH:
     #need to limit this one to not show all existing sermon series and to point to the read more action
@@ -206,7 +216,7 @@ TABS:
                 - 72e659ba-754f-4227-ba0f-ae60eac674f1
               limit: 6
         type: HorizontalCardList
-        subtitle: All Sermon Series
+        subtitle: Sermon Series
         primaryAction:
           action: OPEN_CHANNEL
           title: See More
@@ -220,7 +230,7 @@ TABS:
                 - bee639de-4185-46a4-81c3-fe82e72596b6
               limit: 6
         type: HorizontalCardList
-        subtitle: Latest Teaching Series
+        subtitle: Teaching Series
         primaryAction:
           action: OPEN_CHANNEL
           title: See More
@@ -234,7 +244,7 @@ TABS:
                 - 2dac29bb-f7b7-4e7e-a22d-26174ab2ef60
               limit: 6
         type: HorizontalCardList
-        subtitle: Latest The Gathering Series
+        subtitle: The Gathering Series
         primaryAction:
           action: OPEN_CHANNEL
           title: See More
@@ -287,7 +297,7 @@ TABS:
       type: PrayerList
       title: Daily Prayer
     - type: VerticalPrayerList
-      title: Your Prayers
+      title: Your prayers
   CONNECT:
     - type: ActionTable
       title: Connect to Apollos

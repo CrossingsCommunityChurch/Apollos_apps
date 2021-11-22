@@ -1,4 +1,4 @@
-package church.crossings.app;
+package church.crossings.rockapp;
 
 import android.app.Application;
 import android.util.Log;

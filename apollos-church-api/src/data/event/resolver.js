@@ -13,4 +13,8 @@ export default {
       return event.end;
     },
   },
+  Query: {
+    allEvents: (root, args, { dataSources }) =>
+      dataSources.Event.getAllEvents(),
+  },
 };

@@ -117,7 +117,7 @@ const UserSettings = () => {
                   }}
                 >
                   <Cell>
-                    <CellText>Location</CellText>
+                    <CellText>Choose Campus</CellText>
                     <StyledCellIcon name="arrow-next" />
                   </Cell>
                 </Touchable>
@@ -149,18 +149,32 @@ const UserSettings = () => {
               </StyledPaddedView>
               <TableView>
                 <Touchable
-                  onPress={() => {
-                    openUrl('mailto:support@apollos.app');
-                  }}
+                  onPress={() =>
+                    openUrl(
+                      'https://docs.google.com/forms/d/e/1FAIpQLScWBlamg3lpBknEIWlWd6nrz1KbYMrkSis3Mdo2dWlvATHxKg/viewform?usp=sf_link'
+                    )
+                  }
                 >
                   <Cell>
-                    <CellText>Give Feedback</CellText>
+                    <CellText>Report Bug</CellText>
                     <StyledCellIcon name="arrow-next" />
                   </Cell>
                 </Touchable>
                 <Divider />
                 <Touchable
-                  onPress={() => openUrl('https://apollosrock.newspring.cc/')}
+                  onPress={() =>
+                    openUrl(
+                      'https://docs.google.com/forms/d/e/1FAIpQLSf05zyDAZLj717LGP0kwle4VPH1hALgDPtGoxrFgpgGjuTK7A/viewform?usp=sf_link'
+                    )
+                  }
+                >
+                  <Cell>
+                    <CellText>Request App Feature</CellText>
+                    <StyledCellIcon name="arrow-next" />
+                  </Cell>
+                </Touchable>
+                <Touchable
+                  onPress={() => openUrl('https://crossings.church/appprivacy')}
                 >
                   <Cell>
                     <CellText>Privacy Policy</CellText>
@@ -169,7 +183,7 @@ const UserSettings = () => {
                 </Touchable>
                 <Divider />
                 <Touchable
-                  onPress={() => openUrl('https://apollosrock.newspring.cc/')}
+                  onPress={() => openUrl('https://crossings.church/appterms')}
                 >
                   <Cell>
                     <CellText>Terms of Use</CellText>

@@ -9,7 +9,7 @@ const BrandIcon = makeIcon(({ size = 40, fill, ...otherProps } = {}) => (
     data-name="Layer 1"
     width={size}
     height={size}
-    fill = {fill}
+    fill={fill}
     viewBox="0 0 32 32"
     {...otherProps}
   >

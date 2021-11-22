@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-handler-names */
 
-import React from 'react';
 import { StatusBar, useColorScheme } from 'react-native';
 import {
   NavigationContainer,
@@ -24,6 +23,7 @@ import { MapViewConnected as Location } from '@apollosproject/ui-mapview';
 import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
 import { Landing, Onboarding } from '@apollosproject/ui-onboarding';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import UserSettingsNavigator from './user-settings/UserSettings';
 
 import {
   ContentSingleConnected,
@@ -33,9 +33,10 @@ import {
 import Providers from './Providers';
 import Tabs from './tabs';
 import customTheme, { customIcons } from './theme';
+import EventFeed from './event-feed';
+import Giving from './giving';
 
-import UserSettingsNavigator from './user-settings';
-
+// Use after utilizing postgress
 // import SearchScreenConnected from './ui/Search/SearchScreenConnected';
 
 enableScreens(); // improves performance for react-navigation
@@ -136,6 +137,8 @@ const App = () => {
                   stackPresentation: 'push',
                 })}
               />
+              <Screen component={EventFeed} name="EventFeed" />
+              <Screen component={Giving} name="Giving" />
               <Screen
                 name="Auth"
                 component={Auth}
@@ -144,7 +147,11 @@ const App = () => {
                   stackPresentation: 'push',
                 }}
               />
-              <Screen name="Location" component={Location} />
+              <Screen
+                name="Location"
+                component={Location}
+                options={{ title: 'Campuses' }}
+              />
               <Screen
                 name="Passes"
                 component={Passes}
