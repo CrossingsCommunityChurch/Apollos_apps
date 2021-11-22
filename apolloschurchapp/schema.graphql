@@ -61,8 +61,9 @@ type AddCommentFeature implements Feature & Node {
   id: ID!
   order: Int
   relatedNode: Node!
-  addPrompt: String
-  initialPrompt: String
+  addPrompt: String @deprecated(reason: "Use prompt")
+  initialPrompt: String @deprecated(reason: "Use prompt")
+  prompt: String
 }
 
 input AnalyticsDeviceInfo {
@@ -678,13 +679,14 @@ type Query {
   node(id: ID!): Node
   suggestedFollows: [Person]
   searchPeople(name: String, first: Int, after: String): SearchPeopleResultsConnection
-  interactions(personId: ID!, nodeId: ID, action: InteractionAction): [Interaction]
+  interactions(nodeId: ID, action: InteractionAction): [Interaction]
   likedContent(first: Int, after: String): ContentItemsConnection
-  tabFeedFeatures(tab: Tab!, campusId: ID): FeatureFeed
+  tabFeedFeatures(tab: Tab!, campusId: ID, tags: [String]): FeatureFeed
   userFeedFeatures: [Feature] @deprecated(reason: "Use homeFeedFeatures or discoverFeedFeatures")
   homeFeedFeatures(campusId: ID): FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: HOME)")
   discoverFeedFeatures: FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: DISCOVER)")
   LiveFeedFeatures: FeatureFeed
+  contentItemTags: [String]
   campaigns: ContentItemsConnection
   userFeed(first: Int, after: String): ContentItemsConnection
   personaFeed(first: Int, after: String): ContentItemsConnection

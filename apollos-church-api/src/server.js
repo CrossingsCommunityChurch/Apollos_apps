@@ -52,6 +52,7 @@ const apolloServer = new ApolloServer({
       shouldReadFromCache: () => !isDev,
       shouldWriteToCache: () => !isDev,
     }),
+    new BugsnagPlugin(),
   ],
   formatError: (error) => {
     console.error(get(error, 'extensions.exception.stacktrace', []).join('\n'));
@@ -78,9 +79,14 @@ const apolloServer = new ApolloServer({
 });
 
 const app = express();
+const path = require('path');
 
 app.get('/health', (req, res) => {
   res.send('ok');
+});
+
+app.get('/simpledonation', (req, res) => {
+  res.sendFile(path.join(__dirname, '/merlin.html'));
 });
 
 // password reset

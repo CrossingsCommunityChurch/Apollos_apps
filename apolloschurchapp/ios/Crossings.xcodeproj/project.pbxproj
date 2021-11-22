@@ -9,52 +9,56 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* CrossingsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CrossingsTests.m */; };
 		01F091B02048490A8F9EF4FE /* Inter-UI-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63F6EE53A9B44B4388B5F1C2 /* Inter-UI-Italic.otf */; };
-		07A2B0C02677E76E0034F8DB /* NunitoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0B22677E76D0034F8DB /* NunitoSans-Italic.ttf */; };
-		07A2B0C12677E76E0034F8DB /* NunitoSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0B32677E76D0034F8DB /* NunitoSans-Light.ttf */; };
-		07A2B0C22677E76E0034F8DB /* NunitoSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0B42677E76D0034F8DB /* NunitoSans-ExtraLight.ttf */; };
-		07A2B0C32677E76E0034F8DB /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0B52677E76D0034F8DB /* NunitoSans-Regular.ttf */; };
-		07A2B0C42677E76E0034F8DB /* NunitoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0B62677E76D0034F8DB /* NunitoSans-BoldItalic.ttf */; };
-		07A2B0C52677E76E0034F8DB /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0B72677E76D0034F8DB /* NunitoSans-SemiBold.ttf */; };
-		07A2B0C62677E76E0034F8DB /* NunitoSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0B82677E76D0034F8DB /* NunitoSans-SemiBoldItalic.ttf */; };
-		07A2B0C72677E76E0034F8DB /* NunitoSans-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0B92677E76D0034F8DB /* NunitoSans-BlackItalic.ttf */; };
-		07A2B0C82677E76E0034F8DB /* NunitoSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0BA2677E76D0034F8DB /* NunitoSans-LightItalic.ttf */; };
-		07A2B0C92677E76E0034F8DB /* NunitoSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0BB2677E76D0034F8DB /* NunitoSans-ExtraLightItalic.ttf */; };
-		07A2B0CA2677E76E0034F8DB /* NunitoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0BC2677E76D0034F8DB /* NunitoSans-ExtraBold.ttf */; };
-		07A2B0CB2677E76E0034F8DB /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0BD2677E76D0034F8DB /* NunitoSans-Bold.ttf */; };
-		07A2B0CC2677E76E0034F8DB /* NunitoSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0BE2677E76E0034F8DB /* NunitoSans-ExtraBoldItalic.ttf */; };
-		07A2B0CD2677E76E0034F8DB /* NunitoSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A2B0BF2677E76E0034F8DB /* NunitoSans-Black.ttf */; };
 		08CE105F17284254AD54AF84 /* DroidSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3B8A0AC5A6B4FABB3BDF6CB /* DroidSerif-Bold.ttf */; };
+		0FAB39D70A1174DFF70E38DA /* libPods-OneSignalNotificationServiceExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0031860411B96BE5F3DCD0 /* libPods-OneSignalNotificationServiceExtension.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1C48DCDE11AC47C48E918489 /* Inter-UI-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DC74A378C1CC40E4B6192D7F /* Inter-UI-Medium.otf */; };
-		2AE17F608689DAE577F28E4D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
-		2DCD954D1E0B4F2C00145EB5 /* CrossingsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CrossingsTests.m */; };
 		4CA6A042251BC0BF00DD0D97 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA6A041251BC0BF00DD0D97 /* SplashScreen.storyboard */; };
-		4CA6A043251BC0BF00DD0D97 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA6A041251BC0BF00DD0D97 /* SplashScreen.storyboard */; };
 		578FFEC1D7D54C9B871A9E5B /* Inter-UI-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5A5A2BC2998547F4816B82E4 /* Inter-UI-BlackItalic.otf */; };
-		5C75E4776A19FEDDCD05813E /* libPods-Crossings-tvOS-Crossings-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC02408E578A898123910157 /* libPods-Crossings-tvOS-Crossings-tvOSTests.a */; };
 		68D1351E80AA4A2C96288FD9 /* Inter-UI-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC21254B449443F99016EBFD /* Inter-UI-Black.otf */; };
 		7FBC6BC3CE8D48298F9850A9 /* Inter-UI-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5157D807E164356ADE87867 /* Inter-UI-Bold.otf */; };
 		82AAE537241888D100D1EEC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		82AAE538241888D200D1EEC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		894732A70B4740678E85B593 /* Inter-UI-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F5410F239E9477B9C2E86BD /* Inter-UI-BoldItalic.otf */; };
-		8EA9BDE542E09F685A47D9BE /* libPods-Crossings-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B9762ACA099D28C28DBB31 /* libPods-Crossings-tvOS.a */; };
+		8A02D55F2744203600AD05A3 /* NunitoSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D55E2744203600AD05A3 /* NunitoSans-Black.ttf */; };
+		8A02D56D274420E300AD05A3 /* NunitoSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5652744206A00AD05A3 /* NunitoSans-ExtraBoldItalic.ttf */; };
+		8A02D56E274420E300AD05A3 /* NunitoSans-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5662744206A00AD05A3 /* NunitoSans-BlackItalic.ttf */; };
+		8A02D56F274420E300AD05A3 /* NunitoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5622744206900AD05A3 /* NunitoSans-Italic.ttf */; };
+		8A02D570274420E300AD05A3 /* NunitoSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5682744206A00AD05A3 /* NunitoSans-Light.ttf */; };
+		8A02D571274420E300AD05A3 /* NunitoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5612744206900AD05A3 /* NunitoSans-BoldItalic.ttf */; };
+		8A02D572274420E300AD05A3 /* NunitoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D56B2744206B00AD05A3 /* NunitoSans-ExtraBold.ttf */; };
+		8A02D573274420E300AD05A3 /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5692744206A00AD05A3 /* NunitoSans-Regular.ttf */; };
+		8A02D574274420E300AD05A3 /* NunitoSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5632744206900AD05A3 /* NunitoSans-LightItalic.ttf */; };
+		8A02D575274420E300AD05A3 /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D56C2744209E00AD05A3 /* NunitoSans-Bold.ttf */; };
+		8A02D576274420E300AD05A3 /* NunitoSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5642744206A00AD05A3 /* NunitoSans-SemiBoldItalic.ttf */; };
+		8A02D577274420E300AD05A3 /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5672744206A00AD05A3 /* NunitoSans-SemiBold.ttf */; };
+		8A02D578274420E300AD05A3 /* NunitoSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D56A2744206B00AD05A3 /* NunitoSans-ExtraLight.ttf */; };
+		8A02D579274420E300AD05A3 /* NunitoSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5602744206900AD05A3 /* NunitoSans-ExtraLightItalic.ttf */; };
+		8A02D57A274420E500AD05A3 /* NunitoSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5652744206A00AD05A3 /* NunitoSans-ExtraBoldItalic.ttf */; };
+		8A02D57B274420E500AD05A3 /* NunitoSans-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5662744206A00AD05A3 /* NunitoSans-BlackItalic.ttf */; };
+		8A02D57C274420E500AD05A3 /* NunitoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5622744206900AD05A3 /* NunitoSans-Italic.ttf */; };
+		8A02D57D274420E500AD05A3 /* NunitoSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5682744206A00AD05A3 /* NunitoSans-Light.ttf */; };
+		8A02D57E274420E500AD05A3 /* NunitoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5612744206900AD05A3 /* NunitoSans-BoldItalic.ttf */; };
+		8A02D57F274420E500AD05A3 /* NunitoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D56B2744206B00AD05A3 /* NunitoSans-ExtraBold.ttf */; };
+		8A02D580274420E500AD05A3 /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5692744206A00AD05A3 /* NunitoSans-Regular.ttf */; };
+		8A02D581274420E500AD05A3 /* NunitoSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5632744206900AD05A3 /* NunitoSans-LightItalic.ttf */; };
+		8A02D582274420E500AD05A3 /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D56C2744209E00AD05A3 /* NunitoSans-Bold.ttf */; };
+		8A02D583274420E500AD05A3 /* NunitoSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5642744206A00AD05A3 /* NunitoSans-SemiBoldItalic.ttf */; };
+		8A02D584274420E500AD05A3 /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5672744206A00AD05A3 /* NunitoSans-SemiBold.ttf */; };
+		8A02D585274420E500AD05A3 /* NunitoSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D56A2744206B00AD05A3 /* NunitoSans-ExtraLight.ttf */; };
+		8A02D586274420E500AD05A3 /* NunitoSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D5602744206900AD05A3 /* NunitoSans-ExtraLightItalic.ttf */; };
+		8A02D587274420EA00AD05A3 /* NunitoSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A02D55E2744203600AD05A3 /* NunitoSans-Black.ttf */; };
 		90743C40BF544F10A810C43C /* DroidSerif-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADC3D2DB245545ADB1CAB3FE /* DroidSerif-Italic.ttf */; };
 		93A2B0A9328A46A4B7DD5EFA /* DroidSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E007B33EDD74B82AEF02C24 /* DroidSerif-Regular.ttf */; };
 		AB3BD177B8A14193A5EEDDF8 /* Inter-UI-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A613256118404CB691DE2C8E /* Inter-UI-Regular.otf */; };
 		B02F194A3F6A4FE29AC799B4 /* DroidSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A93F9D112A034626A9421759 /* DroidSerif-BoldItalic.ttf */; };
+		BF49AE872649A852001C7B78 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF49AE862649A852001C7B78 /* NotificationService.swift */; };
+		BF49AE8B2649A852001C7B78 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BF49AE842649A852001C7B78 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BFC9F08425757C2D00FF49D7 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9F08325757C2D00FF49D7 /* File.swift */; };
 		E875558F3FB8FA2024EF7DC2 /* libPods-Crossings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6B5B7B6A0D1ECB68CF0DD /* libPods-Crossings.a */; };
-		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
-		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 		EF3A30A2E55D4F8352E116D3 /* libPods-Crossings-CrossingsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D0F1F316A88242D1FD60FB /* libPods-Crossings-CrossingsTests.a */; };
 		FCB3069DB5DD4170B2CAEFC4 /* Inter-UI-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A460FD7884FD4574A818005A /* Inter-UI-MediumItalic.otf */; };
-		FD51D238924B474690C6A6BF /* libPods-OneSignalNotificationServiceExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0031860411B96BE5F3DCD0 /* libPods-OneSignalNotificationServiceExtension.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,13 +68,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = Crossings;
-		};
-		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "Crossings-tvOS";
 		};
 		BF49AE892649A852001C7B78 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -88,6 +85,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				BF49AE8B2649A852001C7B78 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,20 +97,6 @@
 		00E356EE1AD99517003FC87E /* CrossingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrossingsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* CrossingsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrossingsTests.m; sourceTree = "<group>"; };
-		07A2B0B22677E76D0034F8DB /* NunitoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Italic.ttf"; path = "../assets/fonts/NunitoSans-Italic.ttf"; sourceTree = "<group>"; };
-		07A2B0B32677E76D0034F8DB /* NunitoSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Light.ttf"; path = "../assets/fonts/NunitoSans-Light.ttf"; sourceTree = "<group>"; };
-		07A2B0B42677E76D0034F8DB /* NunitoSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraLight.ttf"; path = "../assets/fonts/NunitoSans-ExtraLight.ttf"; sourceTree = "<group>"; };
-		07A2B0B52677E76D0034F8DB /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Regular.ttf"; path = "../assets/fonts/NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
-		07A2B0B62677E76D0034F8DB /* NunitoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-BoldItalic.ttf"; path = "../assets/fonts/NunitoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
-		07A2B0B72677E76D0034F8DB /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-SemiBold.ttf"; path = "../assets/fonts/NunitoSans-SemiBold.ttf"; sourceTree = "<group>"; };
-		07A2B0B82677E76D0034F8DB /* NunitoSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-SemiBoldItalic.ttf"; path = "../assets/fonts/NunitoSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		07A2B0B92677E76D0034F8DB /* NunitoSans-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-BlackItalic.ttf"; path = "../assets/fonts/NunitoSans-BlackItalic.ttf"; sourceTree = "<group>"; };
-		07A2B0BA2677E76D0034F8DB /* NunitoSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-LightItalic.ttf"; path = "../assets/fonts/NunitoSans-LightItalic.ttf"; sourceTree = "<group>"; };
-		07A2B0BB2677E76D0034F8DB /* NunitoSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraLightItalic.ttf"; path = "../assets/fonts/NunitoSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
-		07A2B0BC2677E76D0034F8DB /* NunitoSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraBold.ttf"; path = "../assets/fonts/NunitoSans-ExtraBold.ttf"; sourceTree = "<group>"; };
-		07A2B0BD2677E76D0034F8DB /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Bold.ttf"; path = "../assets/fonts/NunitoSans-Bold.ttf"; sourceTree = "<group>"; };
-		07A2B0BE2677E76E0034F8DB /* NunitoSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraBoldItalic.ttf"; path = "../assets/fonts/NunitoSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		07A2B0BF2677E76E0034F8DB /* NunitoSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Black.ttf"; path = "../assets/fonts/NunitoSans-Black.ttf"; sourceTree = "<group>"; };
 		0D480D95FC7F4569B8B934E3 /* libRCTOneSignal.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTOneSignal.a; sourceTree = "<group>"; };
 		12D0F1F316A88242D1FD60FB /* libPods-Crossings-CrossingsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Crossings-CrossingsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* Crossings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crossings.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,29 +105,35 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Crossings/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Crossings/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Crossings/main.m; sourceTree = "<group>"; };
-		1ECA88A0369BB1DDE56EE65D /* Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Crossings-tvOS-Crossings-tvOSTests/Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1F8F5BC4745C8F22C695573D /* Pods-Crossings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings.release.xcconfig"; path = "Target Support Files/Pods-Crossings/Pods-Crossings.release.xcconfig"; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* Crossings-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crossings-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* Crossings-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Crossings-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F5410F239E9477B9C2E86BD /* Inter-UI-BoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-BoldItalic.otf"; path = "../assets/fonts/Inter-UI-BoldItalic.otf"; sourceTree = "<group>"; };
-		38B9762ACA099D28C28DBB31 /* libPods-Crossings-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Crossings-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA6A041251BC0BF00DD0D97 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
-		4D3B523797B74698347A5317 /* Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Crossings-tvOS-Crossings-tvOSTests/Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		4E007B33EDD74B82AEF02C24 /* DroidSerif-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-Regular.ttf"; path = "../assets/fonts/DroidSerif-Regular.ttf"; sourceTree = "<group>"; };
 		54F271B8EB67A4997A2C7D96 /* Pods-Crossings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings.debug.xcconfig"; path = "Target Support Files/Pods-Crossings/Pods-Crossings.debug.xcconfig"; sourceTree = "<group>"; };
 		59218083CDDF8EF2ABA9BCD1 /* Pods-Crossings-CrossingsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-CrossingsTests.debug.xcconfig"; path = "Target Support Files/Pods-Crossings-CrossingsTests/Pods-Crossings-CrossingsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		59B7EF0894518FA2172F644D /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		5A5A2BC2998547F4816B82E4 /* Inter-UI-BlackItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-BlackItalic.otf"; path = "../assets/fonts/Inter-UI-BlackItalic.otf"; sourceTree = "<group>"; };
 		63F6EE53A9B44B4388B5F1C2 /* Inter-UI-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Italic.otf"; path = "../assets/fonts/Inter-UI-Italic.otf"; sourceTree = "<group>"; };
-		745C835CA2F1E1EC2425152A /* Pods-Crossings-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Crossings-tvOS/Pods-Crossings-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		8A02D55E2744203600AD05A3 /* NunitoSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Black.ttf"; sourceTree = "<group>"; };
+		8A02D5602744206900AD05A3 /* NunitoSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		8A02D5612744206900AD05A3 /* NunitoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		8A02D5622744206900AD05A3 /* NunitoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Italic.ttf"; sourceTree = "<group>"; };
+		8A02D5632744206900AD05A3 /* NunitoSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		8A02D5642744206A00AD05A3 /* NunitoSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		8A02D5652744206A00AD05A3 /* NunitoSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		8A02D5662744206A00AD05A3 /* NunitoSans-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-BlackItalic.ttf"; sourceTree = "<group>"; };
+		8A02D5672744206A00AD05A3 /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		8A02D5682744206A00AD05A3 /* NunitoSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Light.ttf"; sourceTree = "<group>"; };
+		8A02D5692744206A00AD05A3 /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
+		8A02D56A2744206B00AD05A3 /* NunitoSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLight.ttf"; sourceTree = "<group>"; };
+		8A02D56B2744206B00AD05A3 /* NunitoSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		8A02D56C2744209E00AD05A3 /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Bold.ttf"; sourceTree = "<group>"; };
 		A460FD7884FD4574A818005A /* Inter-UI-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-MediumItalic.otf"; path = "../assets/fonts/Inter-UI-MediumItalic.otf"; sourceTree = "<group>"; };
 		A613256118404CB691DE2C8E /* Inter-UI-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Regular.otf"; path = "../assets/fonts/Inter-UI-Regular.otf"; sourceTree = "<group>"; };
 		A93F9D112A034626A9421759 /* DroidSerif-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-BoldItalic.ttf"; path = "../assets/fonts/DroidSerif-BoldItalic.ttf"; sourceTree = "<group>"; };
 		AB44FC16DED929081698EDFD /* Pods-CrossingsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrossingsTests.debug.xcconfig"; path = "Target Support Files/Pods-CrossingsTests/Pods-CrossingsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AC02408E578A898123910157 /* libPods-Crossings-tvOS-Crossings-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Crossings-tvOS-Crossings-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC3D2DB245545ADB1CAB3FE /* DroidSerif-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-Italic.ttf"; path = "../assets/fonts/DroidSerif-Italic.ttf"; sourceTree = "<group>"; };
-		AE85030F59F256E90D5A4C2B /* Pods-Crossings-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crossings-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Crossings-tvOS/Pods-Crossings-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		BF49AE842649A852001C7B78 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF49AE862649A852001C7B78 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		BF49AE882649A852001C7B78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -171,7 +161,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AE17F608689DAE577F28E4D /* BuildFile in Frameworks */,
 				EF3A30A2E55D4F8352E116D3 /* libPods-Crossings-CrossingsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,26 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
 				E875558F3FB8FA2024EF7DC2 /* libPods-Crossings.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2D02E4781E0B4A5D006451C7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */,
-				2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */,
-				8EA9BDE542E09F685A47D9BE /* libPods-Crossings-tvOS.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2D02E48D1E0B4A5D006451C7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5C75E4776A19FEDDCD05813E /* libPods-Crossings-tvOS-Crossings-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD51D238924B474690C6A6BF /* libPods-OneSignalNotificationServiceExtension.a in Frameworks */,
+				0FAB39D70A1174DFF70E38DA /* libPods-OneSignalNotificationServiceExtension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,8 +225,6 @@
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 				DDB6B5B7B6A0D1ECB68CF0DD /* libPods-Crossings.a */,
-				38B9762ACA099D28C28DBB31 /* libPods-Crossings-tvOS.a */,
-				AC02408E578A898123910157 /* libPods-Crossings-tvOS-Crossings-tvOSTests.a */,
 				12D0F1F316A88242D1FD60FB /* libPods-Crossings-CrossingsTests.a */,
 				CB0031860411B96BE5F3DCD0 /* libPods-OneSignalNotificationServiceExtension.a */,
 			);
@@ -266,20 +234,20 @@
 		58D6A3E05A234CD89DC0BCE1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				07A2B0BF2677E76E0034F8DB /* NunitoSans-Black.ttf */,
-				07A2B0B92677E76D0034F8DB /* NunitoSans-BlackItalic.ttf */,
-				07A2B0BD2677E76D0034F8DB /* NunitoSans-Bold.ttf */,
-				07A2B0B62677E76D0034F8DB /* NunitoSans-BoldItalic.ttf */,
-				07A2B0BC2677E76D0034F8DB /* NunitoSans-ExtraBold.ttf */,
-				07A2B0BE2677E76E0034F8DB /* NunitoSans-ExtraBoldItalic.ttf */,
-				07A2B0B42677E76D0034F8DB /* NunitoSans-ExtraLight.ttf */,
-				07A2B0BB2677E76D0034F8DB /* NunitoSans-ExtraLightItalic.ttf */,
-				07A2B0B22677E76D0034F8DB /* NunitoSans-Italic.ttf */,
-				07A2B0B32677E76D0034F8DB /* NunitoSans-Light.ttf */,
-				07A2B0BA2677E76D0034F8DB /* NunitoSans-LightItalic.ttf */,
-				07A2B0B52677E76D0034F8DB /* NunitoSans-Regular.ttf */,
-				07A2B0B72677E76D0034F8DB /* NunitoSans-SemiBold.ttf */,
-				07A2B0B82677E76D0034F8DB /* NunitoSans-SemiBoldItalic.ttf */,
+				8A02D55E2744203600AD05A3 /* NunitoSans-Black.ttf */,
+				8A02D5662744206A00AD05A3 /* NunitoSans-BlackItalic.ttf */,
+				8A02D5612744206900AD05A3 /* NunitoSans-BoldItalic.ttf */,
+				8A02D56B2744206B00AD05A3 /* NunitoSans-ExtraBold.ttf */,
+				8A02D56C2744209E00AD05A3 /* NunitoSans-Bold.ttf */,
+				8A02D5652744206A00AD05A3 /* NunitoSans-ExtraBoldItalic.ttf */,
+				8A02D56A2744206B00AD05A3 /* NunitoSans-ExtraLight.ttf */,
+				8A02D5602744206900AD05A3 /* NunitoSans-ExtraLightItalic.ttf */,
+				8A02D5622744206900AD05A3 /* NunitoSans-Italic.ttf */,
+				8A02D5682744206A00AD05A3 /* NunitoSans-Light.ttf */,
+				8A02D5632744206900AD05A3 /* NunitoSans-LightItalic.ttf */,
+				8A02D5692744206A00AD05A3 /* NunitoSans-Regular.ttf */,
+				8A02D5672744206A00AD05A3 /* NunitoSans-SemiBold.ttf */,
+				8A02D5642744206A00AD05A3 /* NunitoSans-SemiBoldItalic.ttf */,
 				E3B8A0AC5A6B4FABB3BDF6CB /* DroidSerif-Bold.ttf */,
 				A93F9D112A034626A9421759 /* DroidSerif-BoldItalic.ttf */,
 				ADC3D2DB245545ADB1CAB3FE /* DroidSerif-Italic.ttf */,
@@ -301,16 +269,12 @@
 			children = (
 				54F271B8EB67A4997A2C7D96 /* Pods-Crossings.debug.xcconfig */,
 				1F8F5BC4745C8F22C695573D /* Pods-Crossings.release.xcconfig */,
-				745C835CA2F1E1EC2425152A /* Pods-Crossings-tvOS.debug.xcconfig */,
-				AE85030F59F256E90D5A4C2B /* Pods-Crossings-tvOS.release.xcconfig */,
 				D394E3064D75710E81C51EB0 /* Pods-Crossings-tvOSTests.debug.xcconfig */,
 				DA9745795726553C6FA9E7A8 /* Pods-Crossings-tvOSTests.release.xcconfig */,
 				AB44FC16DED929081698EDFD /* Pods-CrossingsTests.debug.xcconfig */,
 				E98AC9782C338F13632EF710 /* Pods-CrossingsTests.release.xcconfig */,
 				59218083CDDF8EF2ABA9BCD1 /* Pods-Crossings-CrossingsTests.debug.xcconfig */,
 				C6895BD78D40E00368BEB025 /* Pods-Crossings-CrossingsTests.release.xcconfig */,
-				1ECA88A0369BB1DDE56EE65D /* Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig */,
-				4D3B523797B74698347A5317 /* Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig */,
 				59B7EF0894518FA2172F644D /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
 				D73A12BF0099DED435E951E7 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
 			);
@@ -355,8 +319,6 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* Crossings.app */,
 				00E356EE1AD99517003FC87E /* CrossingsTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* Crossings-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* Crossings-tvOSTests.xctest */,
 				BF49AE842649A852001C7B78 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
@@ -409,7 +371,6 @@
 				43D579D8398224D7B09F58F6 /* [CP] Copy Pods Resources */,
 				BF49AE8C2649A852001C7B78 /* Embed App Extensions */,
 				C777F5323DB998E21CEC6765 /* [CP] Embed Pods Frameworks */,
-				DBC2064BB73D427582FAEEDC /* Upload source maps to Bugsnag */,
 			);
 			buildRules = (
 			);
@@ -420,43 +381,6 @@
 			productName = "Hello World";
 			productReference = 13B07F961A680F5B00A75B9A /* Crossings.app */;
 			productType = "com.apple.product-type.application";
-		};
-		2D02E47A1E0B4A5D006451C7 /* Crossings-tvOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Crossings-tvOS" */;
-			buildPhases = (
-				9C20354F160AAF86C8281F23 /* [CP] Check Pods Manifest.lock */,
-				2D02E4771E0B4A5D006451C7 /* Sources */,
-				2D02E4781E0B4A5D006451C7 /* Frameworks */,
-				2D02E4791E0B4A5D006451C7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Crossings-tvOS";
-			productName = "Crossings-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* Crossings-tvOS.app */;
-			productType = "com.apple.product-type.application";
-		};
-		2D02E48F1E0B4A5D006451C7 /* Crossings-tvOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Crossings-tvOSTests" */;
-			buildPhases = (
-				A85CD736CDC3356677735901 /* [CP] Check Pods Manifest.lock */,
-				2D02E48C1E0B4A5D006451C7 /* Sources */,
-				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
-				2D02E48E1E0B4A5D006451C7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
-			);
-			name = "Crossings-tvOSTests";
-			productName = "Crossings-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* Crossings-tvOSTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		BF49AE832649A852001C7B78 /* OneSignalNotificationServiceExtension */ = {
 			isa = PBXNativeTarget;
@@ -483,7 +407,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1170;
 				ORGANIZATIONNAME = Apollos;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -495,28 +419,19 @@
 						LastSwiftMigration = 1220;
 						ProvisioningStyle = Manual;
 					};
-					2D02E47A1E0B4A5D006451C7 = {
-						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 1230;
-						ProvisioningStyle = Automatic;
-					};
-					2D02E48F1E0B4A5D006451C7 = {
-						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 2D02E47A1E0B4A5D006451C7;
-					};
 					BF49AE832649A852001C7B78 = {
 						CreatedOnToolsVersion = 12.5;
-						DevelopmentTeam = 83DP3WM45E;
+						DevelopmentTeam = 7KS82J74VW;
 						ProvisioningStyle = Manual;
 					};
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Crossings" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = en;
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -527,8 +442,6 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* Crossings */,
 				00E356ED1AD99517003FC87E /* CrossingsTests */,
-				2D02E47A1E0B4A5D006451C7 /* Crossings-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* Crossings-tvOSTests */,
 				BF49AE832649A852001C7B78 /* OneSignalNotificationServiceExtension */,
 			);
 		};
@@ -539,6 +452,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A02D586274420E500AD05A3 /* NunitoSans-ExtraLightItalic.ttf in Resources */,
+				8A02D57A274420E500AD05A3 /* NunitoSans-ExtraBoldItalic.ttf in Resources */,
+				8A02D583274420E500AD05A3 /* NunitoSans-SemiBoldItalic.ttf in Resources */,
+				8A02D57E274420E500AD05A3 /* NunitoSans-BoldItalic.ttf in Resources */,
+				8A02D57B274420E500AD05A3 /* NunitoSans-BlackItalic.ttf in Resources */,
+				8A02D582274420E500AD05A3 /* NunitoSans-Bold.ttf in Resources */,
+				8A02D580274420E500AD05A3 /* NunitoSans-Regular.ttf in Resources */,
+				8A02D581274420E500AD05A3 /* NunitoSans-LightItalic.ttf in Resources */,
+				8A02D57D274420E500AD05A3 /* NunitoSans-Light.ttf in Resources */,
+				8A02D587274420EA00AD05A3 /* NunitoSans-Black.ttf in Resources */,
+				8A02D57C274420E500AD05A3 /* NunitoSans-Italic.ttf in Resources */,
+				8A02D584274420E500AD05A3 /* NunitoSans-SemiBold.ttf in Resources */,
+				8A02D57F274420E500AD05A3 /* NunitoSans-ExtraBold.ttf in Resources */,
+				8A02D585274420E500AD05A3 /* NunitoSans-ExtraLight.ttf in Resources */,
 				82AAE537241888D100D1EEC7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,51 +474,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07A2B0CA2677E76E0034F8DB /* NunitoSans-ExtraBold.ttf in Resources */,
-				07A2B0C72677E76E0034F8DB /* NunitoSans-BlackItalic.ttf in Resources */,
+				8A02D579274420E300AD05A3 /* NunitoSans-ExtraLightItalic.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				07A2B0CB2677E76E0034F8DB /* NunitoSans-Bold.ttf in Resources */,
 				08CE105F17284254AD54AF84 /* DroidSerif-Bold.ttf in Resources */,
+				8A02D570274420E300AD05A3 /* NunitoSans-Light.ttf in Resources */,
+				8A02D576274420E300AD05A3 /* NunitoSans-SemiBoldItalic.ttf in Resources */,
+				8A02D56E274420E300AD05A3 /* NunitoSans-BlackItalic.ttf in Resources */,
 				B02F194A3F6A4FE29AC799B4 /* DroidSerif-BoldItalic.ttf in Resources */,
-				07A2B0C92677E76E0034F8DB /* NunitoSans-ExtraLightItalic.ttf in Resources */,
-				07A2B0C22677E76E0034F8DB /* NunitoSans-ExtraLight.ttf in Resources */,
+				8A02D573274420E300AD05A3 /* NunitoSans-Regular.ttf in Resources */,
+				8A02D577274420E300AD05A3 /* NunitoSans-SemiBold.ttf in Resources */,
+				8A02D578274420E300AD05A3 /* NunitoSans-ExtraLight.ttf in Resources */,
 				90743C40BF544F10A810C43C /* DroidSerif-Italic.ttf in Resources */,
-				07A2B0C52677E76E0034F8DB /* NunitoSans-SemiBold.ttf in Resources */,
+				8A02D56D274420E300AD05A3 /* NunitoSans-ExtraBoldItalic.ttf in Resources */,
 				93A2B0A9328A46A4B7DD5EFA /* DroidSerif-Regular.ttf in Resources */,
 				68D1351E80AA4A2C96288FD9 /* Inter-UI-Black.otf in Resources */,
-				07A2B0CD2677E76E0034F8DB /* NunitoSans-Black.ttf in Resources */,
-				07A2B0C32677E76E0034F8DB /* NunitoSans-Regular.ttf in Resources */,
 				578FFEC1D7D54C9B871A9E5B /* Inter-UI-BlackItalic.otf in Resources */,
-				07A2B0C12677E76E0034F8DB /* NunitoSans-Light.ttf in Resources */,
 				7FBC6BC3CE8D48298F9850A9 /* Inter-UI-Bold.otf in Resources */,
-				07A2B0C82677E76E0034F8DB /* NunitoSans-LightItalic.ttf in Resources */,
 				894732A70B4740678E85B593 /* Inter-UI-BoldItalic.otf in Resources */,
+				8A02D574274420E300AD05A3 /* NunitoSans-LightItalic.ttf in Resources */,
+				8A02D55F2744203600AD05A3 /* NunitoSans-Black.ttf in Resources */,
+				8A02D575274420E300AD05A3 /* NunitoSans-Bold.ttf in Resources */,
+				8A02D56F274420E300AD05A3 /* NunitoSans-Italic.ttf in Resources */,
 				01F091B02048490A8F9EF4FE /* Inter-UI-Italic.otf in Resources */,
-				07A2B0CC2677E76E0034F8DB /* NunitoSans-ExtraBoldItalic.ttf in Resources */,
-				07A2B0C62677E76E0034F8DB /* NunitoSans-SemiBoldItalic.ttf in Resources */,
+				8A02D571274420E300AD05A3 /* NunitoSans-BoldItalic.ttf in Resources */,
 				1C48DCDE11AC47C48E918489 /* Inter-UI-Medium.otf in Resources */,
-				07A2B0C42677E76E0034F8DB /* NunitoSans-BoldItalic.ttf in Resources */,
 				FCB3069DB5DD4170B2CAEFC4 /* Inter-UI-MediumItalic.otf in Resources */,
-				07A2B0C02677E76E0034F8DB /* NunitoSans-Italic.ttf in Resources */,
 				AB3BD177B8A14193A5EEDDF8 /* Inter-UI-Regular.otf in Resources */,
+				8A02D572274420E300AD05A3 /* NunitoSans-ExtraBold.ttf in Resources */,
 				4CA6A042251BC0BF00DD0D97 /* SplashScreen.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2D02E4791E0B4A5D006451C7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
-				4CA6A043251BC0BF00DD0D97 /* SplashScreen.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2D02E48E1E0B4A5D006451C7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				82AAE538241888D200D1EEC7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,7 +527,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export EXTRA_PACKAGER_ARGS=\"--sourcemap-output $TMPDIR/$(md5 -qs \"$CONFIGURATION_BUILD_DIR\")-main.jsbundle.map\"\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		07E1EAA0838946D1A5AB5FCD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -626,11 +536,15 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Crossings-CrossingsTests/Pods-Crossings-CrossingsTests-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Flipper-DoubleConversion/double-conversion.framework/double-conversion",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/hermes.framework/hermes",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/double-conversion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -760,50 +674,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Crossings-CrossingsTests/Pods-Crossings-CrossingsTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9C20354F160AAF86C8281F23 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Crossings-tvOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A85CD736CDC3356677735901 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Crossings-tvOS-Crossings-tvOSTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C777F5323DB998E21CEC6765 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -811,30 +681,20 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Crossings/Pods-Crossings-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Flipper-DoubleConversion/double-conversion.framework/double-conversion",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/hermes.framework/hermes",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/double-conversion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Crossings/Pods-Crossings-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		DBC2064BB73D427582FAEEDC /* Upload source maps to Bugsnag */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Upload source maps to Bugsnag";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "SOURCE_MAP=\"$TMPDIR/$(md5 -qs \"$CONFIGURATION_BUILD_DIR\")-main.jsbundle.map\" ../node_modules/@bugsnag/react-native/bugsnag-react-native-xcode.sh";
 		};
 		DEEF24CE4F76789E5E8C369D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -879,27 +739,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2D02E4771E0B4A5D006451C7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */,
-				2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2D02E48C1E0B4A5D006451C7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2DCD954D1E0B4F2C00145EB5 /* CrossingsTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BF49AE802649A852001C7B78 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF49AE872649A852001C7B78 /* NotificationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -910,11 +754,6 @@
 			isa = PBXTargetDependency;
 			target = 13B07F861A680F5B00A75B9A /* Crossings */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
-		};
-		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* Crossings-tvOS */;
-			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 		BF49AE8A2649A852001C7B78 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -939,7 +778,7 @@
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 				INFOPLIST_FILE = CrossingsTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
@@ -964,7 +803,7 @@
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 				INFOPLIST_FILE = CrossingsTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
@@ -981,13 +820,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 54F271B8EB67A4997A2C7D96 /* Pods-Crossings.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Crossings/Crossings.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 215;
+				CURRENT_PROJECT_VERSION = 670;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 83DP3WM45E;
 				HEADER_SEARCH_PATHS = (
@@ -996,7 +834,6 @@
 				);
 				INFOPLIST_FILE = Crossings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1008,7 +845,6 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Crossings-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1017,13 +853,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1F8F5BC4745C8F22C695573D /* Pods-Crossings.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Crossings/Crossings.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 215;
+				CURRENT_PROJECT_VERSION = 670;
 				DEVELOPMENT_TEAM = 83DP3WM45E;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1031,7 +866,6 @@
 				);
 				INFOPLIST_FILE = Crossings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1042,143 +876,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore church.crossings.rock";
 				SWIFT_OBJC_BRIDGING_HEADER = "Crossings-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = Release;
-		};
-		2D02E4971E0B4A5E006451C7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 745C835CA2F1E1EC2425152A /* Pods-Crossings-tvOS.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_TESTABILITY = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-video/ios",
-				);
-				INFOPLIST_FILE = "Crossings-tvOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Crossings-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_OBJC_BRIDGING_HEADER = "Crossings-tvOS-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-			};
-			name = Debug;
-		};
-		2D02E4981E0B4A5E006451C7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE85030F59F256E90D5A4C2B /* Pods-Crossings-tvOS.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-video/ios",
-				);
-				INFOPLIST_FILE = "Crossings-tvOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Crossings-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_OBJC_BRIDGING_HEADER = "Crossings-tvOS-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-			};
-			name = Release;
-		};
-		2D02E4991E0B4A5E006451C7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1ECA88A0369BB1DDE56EE65D /* Pods-Crossings-tvOS-Crossings-tvOSTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_TESTABILITY = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-video/ios",
-				);
-				INFOPLIST_FILE = "Crossings-tvOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Crossings-tvOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Crossings-tvOS.app/Crossings-tvOS";
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-			};
-			name = Debug;
-		};
-		2D02E49A1E0B4A5E006451C7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D3B523797B74698347A5317 /* Pods-Crossings-tvOS-Crossings-tvOSTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-video/ios",
-				);
-				INFOPLIST_FILE = "Crossings-tvOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Crossings-tvOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Crossings-tvOS.app/Crossings-tvOS";
-				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Release;
 		};
@@ -1205,7 +903,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1216,6 +913,7 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 i386";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1231,7 +929,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
@@ -1267,7 +965,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1278,6 +975,7 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 i386";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1286,7 +984,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
@@ -1295,7 +993,6 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1315,10 +1012,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 83DP3WM45E;
+				DEVELOPMENT_TEAM = 7KS82J74VW;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1329,7 +1026,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1345,14 +1042,14 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Differential Dev Shop, LLC (7KS82J74VW)";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 83DP3WM45E;
+				DEVELOPMENT_TEAM = 7KS82J74VW;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = church.crossings.rock.OneSignalNotificationServiceExtension;
@@ -1361,7 +1058,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1382,24 +1079,6 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Crossings-tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2D02E4971E0B4A5E006451C7 /* Debug */,
-				2D02E4981E0B4A5E006451C7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Crossings-tvOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2D02E4991E0B4A5E006451C7 /* Debug */,
-				2D02E49A1E0B4A5E006451C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
