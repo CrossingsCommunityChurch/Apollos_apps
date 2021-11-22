@@ -30,17 +30,14 @@ export default class Giving extends Component {
       navigate: PropTypes.func,
     }),
   };
-
+  // Need to change this to point local when developing for now until an update is pushed to the API.
   render() {
-    const htmlsource = `
-    <script src="https://merlin.simpledonation.com/js/installScript.js"></script><a href="#" class="open-merlin" data-merlin-key="01E4ESB8Z1ANNJZ95F7JHP20Y6" data-merlin-autoload="true">Give Now</a>
-  `;
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <WebView
           javaScriptEnabled={true}
           originWhitelist={['*']}
-          source={{ html: htmlsource }}
+          source={{ uri: 'https://apollo.crossings.church/simpledonation' }}
           mixedContentMode="always"
         />
       </SafeAreaView>
