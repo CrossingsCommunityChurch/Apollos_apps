@@ -56,6 +56,7 @@ platform :ios do
     build_app(workspace: "ios/" << proj << ".xcworkspace", scheme: proj)
     changelog_from_git_commits
     testflight
+    upload_symbols_to_bugsnag
   end
 
   desc "Promote the most recent Testflight version to production"
@@ -74,7 +75,6 @@ platform :ios do
       run_precheck_before_submit: false
     )
   end
-  upload_symbols_to_bugsnag
 end
 
 platform :android do
