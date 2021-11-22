@@ -24,7 +24,7 @@ end
 
 before_all do
   ensure_git_branch
-  ensure_git_status_clean show_diff=true
+  ensure_git_status_clean(show_diff: "true")
   git_pull
 end
 
