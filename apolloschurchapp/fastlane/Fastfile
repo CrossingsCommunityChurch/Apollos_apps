@@ -24,7 +24,7 @@ end
 
 before_all do
   ensure_git_branch
-  ensure_git_status_clean
+  ensure_git_status_clean(show_diff: "true")
   git_pull
 end
 
@@ -56,6 +56,7 @@ platform :ios do
     build_app(workspace: "ios/" << proj << ".xcworkspace", scheme: proj)
     changelog_from_git_commits
     testflight
+    upload_symbols_to_bugsnag
   end
 
   desc "Promote the most recent Testflight version to production"
@@ -100,5 +101,4 @@ end
 error do |lane, exception|
   s = File.read("../app.json")
   app_name = s[/"name": "(.*)",/, 1]
-  slack(message: app_name << " - " << exception.to_s, success: false)
 end

@@ -86,7 +86,7 @@ app.get('/health', (req, res) => {
 });
 
 app.get('/simpledonation', (req, res) => {
-  res.sendFile(path.join(__dirname, '/merlin.html'));
+  res.sendFile(path.join(__dirname, 'merlin.html'));
 });
 
 // password reset

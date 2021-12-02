@@ -8,7 +8,7 @@ import {
 import * as Analytics from '@apollosproject/data-connector-analytics';
 import * as Scripture from '@apollosproject/data-connector-bible';
 // import * as LiveStream from '@apollosproject/data-connector-church-online';
-import * as Cloudinary from '@apollosproject/data-connector-cloudinary';
+// import * as Cloudinary from '@apollosproject/data-connector-cloudinary';
 import * as Search from '@apollosproject/data-connector-algolia-search';
 import * as Pass from '@apollosproject/data-connector-passes';
 import * as Cache from '@apollosproject/data-connector-redis-cache';
@@ -46,6 +46,7 @@ import * as PostgresActionAlgorithm from './action-algorithms';
 import * as LiveStream from './livestream';
 import * as Schedule from './schedule';
 import * as PrayerRequest from './prayer';
+import * as Cloudinary from './cloudinary';
 
 // eslint-disable-next-line import/order
 import {
