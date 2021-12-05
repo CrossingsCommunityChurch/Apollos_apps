@@ -141,7 +141,7 @@ TABS:
         },
       },
       {
-        title: Calendar,
+        title: Info,
         icon: cal,
         id: 122,
         action: OPEN_CHANNEL,
@@ -154,6 +154,15 @@ TABS:
     - algorithms: [UPCOMING_STREAMS]
       type: LiveContentList
       title: Live Now
+    # - algorithms:
+    #   - type: CAMPAIGN_ITEMS
+    #     arguments:
+    #       channelIds:
+    #         - b80faa86-97ec-4034-b56b-f086a083834e
+    #         - 9bc14762-96b7-499d-910e-c648e1396082
+    #   type: HeroList
+    #   isFeatured: true
+    #   subtitle: Featured
     - algorithms:
       - type: CONTENT_FEED
         arguments:
