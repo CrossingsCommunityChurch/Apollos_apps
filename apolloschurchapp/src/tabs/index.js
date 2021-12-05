@@ -22,6 +22,7 @@ import ActionBar from '../ui/ActionBar';
 import tabBarIcon from './tabBarIcon';
 import Logo from './logo';
 import HomeSearchButton from '../ui/Search/SearchButton';
+import LiveStreamListFeatureConnected from '../live-feed/LiveStreamListFeatureConnected';
 
 const HeaderLogo = () => <Logo />;
 
@@ -56,6 +57,11 @@ const HomeTab = createFeatureFeedTab({
   },
   tabName: 'Home',
   feedName: 'HOME',
+  tabProps: {
+    additionalFeatures: {
+      LiveStreamListFeature: LiveStreamListFeatureConnected,
+    },
+  },
 });
 
 const ReadTab = createFeatureFeedTab({
