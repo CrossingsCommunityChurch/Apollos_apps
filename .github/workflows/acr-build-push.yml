@@ -2,6 +2,8 @@ name: build_api
 on:
   push:
     branches: [master]
+    paths:
+      - "apollos-church-api/**"
   workflow_dispatch:
 
 jobs:
@@ -9,9 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check for API changes
-        run: if [[$(git diff HEAD~1 apollos-church-api) == ""]]; then exit; fi
-
       - name: ACR build
         id: acr
         uses: ams0/acr-task-github-action@v2
