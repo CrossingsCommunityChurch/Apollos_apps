@@ -26,7 +26,7 @@ import {
   BinaryFiles,
   FeatureFeed,
   // Event,
-  // PrayerRequest,
+  PrayerRequest,
   Person as RockPerson,
   ContentItem as RockContentItem,
   Campus as RockCampus,
@@ -45,7 +45,7 @@ import * as PostgresActionAlgorithm from './action-algorithms';
 // import * as Search from './search';
 import * as LiveStream from './livestream';
 import * as Schedule from './schedule';
-import * as PrayerRequest from './prayer';
+// import * as PrayerRequest from './prayer';
 import * as Cloudinary from './cloudinary';
 
 // eslint-disable-next-line import/order
