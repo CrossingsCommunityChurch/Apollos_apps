@@ -307,10 +307,14 @@ PODS:
   - React-jsinspector (0.66.1)
   - React-logger (0.66.1):
     - glog
+<<<<<<< ours
   - react-native-amplitude-analytics (0.2.12):
     - Amplitude-iOS (~> 4.3.1)
     - React
   - react-native-apollos-player (2.38.0):
+=======
+  - react-native-apollos-player (2.40.0):
+>>>>>>> theirs
     - React
   - react-native-config (0.11.7):
     - React
@@ -777,7 +781,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 8c0517dee5e8c70cd6c3066f20213ff7ce54f176
   React-logger: bfddd3418dc1d45b77b822958f3e31422e2c179b
   react-native-amplitude-analytics: b3f6d615c005d22532cdf95701eb6e6b2c454ab2
-  react-native-apollos-player: f7101f8ef3e402af6fc4717361bb962b2a3a2a58
+  react-native-apollos-player: 48964f832857c72594649f9074bbfb002b758a0f
   react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
   react-native-geolocation: c956aeb136625c23e0dce0467664af2c437888c9
   react-native-geolocation-service: 7c9436da6dfdecd9526c62eac62ea2bc3f0cc8ea
