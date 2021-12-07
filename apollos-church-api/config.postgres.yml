@@ -116,6 +116,7 @@ CONTENT:
   LIVESTREAM_CONTENT_CHANNEL_IDS: 
     - d5f7c59d-079a-479b-8bd1-6ab8e0c2da1f
   
+SUGGESTED_FOLLOWS:
 
 TABS:
   HOME:
@@ -308,6 +309,7 @@ TABS:
     - type: VerticalPrayerList
       title: Your prayers
   CONNECT:
+    - type: FollowPeople
     - type: ActionTable
       title: Connect to Apollos
       actions:
