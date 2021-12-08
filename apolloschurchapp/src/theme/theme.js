@@ -5,6 +5,8 @@ import { Image, StyleSheet } from 'react-native';
 import { styled } from '@apollosproject/ui-kit';
 import fonts from './fonts';
 import { UIConnectedOverrides } from './overrides';
+// import LiveStreamListFeatureConnected from '../live-feed/LiveStreamListFeatureConnected';
+import propOverrides from './propOverrides';
 
 /* Add your custom theme definitions below. Anything that is supported in UI-Kit Theme can be
  overridden and/or customized here! */
@@ -138,8 +140,8 @@ const overrides = {
   H6: {
     fontFamily: typography.sans.black.default,
   },
-  ...UIConnectedOverrides(),
-
+  // ...UIConnectedOverrides(),
+  // ...propOverrides,
   // Onboarding
   'ui-onboarding.Landing.Title': {
     textAlign: 'center',

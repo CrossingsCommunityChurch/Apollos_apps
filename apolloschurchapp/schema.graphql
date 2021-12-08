@@ -358,6 +358,12 @@ type Follow {
   state: FollowState
 }
 
+type FollowPeopleFeature implements Feature & Node {
+  id: ID!
+  order: Int
+  suggestedPeople: [Person]
+}
+
 enum FollowState {
   REQUESTED
   DECLINED
@@ -513,7 +519,7 @@ interface Media {
   sources: [MediaSource]
 }
 
-type MediaContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ScriptureNode & LikableNode & ShareableNode {
+type MediaContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ScriptureNode & LikableNode & FeaturesNode & ShareableNode {
   id: ID!
   title(hyphenated: Boolean): String
   publishDate: String
@@ -530,6 +536,8 @@ type MediaContentItem implements ContentItem & Node & ContentNode & Card & Video
   scriptures: [Scripture]
   isLiked: Boolean
   likedCount: Int
+  features: [Feature] @deprecated(reason: "Use featureFeed")
+  featureFeed: FeatureFeed
   sharing: SharableContentItem
 }
 
@@ -575,6 +583,7 @@ type Mutation {
   requestFollow(followedPersonId: ID!): Follow
   ignoreFollowRequest(requestPersonId: ID!): Follow
   acceptFollowRequest(requestPersonId: ID!): Follow
+  unfollowPerson(followedPersonId: ID!): Follow
   updateUserPushSettings(input: PushSettingsInput!): Person
 }
 
