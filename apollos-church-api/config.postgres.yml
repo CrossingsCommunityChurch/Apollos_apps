@@ -121,6 +121,16 @@ TABS:
   HOME:
     - type: ActionBar
       actions: [{
+        title: Info,
+        icon: cal,
+        id: 122,
+        action: OPEN_CHANNEL,
+          relatedNode: {
+            __typename: 'ContentChannel',
+            apollosId: 'ContentChannel:b80faa86-97ec-4034-b56b-f086a083834e'
+          }
+      },
+      {
         title: Check In,
         icon: check,
         id: 120,
@@ -139,16 +149,6 @@ TABS:
           __typename: Url,
           url: 'Crossings://crossings/app-link/nav/Giving'
         },
-      },
-      {
-        title: Info,
-        icon: cal,
-        id: 122,
-        action: OPEN_CHANNEL,
-          relatedNode: {
-            __typename: 'ContentChannel',
-            apollosId: 'ContentChannel:b80faa86-97ec-4034-b56b-f086a083834e'
-          }
       }
       ]
     - algorithms: [UPCOMING_STREAMS]
