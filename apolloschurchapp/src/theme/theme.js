@@ -138,7 +138,7 @@ const overrides = {
   H6: {
     fontFamily: typography.sans.black.default,
   },
-  ...UIConnectedOverrides(),
+  ...UIConnectedOverrides({ lightColors, darkColors }),
 
   // Onboarding
   'ui-onboarding.Landing.Title': {
