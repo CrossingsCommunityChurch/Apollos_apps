@@ -6,7 +6,6 @@ class dataSource extends ActionAlgorithm.dataSource {
     ...this.ACTION_ALGORITHMS,
     UPCOMING_EVENTS: this.upcomingEventsAlgorithm.bind(this),
     UPCOMING_STREAMS: this.allLiveStreamContentAlgorithm.bind(this),
-    PERSONAL_PRAYER: this.dailyPersonalPrayerAlgorithm.bind(this),
   };
 
   async upcomingEventsAlgorithm() {
@@ -39,21 +38,6 @@ class dataSource extends ActionAlgorithm.dataSource {
     const { LiveStream } = this.context.dataSources;
     const liveStreams = await LiveStream.getLiveStreams();
     return liveStreams;
-  }
-
-  async dailyPersonalPrayerAlgorithm({
-    limit = 10,
-    numberDaysSincePrayer,
-    personId,
-  } = {}) {
-    const { PrayerRequest, Feature } = this.context.dataSources;
-    Feature.setCacheHint({ scope: 'PRIVATE' });
-
-    return PrayerRequest.byPersonalPrayerFeed({
-      numberDaysSincePrayer,
-      personId,
-      limit,
-    });
   }
 }
 
