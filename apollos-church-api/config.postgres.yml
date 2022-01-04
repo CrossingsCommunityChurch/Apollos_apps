@@ -308,6 +308,7 @@ TABS:
     - type: VerticalPrayerList
       title: Your prayers
   CONNECT:
+    - type: FollowPeople
     - type: ActionTable
       title: Connect to Apollos
       actions:
