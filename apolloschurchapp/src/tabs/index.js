@@ -88,6 +88,18 @@ const WatchTab = createFeatureFeedTab({
   feedName: 'WATCH',
 });
 
+const GiveTab = createFeatureFeedTab({
+  screenOptions: {
+    headerHideShadow: true,
+    headerLeft: ProfileButton,
+    headerRight: SearchButton,
+    headerCenter: HeaderLogo,
+    headerLargeTitle: false,
+  },
+  tabName: 'Give',
+  feedName: 'GIVE',
+});
+
 const PrayTab = createFeatureFeedTab({
   screenOptions: {
     headerHideShadow: true,
@@ -157,6 +169,11 @@ const TabNavigator = () => {
         name="Pray"
         component={PrayTab}
         options={{ tabBarIcon: tabBarIcon('like') }}
+      />
+      <Screen
+        name="Give"
+        component={GiveTab}
+        options={{ tabBarIcon: tabBarIcon('currency-circle-dollar') }}
       />
       <Screen
         name="Connect"

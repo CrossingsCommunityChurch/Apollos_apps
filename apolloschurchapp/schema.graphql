@@ -795,6 +795,7 @@ enum Tab {
   READ
   WATCH
   PRAY
+  GIVE
   CONNECT
 }
 
@@ -917,6 +918,7 @@ interface VideoNode {
 type WebviewFeature implements Feature & Node {
   id: ID!
   order: Int
+  height: Int
   title: String
   linkText: String
   url: String

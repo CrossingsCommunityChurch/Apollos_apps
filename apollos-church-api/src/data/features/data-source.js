@@ -50,6 +50,10 @@ export default class Feature extends coreFeatures.dataSource {
             return this.createPrayerListFeature(finalConfig);
           case 'VerticalPrayerList':
             return this.createVerticalPrayerListFeature(finalConfig);
+          case 'WebView':
+            return this.createWebViewFeature(finalConfig);
+          case 'FollowPeople':
+            return this.createFollowPeopleFeature(finalConfig);
           case 'LiveContentList':
             return this.createLiveStreamListFeature(finalConfig);
           case 'ActionList':

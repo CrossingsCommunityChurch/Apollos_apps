@@ -73,7 +73,8 @@ BIBLE_API:
     KJV: 'de4e12af7f28f599-02'
 CLOUDINARY:
   URL: ${CLOUDINARY_URL}
-
+SIMPLEDONATION:
+   KEY: ${SIMPLE_DONATION_KEY}
 CONTENT:
   SERMON_CHANNEL_ID: 1d14f86d-fe99-4bcd-8456-ef22adc0d43f
   
@@ -307,6 +308,9 @@ TABS:
       title: Daily Prayer
     - type: VerticalPrayerList
       title: Your prayers
+  GIVE:
+    - type: WebView
+      url: ${ROOT_URL}/simpledonation
   CONNECT:
     - type: FollowPeople
     - type: ActionTable

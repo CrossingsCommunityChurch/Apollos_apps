@@ -34,8 +34,6 @@ import Providers from './Providers';
 import Tabs from './tabs';
 import customTheme, { customIcons } from './theme';
 import EventFeed from './event-feed';
-import Giving from './giving';
-
 // Use after utilizing postgress
 // import SearchScreenConnected from './ui/Search/SearchScreenConnected';
 
@@ -133,7 +131,6 @@ const App = () => {
                 })}
               />
               <Screen component={EventFeed} name="EventFeed" />
-              <Screen component={Giving} name="Giving" />
               <Screen
                 name="Auth"
                 component={Auth}
