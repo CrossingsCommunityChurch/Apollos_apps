@@ -26,13 +26,13 @@ import {
   BinaryFiles,
   FeatureFeed,
   // Event,
-  // PrayerRequest,
   Person as RockPerson,
   ContentItem as RockContentItem,
   Campus as RockCampus,
   ContentChannel,
   Feature as RockFeature,
   ActionAlgorithm as RockActionAlgorithm,
+  PrayerRequest as RockPrayerRequest,
 } from '@apollosproject/data-connector-rock';
 
 import * as PostgresContentItem from './content-items';
@@ -45,7 +45,7 @@ import * as PostgresActionAlgorithm from './action-algorithms';
 // import * as Search from './search';
 import * as LiveStream from './livestream';
 import * as Schedule from './schedule';
-import * as PrayerRequest from './prayer';
+// import * as PrayerRequest from './prayer';
 import * as Cloudinary from './cloudinary';
 
 // eslint-disable-next-line import/order
@@ -67,7 +67,7 @@ import {
   ContentItemsConnection,
   ContentItemCategory,
   // ActionAlgorithm as PostgresActionAlgorithm,
-  // PrayerRequest as PostgresPrayerRequest,
+  PrayerRequest as PostgresPrayerRequest,
 } from '@apollosproject/data-connector-postgres';
 
 import * as Theme from './theme';
@@ -79,6 +79,7 @@ import {
   OneSignal,
   PostgresDefaultCampusOverride,
   RockDefaultCampusOverride,
+  PrayerRequest,
 } from './rockWithPostgres';
 
 const postgresContentModules = {
@@ -91,10 +92,14 @@ const postgresContentModules = {
   ContentItem: PostgresContentItem,
   ContentItemsConnection,
   ContentChannel: ContentItemCategory,
-  // PrayerRequest: PostgresPrayerRequest,
   RockCampus: { dataSource: RockCampus.dataSource },
   Campus,
   PostgresDefaultCampusOverride,
+  RockPrayerRequest: {
+    dataSource: RockPrayerRequest.dataSource,
+  },
+  PostgresPrayerRequest,
+  PrayerRequest,
 };
 
 const rockContentModules = {
@@ -104,7 +109,6 @@ const rockContentModules = {
   Feature: RockFeature,
   ContentItem: RockContentItem,
   ContentChannel,
-  PrayerRequest,
   PostgresCampus: {
     // essentially everything but the resolvers
     dataSource: Campus.dataSource,
@@ -113,6 +117,7 @@ const rockContentModules = {
   },
   Campus: RockCampus,
   RockDefaultCampusOverride,
+  PrayerRequest: RockPrayerRequest,
 };
 
 const data = {
@@ -125,7 +130,6 @@ const data = {
     ? postgresContentModules
     : rockContentModules),
   Cloudinary,
-  PrayerRequest,
   Auth,
   AuthSms,
   Sms,

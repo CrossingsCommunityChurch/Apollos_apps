@@ -1,8 +1,11 @@
 name: build_api
 on:
   push:
-    branches:
-      - "master"
+    branches: [master]
+    paths:
+      - "apollos-church-api/**"
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest

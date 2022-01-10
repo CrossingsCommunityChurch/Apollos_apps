@@ -34,8 +34,6 @@ import Providers from './Providers';
 import Tabs from './tabs';
 import customTheme, { customIcons } from './theme';
 import EventFeed from './event-feed';
-import Giving from './giving';
-
 // Use after utilizing postgress
 // import SearchScreenConnected from './ui/Search/SearchScreenConnected';
 
@@ -79,11 +77,6 @@ const ThemedNavigationContainer = withTheme(({ theme, ...props }) => ({
 }))(({ containerRef, ...props }) => (
   <NavigationContainer ref={containerRef} {...props} />
 ));
-
-const LandingToAuth = () => {
-  const navigation = useNavigation();
-  return <Landing onPressPrimary={() => navigation.navigate('Auth')} />;
-};
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -138,7 +131,6 @@ const App = () => {
                 })}
               />
               <Screen component={EventFeed} name="EventFeed" />
-              <Screen component={Giving} name="Giving" />
               <Screen
                 name="Auth"
                 component={Auth}
@@ -165,7 +157,7 @@ const App = () => {
                   stackPresentation: 'push',
                 }}
               />
-              <Screen name="LandingScreen" component={LandingToAuth} />
+              <Screen name="LandingScreen" component={Landing} />
               <Screen name="Search" component={SearchScreenConnected} />
               <Screen
                 name="UserSettingsNavigator"
