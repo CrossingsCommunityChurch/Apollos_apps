@@ -75,6 +75,7 @@ platform :ios do
       run_precheck_before_submit: false
     )
   end
+  upload_symbols_to_bugsnag
 end
 
 platform :android do
@@ -96,6 +97,7 @@ platform :android do
       package_name: package_name
     )
   end
+  send_build_to_bugsnag
 end
 
 error do |lane, exception|
