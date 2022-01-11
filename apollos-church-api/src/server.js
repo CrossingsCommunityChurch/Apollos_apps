@@ -37,8 +37,6 @@ export { resolvers, schema, testSchema };
 const isDev =
   process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test';
 
-// const extensions = isDev ? [() => new RockLoggingExtension()] : [];
-
 const { ROCK, APP } = ApollosConfig;
 
 const apolloServer = new ApolloServer({
