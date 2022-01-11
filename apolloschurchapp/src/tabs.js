@@ -18,12 +18,12 @@ import {
   ConnectScreenConnected,
 } from '@apollosproject/ui-connected';
 import { checkOnboardingStatusAndNavigate } from '@apollosproject/ui-onboarding';
-import ActionTable from '../ui/ActionTable';
-import ActionBar from '../ui/ActionBar';
-import tabBarIcon from './tabBarIcon';
-import Logo from './logo';
-import HomeSearchButton from '../ui/Search/SearchButton';
-import LiveStreamListFeatureConnected from '../live-feed/LiveStreamListFeatureConnected';
+import ActionTable from './ui/ActionTable';
+import ActionBar from './ui/ActionBar';
+import tabBarIcon from './tabs/tabBarIcon';
+import Logo from './tabs/logo';
+import HomeSearchButton from './ui/Search/SearchButton';
+import LiveStreamListFeatureConnected from './live-feed/LiveStreamListFeatureConnected';
 
 const HeaderLogo = () => <Logo />;
 
@@ -75,7 +75,7 @@ const SearchButtonCore = () => {
   );
 };
 
-const tabBarIcon = (name) => {
+const tabBarIconCore = (name) => {
   function TabBarIcon({ color }) {
     return <Icon name={name} fill={color} size={24} />;
   }
@@ -113,6 +113,9 @@ const ReadTab = createFeatureFeedTab({
   },
   tabName: 'Read',
   feedName: 'READ',
+  tabProps: {
+    useTagFilter: true,
+  },
 });
 
 const WatchTab = createFeatureFeedTab({
@@ -216,7 +219,7 @@ const TabNavigator = () => {
       />
       <Screen
         name="Connect"
-        component={ConnectTab}
+        component={ConnectTabStackNavigator}
         options={{ tabBarIcon: tabBarIcon('profile') }}
       />
     </Navigator>

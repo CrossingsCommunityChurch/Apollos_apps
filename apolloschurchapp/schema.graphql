@@ -103,6 +103,12 @@ input AnalyticsTrackInput {
 
 scalar AnalyticsValue
 
+type AppTab {
+  title: String
+  icon: String
+  feed: FeatureFeed
+}
+
 type AudioMedia implements Media {
   name: String
   key: String
@@ -690,7 +696,8 @@ type Query {
   searchPeople(name: String, first: Int, after: String): SearchPeopleResultsConnection
   interactions(nodeId: ID, action: InteractionAction): [Interaction]
   likedContent(first: Int, after: String): ContentItemsConnection
-  tabFeedFeatures(tab: Tab!, campusId: ID, tags: [String]): FeatureFeed
+  tabs(campusId: ID, tags: [String]): [AppTab]
+  tabFeedFeatures(tab: Tab!, campusId: ID, tags: [String]): FeatureFeed @deprecated(reason: "Use tabs")
   userFeedFeatures: [Feature] @deprecated(reason: "Use homeFeedFeatures or discoverFeedFeatures")
   homeFeedFeatures(campusId: ID): FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: HOME)")
   discoverFeedFeatures: FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: DISCOVER)")
