@@ -113,9 +113,6 @@ const ReadTab = createFeatureFeedTab({
   },
   tabName: 'Read',
   feedName: 'READ',
-  tabProps: {
-    useTagFilter: true,
-  },
 });
 
 const WatchTab = createFeatureFeedTab({

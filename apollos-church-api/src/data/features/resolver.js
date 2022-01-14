@@ -9,6 +9,11 @@ const resolver = {
   LiveStreamListFeature: {
     id: id('LiveStreamListFeature'),
   },
+  WebviewFeature: {
+    height: ({ args, height }) => args?.height || height || 400,
+    id: id('WebviewFeature'),
+    url: ({ args, url }) => args?.url || url || '',
+  },
 };
 
 export default resolver;

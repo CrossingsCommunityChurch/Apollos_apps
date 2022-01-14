@@ -18,7 +18,7 @@ fragmentTypes.__schema.types.forEach((supertype) => {
 });
 
 ApollosConfig.loadJs({
-  SCHEMA_VERSION: '2021.11.18',
+  SCHEMA_VERSION: '2022.01.12',
   FRAGMENTS: {
     ...FRAGMENTS,
     LIVE_STREAM_LIST_FEATURE_FRAGMENT: gql`
