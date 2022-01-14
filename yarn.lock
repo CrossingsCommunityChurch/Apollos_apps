@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@amplitude/react-native@^2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@amplitude/react-native/-/react-native-2.7.0.tgz#bcd82142eaf8d7d6f161ce040c22f86eb3efb60c"
+  integrity sha512-2dMxCVgRPwReHRDm9JKbL+sZGyozJlcdr5Jokv8TQR7idNxxGmm4YSYkjhGjSWkoEyGEyy+lh9kRJQL/DcUWJQ==
+
 "@apollo/client@3.3.20":
   version "3.3.20"
   resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.3.20.tgz#8f0935fa991857e9cf2e73c9bd378ad7ec97caf8"
@@ -16220,7 +16225,7 @@ react-colorful@^5.1.2:
   resolved "https://registry.yarnpkg.com/react-colorful/-/react-colorful-5.4.0.tgz#e05e602469f9768234f29c1bad9ec1f4e86145a2"
   integrity sha512-k7QJXuQGWevr/V8hoMJ1wBW9i2CVhBdDXpBf3jy/AAtzVyYtsFqEAT+y+NOGiSG1cmnGTreqm5EFLXlVaKbPLQ==
 
-react-devtools-core@^4.13.0:
+react-devtools-core@4.13.4, react-devtools-core@^4.13.0:
   version "4.13.4"
   resolved "https://registry.yarnpkg.com/react-devtools-core/-/react-devtools-core-4.13.4.tgz#9d763715f537df666cefe0414e8732bd9695d4d7"
   integrity sha512-su/lI4LdiK5P1YgZpbm8K1iNQX6s0Lq5fJLa1ZcnpewvrqP5V14svHrbPmrU5ptMUSiwjZ3/CBmc/JCZOuuiHQ==
