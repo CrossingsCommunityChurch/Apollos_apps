@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import { PureComponent } from 'react';
 import { Query } from '@apollo/client/react/components';
 import PropTypes from 'prop-types';
 
@@ -8,6 +8,7 @@ import NoResults from '@apollosproject/ui-connected/src/SearchFeedConnected/NoRe
 
 import { SafeAreaView } from 'react-native-safe-area-context';
 import EventCard from './EventCard';
+import EventHeader from './EventHeader';
 
 import GET_ALL_EVENTS from './getEvents';
 
@@ -19,7 +20,7 @@ const BackgroundContainer = styled(({ theme }) => ({
   backgroundColor: theme.colors.background.paper,
   paddingTop: theme.sizing.baseUnit,
 }))(BackgroundView);
-class ContentFeed extends PureComponent {
+class EventFeed extends PureComponent {
   /** Function for React Navigation to set information in the header. */
   static navigationOptions = () => ({
     title: 'Upcoming Events',
@@ -41,6 +42,7 @@ class ContentFeed extends PureComponent {
         {(openUrl) => (
           <BackgroundContainer>
             <SafeAreaView edges={['right', 'left']}>
+              <EventHeader />
               <Query query={GET_ALL_EVENTS} fetchPolicy="cache-and-network">
                 {({ loading, error, data, refetch }) => (
                   <FeedView
@@ -70,4 +72,4 @@ class ContentFeed extends PureComponent {
   }
 }
 
-export default ContentFeed;
+export default EventFeed;

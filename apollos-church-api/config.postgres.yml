@@ -73,7 +73,8 @@ BIBLE_API:
     KJV: 'de4e12af7f28f599-02'
 CLOUDINARY:
   URL: ${CLOUDINARY_URL}
-
+SIMPLEDONATION:
+  KEY: ${SIMPLE_DONATION_KEY}
 CONTENT:
   SERMON_CHANNEL_ID: 1d14f86d-fe99-4bcd-8456-ef22adc0d43f
   
@@ -121,6 +122,16 @@ TABS:
   HOME:
     - type: ActionBar
       actions: [{
+        title: Info,
+        icon: cal,
+        id: 122,
+        action: OPEN_CHANNEL,
+          relatedNode: {
+            __typename: 'ContentChannel',
+            apollosId: 'ContentChannel:b80faa86-97ec-4034-b56b-f086a083834e'
+          }
+      },
+      {
         title: Check In,
         icon: check,
         id: 120,
@@ -130,26 +141,6 @@ TABS:
           url: 'https://app.crossings.church/self-checkin',
         }
       },
-      {
-        title: Give,
-        icon: hands,
-        id: 121,
-        action: OPEN_URL,
-        relatedNode: {
-          __typename: Url,
-          url: 'Crossings://crossings/app-link/nav/Giving'
-        },
-      },
-      {
-        title: Info,
-        icon: cal,
-        id: 122,
-        action: OPEN_CHANNEL,
-          relatedNode: {
-            __typename: 'ContentChannel',
-            apollosId: 'ContentChannel:b80faa86-97ec-4034-b56b-f086a083834e'
-          }
-      }
       ]
     - algorithms: [UPCOMING_STREAMS]
       type: LiveContentList
@@ -170,7 +161,7 @@ TABS:
             - 1d14f86d-fe99-4bcd-8456-ef22adc0d43f
           limit: 5
       type: HeroList
-      title: Recent Messages
+      title: Recent Sermons
       primaryAction:
         action: OPEN_CHANNEL
         title: See More
@@ -192,7 +183,13 @@ TABS:
       algorithms: [SERMON_CHILDREN, PERSONA_FEED]
       subtitle: Explore what God calls you to today
       type: ActionList
-    - algorithms: [PERSONA_FEED]
+    - algorithms:
+      - type: SERIES_IN_PROGRESS
+        arguments:
+          channelIds:
+            - 1d14f86d-fe99-4bcd-8456-ef22adc0d43f
+            - bee639de-4185-46a4-81c3-fe82e72596b6
+            - 2dac29bb-f7b7-4e7e-a22d-26174ab2ef60
       subtitle: Continue
       type: HorizontalCardList
     - title: RECOMMENDED
@@ -307,7 +304,12 @@ TABS:
       title: Daily Prayer
     - type: VerticalPrayerList
       title: Your prayers
+  GIVE:
+    - type: WebView
+      height: 600
+      url: http://localhost:4000/simpledonation
   CONNECT:
+    - type: FollowPeople
     - type: ActionTable
       title: Connect to Apollos
       actions:

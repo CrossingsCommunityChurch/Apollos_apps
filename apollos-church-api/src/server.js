@@ -6,7 +6,10 @@ import { RockLoggingExtension } from '@apollosproject/rock-apollo-data-source';
 import { get } from 'lodash';
 import { BaseRedisCache } from 'apollo-server-cache-redis';
 import Redis from 'ioredis';
-import { setupUniversalLinks } from '@apollosproject/server-core';
+import {
+  setupUniversalLinks,
+  useSimpleDonationRoute,
+} from '@apollosproject/server-core';
 import { createMigrationRunner } from '@apollosproject/data-connector-postgres';
 import { BugsnagPlugin } from '@apollosproject/bugsnag';
 
@@ -33,8 +36,6 @@ export { resolvers, schema, testSchema };
 
 const isDev =
   process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test';
-
-// const extensions = isDev ? [() => new RockLoggingExtension()] : [];
 
 const { ROCK, APP } = ApollosConfig;
 
@@ -79,14 +80,8 @@ const apolloServer = new ApolloServer({
 });
 
 const app = express();
-const path = require('path');
-
 app.get('/health', (req, res) => {
   res.send('ok');
-});
-
-app.get('/simpledonation', (req, res) => {
-  res.sendFile(path.join(__dirname, 'merlin.html'));
 });
 
 // password reset
@@ -98,6 +93,7 @@ applyServerMiddleware({ app, dataSources, context });
 setupJobs({ app, dataSources, context });
 // Comment out if you don't want the API serving apple-app-site-association or assetlinks manifests.
 setupUniversalLinks({ app });
+useSimpleDonationRoute({ app });
 
 apolloServer.applyMiddleware({ app });
 apolloServer.applyMiddleware({ app, path: '/' });
