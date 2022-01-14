@@ -16,6 +16,8 @@ import {
   createFeatureFeedTab,
   UserAvatarConnected,
   ConnectScreenConnected,
+  CampusTabComponent,
+  GET_USER_PROFILE,
 } from '@apollosproject/ui-connected';
 import { checkOnboardingStatusAndNavigate } from '@apollosproject/ui-onboarding';
 import ActionTable from './ui/ActionTable';
