@@ -20,8 +20,8 @@
   "private": true,
   "node": ">=12.x.x",
   "devDependencies": {
-    "lerna": "^3.20.2",
-    "chalk": "^4.0.0"
+    "chalk": "^4.0.0",
+    "lerna": "^3.20.2"
   },
   "dependencies": {},
   "workspaces": {
@@ -34,5 +34,6 @@
       "**",
       "**/**"
     ]
-  }
+  },
+  "version": "0.0.0"
 }
