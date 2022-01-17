@@ -1,0 +1,52 @@
+diff --git a/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/ConnectScreenConnected/index.js b/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/ConnectScreenConnected/index.js
+index 521d8ed..7069309 100644
+--- a/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/ConnectScreenConnected/index.js
++++ b/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/ConnectScreenConnected/index.js
+@@ -60,7 +60,7 @@ const ConnectScreenConnected = (props) => {
+             <SuggestedFollowListConnected
+               refetchRef={refetchRef}
+               onPressFollowListButton={() => setModalOpen(true)}
+-              followListButtonTitle={'Find People to Follow'}
++              followListButtonTitle={'Explore Connections'}
+             />
+ 
+             {ActionTable && <ActionTable />}
+diff --git a/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/FollowListConnected/RequestedFollowListConnected.js b/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/FollowListConnected/RequestedFollowListConnected.js
+index cac25e8..6b1c74e 100644
+--- a/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/FollowListConnected/RequestedFollowListConnected.js
++++ b/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/FollowListConnected/RequestedFollowListConnected.js
+@@ -49,7 +49,7 @@ RequestedFollowListConnected.propTypes = {
+ 
+ RequestedFollowListConnected.defaultProps = {
+   Component: FollowListConnected,
+-  Header: () => <FeatureTitles subtitle={'Follow Requests'} />, // eslint-disable-line react/display-name
++  Header: () => <FeatureTitles subtitle={'Connection Requests'} />, // eslint-disable-line react/display-name
+ };
+ 
+ RequestedFollowListConnected.displayName = 'SuggestedFollowListConnected';
+diff --git a/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/FollowListConnected/SuggestedFollowListConnected.js b/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/FollowListConnected/SuggestedFollowListConnected.js
+index c3c8e55..4ec24cc 100644
+--- a/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/FollowListConnected/SuggestedFollowListConnected.js
++++ b/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/FollowListConnected/SuggestedFollowListConnected.js
+@@ -49,7 +49,7 @@ SuggestedFollowListConnected.propTypes = {
+ 
+ SuggestedFollowListConnected.defaultProps = {
+   Component: FollowListConnected,
+-  Header: () => <FeatureTitles subtitle={'People to Follow'} />, // eslint-disable-line react/display-name
++  Header: () => <FeatureTitles subtitle={'Connect with Congregation'} />, // eslint-disable-line react/display-name
+ };
+ 
+ SuggestedFollowListConnected.displayName = 'SuggestedFollowListConnected';
+diff --git a/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/FollowPeopleFeature/index.js b/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/FollowPeopleFeature/index.js
+index 2183e23..0664a59 100644
+--- a/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/FollowPeopleFeature/index.js
++++ b/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/FollowPeopleFeature/index.js
+@@ -15,7 +15,7 @@ const FollowPeopleFeature = ({ refetchRef }) => {
+       <SuggestedFollowListConnected
+         refetchRef={refetchRef}
+         onPressFollowListButton={() => setModalOpen(true)}
+-        followListButtonTitle={'Find People to Follow'}
++        followListButtonTitle={'Explore Connections'}
+       />
+       <FollowListSearchModalConnected
+         open={modalOpen}
