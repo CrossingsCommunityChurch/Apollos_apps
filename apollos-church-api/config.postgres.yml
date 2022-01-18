@@ -325,3 +325,18 @@ TABS:
             relatedNode: { __typename: Url, url: 'https://www.facebook.com' },
           },
         ]
+  TV:
+    - algorithms:
+      - type: CONTENT_FEED
+        arguments:
+          channelIds:
+            - 1d14f86d-fe99-4bcd-8456-ef22adc0d43f
+          limit: 5
+      type: HeroList
+      title: Recent Sermons
+      primaryAction:
+        action: OPEN_CHANNEL
+        title: See More
+        relatedNode:
+          __typename: ContentChannel
+          apollosId: ContentChannel:1d14f86d-fe99-4bcd-8456-ef22adc0d43f

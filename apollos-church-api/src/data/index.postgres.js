@@ -38,7 +38,7 @@ import {
 import * as PostgresContentItem from './content-items';
 import * as Event from './event';
 import * as PostgresFeature from './features';
-// import * as FeatureFeed from './feature-feeds';
+// import * as FeatureFeed from './feature-feed/feature-feeds';
 // import * as RockPerson from './person';
 import * as Sms from './clearstream';
 import * as PostgresActionAlgorithm from './action-algorithms';

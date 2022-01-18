@@ -3,6 +3,9 @@ import { Feature } from '@apollosproject/data-connector-postgres';
 
 export default gql`
   ${Feature.schema}
+  extend enum Tab {
+    TV
+  }
   type LiveStreamAction {
     relatedNode: Node
     action: ACTION_FEATURE_ACTION
