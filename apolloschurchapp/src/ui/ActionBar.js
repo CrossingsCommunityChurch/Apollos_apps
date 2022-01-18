@@ -21,11 +21,6 @@ const Toolbar = () => (
             label="Volunteer"
           />
           <ActionBarItem
-            onPress={() => openUrl('https://crossings.church/mobile/give')}
-            icon="hands"
-            label="Give"
-          />
-          <ActionBarItem
             onPress={() => openUrl('https://crossings.church/group-finder')}
             icon="find-group"
             label="Find A Group"
