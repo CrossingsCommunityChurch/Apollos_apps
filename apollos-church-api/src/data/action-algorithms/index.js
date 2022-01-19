@@ -6,7 +6,15 @@ class dataSource extends ActionAlgorithm.dataSource {
     ...this.ACTION_ALGORITHMS,
     UPCOMING_EVENTS: this.upcomingEventsAlgorithm.bind(this),
     UPCOMING_STREAMS: this.allLiveStreamContentAlgorithm.bind(this),
+    GROUP_FINDER_GROUPS: this.groupFinderGroupsAlgorithm.bind(this),
   };
+
+  async groupFinderGroupsAlgorithm() {
+    const { Group } = this.context.dataSources;
+    const groups = await Group.getGroups();
+    console.log('GROUPS DATA IS: ', groups);
+    return groups;
+  }
 
   async upcomingEventsAlgorithm() {
     const { Event, Campus, PostgresPerson } = this.context.dataSources;
