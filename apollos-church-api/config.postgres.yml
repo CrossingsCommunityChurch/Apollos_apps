@@ -120,6 +120,13 @@ CONTENT:
 
 TABS:
   HOME:
+    - algorithms: [DAILY_PRAYER]
+      isCard: false
+      type: PrayerList
+      title: Daily Prayer
+    - algorithms: [UPCOMING_STREAMS]
+      type: LiveContentList
+      title: Live Now
     - type: ActionBar
       actions: [{
         title: Info,
@@ -142,9 +149,6 @@ TABS:
         }
       },
       ]
-    - algorithms: [UPCOMING_STREAMS]
-      type: LiveContentList
-      title: Live Now
     # - algorithms:
     #   - type: CAMPAIGN_ITEMS
     #     arguments:
@@ -298,10 +302,6 @@ TABS:
       #  subtitle: Something Else
 
   PRAY:
-    - algorithms: [DAILY_PRAYER]
-      isCard: false
-      type: PrayerList
-      title: Daily Prayer
     - type: VerticalPrayerList
       title: Your prayers
   GIVE:
