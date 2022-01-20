@@ -11,8 +11,9 @@ class dataSource extends ActionAlgorithm.dataSource {
 
   async groupFinderGroupsAlgorithm() {
     const { Group } = this.context.dataSources;
-    const groups = await Group.getGroups();
-    console.log('GROUPS DATA IS: ', groups);
+    const groups = await Group.getGroups({
+      limit: 4,
+    });
     return groups;
   }
 

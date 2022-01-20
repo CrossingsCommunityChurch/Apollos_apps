@@ -11,9 +11,6 @@ export default gql`
     start: String
     end: String
   }
-  extend type Query {
-    groups: [Group] @cacheControl(maxAge: 6400)
-  }
 
   extend type Campus {
     groups: [Group]

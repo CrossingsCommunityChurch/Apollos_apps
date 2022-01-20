@@ -1,12 +1,23 @@
 import { createGlobalId } from '@apollosproject/server-core';
 
 const resolver = {
-  Query: {
-    groups: (root, args, { dataSources }) => dataSources.Groups.getGroups(),
-  },
   Group: {
-    id: (root, args, context, { parentType }) =>
-      createGlobalId(root?.id, parentType.name),
+    id: ({ id }, args, context, { parentType }) =>
+      createGlobalId(id, parentType.name),
+    title: (root) => root.name,
+    htmlContent: (root) => root.description,
+    start: async ({ schedule }, args, { dataSources }) => {
+      const group = await dataSources.Group.getDateTime(schedule);
+      return group.start;
+    },
+    end: async ({ schedule }, args, { dataSources }) => {
+      const group = await dataSources.Group.getDateTime(schedule);
+      return group.end;
+    },
+    coverImage: ({ id }, args, { dataSources }) => {
+      const image = dataSources.Group.getImage(id);
+      console.log('IMAGE IS: ', image);
+    },
   },
   Campus: {
     groups: ({ id }, args, { dataSources }) =>
