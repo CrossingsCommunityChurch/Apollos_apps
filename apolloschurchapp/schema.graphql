@@ -158,6 +158,7 @@ type Campus implements Node {
   longitude: Float
   image: ImageMediaSource
   distanceFromLocation(location: CampusLocationInput): Float
+  groups: [Group]
   events: [Event]
 }
 
@@ -382,18 +383,14 @@ enum GENDER {
   Unknown
 }
 
-type Group implements Node {
+type Group implements Node & ContentNode {
   id: ID!
-  name: String
-  leader: Person @deprecated(reason: "No longer used, use 'leaders' instead")
-  leaders: [Person]
-  members: [Person]
-}
-
-enum GROUP_TYPE {
-  Serving
-  Community
-  Family
+  title(hyphenated: Boolean): String
+  htmlContent: String
+  coverImage: ImageMedia
+  location: String
+  start: String
+  end: String
 }
 
 type HeroListFeature implements Feature & Node {
@@ -657,7 +654,6 @@ type Person implements Node {
   campus: Campus
   prayers: [PrayerRequest]
   devices: [Device]
-  groups(type: GROUP_TYPE, asLeader: Boolean): [Group]
   currentUserFollowing: Follow
   followingCurrentUser: Follow
 }

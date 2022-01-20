@@ -22,7 +22,7 @@ import {
   PersonalDevice,
   Template,
   AuthSms,
-  Group,
+  // Group,
   BinaryFiles,
   FeatureFeed,
   // Event,
@@ -47,7 +47,7 @@ import * as LiveStream from './livestream';
 import * as Schedule from './schedule';
 // import * as PrayerRequest from './prayer';
 import * as Cloudinary from './cloudinary';
-
+import * as Group from './groups';
 // eslint-disable-next-line import/order
 import {
   Comment,
