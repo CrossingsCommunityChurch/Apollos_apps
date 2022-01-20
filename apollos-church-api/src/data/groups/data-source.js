@@ -75,7 +75,7 @@ export default class Group extends RockApolloDataSource {
     );
   }
 
-  getImage = async ({ groupId }) => {
+  getImage = async (groupId) => {
     const groups = await this.getGroupsData();
     const filteredGroups = groups.filter(({ id }) => id === groupId);
     if (filteredGroups.length > 0) {

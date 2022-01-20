@@ -14,9 +14,9 @@ const resolver = {
       const group = await dataSources.Group.getDateTime(schedule);
       return group.end;
     },
-    coverImage: ({ id }, args, { dataSources }) => {
-      const image = dataSources.Group.getImage(id);
-      console.log('IMAGE IS: ', image);
+    coverImage: async ({ id }, args, { dataSources }) => {
+      const image = await dataSources.Group.getImage(id);
+      return image;
     },
   },
   Campus: {
