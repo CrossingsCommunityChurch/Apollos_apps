@@ -21,13 +21,13 @@ export default class Group extends RockApolloDataSource {
     if (moment(time).isValid()) {
       return moment(time)
         .tz(ApollosConfig.ROCK.TIMEZONE)
-        .format('dddd, MMM D');
+        .format('h:mm a ddd, MMM D');
     }
     return null;
   };
 
   // Possibly leverage campus here to show groups by campus?
-  async getGroups({ limit = null } = {}) {
+  async getGroups({ limit = null, campusId = null } = {}) {
     const groups = await this.getGroupsData();
     const sortedGroups = groups
       .filter(({ nextOc }) => nextOc && new Date(nextOc) > new Date())

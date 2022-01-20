@@ -10,9 +10,15 @@ class dataSource extends ActionAlgorithm.dataSource {
   };
 
   async groupFinderGroupsAlgorithm() {
-    const { Group } = this.context.dataSources;
+    const { Group, Campus, PostgresPerson } = this.context.dataSources;
+    const person = await PostgresPerson.getCurrentPerson();
+    // Should we return unflitered groups?
+    if (!person) return [];
+    const campus = await Campus.getForPerson(person);
+    const campusID = campus.dataValues.originId;
     const groups = await Group.getGroups({
       limit: 4,
+      campusId: campusID,
     });
     return groups;
   }
