@@ -29,8 +29,10 @@ export default class Group extends RockApolloDataSource {
   // Possibly leverage campus here to show groups by campus?
   async getGroups({ limit = null, campusId = null } = {}) {
     const groups = await this.getGroupsData();
+    console.log('type of campusID is ', typeof campusId);
     const sortedGroups = groups
       .filter(({ nextOc }) => nextOc && new Date(nextOc) > new Date())
+      .filter(({ campus }) => campus && campus == campusId)
       .sort((a, b) => new Date(a.nextOc) - new Date(b.nextOc));
     if (limit != null) {
       const groups2 = sortedGroups.slice(0, limit);
