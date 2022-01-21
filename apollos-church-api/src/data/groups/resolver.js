@@ -6,17 +6,21 @@ const resolver = {
       createGlobalId(id, parentType.name),
     title: (root) => root.name,
     htmlContent: (root) => root.description,
-    start: async ({ schedule }, args, { dataSources }) => {
-      const group = await dataSources.Group.getDateTime(schedule);
+    start: async ({ id }, args, { dataSources }) => {
+      const group = await dataSources.Group.getTime(id);
       return group.start;
     },
-    end: async ({ schedule }, args, { dataSources }) => {
-      const group = await dataSources.Group.getDateTime(schedule);
+    end: async ({ id }, args, { dataSources }) => {
+      const group = await dataSources.Group.getTime(id);
       return group.end;
     },
     coverImage: async ({ id }, args, { dataSources }) => {
       const image = await dataSources.Group.getImage(id);
       return image;
+    },
+    location: async ({ id }, args, { dataSources }) => {
+      const location = await dataSources.Group.getLocation(id);
+      return location;
     },
   },
   Campus: {

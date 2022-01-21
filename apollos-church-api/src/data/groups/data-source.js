@@ -21,16 +21,17 @@ export default class Group extends RockApolloDataSource {
     if (moment(time).isValid()) {
       return moment(time)
         .tz(ApollosConfig.ROCK.TIMEZONE)
-        .format('dddd, MMM D');
+        .format('h:mm a ddd, MMM D');
     }
     return null;
   };
 
   // Possibly leverage campus here to show groups by campus?
-  async getGroups({ limit = null } = {}) {
+  async getGroups({ limit = null, campusId = null } = {}) {
     const groups = await this.getGroupsData();
     const sortedGroups = groups
       .filter(({ nextOc }) => nextOc && new Date(nextOc) > new Date())
+      .filter(({ campus }) => campus && campus == campusId)
       .sort((a, b) => new Date(a.nextOc) - new Date(b.nextOc));
     if (limit != null) {
       const groups2 = sortedGroups.slice(0, limit);
@@ -51,6 +52,7 @@ export default class Group extends RockApolloDataSource {
           end: 'fake end date',
           relatedNode: { ...group, __type: 'Group' },
           action: 'READ_CONTENT',
+          dateFilter: group.nextOc,
         }))
       );
     }
@@ -89,6 +91,27 @@ export default class Group extends RockApolloDataSource {
     return null;
   };
 
+  getLocation = async (groupId) => {
+    const groups = await this.getGroupsData();
+    const filteredGroups = groups.filter(({ id }) => id === groupId);
+    if (filteredGroups.length > 0) {
+      const group = filteredGroups[0];
+      console.log('SELECTED GROUP IS ......................', group);
+      return group.locationName;
+    }
+    return null;
+  };
+
+  getTime = async (groupId) => {
+    const groups = await this.getGroupsData();
+    const filteredGroups = groups.filter(({ id }) => id === groupId);
+    if (filteredGroups.length > 0) {
+      const group = filteredGroups[0];
+      return this.getDateTime(group.scheduleId);
+    }
+    return null;
+  };
+
   getFromId = (id) =>
     this.request()
       .filter(`Id eq ${id}`)
@@ -105,7 +128,7 @@ export default class Group extends RockApolloDataSource {
     /** Named schedules will include a duration, check in start offset and check in end offset
      *  (in minutes) and there is a parser using Lava that gives us all of these values
      */
-    const lava = `{% schedule id:'${schedule.id}' %}
+    const lava = `{% schedule id:'${schedule}' %}
         {% assign duration = schedule.DurationInMinutes %}
             {
               "nextStartDateTime": "{{ schedule.NextStartDateTime | Date:'yyyy-MM-dd HH:mm' }}",
@@ -113,6 +136,7 @@ export default class Group extends RockApolloDataSource {
             }
         {% endschedule %}`;
 
+    this.baseURL = ROCK.API_URL || `${ROCK.URL}/api`;
     /** Parse the response and get each property of the response */
     const response = await this.post(
       `/Lava/RenderTemplate`,

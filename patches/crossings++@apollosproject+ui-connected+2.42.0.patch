@@ -11,6 +11,55 @@ index 521d8ed..7069309 100644
              />
  
              {ActionTable && <ActionTable />}
+diff --git a/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/EventDetailsConnected/getEvent.js b/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/EventDetailsConnected/getEvent.js
+index 6c7f703..c2e5a03 100644
+--- a/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/EventDetailsConnected/getEvent.js
++++ b/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/EventDetailsConnected/getEvent.js
+@@ -14,6 +14,19 @@ export const EVENT_FRAGMENT = gql`
+       }
+     }
+   }
++  fragment groupFragment on Group {
++    id
++    title
++    location
++    start
++    end
++    htmlContent
++    coverImage {
++      sources {
++        uri
++      }
++    }
++  }
+ `;
+ 
+ export default gql`
+@@ -23,6 +36,9 @@ export default gql`
+       ... on Event {
+         ...eventFragment
+       }
++      ... on Group{
++        ...groupFragment
++      }
+     }
+   }
+   ${EVENT_FRAGMENT}
+diff --git a/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/EventDetailsConnected/index.js b/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/EventDetailsConnected/index.js
+index 2c4b2a4..853fd95 100644
+--- a/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/EventDetailsConnected/index.js
++++ b/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/EventDetailsConnected/index.js
+@@ -36,8 +36,8 @@ const EventDetailsConnected = ({ nodeId }) => {
+     fetchPolicy: 'cache-and-network',
+   });
+   const event = data?.node;
+-
+-  return event && event.__typename === 'Event' ? (
++  return event && (event.__typename === 'Event' || event.__typename === 'Group') ? (
++    console.log("EVENT start IS >>>>>> ", event?.location) ,
+     <Paragraph>
+       {event.start ? (
+         <EventInfoItem
 diff --git a/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/FollowListConnected/RequestedFollowListConnected.js b/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/FollowListConnected/RequestedFollowListConnected.js
 index cac25e8..6b1c74e 100644
 --- a/node_modules/crossings/node_modules/@apollosproject/ui-connected/src/FollowListConnected/RequestedFollowListConnected.js
