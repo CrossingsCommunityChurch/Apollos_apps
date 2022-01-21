@@ -22,6 +22,11 @@ const resolver = {
       const location = await dataSources.Group.getLocation(id);
       return location;
     },
+    sharing: (root, args, { dataSources }) => ({
+      url: dataSources.Group.getShareUrl(root),
+      title: 'Share via ...',
+      message: `${root.name} - `,
+    }),
   },
   Campus: {
     groups: ({ id }, args, { dataSources }) =>

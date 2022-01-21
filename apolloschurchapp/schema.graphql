@@ -383,7 +383,7 @@ enum GENDER {
   Unknown
 }
 
-type Group implements Node & ContentNode {
+type Group implements Node & ContentNode & ShareableNode {
   id: ID!
   title(hyphenated: Boolean): String
   htmlContent: String
@@ -391,6 +391,7 @@ type Group implements Node & ContentNode {
   location: String
   start: String
   end: String
+  sharing: SharableContentItem
 }
 
 type HeroListFeature implements Feature & Node {

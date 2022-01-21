@@ -1,6 +1,11 @@
 import ApollosConfig from '@apollosproject/config';
 import RockApolloDataSource from '@apollosproject/rock-apollo-data-source';
 import moment from 'moment-timezone';
+import {
+  createGlobalId,
+  parseGlobalId,
+  generateAppLink,
+} from '@apollosproject/server-core';
 
 const { ROCK } = ApollosConfig;
 
@@ -15,6 +20,13 @@ export default class Group extends RockApolloDataSource {
       'Webhooks/Lava.ashx/crossings/api/appgroups'
     );
     return response;
+  };
+
+  getShareUrl = async (content) => {
+    const __typename = 'Group';
+    return generateAppLink('universal', 'content', {
+      contentID: createGlobalId(content.id, __typename),
+    });
   };
 
   getTimeFormat = (time) => {

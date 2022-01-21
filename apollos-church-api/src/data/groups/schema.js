@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 export default gql`
-  type Group implements Node & ContentNode {
+  type Group implements Node & ContentNode & ShareableNode {
     id: ID!
     title(hyphenated: Boolean): String
     htmlContent: String
@@ -10,6 +10,7 @@ export default gql`
     location: String
     start: String
     end: String
+    sharing: SharableContentItem
   }
 
   extend type Campus {
