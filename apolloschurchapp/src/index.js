@@ -170,6 +170,6 @@ const App = () => {
       </BackgroundView>
     </ThemeProvider>
   );
-};
+}
 
 export default App;

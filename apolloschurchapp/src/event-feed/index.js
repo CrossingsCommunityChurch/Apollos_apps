@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { BackgroundView, FeedView, styled } from '@apollosproject/ui-kit';
 import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 import NoResults from '@apollosproject/ui-connected/src/SearchFeedConnected/NoResults';
+import { getBottomSpace } from 'react-native-iphone-x-helper';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
 import EventCard from './EventCard';
@@ -16,9 +17,12 @@ import GET_ALL_EVENTS from './getEvents';
  * This is where the component description lives
  * A FeedView wrapped in a query to pull content data.
  */
+const bottomHeight = getBottomSpace();
+
 const BackgroundContainer = styled(({ theme }) => ({
   backgroundColor: theme.colors.background.paper,
   paddingTop: theme.sizing.baseUnit,
+  paddingBottom: bottomHeight,
 }))(BackgroundView);
 class EventFeed extends PureComponent {
   /** Function for React Navigation to set information in the header. */

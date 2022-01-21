@@ -141,17 +141,17 @@ const GiveTab = createFeatureFeedTab({
   feedName: 'GIVE',
 });
 
-const PrayTab = createFeatureFeedTab({
-  screenOptions: {
-    headerHideShadow: true,
-    headerCenter: HeaderLogo,
-    headerRight: SearchButton,
-    headerLeft: ProfileButton,
-    headerLargeTitle: false,
-  },
-  tabName: 'Pray',
-  feedName: 'PRAY',
-});
+// const PrayTab = createFeatureFeedTab({
+//   screenOptions: {
+//     headerHideShadow: true,
+//     headerCenter: HeaderLogo,
+//     headerRight: SearchButton,
+//     headerLeft: ProfileButton,
+//     headerLargeTitle: false,
+//   },
+//   tabName: 'Pray',
+//   feedName: 'PRAY',
+// });
 
 const CustomConnectScreen = () => (
   <ConnectScreenConnected ActionTable={ActionTable} ActionBar={ActionBar} />
@@ -206,11 +206,11 @@ const TabNavigator = () => {
         component={WatchTab}
         options={{ tabBarIcon: tabBarIcon('video') }}
       />
-      <Screen
+      {/* <Screen
         name="Pray"
         component={PrayTab}
         options={{ tabBarIcon: tabBarIcon('like') }}
-      />
+      /> */}
       <Screen
         name="Give"
         component={GiveTab}

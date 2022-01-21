@@ -120,6 +120,10 @@ CONTENT:
 
 TABS:
   HOME:
+    - algorithms: [DAILY_PRAYER]
+      isCard: false
+      type: PrayerList
+      title: Daily Prayer
     - type: ActionBar
       actions: [{
         title: Info,
@@ -168,17 +172,17 @@ TABS:
         relatedNode:
           __typename: ContentChannel
           apollosId: ContentChannel:1d14f86d-fe99-4bcd-8456-ef22adc0d43f
-    - title: Upcoming Events
+    - title: Events and Groups
       subtitle: What's happening at Crossings
       type: ActionList
       primaryAction:
         action: OPEN_URL
-        title: See More Events
+        title: See More
         relatedNode:
           __typename: Url
           url: 'Crossings://crossings/app-link/nav/EventFeed'
       algorithms:
-        - type: UPCOMING_EVENTS          
+        - type: GROUPS_AND_EVENTS     
     - title: FOR YOU
       algorithms: [SERMON_CHILDREN, PERSONA_FEED]
       subtitle: Explore what God calls you to today
@@ -298,10 +302,6 @@ TABS:
       #  subtitle: Something Else
 
   PRAY:
-    - algorithms: [DAILY_PRAYER]
-      isCard: false
-      type: PrayerList
-      title: Daily Prayer
     - type: VerticalPrayerList
       title: Your prayers
   GIVE:
