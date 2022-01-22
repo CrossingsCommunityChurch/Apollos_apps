@@ -1,0 +1,44 @@
+diff --git a/node_modules/@apollosproject/server-core/lib/giving/simple-donation.js b/node_modules/@apollosproject/server-core/lib/giving/simple-donation.js
+index 91a375c..6972e9b 100644
+--- a/node_modules/@apollosproject/server-core/lib/giving/simple-donation.js
++++ b/node_modules/@apollosproject/server-core/lib/giving/simple-donation.js
+@@ -1,11 +1,11 @@
+-"use strict";
++
+ 
+ Object.defineProperty(exports, "__esModule", {
+   value: true
+ });
+ exports.default = useSimpleDonationRoute;
+ 
+-var _config = _interopRequireDefault(require("@apollosproject/config"));
++const _config = _interopRequireDefault(require("@apollosproject/config"));
+ 
+ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+ 
+@@ -14,7 +14,7 @@ function useSimpleDonationRoute({
+ }) {
+   // Give Screen
+   app.get('/simpledonation', (req, res) => {
+-    var _ApollosConfig$SIMPLE;
++    let _ApollosConfig$SIMPLE;
+ 
+     res.send(`
+             <!DOCTYPE html>
+@@ -23,7 +23,7 @@ function useSimpleDonationRoute({
+                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                 </head>
+                 <body>
+-                    <script async src="https://merlin.simpledonation.com/js/installScript.js?cssFile=${req === null || req === void 0 ? void 0 : req.protocol}://${req === null || req === void 0 ? void 0 : req.get('host')}/giving.css"></script>
++                    <script async src="https://merlin.simpledonation.com/js/installScript.js?cssFile=${req === null || req === void 0 ? void 0 : 'https'}://${req === null || req === void 0 ? void 0 : req.get('host')}/giving.css"></script>
+                     <a href="#" class="open-merlin" style="color:white;" data-merlin-key="${_config.default === null || _config.default === void 0 ? void 0 : (_ApollosConfig$SIMPLE = _config.default.SIMPLEDONATION) === null || _ApollosConfig$SIMPLE === void 0 ? void 0 : _ApollosConfig$SIMPLE.KEY}" data-merlin-autoload="true">Give Now</a>
+                 </body>
+             </html>
+@@ -33,4 +33,4 @@ function useSimpleDonationRoute({
+     res.sendFile(`${__dirname}/giving.css`);
+   });
+ }
+-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9naXZpbmcvc2ltcGxlLWRvbmF0aW9uLmpzIl0sIm5hbWVzIjpbInVzZVNpbXBsZURvbmF0aW9uUm91dGUiLCJhcHAiLCJnZXQiLCJyZXEiLCJyZXMiLCJzZW5kIiwicHJvdG9jb2wiLCJBcG9sbG9zQ29uZmlnIiwiU0lNUExFRE9OQVRJT04iLCJLRVkiLCJzZW5kRmlsZSIsIl9fZGlybmFtZSJdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBOzs7O0FBRWUsU0FBU0Esc0JBQVQsQ0FBZ0M7QUFBRUMsRUFBQUE7QUFBRixDQUFoQyxFQUF5QztBQUN0RDtBQUNBQSxFQUFBQSxHQUFHLENBQUNDLEdBQUosQ0FBUSxpQkFBUixFQUEyQixDQUFDQyxHQUFELEVBQU1DLEdBQU4sS0FBYztBQUFBOztBQUN2Q0EsSUFBQUEsR0FBRyxDQUFDQyxJQUFKLENBQVU7QUFDZDtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSx1R0FDc0JGLEdBUlQsYUFRU0EsR0FSVCx1QkFRU0EsR0FBRyxDQUFFRyxRQUNOLE1BQUtILEdBVGIsYUFTYUEsR0FUYix1QkFTYUEsR0FBRyxDQUFFRCxHQUFMLENBQVMsTUFBVCxDQUFpQjtBQUMzQyw0RkFDc0JLLGVBWFQsYUFXU0EsZUFYVCxnREFXU0EsZ0JBQWVDLGNBWHhCLDBEQVdTLHNCQUErQkMsR0FDaEM7QUFDckI7QUFDQTtBQUNBLGFBZkk7QUFnQkQsR0FqQkQ7QUFrQkFSLEVBQUFBLEdBQUcsQ0FBQ0MsR0FBSixDQUFRLGFBQVIsRUFBdUIsQ0FBQ0MsR0FBRCxFQUFNQyxHQUFOLEtBQWM7QUFDbkNBLElBQUFBLEdBQUcsQ0FBQ00sUUFBSixDQUFjLEdBQUVDLFNBQVUsYUFBMUI7QUFDRCxHQUZEO0FBR0QiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgQXBvbGxvc0NvbmZpZyBmcm9tICdAYXBvbGxvc3Byb2plY3QvY29uZmlnJztcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gdXNlU2ltcGxlRG9uYXRpb25Sb3V0ZSh7IGFwcCB9KSB7XG4gIC8vIEdpdmUgU2NyZWVuXG4gIGFwcC5nZXQoJy9zaW1wbGVkb25hdGlvbicsIChyZXEsIHJlcykgPT4ge1xuICAgIHJlcy5zZW5kKGBcbiAgICAgICAgICAgIDwhRE9DVFlQRSBodG1sPlxuICAgICAgICAgICAgPGh0bWw+XG4gICAgICAgICAgICAgICAgPGhlYWQ+XG4gICAgICAgICAgICAgICAgICAgIDxtZXRhIG5hbWU9XCJ2aWV3cG9ydFwiIGNvbnRlbnQ9XCJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MS4wXCI+XG4gICAgICAgICAgICAgICAgPC9oZWFkPlxuICAgICAgICAgICAgICAgIDxib2R5PlxuICAgICAgICAgICAgICAgICAgICA8c2NyaXB0IGFzeW5jIHNyYz1cImh0dHBzOi8vbWVybGluLnNpbXBsZWRvbmF0aW9uLmNvbS9qcy9pbnN0YWxsU2NyaXB0LmpzP2Nzc0ZpbGU9JHtcbiAgICAgICAgICAgICAgICAgICAgICByZXE/LnByb3RvY29sXG4gICAgICAgICAgICAgICAgICAgIH06Ly8ke3JlcT8uZ2V0KCdob3N0Jyl9L2dpdmluZy5jc3NcIj48L3NjcmlwdD5cbiAgICAgICAgICAgICAgICAgICAgPGEgaHJlZj1cIiNcIiBjbGFzcz1cIm9wZW4tbWVybGluXCIgc3R5bGU9XCJjb2xvcjp3aGl0ZTtcIiBkYXRhLW1lcmxpbi1rZXk9XCIke1xuICAgICAgICAgICAgICAgICAgICAgIEFwb2xsb3NDb25maWc/LlNJTVBMRURPTkFUSU9OPy5LRVlcbiAgICAgICAgICAgICAgICAgICAgfVwiIGRhdGEtbWVybGluLWF1dG9sb2FkPVwidHJ1ZVwiPkdpdmUgTm93PC9hPlxuICAgICAgICAgICAgICAgIDwvYm9keT5cbiAgICAgICAgICAgIDwvaHRtbD5cbiAgICAgICAgICAgIGApO1xuICB9KTtcbiAgYXBwLmdldCgnL2dpdmluZy5jc3MnLCAocmVxLCByZXMpID0+IHtcbiAgICByZXMuc2VuZEZpbGUoYCR7X19kaXJuYW1lfS9naXZpbmcuY3NzYCk7XG4gIH0pO1xufVxuIl19
+\ No newline at end of file
++// # sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9naXZpbmcvc2ltcGxlLWRvbmF0aW9uLmpzIl0sIm5hbWVzIjpbInVzZVNpbXBsZURvbmF0aW9uUm91dGUiLCJhcHAiLCJnZXQiLCJyZXEiLCJyZXMiLCJzZW5kIiwicHJvdG9jb2wiLCJBcG9sbG9zQ29uZmlnIiwiU0lNUExFRE9OQVRJT04iLCJLRVkiLCJzZW5kRmlsZSIsIl9fZGlybmFtZSJdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBOzs7O0FBRWUsU0FBU0Esc0JBQVQsQ0FBZ0M7QUFBRUMsRUFBQUE7QUFBRixDQUFoQyxFQUF5QztBQUN0RDtBQUNBQSxFQUFBQSxHQUFHLENBQUNDLEdBQUosQ0FBUSxpQkFBUixFQUEyQixDQUFDQyxHQUFELEVBQU1DLEdBQU4sS0FBYztBQUFBOztBQUN2Q0EsSUFBQUEsR0FBRyxDQUFDQyxJQUFKLENBQVU7QUFDZDtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSx1R0FDc0JGLEdBUlQsYUFRU0EsR0FSVCx1QkFRU0EsR0FBRyxDQUFFRyxRQUNOLE1BQUtILEdBVGIsYUFTYUEsR0FUYix1QkFTYUEsR0FBRyxDQUFFRCxHQUFMLENBQVMsTUFBVCxDQUFpQjtBQUMzQyw0RkFDc0JLLGVBWFQsYUFXU0EsZUFYVCxnREFXU0EsZ0JBQWVDLGNBWHhCLDBEQVdTLHNCQUErQkMsR0FDaEM7QUFDckI7QUFDQTtBQUNBLGFBZkk7QUFnQkQsR0FqQkQ7QUFrQkFSLEVBQUFBLEdBQUcsQ0FBQ0MsR0FBSixDQUFRLGFBQVIsRUFBdUIsQ0FBQ0MsR0FBRCxFQUFNQyxHQUFOLEtBQWM7QUFDbkNBLElBQUFBLEdBQUcsQ0FBQ00sUUFBSixDQUFjLEdBQUVDLFNBQVUsYUFBMUI7QUFDRCxHQUZEO0FBR0QiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgQXBvbGxvc0NvbmZpZyBmcm9tICdAYXBvbGxvc3Byb2plY3QvY29uZmlnJztcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gdXNlU2ltcGxlRG9uYXRpb25Sb3V0ZSh7IGFwcCB9KSB7XG4gIC8vIEdpdmUgU2NyZWVuXG4gIGFwcC5nZXQoJy9zaW1wbGVkb25hdGlvbicsIChyZXEsIHJlcykgPT4ge1xuICAgIHJlcy5zZW5kKGBcbiAgICAgICAgICAgIDwhRE9DVFlQRSBodG1sPlxuICAgICAgICAgICAgPGh0bWw+XG4gICAgICAgICAgICAgICAgPGhlYWQ+XG4gICAgICAgICAgICAgICAgICAgIDxtZXRhIG5hbWU9XCJ2aWV3cG9ydFwiIGNvbnRlbnQ9XCJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MS4wXCI+XG4gICAgICAgICAgICAgICAgPC9oZWFkPlxuICAgICAgICAgICAgICAgIDxib2R5PlxuICAgICAgICAgICAgICAgICAgICA8c2NyaXB0IGFzeW5jIHNyYz1cImh0dHBzOi8vbWVybGluLnNpbXBsZWRvbmF0aW9uLmNvbS9qcy9pbnN0YWxsU2NyaXB0LmpzP2Nzc0ZpbGU9JHtcbiAgICAgICAgICAgICAgICAgICAgICByZXE/LnByb3RvY29sXG4gICAgICAgICAgICAgICAgICAgIH06Ly8ke3JlcT8uZ2V0KCdob3N0Jyl9L2dpdmluZy5jc3NcIj48L3NjcmlwdD5cbiAgICAgICAgICAgICAgICAgICAgPGEgaHJlZj1cIiNcIiBjbGFzcz1cIm9wZW4tbWVybGluXCIgc3R5bGU9XCJjb2xvcjp3aGl0ZTtcIiBkYXRhLW1lcmxpbi1rZXk9XCIke1xuICAgICAgICAgICAgICAgICAgICAgIEFwb2xsb3NDb25maWc/LlNJTVBMRURPTkFUSU9OPy5LRVlcbiAgICAgICAgICAgICAgICAgICAgfVwiIGRhdGEtbWVybGluLWF1dG9sb2FkPVwidHJ1ZVwiPkdpdmUgTm93PC9hPlxuICAgICAgICAgICAgICAgIDwvYm9keT5cbiAgICAgICAgICAgIDwvaHRtbD5cbiAgICAgICAgICAgIGApO1xuICB9KTtcbiAgYXBwLmdldCgnL2dpdmluZy5jc3MnLCAocmVxLCByZXMpID0+IHtcbiAgICByZXMuc2VuZEZpbGUoYCR7X19kaXJuYW1lfS9naXZpbmcuY3NzYCk7XG4gIH0pO1xufVxuIl19
+\ No newline at end of file
