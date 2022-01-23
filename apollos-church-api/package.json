@@ -50,6 +50,8 @@
     "keyword-extractor": "^0.0.19",
     "node-ical": "^0.12.1",
     "object-sizeof": "^1.6.1",
+    "patch-package": "^6.4.7",
+    "postinstall-postinstall": "^2.1.0",
     "pg": "^8.6.0",
     "prettier": "1.12.1",
     "randomcolor": "0.5.3",
