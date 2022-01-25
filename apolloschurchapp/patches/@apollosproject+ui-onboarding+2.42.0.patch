@@ -1,0 +1,13 @@
+diff --git a/node_modules/@apollosproject/ui-onboarding/src/Onboarding/index.js b/node_modules/@apollosproject/ui-onboarding/src/Onboarding/index.js
+index 70f98ee..679a6d2 100644
+--- a/node_modules/@apollosproject/ui-onboarding/src/Onboarding/index.js
++++ b/node_modules/@apollosproject/ui-onboarding/src/Onboarding/index.js
+@@ -41,7 +41,7 @@ function Onboarding(props) {
+     FeaturesConnected,
+     LocationFinderConnected,
+     AskNotificationsConnected,
+-    FollowConnected,
++    // FollowConnected,
+   ];
+   const { data, loading } = useQuery(WITH_USER_ID, {
+     fetchPolicy: 'network-only',
